@@ -1,0 +1,59 @@
+# Build output and local validation artifacts
+[Bb]in/
+[Oo]bj/
+[Aa]rtifacts/
+TestResults/
+*.pdb
+*.exe
+*.cache
+
+# Editors and machine-specific project settings
+.vs/
+.vscode/
+.idea/
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+*.sln.iml
+
+# Logs, dumps, packet captures, and temporary files
+[Ll]og/
+[Ll]ogs/
+[Dd]iagnostics/
+*.log
+*.dmp
+*.pcap
+*.pcapng
+*.csv
+!tests/fixtures/*.csv
+*.tmp
+*.temp
+*.bak
+*.orig
+*.rej
+*.zip
+__pycache__/
+*.pyc
+Thumbs.db
+.DS_Store
+
+# Local account/settings data and credentials
+ExaltMultiTool_Settings.bin
+settings.json
+accounts.json
+credentials.json
+tokens.json
+.env
+.env.*
+!.env.example
+*.pfx
+*.p12
+*.key
+*.pem
+
+# Legacy external sniffer folder
+/Sniffer/
+
+# lib/*.dll, CompiledResources/*.resources, and ExaltHelper_Data/*
+# are build/runtime inputs and must remain in the repository.

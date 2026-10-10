@@ -1,0 +1,87 @@
+[MV SNIFFER SESSION STARTED]
+[DIALOGUE] From: '#Village Girl Umi' | Text: "Oh, the festival is already about to start. Go on up ahead and have fun!" | Clean:
+[DIALOGUE] From: '#Sage Genji' | Text: "A timeless ritual for the spirits before us..." | Clean:
+[DIALOGUE] From: '#Drummer Kaguya' | Text: "A great beat sounded through the ages..." | Clean:
+[DIALOGUE] From: '#Dancer Miko' | Text: "And the graceful dance of our patron god..." | Clean:
+[DIALOGUE] From: '#Sage Genji' | Text: "Witness our form! Witness our grace! Witness the beauty, of the Moonlight Dance!" | Clean:
+[DIALOGUE] From: '#Drummer Kaguya' | Text: "Witness our form! Witness our grace! Witness the beauty, of the Moonlight Dance!" | Clean:
+[DIALOGUE] From: '#Dancer Miko' | Text: "Witness our form! Witness our grace! Witness the beauty, of the Moonlight Dance!" | Clean:
+[DIALOGUE] From: '#Drummer Kaguya' | Text: "Let me start! I'll show these guests a thundering opening act!" | Clean:
+[DIALOGUE] From: '#Drummer Kaguya' | Text: "What vigour you have! Your peformance inspires the spirits to join in." | Clean:
+[DIALOGUE] From: '#Drummer Kaguya' | Text: "The storm clouds deepen... Through my danmaku dance, I will invoke the power of thunder!" | Clean:
+[DIALOGUE] From: '#Drummer Kaguya' | Text: "The storm has settled... but this is just the beginning! My partners will show you their might!" | Clean:
+[DIALOGUE] From: '#Sage Genji' | Text: "Kaguya's dance is as energetic as ever, now bear witness to mine." | Clean:
+[DIALOGUE] From: '#Sage Genji' | Text: "My section of the festival is almost over. I hope my contribution refreshed your spirit." | Clean:
+[DIALOGUE] From: '#Sage Genji' | Text: "Our final dancer will now greet you, please enjoy the final performances." | Clean:
+[DIALOGUE] From: '#Dancer Miko' | Text: "I am honoured to be the final dancer. May my dance please the spirits that have gathered here tonight." | Clean:
+[DIALOGUE] From: '#Dancer Miko' | Text: "You have my praise for making it this far." | Clean:
+[DIALOGUE] From: '#Dancer Miko' | Text: "My final dance will now bring this festival to a close!" | Clean:
+[DIALOGUE] From: '#Sage Genji' | Text: "By the grace of our patron Goddess..." | Clean:
+[DIALOGUE] From: '#Drummer Kaguya' | Text: "By the grace of our patron Goddess..." | Clean:
+[DIALOGUE] From: '#Dancer Miko' | Text: "By the grace of our patron Goddess..." | Clean:
+[DIALOGUE] From: '#Sage Genji' | Text: "Let us begin the final dance!" | Clean:
+[DIALOGUE] From: '#Drummer Kaguya' | Text: "Let us begin the final dance!" | Clean:
+[DIALOGUE] From: '#Dancer Miko' | Text: "Let us begin the final dance!" | Clean:
+[DIALOGUE] From: '#Sage Genji' | Text: "This concludes the Moonlight Dance." | Clean:
+[DIALOGUE] From: '#Dancer Miko' | Text: "Thank you all for coming tonight." | Clean:
+[DIALOGUE] From: '#Drummer Kaguya' | Text: "We hope to perform for you again in the next festival!" | Clean:
+[DIALOGUE] From: '#Village Girl Umi' | Text: "I saw how you did out there! Usually people just die and go all grumpy into the spirit realm. But you didn't! Congratulations!" | Clean:
+[DIALOGUE] From: '#Village Girl Umi' | Text: "The delicious smells coming from the festival stalls are making me hungry..." | Clean:
+[DIALOGUE] From: '#Village Girl Umi' | Text: "I was wondering, what kind of foods do you like to eat?" | Clean:
+[DIALOGUE] From: '#Village Girl Umi' | Text: "That's one of my favourite foods!" | Clean:
+[DIALOGUE] From: '#Village Girl Umi' | Text: "I feel we have a strong connection... do you want to see something interesting?" | Clean:
+[DIALOGUE] From: '#Village Girl Umi' | Text: "I knew you'd be up for some fun! Come meet me at the village square." | Clean:
+[DIALOGUE] From: '#Village Girl Umi' | Text: "Fireworks are usually lit at the end of festivals..." | Clean:
+[DIALOGUE] From: '#Kitsune Umi' | Text: "So let's begin!" | Clean:
+[DIALOGUE] From: '#Kitsune Umi' | Text: "It's a lovely festival night, won't you play with me?" | Clean:
+[MV SNIFFER SESSION STARTED]
+[DIALOGUE] From: '#Village Girl Umi' | Text: "Oh, the festival is already about to start. Go on up ahead and have fun!" | Clean:
+[DIALOGUE] From: '#Sage Genji' | Text: "A timeless ritual for the spirits before us..." | Clean:
+[DIALOGUE] From: '#Drummer Kaguya' | Text: "A great beat sounded through the ages..." | Clean:
+[DIALOGUE] From: '#Dancer Miko' | Text: "And the graceful dance of our patron god..." | Clean:
+[DIALOGUE] From: '#Sage Genji' | Text: "Witness our form! Witness our grace! Witness the beauty, of the Moonlight Dance!" | Clean:
+[DIALOGUE] From: '#Dancer Miko' | Text: "Witness our form! Witness our grace! Witness the beauty, of the Moonlight Dance!" | Clean:
+[DIALOGUE] From: '#Drummer Kaguya' | Text: "Witness our form! Witness our grace! Witness the beauty, of the Moonlight Dance!" | Clean:
+[DIALOGUE] From: '#Sage Genji' | Text: "What more could we ask from a brave audience willing to perform alongside us? Let us begin!" | Clean:
+[DIALOGUE] From: '#Sage Genji' | Text: "Your performance is swift and powerful, the spirits are in awe." | Clean:
+[DIALOGUE] From: '#Sage Genji' | Text: "A danmaku dance may be what we need to lift this festival!" | Clean:
+[DIALOGUE] From: '#Sage Genji' | Text: "Our guests are quite tenacious, my friends! Let us close this opening act, and see where the tide leads us next!" | Clean:
+[DIALOGUE] From: '#Dancer Miko' | Text: "What a marvelous peformance so far! I hope my dance will be just as enjoyable." | Clean:
+[MV SNIFFER SESSION STARTED]
+[DIALOGUE] From: '#Village Girl Umi' | Text: "Oh, the festival is already about to start. Go on up ahead and have fun!" | Clean:
+[DIALOGUE] From: '#Sage Genji' | Text: "A timeless ritual for the spirits before us..." | Clean:
+[DIALOGUE] From: '#Drummer Kaguya' | Text: "A great beat sounded through the ages..." | Clean:
+[DIALOGUE] From: '#Dancer Miko' | Text: "And the graceful dance of our patron god..." | Clean:
+[DIALOGUE] From: '#Sage Genji' | Text: "Witness our form! Witness our grace! Witness the beauty, of the Moonlight Dance!" | Clean:
+[DIALOGUE] From: '#Dancer Miko' | Text: "Witness our form! Witness our grace! Witness the beauty, of the Moonlight Dance!" | Clean:
+[DIALOGUE] From: '#Drummer Kaguya' | Text: "Witness our form! Witness our grace! Witness the beauty, of the Moonlight Dance!" | Clean:
+[DIALOGUE] From: '#Sage Genji' | Text: "What more could we ask from a brave audience willing to perform alongside us? Let us begin!" | Clean:
+[DIALOGUE] From: '#Sage Genji' | Text: "Your performance is swift and powerful, the spirits are in awe." | Clean:
+[DIALOGUE] From: '#Sage Genji' | Text: "A danmaku dance may be what we need to lift this festival!" | Clean:
+[DIALOGUE] From: '#Sage Genji' | Text: "Our guests are quite tenacious, my friends! Let us close this opening act, and see where the tide leads us next!" | Clean:
+[DIALOGUE] From: '#Drummer Kaguya' | Text: "That was a thrilling performance, I hope to be able to match the pace!" | Clean:
+[DIALOGUE] From: '#Drummer Kaguya' | Text: "As my part in the festival draws to a close, my wish is to have invigorated your spirit!" | Clean:
+[DIALOGUE] From: '#Drummer Kaguya' | Text: "You're full of surprises! The final act is now upon us." | Clean:
+[DIALOGUE] From: '#Dancer Miko' | Text: "I am honoured to be the final dancer. May my dance please the spirits that have gathered here tonight." | Clean:
+[DIALOGUE] From: '#Dancer Miko' | Text: "You have my praise for making it this far." | Clean:
+[DIALOGUE] From: '#Dancer Miko' | Text: "My final dance will now bring this festival to a close!" | Clean:
+[DIALOGUE] From: '#Sage Genji' | Text: "By the grace of our patron Goddess..." | Clean:
+[DIALOGUE] From: '#Dancer Miko' | Text: "By the grace of our patron Goddess..." | Clean:
+[DIALOGUE] From: '#Drummer Kaguya' | Text: "By the grace of our patron Goddess..." | Clean:
+[DIALOGUE] From: '#Sage Genji' | Text: "Let us begin the final dance!" | Clean:
+[DIALOGUE] From: '#Dancer Miko' | Text: "Let us begin the final dance!" | Clean:
+[DIALOGUE] From: '#Drummer Kaguya' | Text: "Let us begin the final dance!" | Clean:
+[DIALOGUE] From: '#Sage Genji' | Text: "This concludes the Moonlight Dance." | Clean:
+[DIALOGUE] From: '#Dancer Miko' | Text: "Thank you all for coming tonight." | Clean:
+[DIALOGUE] From: '#Drummer Kaguya' | Text: "We hope to perform for you again in the next festival!" | Clean:
+[MV SNIFFER SESSION STARTED]
+[DIALOGUE] From: '#Village Girl Umi' | Text: "Uoh!" | Clean:
+[DIALOGUE] From: '#Village Girl Umi' | Text: "Uhh, hi! I fell asleep, sorry! You're here for the festival, right?" | Clean:
+[DIALOGUE] From: '#Village Girl Umi' | Text: "Oh, the festival is already about to start. Go on up ahead and have fun!" | Clean:
+[DIALOGUE] From: '#Sage Genji' | Text: "A timeless ritual for the spirits before us..." | Clean:
+[DIALOGUE] From: '#Drummer Kaguya' | Text: "A great beat sounded through the ages..." | Clean:
+[DIALOGUE] From: '#Dancer Miko' | Text: "And the graceful dance of our patron god..." | Clean:
+[DIALOGUE] From: '#Sage Genji' | Text: "Witness our form! Witness our grace! Witness the beauty, of the Moonlight Dance!" | Clean:
+[DIALOGUE] From: '#Drummer Kaguya' | Text: "Witness our form! Witness our grace! Witness the beauty, of the Moonlight Dance!" | Clean:
+[DIALOGUE] From: '#Dancer Miko' | Text: "Witness our form! Witness our grace! Witness the beauty, of the Moonlight Dance!" | Clean:
+[DIALOGUE] From: '#Sage Genji' | Text: "What more could we ask from a brave audience willing to perform alongside us? Let us begin!" | Clean:

@@ -1,0 +1,16 @@
+* text=auto
+*.cs text
+*.csproj text
+*.sln text eol=crlf
+*.slnx text
+*.ps1 text eol=crlf
+*.md text eol=lf
+*.json text eol=lf
+*.xml text
+*.resx text
+*.config text
+*.list text
+*.dll binary
+*.resources binary
+*.ico binary
+*.png binary
