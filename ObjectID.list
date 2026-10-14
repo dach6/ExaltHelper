@@ -14734,7 +14734,8 @@
 18004;;Character;;;13,UGCSetPieceChars8x8;;City Rat Controller
 18005;;Character;;;0,oryxHordeObjects16x16;;City Rat Anchor
 18006;;Projectile;;;639,lofiProjs;;Giant Rat Tail
-18007;Mammoth Rat;Character;;,100,100,0,85,85,0,50,50,1,70,70,0,70,70,0,70,70,0,125,125,0,125,125,0,125,125,0,125,125,0,125,125,0,50,50,1,100,100,0,0,0,0,100,100,1;13,UGCSetPieceChars32x32,80,ancientCityObjects16x16;;Mammoth City Rat
+18007;Mammoth Rat;Character;;,100,100,0,85,85,0,50,50,1,70,70,0,70,70,0,70,70,0,125,125,0,125,125,0,125,125,0,125,125,0,125,125,0,50,50,1,100,100,0,0,0,0,100,100,1;13,UGCSetPieceChars32x32;;Mammoth City Rat
+18008;;Character;;;80,ancientCityObjects16x16;;City Rat Shop Decor 1
 18009;;Character;;;81,ancientCityObjects16x16;;City Rat Shop Decor 2
 18010;Herman the Rodent Hunter;Character;;;79,ancientCityObjects16x16;;City Rat Hunter NPC
 18011;Cat Bell (Small);Equipment;;;407,lofiObj6;EQUIPMENT,CONSUMABLE,UT,TAB_UT;City Cat Bell 1
@@ -14762,6 +14763,7 @@
 18033;Rat Coin x14;Equipment;;;400,lofiObj6;HIGHRATCOIN,RATCOIN;City Rat Coin x14
 18034;Rat Coin x15;Equipment;;;401,lofiObj6;HIGHRATCOIN,RATCOIN;City Rat Coin x15
 18035;;Character;;;402,lofiObj6;;City Rat Shop Decor 4
+18036;;Character;;;402,lofiObj6;;Mammoth City Rat Anchor
 18037;Captive cat;Character;;;10,newRealmSetPieceChars16x16;;City Cat Captive 1
 18038;Captive cat;Character;;;11,newRealmSetPieceChars16x16;;City Cat Captive 2
 18039;Captive cat;Character;;;12,newRealmSetPieceChars16x16;;City Cat Captive 3
@@ -14769,6 +14771,7 @@
 18041;Captive cat;Character;;;14,newRealmSetPieceChars16x16;;City Cat Captive 5
 18042;;Character;;;9,newRealmSetPieceChars16x16;;City Rat Counter 2
 18043;;Character;;;9,newRealmSetPieceChars16x16;;City Rat Counter 3
+18044;Rat Boulder;Character;;,120,120,0;27,lairOfDraconisObjects8x8;;Mammoth City Rat Boulder
 18045;;Character;;;0,oryxHordeObjects16x16;;City Rat Minimap 1
 18046;;Character;;;0,oryxHordeObjects16x16;;City Rat Minimap 2
 18047;Large Rat;Character;;;;;Special Small City Rat

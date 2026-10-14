@@ -2881,6 +2881,19 @@
     <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
     <RequireDismantleWithLabel amount="2">ORG_FUNGAL,ORG_CRYSTAL</RequireDismantleWithLabel>
   </ForgeProperties>
+  <ForgeProperties type="0x1676" id="Irradiance Sheath Shiny">
+    <CanDismantle />
+    <CanCraft />
+    <Description>Requires 2 items [sprite='CollectionIcon' index=11] or [sprite='CollectionIcon' index=12]</Description>
+    <DismantleRequirements common="0" rare="40" legendary="15" mythical="0" />
+    <CraftRequirements common="0" rare="160" legendary="60" mythical="0" />
+    <ForgefireCost>900</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <BlueprintRequired />
+    <ForgeTab>0</ForgeTab>
+    <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
+    <RequireDismantleWithLabel amount="2">ORG_FUNGAL,ORG_CRYSTAL</RequireDismantleWithLabel>
+  </ForgeProperties>
   <ForgeProperties type="0x183d" id="Kageboshi">
     <CanDismantle />
     <CanCraft />
@@ -3575,6 +3588,19 @@
     <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
     <RequireDismantleWithLabel amount="2">ORG_MOONLIGHT</RequireDismantleWithLabel>
   </ForgeProperties>
+  <ForgeProperties type="0x1677" id="Flowering Kimono Shiny">
+    <CanDismantle />
+    <CanCraft />
+    <Description>Requires 2 items [sprite='CollectionIcon' index=94]</Description>
+    <DismantleRequirements common="0" rare="40" legendary="15" mythical="0" />
+    <CraftRequirements common="0" rare="160" legendary="60" mythical="0" />
+    <ForgefireCost>900</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <BlueprintRequired />
+    <ForgeTab>0</ForgeTab>
+    <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
+    <RequireDismantleWithLabel amount="2">ORG_MOONLIGHT</RequireDismantleWithLabel>
+  </ForgeProperties>
   <ForgeProperties type="0x507c" id="Ethereal Happi">
     <CanDismantle />
     <CanCraft />
@@ -3588,7 +3614,33 @@
     <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
     <RequireDismantleWithLabel amount="2">ORG_MOONLIGHT</RequireDismantleWithLabel>
   </ForgeProperties>
+  <ForgeProperties type="0x1678" id="Ethereal Happi Shiny">
+    <CanDismantle />
+    <CanCraft />
+    <Description>Requires 2 items [sprite='CollectionIcon' index=94]</Description>
+    <DismantleRequirements common="0" rare="40" legendary="15" mythical="0" />
+    <CraftRequirements common="0" rare="160" legendary="60" mythical="0" />
+    <ForgefireCost>900</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <BlueprintRequired />
+    <ForgeTab>0</ForgeTab>
+    <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
+    <RequireDismantleWithLabel amount="2">ORG_MOONLIGHT</RequireDismantleWithLabel>
+  </ForgeProperties>
   <ForgeProperties type="0x4ff4" id="Sage's Wakibiki">
+    <CanDismantle />
+    <CanCraft />
+    <Description>Requires 2 items [sprite='CollectionIcon' index=94]</Description>
+    <DismantleRequirements common="0" rare="40" legendary="15" mythical="0" />
+    <CraftRequirements common="0" rare="160" legendary="60" mythical="0" />
+    <ForgefireCost>900</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <BlueprintRequired />
+    <ForgeTab>0</ForgeTab>
+    <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
+    <RequireDismantleWithLabel amount="2">ORG_MOONLIGHT</RequireDismantleWithLabel>
+  </ForgeProperties>
+  <ForgeProperties type="0x1679" id="Sage's Wakibiki Shiny">
     <CanDismantle />
     <CanCraft />
     <Description>Requires 2 items [sprite='CollectionIcon' index=94]</Description>
@@ -3771,6 +3823,19 @@
     <RequireDismantleWithLabel amount="2">ORG_SPECTRAL</RequireDismantleWithLabel>
   </ForgeProperties>
   <ForgeProperties type="0x5d6b" id="Overwhelming Axehead">
+    <CanDismantle />
+    <CanCraft />
+    <Description>Requires 2 items [sprite='CollectionIcon' index=103]</Description>
+    <DismantleRequirements common="0" rare="40" legendary="15" mythical="0" />
+    <CraftRequirements common="0" rare="160" legendary="60" mythical="0" />
+    <ForgefireCost>900</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <BlueprintRequired />
+    <ForgeTab>0</ForgeTab>
+    <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
+    <RequireDismantleWithLabel amount="2">ORG_SPECTRAL</RequireDismantleWithLabel>
+  </ForgeProperties>
+  <ForgeProperties type="0x1674" id="Overwhelming Axehead Shiny">
     <CanDismantle />
     <CanCraft />
     <Description>Requires 2 items [sprite='CollectionIcon' index=103]</Description>
@@ -5068,6 +5133,19 @@
     <RequireDismantleWithLabel amount="2">ORG_LOD</RequireDismantleWithLabel>
   </ForgeProperties>
   <ForgeProperties type="0x7b7b" id="Draconic Insignia">
+    <CanDismantle />
+    <CanCraft />
+    <Description>Requires 2 items [sprite='CollectionIcon' index=150]</Description>
+    <DismantleRequirements common="40" rare="30" legendary="0" mythical="0" />
+    <CraftRequirements common="160" rare="120" legendary="0" mythical="0" />
+    <ForgefireCost>700</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <BlueprintRequired />
+    <ForgeTab>0</ForgeTab>
+    <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
+    <RequireDismantleWithLabel amount="2">ORG_LOD</RequireDismantleWithLabel>
+  </ForgeProperties>
+  <ForgeProperties type="0x1675" id="Draconic Insignia Shiny">
     <CanDismantle />
     <CanCraft />
     <Description>Requires 2 items [sprite='CollectionIcon' index=150]</Description>
@@ -7454,6 +7532,54 @@
     <ForgefireDismantle>0</ForgefireDismantle>
     <ForgeTab>0</ForgeTab>
     <HideItemsWithLabels>TAB_ST,TIERED</HideItemsWithLabels>
+  </ForgeProperties>
+  <ForgeProperties type="0xbefa" id="Teratoma">
+    <CanDismantle />
+    <CanCraft />
+    <BlueprintRequired />
+    <Description>Requires 1 Titan's Heart, 1 Vision of Draconis, and 1 Orb of Aether</Description>
+    <DismantleRequirements common="0" rare="40" legendary="15" mythical="0" />
+    <CraftRequirements common="0" rare="0" legendary="0" mythical="0" />
+    <RequiredItem quantity="1">0xe07f</RequiredItem>
+    <RequiredItem quantity="1">0x144A</RequiredItem>
+    <RequiredItem quantity="1">0x20c2</RequiredItem>
+    <ForgefireCost>700</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <ForgeTab>0</ForgeTab>
+    <HideItemsWithLabels>TAB_ST,TIERED</HideItemsWithLabels>
+  </ForgeProperties>
+  <ForgeProperties type="0xe08c" id="Teratoma Blueprint">
+    <CanDismantle />
+    <Description />
+    <DismantleRequirements common="0" rare="0" legendary="0" mythical="0" />
+    <CraftRequirements common="0" rare="0" legendary="0" mythical="0" />
+    <ForgefireCost>0</ForgefireCost>
+    <ForgefireDismantle>-120</ForgefireDismantle>
+    <Ingredient />
+  </ForgeProperties>
+  <ForgeProperties type="0xbbf8" id="Stoneborn Husk">
+    <CanDismantle />
+    <CanCraft />
+    <BlueprintRequired />
+    <Description>Requires 1 Berserker's Breastplate, 1 Cask Corslet, and 1 Candy Coated Armor</Description>
+    <DismantleRequirements common="0" rare="40" legendary="15" mythical="0" />
+    <CraftRequirements common="0" rare="0" legendary="0" mythical="0" />
+    <RequiredItem quantity="1">0x3a1c</RequiredItem>
+    <RequiredItem quantity="1">0x45ba</RequiredItem>
+    <RequiredItem quantity="1">0xc61</RequiredItem>
+    <ForgefireCost>700</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <ForgeTab>0</ForgeTab>
+    <HideItemsWithLabels>TAB_ST,TIERED</HideItemsWithLabels>
+  </ForgeProperties>
+  <ForgeProperties type="0xe08d" id="Stoneborn Husk Blueprint">
+    <CanDismantle />
+    <Description />
+    <DismantleRequirements common="0" rare="0" legendary="0" mythical="0" />
+    <CraftRequirements common="0" rare="0" legendary="0" mythical="0" />
+    <ForgefireCost>0</ForgefireCost>
+    <ForgefireDismantle>-120</ForgefireDismantle>
+    <Ingredient />
   </ForgeProperties>
   <ForgeProperties type="0x96c2" id="Decades Chronicle">
     <CanDismantle />
@@ -11423,6 +11549,90 @@
     <CraftRequirements common="0" rare="0" legendary="0" mythical="0" />
     <ForgefireCost>500</ForgefireCost>
     <ForgefireDismantle>0</ForgefireDismantle>
+  </ForgeProperties>
+  <ForgeProperties type="0xbc46" id="2DruidST0">
+    <CanDismantle />
+    <Description />
+    <DismantleRequirements common="0" rare="0" legendary="0" mythical="10" />
+    <CraftRequirements common="0" rare="0" legendary="0" mythical="0" />
+    <ForgefireCost>100</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+  </ForgeProperties>
+  <ForgeProperties type="0xbc47" id="2DruidST1">
+    <CanDismantle />
+    <Description />
+    <DismantleRequirements common="0" rare="0" legendary="0" mythical="20" />
+    <CraftRequirements common="0" rare="0" legendary="0" mythical="0" />
+    <ForgefireCost>100</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+  </ForgeProperties>
+  <ForgeProperties type="0xbebc" id="2DruidST2">
+    <CanDismantle />
+    <Description />
+    <DismantleRequirements common="0" rare="0" legendary="0" mythical="15" />
+    <CraftRequirements common="0" rare="0" legendary="0" mythical="0" />
+    <ForgefireCost>100</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+  </ForgeProperties>
+  <ForgeProperties type="0xbebd" id="2DruidST3">
+    <CanDismantle />
+    <Description />
+    <DismantleRequirements common="0" rare="0" legendary="0" mythical="10" />
+    <CraftRequirements common="0" rare="0" legendary="0" mythical="0" />
+    <ForgefireCost>100</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+  </ForgeProperties>
+  <ForgeProperties type="0xbebe" id="3DruidST0">
+    <CanDismantle />
+    <Description>Requires 2 [sprite='CollectionIcon' index=162] Spectral Sentry Rogue Set Tokens and 1 Weapon</Description>
+    <DismantleRequirements common="0" rare="0" legendary="0" mythical="40" />
+    <CraftRequirements common="0" rare="0" legendary="0" mythical="120" />
+    <RequiredItem quantity="2">0x14FB</RequiredItem>
+    <ForgefireCost>900</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <ForgeTab>1</ForgeTab>
+    <HideItemsWithLabels>TAB_UT,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
+    <RequireDismantleWithLabel amount="1">ST</RequireDismantleWithLabel>
+    <RequireDismantleWithLabel amount="1">ST_WEAPON</RequireDismantleWithLabel>
+  </ForgeProperties>
+  <ForgeProperties type="0xbebf" id="3DruidST1">
+    <CanDismantle />
+    <Description>Requires 2 [sprite='CollectionIcon' index=162] Spectral Sentry Rogue Set Tokens and 1 Ability</Description>
+    <DismantleRequirements common="0" rare="0" legendary="0" mythical="40" />
+    <CraftRequirements common="0" rare="0" legendary="0" mythical="120" />
+    <RequiredItem quantity="2">0x14FB</RequiredItem>
+    <ForgefireCost>700</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <ForgeTab>1</ForgeTab>
+    <HideItemsWithLabels>TAB_UT,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
+    <RequireDismantleWithLabel amount="1">ST</RequireDismantleWithLabel>
+    <RequireDismantleWithLabel amount="1">ST_ABILITY</RequireDismantleWithLabel>
+  </ForgeProperties>
+  <ForgeProperties type="0xbec0" id="3DruidST2">
+    <CanDismantle />
+    <Description>Requires 1 [sprite='CollectionIcon' index=162] Spectral Sentry Rogue Set Token and 1 Armor</Description>
+    <DismantleRequirements common="0" rare="0" legendary="0" mythical="30" />
+    <CraftRequirements common="0" rare="0" legendary="0" mythical="60" />
+    <RequiredItem quantity="1">0x14FB</RequiredItem>
+    <ForgefireCost>700</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <ForgeTab>1</ForgeTab>
+    <HideItemsWithLabels>TAB_UT,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
+    <RequireDismantleWithLabel amount="1">ST</RequireDismantleWithLabel>
+    <RequireDismantleWithLabel amount="1">ST_ARMOR</RequireDismantleWithLabel>
+  </ForgeProperties>
+  <ForgeProperties type="0xbec1" id="3DruidST3">
+    <CanDismantle />
+    <Description>Requires 1 [sprite='CollectionIcon' index=162] Spectral Sentry Rogue Set Token and 1 Ring</Description>
+    <DismantleRequirements common="0" rare="0" legendary="0" mythical="20" />
+    <CraftRequirements common="0" rare="0" legendary="0" mythical="30" />
+    <RequiredItem quantity="1">0x14FB</RequiredItem>
+    <ForgefireCost>500</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <ForgeTab>1</ForgeTab>
+    <HideItemsWithLabels>TAB_UT,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
+    <RequireDismantleWithLabel amount="1">ST</RequireDismantleWithLabel>
+    <RequireDismantleWithLabel amount="1">ST_RING</RequireDismantleWithLabel>
   </ForgeProperties>
   <ForgeProperties type="0xe07f" id="Titan's Heart">
     <CanDismantle />
@@ -22417,5 +22627,118 @@
     <ForgeTab>0</ForgeTab>
     <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
     <RequireDismantleWithLabel amount="2">ORG_3D</RequireDismantleWithLabel>
+  </ForgeProperties>
+  <ForgeProperties type="0xF98C" id="HDruidST0">
+    <CanDismantle />
+    <Description />
+    <DismantleRequirements common="0" rare="0" legendary="0" mythical="20" />
+    <CraftRequirements common="0" rare="0" legendary="0" mythical="0" />
+    <ForgefireCost>500</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+  </ForgeProperties>
+  <ForgeProperties type="0xF98D" id="HDruidST1">
+    <CanDismantle />
+    <Description />
+    <DismantleRequirements common="0" rare="0" legendary="0" mythical="20" />
+    <CraftRequirements common="0" rare="0" legendary="0" mythical="0" />
+    <ForgefireCost>500</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+  </ForgeProperties>
+  <ForgeProperties type="0xF98E" id="HDruidST2">
+    <CanDismantle />
+    <Description />
+    <DismantleRequirements common="0" rare="0" legendary="0" mythical="15" />
+    <CraftRequirements common="0" rare="0" legendary="0" mythical="0" />
+    <ForgefireCost>100</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+  </ForgeProperties>
+  <ForgeProperties type="0xF98F" id="HDruidST3">
+    <CanDismantle />
+    <Description />
+    <DismantleRequirements common="0" rare="0" legendary="0" mythical="10" />
+    <CraftRequirements common="0" rare="0" legendary="0" mythical="0" />
+    <ForgefireCost>500</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+  </ForgeProperties>
+  <ForgeProperties type="0xF99C" id="Sweettreats Sword">
+    <CanDismantle />
+    <Description />
+    <DismantleRequirements common="30" rare="15" legendary="0" mythical="0" />
+    <CraftRequirements common="120" rare="60" legendary="0" mythical="0" />
+    <ForgefireCost>500</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <ForgeTab>0</ForgeTab>
+    <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
+    <RequireDismantleWithLabel amount="2">ORG_DDOCKS</RequireDismantleWithLabel>
+  </ForgeProperties>
+  <ForgeProperties type="0xF99E" id="Sweettreats Dagger">
+    <CanDismantle />
+    <Description />
+    <DismantleRequirements common="30" rare="15" legendary="0" mythical="0" />
+    <CraftRequirements common="120" rare="60" legendary="0" mythical="0" />
+    <ForgefireCost>500</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <BlueprintRequired />
+    <ForgeTab>0</ForgeTab>
+    <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
+    <RequireDismantleWithLabel amount="2">ORG_LIBRARY</RequireDismantleWithLabel>
+  </ForgeProperties>
+  <ForgeProperties type="0xF91A" id="Sweettreats Bow">
+    <CanDismantle />
+    <Description />
+    <DismantleRequirements common="30" rare="15" legendary="0" mythical="0" />
+    <CraftRequirements common="120" rare="60" legendary="0" mythical="0" />
+    <ForgefireCost>500</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <BlueprintRequired />
+    <ForgeTab>0</ForgeTab>
+    <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
+    <RequireDismantleWithLabel amount="2">ORG_CDEPTHS</RequireDismantleWithLabel>
+  </ForgeProperties>
+  <ForgeProperties type="0xF91C" id="Sweettreats Staff">
+    <CanDismantle />
+    <Description />
+    <DismantleRequirements common="0" rare="40" legendary="15" mythical="0" />
+    <CraftRequirements common="0" rare="160" legendary="60" mythical="0" />
+    <ForgefireCost>900</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <BlueprintRequired />
+    <ForgeTab>0</ForgeTab>
+    <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
+    <RequireDismantleWithLabel amount="2">ORG_LH,ORG_CULT,ORG_VOID</RequireDismantleWithLabel>
+  </ForgeProperties>
+  <ForgeProperties type="0xF91E" id="Sweettreats Wand">
+    <CanDismantle />
+    <Description />
+    <DismantleRequirements common="40" rare="30" legendary="0" mythical="0" />
+    <CraftRequirements common="160" rare="120" legendary="0" mythical="0" />
+    <ForgefireCost>700</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <BlueprintRequired />
+    <ForgeTab>0</ForgeTab>
+    <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
+    <RequireDismantleWithLabel amount="2">ORG_MTEMPLE</RequireDismantleWithLabel>
+  </ForgeProperties>
+  <ForgeProperties type="0xF91F" id="Sweettreats Katana">
+    <CanDismantle />
+    <Description />
+    <DismantleRequirements common="40" rare="30" legendary="0" mythical="0" />
+    <CraftRequirements common="160" rare="120" legendary="0" mythical="0" />
+    <ForgefireCost>700</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <BlueprintRequired />
+    <ForgeTab>0</ForgeTab>
+    <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
+    <RequireDismantleWithLabel amount="2">ORG_LOD</RequireDismantleWithLabel>
+  </ForgeProperties>
+  <ForgeProperties type="0xF92E" id="Sweettreats Ring">
+    <CanDismantle />
+    <Description />
+    <DismantleRequirements common="0" rare="40" legendary="15" mythical="0" />
+    <CraftRequirements common="0" rare="0" legendary="0" mythical="0" />
+    <ForgefireCost>100</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <ForgeTab>0</ForgeTab>
+    <HideItemsWithLabels>TAB_ST,TIERED</HideItemsWithLabels>
   </ForgeProperties>
 </Objects>
