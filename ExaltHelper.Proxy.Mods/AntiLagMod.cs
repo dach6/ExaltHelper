@@ -193,7 +193,7 @@ internal class AntiLagMod
 								StatTypeField = StatType.Size,
 								StatValue = StatValue,
 								StatStringValue = string.Empty,
-								SecondaryStatValue = 65
+								SecondaryStatValue = -1 // Compressed sentinel retains wire byte 0x41.
 							}
 						}
 					});

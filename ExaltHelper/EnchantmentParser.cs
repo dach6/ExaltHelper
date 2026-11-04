@@ -4,12 +4,14 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Xml;
+using System.Linq;
 
 namespace ExaltHelper;
 
 internal static class EnchantmentParser
 {
 	private static readonly Dictionary<short, string> enchantNames = new Dictionary<short, string>();
+	private static readonly Dictionary<string, string> enchantCategories = new Dictionary<string, string>(StringComparer.Ordinal);
 
 	private static readonly Dictionary<short, float> statModMultipliers = new Dictionary<short, float>();
 
@@ -68,7 +70,7 @@ internal static class EnchantmentParser
 						: short.TryParse(type, out id);
 					if (!parsed || id <= 0) continue;
 					string name = enchant["DisplayId"]?.InnerText;
-					if (!string.IsNullOrWhiteSpace(name)) enchantNames[id] = name;
+					if (!string.IsNullOrWhiteSpace(name)) { enchantNames[id] = name; enchantCategories[name] = ClassifyEnchantment(enchant.GetAttribute("id"), name); }
 					foreach (XmlElement effect in enchant.SelectNodes(".//ActivateOnEquip"))
 						if (effect.InnerText.Trim() == "StatModMult" && TryReadMultiplier(effect.GetAttribute("amount"), out float amount))
 							statModMultipliers[id] = amount;
@@ -257,6 +259,19 @@ internal static class EnchantmentParser
 		return (count: num, rarity: item, names: list);
 	}
 
+	public static string EnchantmentCategory(string name)
+	{
+		EnsureLoaded();
+		return name != null && enchantCategories.TryGetValue(name, out string category) ? category : ClassifyEnchantment("", name ?? "");
+	}
+	private static string ClassifyEnchantment(string id, string name)
+	{
+		if ((name.Contains("Loot Bonus III") || name.Contains("Loot Bonus IV")) && !name.Contains("XP Loot Bonus")) return "Loot";
+		if (name.IndexOf("Awakened", StringComparison.OrdinalIgnoreCase) >= 0) return "Awakened";
+		if (name.IndexOf("Unique", StringComparison.OrdinalIgnoreCase) >= 0 || name.Any(char.IsLetter) && name.Where(char.IsLetter).All(char.IsUpper)
+			|| id.Any(char.IsLetter) && id.All(x => char.IsUpper(x) || x == '_' || char.IsDigit(x))) return "Unique";
+		return "Normal";
+	}
 	public static Color GetRarityColor(string rarity)
 	{
 		if (string.IsNullOrEmpty(rarity))

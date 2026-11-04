@@ -1035,6 +1035,19 @@
     <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
     <RequireDismantleWithLabel amount="2">ORG_LH,ORG_CULT,ORG_VOID</RequireDismantleWithLabel>
   </ForgeProperties>
+  <ForgeProperties type="0x1A08" id="Magical Lodestone Shiny">
+    <CanDismantle />
+    <CanCraft />
+    <Description>Requires 2 items [sprite='CollectionIcon' index=15] or [sprite='CollectionIcon' index=16] or [sprite='CollectionIcon' index=17]</Description>
+    <DismantleRequirements common="0" rare="40" legendary="15" mythical="0" />
+    <CraftRequirements common="0" rare="160" legendary="60" mythical="0" />
+    <ForgefireCost>900</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <BlueprintRequired />
+    <ForgeTab>0</ForgeTab>
+    <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
+    <RequireDismantleWithLabel amount="2">ORG_LH,ORG_CULT,ORG_VOID</RequireDismantleWithLabel>
+  </ForgeProperties>
   <ForgeProperties type="0x709d" id="Avarice">
     <CanDismantle />
     <CanCraft />
@@ -2907,6 +2920,19 @@
     <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
     <RequireDismantleWithLabel amount="2">REALMWHITE</RequireDismantleWithLabel>
   </ForgeProperties>
+  <ForgeProperties type="0x1A05" id="Kageboshi Shiny">
+    <CanDismantle />
+    <CanCraft />
+    <Description>Requires 2 items [sprite='CollectionIcon' index=100]</Description>
+    <DismantleRequirements common="0" rare="40" legendary="15" mythical="0" />
+    <CraftRequirements common="0" rare="160" legendary="60" mythical="0" />
+    <ForgefireCost>900</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <BlueprintRequired />
+    <ForgeTab>0</ForgeTab>
+    <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
+    <RequireDismantleWithLabel amount="2">REALMWHITE</RequireDismantleWithLabel>
+  </ForgeProperties>
   <ForgeProperties type="0x36a4" id="Penetrating Blast Spell">
     <CanDismantle />
     <CanCraft />
@@ -2940,6 +2966,20 @@
     <BlueprintRequired />
     <ForgeTab>0</ForgeTab>
     <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
+  </ForgeProperties>
+  <ForgeProperties type="0xadce" id="Squidver">
+    <CanDismantle />
+    <CanCraft />
+    <Description>Requires 2 items [sprite='CollectionIcon' index=137]</Description>
+    <DismantleRequirements common="40" rare="30" legendary="0" mythical="0" />
+    <CraftRequirements common="160" rare="120" legendary="0" mythical="0" />
+    <ForgefireCost>700</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <BlueprintRequired />
+    <ForgeTab>0</ForgeTab>
+    <BlueprintRequired />
+    <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
+    <RequireDismantleWithLabel amount="2">ORG_OTRENCH</RequireDismantleWithLabel>
   </ForgeProperties>
   <ForgeProperties type="0x66A2" id="Vindication Prism">
     <CanDismantle />
@@ -6065,7 +6105,33 @@
     <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
     <RequireDismantleWithLabel amount="2">ORG_3D</RequireDismantleWithLabel>
   </ForgeProperties>
+  <ForgeProperties type="0x1A09" id="Morning Square Shiny">
+    <CanDismantle />
+    <CanCraft />
+    <Description>Requires 2 items [sprite='CollectionIcon' index=136]</Description>
+    <DismantleRequirements common="40" rare="30" legendary="0" mythical="0" />
+    <CraftRequirements common="160" rare="120" legendary="0" mythical="0" />
+    <ForgefireCost>700</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <BlueprintRequired />
+    <ForgeTab>0</ForgeTab>
+    <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
+    <RequireDismantleWithLabel amount="2">ORG_3D</RequireDismantleWithLabel>
+  </ForgeProperties>
   <ForgeProperties type="0xaf74" id="The Triangle">
+    <CanDismantle />
+    <CanCraft />
+    <Description>Requires 2 items [sprite='CollectionIcon' index=136]</Description>
+    <DismantleRequirements common="40" rare="30" legendary="0" mythical="0" />
+    <CraftRequirements common="160" rare="120" legendary="0" mythical="0" />
+    <ForgefireCost>700</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <BlueprintRequired />
+    <ForgeTab>0</ForgeTab>
+    <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
+    <RequireDismantleWithLabel amount="2">ORG_3D</RequireDismantleWithLabel>
+  </ForgeProperties>
+  <ForgeProperties type="0x1A0C" id="The Triangle Shiny">
     <CanDismantle />
     <CanCraft />
     <Description>Requires 2 items [sprite='CollectionIcon' index=136]</Description>
@@ -8255,6 +8321,19 @@
     <ForgeTab>0</ForgeTab>
     <HideItemsWithLabels>TAB_ST,ALIEN_ESSENCE</HideItemsWithLabels>
   </ForgeProperties>
+  <ForgeProperties type="0xadcf" id="Coral Juice Refinery">
+    <CanDismantle />
+    <CanCraft />
+    <Description>Requires 2 items [sprite='CollectionIcon' index=137]</Description>
+    <DismantleRequirements common="40" rare="20" legendary="0" mythical="0" />
+    <CraftRequirements common="160" rare="80" legendary="0" mythical="0" />
+    <ForgefireCost>500</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <BlueprintRequired />
+    <ForgeTab>0</ForgeTab>
+    <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
+    <RequireDismantleWithLabel amount="2">ORG_OTRENCH</RequireDismantleWithLabel>
+  </ForgeProperties>
   <ForgeProperties type="0xc10" id="Coral Bow">
     <CanDismantle />
     <CanCraft />
@@ -8969,6 +9048,18 @@
     <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
     <RequireDismantleWithLabel amount="2">ORG_DAVY</RequireDismantleWithLabel>
   </ForgeProperties>
+  <ForgeProperties type="0xbc0c" id="Big Berdtha">
+    <CanDismantle />
+    <CanCraft />
+    <Description>Requires 2 items [sprite='CollectionIcon' index=141]</Description>
+    <DismantleRequirements common="30" rare="15" legendary="0" mythical="0" />
+    <CraftRequirements common="120" rare="60" legendary="0" mythical="0" />
+    <ForgefireCost>500</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <ForgeTab>0</ForgeTab>
+    <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
+    <RequireDismantleWithLabel amount="2">ORG_DDOCKS</RequireDismantleWithLabel>
+  </ForgeProperties>
   <ForgeProperties type="0xcdb" id="Pirate King's Cutlass">
     <CanDismantle />
     <CanCraft />
@@ -9262,6 +9353,19 @@
     <RequireDismantleWithLabel amount="2">ORG_CEM</RequireDismantleWithLabel>
   </ForgeProperties>
   <ForgeProperties type="0xb3f8" id="Esben's Wedding Ring">
+    <CanDismantle />
+    <CanCraft />
+    <Description>Requires 2 items [sprite='CollectionIcon' index=151]</Description>
+    <DismantleRequirements common="0" rare="40" legendary="15" mythical="0" />
+    <CraftRequirements common="0" rare="160" legendary="60" mythical="0" />
+    <ForgefireCost>500</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <BlueprintRequired />
+    <ForgeTab>0</ForgeTab>
+    <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
+    <RequireDismantleWithLabel amount="2">ORG_ICECAVE</RequireDismantleWithLabel>
+  </ForgeProperties>
+  <ForgeProperties type="0x1A07" id="Esben's Wedding Ring Shiny">
     <CanDismantle />
     <CanCraft />
     <Description>Requires 2 items [sprite='CollectionIcon' index=151]</Description>
@@ -11804,6 +11908,19 @@
     <RequireDismantleWithLabel amount="2">REALMWHITE</RequireDismantleWithLabel>
   </ForgeProperties>
   <ForgeProperties type="0xbb7f" id="Shifting Shroud">
+    <CanDismantle />
+    <CanCraft />
+    <Description>Requires 2 items [sprite='CollectionIcon' index=100]</Description>
+    <DismantleRequirements common="0" rare="40" legendary="15" mythical="0" />
+    <CraftRequirements common="0" rare="160" legendary="60" mythical="0" />
+    <ForgefireCost>900</ForgefireCost>
+    <ForgefireDismantle>0</ForgefireDismantle>
+    <BlueprintRequired />
+    <ForgeTab>0</ForgeTab>
+    <HideItemsWithLabels>TAB_ST,TIERED,ALIEN_ESSENCE</HideItemsWithLabels>
+    <RequireDismantleWithLabel amount="2">REALMWHITE</RequireDismantleWithLabel>
+  </ForgeProperties>
+  <ForgeProperties type="0x1A01" id="Shifting Shroud Shiny">
     <CanDismantle />
     <CanCraft />
     <Description>Requires 2 items [sprite='CollectionIcon' index=100]</Description>

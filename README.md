@@ -1,6 +1,14 @@
 # ExaltHelper
 
-**Version 1.0.0**
+**Version 1.1.0**
+
+Launcher game version: **7.2.0.0.0**.
+
+The bundled game data and item atlases were extracted together from the installed
+7.2.0.0.0 client. [The asset manifest](assets/game-assets.json) records the source
+fingerprints, packaged checksums, catalog counts and representative release changes.
+
+Includes grouped loot bags, consistent themed item tooltips, and character details that keep their scroll position during live updates. Restart ExaltHelper after updating.
 
 ExaltHelper is a Windows companion for Realm of the Mad God Exalt. It combines an integrated combat HUD, launcher and account tools, and configurable gameplay utilities in one application.
 
@@ -10,6 +18,13 @@ ExaltHelper is a Windows companion for Realm of the Mad God Exalt. It combines a
 - Inspect players and equipment, view ability logs, and follow party and loot activity.
 - Track Moonlight Village encounters and phases.
 - Move and resize the HUD, toggle click-through, and navigate lists with the mouse wheel or draggable scrollbars.
+- Switch to an independent desktop dashboard for a second monitor, with saved window position, size, theme, widgets and tracked objectives.
+- Use a layered dark slate interface with an icon sidebar, tinted resource cards, framed inventory slots, rounded inputs and thin dark scrollbars.
+- Track seasonal missions and Tinkerer quests, with prerequisites, AND/OR objectives, pinning, ordering, hiding and a shared taskbar.
+- Browse persistent combat, loot and chat history, plus Trophy Hall collections with discovered and missing drops.
+- Recognize loot and equipment by their icons; hover an individual item for its name, rarity, catalog stats, observed enchantments and drop context. Item names remain searchable.
+- Customize event/dungeon callouts, reward tags and clipboard shortcuts; filter feed loot independently and follow key openings and dust-cap notices.
+- Inspect account characters, fame milestones, Treasury, Vault, Exaltations and Pet Yard; compare equipment and ability calculations.
 - Launch the official or Steam client and manage multiple accounts.
 - Configure reconnect tools, automation, hotkeys, and effect filters.
 - Display bundled monster names, equipment icons, forge rarities, and enchantment data.
@@ -18,7 +33,7 @@ ExaltHelper is a Windows companion for Realm of the Mad God Exalt. It combines a
 
 Requirements: Windows, .NET Framework 4.8, and an installed Realm of the Mad God Exalt client.
 
-1. Download `ExaltHelper-Release.zip` from the repository's Releases page.
+1. Download `ExaltHelper-1.1.0-Release.zip`.
 2. Extract the entire ZIP to a writable folder.
 3. Open `ExaltHelper.exe` and accept the administrator prompt.
 4. Select your Exalt launcher in the application and locate it when prompted.
@@ -30,13 +45,20 @@ Keep `assets/`, `ExaltHelper_Data/`, the DLLs, and `ExaltHelper.exe.config` besi
 
 | Control | Action |
 | --- | --- |
-| **F8** | Show or hide the HUD |
-| **F9** | Toggle lock/click-through mode |
+| **F8** | Show or hide the active HUD view |
+| **F9** | Toggle compact overlay lock/click-through mode |
+| **F10** | Switch between the compact overlay and desktop dashboard |
+| **Expand F10** beside **Lock** | Open the desktop dashboard from the compact HUD |
+| ExaltHUD menu / overlay right-click | Open the desktop dashboard |
 | Drag grips | Move the unlocked HUD |
 | Bottom edge | Resize the unlocked HUD vertically |
 | Scrollbars | Click the track, drag the thumb, or use the mouse wheel |
 
 Unlock the HUD to use its controls and scroll lists. Use windowed or borderless game mode so the overlay can appear above the client.
+
+The desktop dashboard is a normal resizable window and stays available when the game is minimized or closed. Use **Monitor** to move it to another display, **Pin window** to keep it above other windows, and **Compact F10** to return to the overlay. Closing the dashboard returns to compact mode. See [the HUD guide](docs/HUD-GUIDE.md) for widgets, tasks, account refresh, calculator controls and local storage.
+
+The implementation uses RealmHound as its feature and mechanics reference. [The verification ledger](docs/REALMHOUND-PARITY.md) records feature scope, offline test evidence and remaining live-game verification limits. Successful fixture tests do not establish current authenticated server compatibility.
 
 ## Damage tracking
 
@@ -89,4 +111,5 @@ Repository setup instructions are in [docs/GITHUB-UPLOAD.md](docs/GITHUB-UPLOAD.
 ## References
 
 - [RealmShark / Tomato](https://github.com/X-com/RealmShark): reference implementation for combat tracking and game packets.
+- [RealmHound](https://github.com/pillarzz/RealmHound): expanded dashboard features, account/mission mechanics, calculator reference and drop catalog. See [third-party notices](THIRD-PARTY-NOTICES.md).
 - [RealmEye Wiki](https://www.realmeye.com/wiki/items): item and ability mechanics.

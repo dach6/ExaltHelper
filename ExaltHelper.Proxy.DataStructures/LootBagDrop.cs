@@ -6,6 +6,12 @@ namespace ExaltHelper.Proxy.DataStructures;
 
 internal class LootBagDrop
 {
+	public string DropId { get; set; } = Guid.NewGuid().ToString("N");
+	public string JournalScopeId { get; set; }
+	public string Dungeon { get; set; }
+	public string Character { get; set; }
+	public DateTime DungeonStartTime { get; set; }
+
 	public int BagEntityId { get; set; }
 
 	public string BagType { get; set; } = "Blue Bag";

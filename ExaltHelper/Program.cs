@@ -18,7 +18,7 @@ namespace ExaltHelper;
 
 internal static class Program
 {
-	public const string ToolVersion = "1.0.0";
+	public const string ToolVersion = "1.1.0";
 
 	private static string _gameVersion;
 
@@ -46,7 +46,7 @@ internal static class Program
 			catch
 			{
 			}
-			_gameVersion = "7.1.0.1.0";
+			_gameVersion = "7.2.0.0.0";
 			return _gameVersion;
 		}
 	}

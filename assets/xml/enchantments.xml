@@ -6693,7 +6693,7 @@
     <PowerLevelMult>1</PowerLevelMult>
   </Enchantment>
   <Enchantment id="Dexterity_Speed_Bonus_2" type="0xa1">
-    <DisplayId>Dexterity and and Speed Bonus II</DisplayId>
+    <DisplayId>Dexterity and Speed Bonus II</DisplayId>
     <Texture>
       <File>enchantments16x16</File>
       <Index>47</Index>
@@ -9033,7 +9033,7 @@
     <PowerLevelMult>1</PowerLevelMult>
   </Enchantment>
   <Enchantment id="Dexterity_Mana_Tradeoff_3" type="0x4E9">
-    <DisplayId>Dexterity -Mana Tradeoff II</DisplayId>
+    <DisplayId>Dexterity -Mana Tradeoff III</DisplayId>
     <Texture>
       <File>enchantments16x16</File>
       <Index>48</Index>
@@ -9193,7 +9193,7 @@
     <PowerLevelMult>1</PowerLevelMult>
   </Enchantment>
   <Enchantment id="Dexterity_Speed_Tradeoff_3" type="0x4F3">
-    <DisplayId>Dexterity -Speed Tradeoff II</DisplayId>
+    <DisplayId>Dexterity -Speed Tradeoff III</DisplayId>
     <Texture>
       <File>enchantments16x16</File>
       <Index>48</Index>
@@ -9353,7 +9353,7 @@
     <PowerLevelMult>1</PowerLevelMult>
   </Enchantment>
   <Enchantment id="Dexterity_Wisdom_Tradeoff_3" type="0x4FD">
-    <DisplayId>Dexterity -Wisdom Tradeoff II</DisplayId>
+    <DisplayId>Dexterity -Wisdom Tradeoff III</DisplayId>
     <Texture>
       <File>enchantments16x16</File>
       <Index>48</Index>
@@ -9553,7 +9553,7 @@
     <PowerLevelMult>1</PowerLevelMult>
   </Enchantment>
   <Enchantment id="Mana_Attack_Tradeoff_1" type="0x50A">
-    <DisplayId>Mana -AttackTradeoff I</DisplayId>
+    <DisplayId>Mana -Attack Tradeoff I</DisplayId>
     <Texture>
       <File>enchantments16x16</File>
       <Index>46</Index>
@@ -9673,7 +9673,7 @@
     <PowerLevelMult>1</PowerLevelMult>
   </Enchantment>
   <Enchantment id="Mana_Life_Tradeoff_3" type="0x511">
-    <DisplayId>Mana -Life Tradeoff II</DisplayId>
+    <DisplayId>Mana -Life Tradeoff III</DisplayId>
     <Texture>
       <File>enchantments16x16</File>
       <Index>48</Index>
@@ -11513,7 +11513,7 @@
     <PowerLevelMult>1</PowerLevelMult>
   </Enchantment>
   <Enchantment id="Vitality_Defense_Tradeoff_3" type="0x584">
-    <DisplayId>Vitality -Defense Tradeoff II</DisplayId>
+    <DisplayId>Vitality -Defense Tradeoff III</DisplayId>
     <Texture>
       <File>enchantments16x16</File>
       <Index>48</Index>
@@ -15914,8 +15914,8 @@
     <PowerLevelAdd>0</PowerLevelAdd>
     <PowerLevelMult>1</PowerLevelMult>
   </Enchantment>
-  <Enchantment id="VAMPRIC_LIFEFORCE" type="0x62D">
-    <DisplayId>Vampric Lifeforce</DisplayId>
+  <Enchantment id="VAMPIRIC_LIFEFORCE" type="0x62D">
+    <DisplayId>Vampiric Lifeforce</DisplayId>
     <Texture>
       <File>enchantments16x16</File>
       <Index>86</Index>
@@ -15999,7 +15999,7 @@
     <PowerLevelAdd>0</PowerLevelAdd>
     <PowerLevelMult>1</PowerLevelMult>
   </Enchantment>
-  <Enchantment id="OVERWHEMLING_STRIKES" type="0x632">
+  <Enchantment id="OVERWHELMING_STRIKES" type="0x632">
     <DisplayId>Overwhelming Strikes</DisplayId>
     <Texture>
       <File>enchantments16x16</File>
@@ -16358,7 +16358,7 @@ On ability use summon a snow golem that can be controlled and attacks nearby ene
       <File>enchantments16x16</File>
       <Index>123</Index>
     </Texture>
-    <Description>Unleash the wrath of Bees with your attacks. Adding a burst of bee bullets that each deal 60 armor piercing damage.</Description>
+    <Description>Unleash the wrath of Bees with your attacks. Adding a burst of bee bullets that each deal 80 armor piercing damage.</Description>
     <Weight>7500</Weight>
     <CompatibleWithItemLabels>WEAPON,UT,STINGER</CompatibleWithItemLabels>
     <IncompatibleWithItemLabels>ARMOR,ABILITY,RING</IncompatibleWithItemLabels>
@@ -16726,7 +16726,7 @@ On ability use summon a snow golem that can be controlled and attacks nearby ene
       <File>enchantments16x16</File>
       <Index>122</Index>
     </Texture>
-    <Description>Fires a lightning blast every second. This blast deals 200 damage to up to 2 targets with the first target taking a shockblast for 40 damage. This blast scales off wisdom, gaining 5 total damge per wisdom and gaining a target every 30 wis over 50.</Description>
+    <Description>Fires a lightning blast every second. This blast deals 200 damage to up to 2 targets with the first target taking a shockblast for 40 damage. This blast scales off wisdom, gaining 5 total damage per wisdom and gaining a target every 30 wis over 50.</Description>
     <Weight>7500</Weight>
     <CompatibleWithItemLabels>WEAPON,CONDUCTING</CompatibleWithItemLabels>
     <IncompatibleWithItemLabels>RING,ABILITY,ARMOR</IncompatibleWithItemLabels>
@@ -17736,7 +17736,7 @@ On ability use summon a snow golem that can be controlled and attacks nearby ene
       <File>enchantments16x16</File>
       <Index>86</Index>
     </Texture>
-    <Description>Surge of power: While wearing an Apirant's Armor and Weapon and hit for at least 20 damage while above 80% hp, gain Energized and +10 Wisdom for 5 seconds. Cooldown 20 seconds.</Description>
+    <Description>Surge of power: While wearing an Aspirant's Armor and Weapon and hit for at least 20 damage while above 80% hp, gain Energized and +10 Wisdom for 5 seconds. Cooldown 20 seconds.</Description>
     <Weight>1000</Weight>
     <CompatibleWithItemLabels>RING,MAGUS,UT,MOTMG2023</CompatibleWithItemLabels>
     <IncompatibleWithItemLabels>WEAPON,ABILITY,ARMOR</IncompatibleWithItemLabels>
@@ -17760,7 +17760,7 @@ On ability use summon a snow golem that can be controlled and attacks nearby ene
       <File>enchantments16x16</File>
       <Index>86</Index>
     </Texture>
-    <Description>Focused counter: While wearing an Apirant's Armor and Weapon and hit for at least 20 damage while above 80% hp, gain Damaging for 5 seconds. Cooldown 20 seconds.</Description>
+    <Description>Focused counter: While wearing an Aspirant's Armor and Weapon and hit for at least 20 damage while above 80% hp, gain Damaging for 5 seconds. Cooldown 20 seconds.</Description>
     <Weight>1000</Weight>
     <CompatibleWithItemLabels>RING,MAGUS,UT,MOTMG2023</CompatibleWithItemLabels>
     <IncompatibleWithItemLabels>WEAPON,ABILITY,ARMOR</IncompatibleWithItemLabels>
@@ -17781,7 +17781,7 @@ On ability use summon a snow golem that can be controlled and attacks nearby ene
       <File>enchantments16x16</File>
       <Index>86</Index>
     </Texture>
-    <Description>Steel resolve: While wearing an Apirant's Armor and Weapon and hit for at least 20 damage while above 80% hp, gain Armored for 5 seconds. Cooldown 20 seconds.</Description>
+    <Description>Steel resolve: While wearing an Aspirant's Armor and Weapon and hit for at least 20 damage while above 80% hp, gain Armored for 5 seconds. Cooldown 20 seconds.</Description>
     <Weight>1000</Weight>
     <CompatibleWithItemLabels>RING,MAGUS,UT,MOTMG2023</CompatibleWithItemLabels>
     <IncompatibleWithItemLabels>WEAPON,ABILITY,ARMOR</IncompatibleWithItemLabels>
@@ -17802,7 +17802,7 @@ On ability use summon a snow golem that can be controlled and attacks nearby ene
       <File>enchantments16x16</File>
       <Index>86</Index>
     </Texture>
-    <Description>Swift counter: While wearing an Apirant's Armor and Weapon and hit for at least 20 damage while above 80% hp, gain Berserk for 5 seconds. Cooldown 20 seconds.</Description>
+    <Description>Swift counter: While wearing an Aspirant's Armor and Weapon and hit for at least 20 damage while above 80% hp, gain Berserk for 5 seconds. Cooldown 20 seconds.</Description>
     <Weight>1000</Weight>
     <CompatibleWithItemLabels>RING,MAGUS,UT,MOTMG2023</CompatibleWithItemLabels>
     <IncompatibleWithItemLabels>WEAPON,ABILITY,ARMOR</IncompatibleWithItemLabels>
@@ -17912,7 +17912,7 @@ On ability use summon a snow golem that can be controlled and attacks nearby ene
     <PowerLevelAdd>0</PowerLevelAdd>
     <PowerLevelMult>1</PowerLevelMult>
   </Enchantment>
-  <Enchantment id="THANNKSGIVING_THANKFUL" type="0x1c7">
+  <Enchantment id="THANKSGIVING_THANKFUL" type="0x1c7">
     <DisplayId>Thankful</DisplayId>
     <Texture>
       <File>enchantments16x16</File>
@@ -17932,7 +17932,7 @@ On ability use summon a snow golem that can be controlled and attacks nearby ene
     <PowerLevelAdd>0</PowerLevelAdd>
     <PowerLevelMult>1</PowerLevelMult>
   </Enchantment>
-  <Enchantment id="THANNKSGIVING_GIVER" type="0x1c8">
+  <Enchantment id="THANKSGIVING_GIVER" type="0x1c8">
     <DisplayId>Giver</DisplayId>
     <Texture>
       <File>enchantments16x16</File>

@@ -204,7 +204,7 @@
 141;;Projectile;;;;;InkBubbles
 142;;Projectile;;;54,lofiProjs;;OctoBlast
 143;;Projectile;;;7,lofiProjsBig;;Deep Sea Blast Yellow
-144;;Projectile;;;55,lofiProjs;;Coral Arrow
+144;;Projectile;;;661,oceanTrenchObjects8x8;;Coral Arrow
 145;;Projectile;;;56,lofiProjs;;FishWarrior Spear
 146;;Projectile;;;57,lofiProjs;;Coral Shot
 147;;Projectile;;;58,lofiProjs;;Mute Spell
@@ -1381,7 +1381,7 @@
 1328;Midnight Star;Equipment;;25,400,500,0;32,lofiObjShiny;EQUIPMENT,ABILITY,SHURIKEN,UT,TAB_UT,POWERTIER_A,XPBONUS,MPCOST,SHINY,STATMOD,ORG_LOD;Midnight Star Shiny
 1329;Wavecrest Concertina;Equipment;;;33,lofiObjShiny;EQUIPMENT,ABILITY,LUTE,UT,TAB_UT,POWERTIER_A,XPBONUS,MPCOST,SHINY,ORG_DDOCKS;Wavecrest Concertina Shiny
 1330;Staff of the Crystal Serpent;Equipment;;17,70,85,0;34,lofiObjShiny;EQUIPMENT,WEAPON,STAFF,UT,TAB_UT,POWERTIER_D,TRADEABLE,XPBONUS,SHINY,STAFF_OF_THE_CRYSTAL_SERPENT,ORG_JUNGLE;Staff of the Crystal Serpent Shiny
-1331;Coral Silk Armor;Equipment;;;36,lofiObjShiny;EQUIPMENT,ARMOR,LEATHER,UT,TAB_UT,POWERTIER_B,TRADEABLE,XPBONUS,SHINY,ORG_OTRENCH;Coral Silk Armor Shiny
+1331;Coral Silk Armor;Equipment;;;670,oceanTrenchObjects8x8;EQUIPMENT,ARMOR,LEATHER,UT,TAB_UT,POWERTIER_B,TRADEABLE,XPBONUS,SHINY,ORG_OTRENCH;Coral Silk Armor Shiny
 1332;;Skin;;;360,playerskins;;Monk Paladin
 1333;;Equipment;;;360,playerskins;;Monk Paladin Skin
 1334;Decaract;Character;;;181,lofiChar8x8;ENEMY,QUEST;Battle Decaract
@@ -1995,7 +1995,7 @@
 1837;8/8 Default Gravestone;Gravestone;;;61,lofiChar216x16;;Gravestone 11
 1838;The Crawling Depths;Portal;;;240,spiderDenObjects8x8;;The Crawling Depths
 1839;;GuildHallPortal;;;84,lofiEnvironment2;;Guild Hall Portal
-1840;Ocean Trench;Portal;;;159,lofiEnvironment2;;Ocean Trench Portal
+1840;Legacy Ocean Trench;Portal;;;159,lofiEnvironment2;;Legacy Ocean Trench Portal
 1841;;Character;;;38,lofiEnvironment2;;Ocean Vent
 1842;;SpiderWeb;;;;;Spider Web
 1843;Forbidden Jungle;Portal;;;168,lofiEnvironment2;;Forbidden Jungle Portal
@@ -3280,19 +3280,19 @@
 3085;;Character;;;17,d3Chars8x8rEmbed;ENEMY,MINION,MINION_STRONG;20Def
 3086;;Character;;;17,d3Chars8x8rEmbed;ENEMY,MINION,MINION_STRONG;60Def
 3087;;Equipment;;5,300,400,0;86,lofiObj2;EQUIPMENT,ABILITY,SHIELD,UT,TAB_UT,POWERTIER_SS,XPBONUS,MPCOST,REALMWHITE,STATMOD;Shield of Ogmur
-3088;;Equipment;;3,75,95,0;4,lofiObj2;EQUIPMENT,WEAPON,BOW,UT,TAB_UT,POWERTIER_B,TRADEABLE,XPBONUS,ORG_OTRENCH,CBOW;Coral Bow
-3089;;Equipment;;;5,lofiObj2;KEY,EPIC_KEY;Ocean Trench Key
-3090;;Equipment;;;7,lofiObj2;EQUIPMENT,CONSUMABLE,UT,TAB_UT,TRADEABLE;Coral Juice
-3091;;Equipment;;;8,lofiObj2;EQUIPMENT,RING,UT,TAB_UT,POWERTIER_C,TRADEABLE,XPBONUS,ORG_OTRENCH;Coral Ring
+3088;;Equipment;;3,75,95,0;660,oceanTrenchObjects8x8;EQUIPMENT,WEAPON,BOW,UT,TAB_UT,POWERTIER_B,TRADEABLE,XPBONUS,ORG_OTRENCH,CBOW;Coral Bow
+3089;Ocean Trench Key;Equipment;;;419,oceanTrenchObjects8x8;KEY,EPIC_KEY,COMMUNITY;Ocean Trench Key
+3090;;Equipment;;;665,oceanTrenchObjects8x8;EQUIPMENT,CONSUMABLE,UT,TAB_UT,TRADEABLE;Coral Juice
+3091;;Equipment;;;664,oceanTrenchObjects8x8;EQUIPMENT,RING,UT,TAB_UT,POWERTIER_C,TRADEABLE,XPBONUS,ORG_OTRENCH;Coral Ring
 3092;;Equipment;;;367,lofiObjShiny;EQUIPMENT,ARMOR,ROBE,SUMMONPOWERED,UT,TAB_UT,POWERTIER_D,TRADEABLE,XPBONUS,ORG_JUNGLE,ROBE_OF_THE_TLATOANI;Robe of the Tlatoani
 3093;;Equipment;;17,70,85,0;10,lofiObj2;EQUIPMENT,WEAPON,STAFF,UT,TAB_UT,POWERTIER_D,TRADEABLE,XPBONUS,STAFF_OF_THE_CRYSTAL_SERPENT,ORG_JUNGLE;Staff of the Crystal Serpent
 3094;;Equipment;;;11,lofiObj2;EQUIPMENT,ABILITY,SKULL,STATMOD,UT,TAB_UT,POWERTIER_D,TRADEABLE,XPBONUS,MPCOST,ORG_JUNGLE;Cracked Crystal Skull
 3095;;Equipment;;;12,lofiObj2;EQUIPMENT,RING,UT,TAB_UT,POWERTIER_D,TRADEABLE,CRYSTAL_BONE_RING,ORG_JUNGLE;Crystal Bone Ring
-3096;;Equipment;;;13,lofiObj2;EQUIPMENT,ARMOR,LEATHER,UT,TAB_UT,POWERTIER_B,TRADEABLE,XPBONUS,ORG_OTRENCH;Coral Silk Armor
+3096;;Equipment;;;663,oceanTrenchObjects8x8;EQUIPMENT,ARMOR,LEATHER,UT,TAB_UT,POWERTIER_B,TRADEABLE,XPBONUS,ORG_OTRENCH;Coral Silk Armor
 3097;;Equipment;;;24,lofiObj2;KEY,COMMON_KEY;Totem Key
 3098;;Equipment;;;25,lofiObj2;EQUIPMENT,CONSUMABLE,UT,TAB_UT,TRADEABLE;Pollen Powder
 3099;;Character;;;2,lofiObj;NOMISSIONKILLCOUNT;Guill Potion Gift
-3100;;Equipment;;;27,lofiObj2;EQUIPMENT,ABILITY,TRAP,UT,TAB_UT,POWERTIER_A,XPBONUS,MPCOST,STATMOD,ORG_OTRENCH;Coral Venom Trap
+3100;;Equipment;;;662,oceanTrenchObjects8x8;EQUIPMENT,ABILITY,TRAP,UT,TAB_UT,POWERTIER_A,XPBONUS,MPCOST,STATMOD,ORG_OTRENCH;Coral Venom Trap
 3101;;Equipment;;8,155,180,0;28,lofiObj2;EQUIPMENT,WEAPON,WAND,UT,TAB_UT,POWERTIER_C,TRADEABLE,XPBONUS,ORG_MANOR;St. Abraham's Wand
 3102;;Equipment;;;83,lofiObj2;EQUIPMENT,ABILITY,TOME,UT,TAB_UT,POWERTIER_A,TRADEABLE,XPBONUS,MPCOST,STATMOD,ORG_TOMB;Tome of Holy Protection
 3103;;Equipment;;;30,lofiObj2;EQUIPMENT,ARMOR,ROBE,SUMMONPOWERED,UT,TAB_UT,POWERTIER_C,TRADEABLE,XPBONUS,ORG_MANOR;Chasuble of Holy Light
@@ -4162,12 +4162,12 @@
 3923;Royal Knight;Summon;;,100,250,1,100,250,1,100,250,1,100,200,1;54,theShattersChars16x16;;Summon Royal Knight Shiny
 3924;Crystal Bone Ring;Equipment;;;151,lofiObjShiny;EQUIPMENT,RING,UT,TAB_UT,POWERTIER_D,TRADEABLE,SHINY,CRYSTAL_BONE_RING;Crystal Bone Ring Shiny
 3925;Prism of Dancing Swords;Equipment;;;152,lofiObjShiny;EQUIPMENT,ABILITY,PRISM,UT,TAB_UT,POWERTIER_B,TRADEABLE,XPBONUS,MPCOST,SHINY,ORG_PUPPET;Prism of Dancing Swords Shiny
-3926;Coral Bow;Equipment;;3,75,95,0;153,lofiObjShiny;EQUIPMENT,WEAPON,BOW,UT,TAB_UT,POWERTIER_B,TRADEABLE,XPBONUS,SHINY,ORG_OTRENCH,CBOW;Coral Bow Shiny
+3926;Coral Bow;Equipment;;3,75,95,0;667,oceanTrenchObjects8x8;EQUIPMENT,WEAPON,BOW,UT,TAB_UT,POWERTIER_B,TRADEABLE,XPBONUS,SHINY,ORG_OTRENCH,CBOW;Coral Bow Shiny
 3927;Celestial Blade;Equipment;;24,205,225,0;155,lofiObjShiny;EQUIPMENT,WEAPON,KATANA,UT,TAB_UT,POWERTIER_A,XPBONUS,SHINY,ORG_LOD;Celestial Blade Shiny
 3928;Fire Dragon Battle Armor;Equipment;;;164,lofiObjShiny;EQUIPMENT,ARMOR,HEAVY,UT,TAB_UT,POWERTIER_A,XPBONUS,LOD,SHINY,ORG_LOD;Fire Dragon Battle Armor Shiny
 3929;Peacekeeper;Equipment;;;165,lofiObjShiny;EQUIPMENT,ABILITY,MACE,STATMOD,SUMMONPOWERED,UT,TAB_UT,POWERTIER_S,XPBONUS,MPCOST,ORG_SHTT,SHINY;Peacekeeper Shiny
 3930;;Projectile;;;;;LOD Celestial Slash Shiny
-3931;;Projectile;;;154,lofiObjShiny;;Coral Arrow Shiny
+3931;;Projectile;;;668,oceanTrenchObjects8x8;;Coral Arrow Shiny
 3932;Royal Archer;Summon;;,500,600,0;53,theShattersChars16x16;;Summon Royal Archer Shiny
 3933;Royal Raider;Summon;;,100,150,1;52,theShattersChars16x16;;Summon Royal Raider Shiny
 3934;;GameObject;;;;;Snowball Small Candy Cane
@@ -4538,7 +4538,7 @@
 4309;Beehemoth Armor;Equipment;;;74,epicHiveObjects8x8;EQUIPMENT,ARMOR,LEATHER,UT,TAB_UT,POWERTIER_B,XPBONUS,BEEHEMOTH,ORG_NEST;EH Red Bee Armor
 4310;Beehemoth Armor;Equipment;;;73,epicHiveObjects8x8;EQUIPMENT,ARMOR,LEATHER,UT,TAB_UT,POWERTIER_B,XPBONUS,BEEHEMOTH,ORG_NEST;EH Blue Bee Armor
 4311;Computer;GameObject;;;0,invisible;;EH Computer
-4312;Killer Bee Nest;Character;;,75,75,1,90,90,0,90,90,0,100,100,0,100,100,0,100,100,0;7,epicHiveChars16x16;ENEMY,MINIBOSS,BOSSFIGHT,GOD,QUEST,STASISIMMUNE;EH Event Hive
+4312;Killer Bee Nest;Character;;,75,75,1,90,90,0,90,90,0,100,100,0,100,100,0,100,100,0;7,epicHiveChars16x16;ENEMY,MINIBOSS,BOSSFIGHT,GOD,QUEST,STASISIMMUNE,VETERAN_ENCOUNTER;EH Event Hive
 4313;Nest Colony;Character;;,60,60,0,100,100,0,100,100,1,80,80,0,100,100,0,75,75,1;6,epicHiveChars16x16;ENEMY,MINION,STASISIMMUNE,MINION_MID;EH Hive Bomb
 4314;;Character;;;0,invisible;ENEMY,MINION,ENCOUNTER,EH Event Hive Summoner;EH Event Hive Summoner
 4315;;GameObject;;;;;EH Static Partial Floor
@@ -5980,8 +5980,8 @@
 6078;White Duck;PetSkin;;;209,chars8x8rPets1;;White Duck Pet Skin
 6079;White Duck Pet Skin;Equipment;;;209,chars8x8rPets1;;White Duck Pet Stone
 6080;;Pet;;;50,lofiObj2;;Senor Skeleton
-6081;SeÒor Skeleton;PetSkin;;;167,chars8x8rPets1;;Senor Skeleton Skin
-6082;SeÒor Skeleton Pet Skin;Equipment;;;167,chars8x8rPets1;;Senor Skeleton Pet Stone
+6081;Se√±or Skeleton;PetSkin;;;167,chars8x8rPets1;;Senor Skeleton Skin
+6082;Se√±or Skeleton Pet Skin;Equipment;;;167,chars8x8rPets1;;Senor Skeleton Pet Stone
 6083;;Pet;;;50,lofiObj2;;Flying Eyeball
 6084;Flying Eyeball;PetSkin;;;168,chars8x8rPets1;;Flying Eyeball Skin
 6085;Flying Eyeball Pet Skin;Equipment;;;168,chars8x8rPets1;;Flying Eyeball Pet Stone
@@ -6550,6 +6550,19 @@
 6654;;GameObject;;;1317,oryxSanctuaryObjects8x8;;O3 Glass Reflection S 0x6
 6655;;GameObject;;;1318,oryxSanctuaryObjects8x8;;O3 Glass Reflection S 0x7
 6656;Winter 2024 Biome Gift;Character;;;;ENEMY,MINION,STASISIMMUNE,MINION_WEAK,CANDY;Eternal Frost Present Misc
+6657;Shifting Shroud;Equipment;;;1038,lofiObjShiny;EQUIPMENT,ARMOR,ROBE,UT,TAB_UT,POWERTIER_S,XPBONUS,REALMWHITE,SHINY;Shifting Shroud Shiny
+6658;Shroud Slime;Summon;;,90,120,0,65,85,1;0,invisible;;Shroud Slime Shiny
+6659;;Projectile;;;1039,lofiObjShiny;;Shroud Blue Wave Shiny
+6660;;Projectile;;;1040,lofiObjShiny;;Shroud Green Wave Shiny
+6661;Kageboshi;Equipment;;25,400,600,0;1037,lofiObjShiny;EQUIPMENT,ABILITY,SHURIKEN,UT,TAB_UT,POWERTIER_B,XPBONUS,MPCOST,REALMWHITE,STATMOD,SHINY;Kageboshi Shiny
+6662;;Projectile;;;1037,lofiObjShiny;;Staruu Missile Shiny
+6663;Esben's Wedding Ring;Equipment;;;1041,lofiObjShiny;EQUIPMENT,RING,UT,TAB_UT,POWERTIER_B,TRADEABLE,XPBONUS,ORG_ICECAVE,SHINY;Esben's Wedding Ring Shiny
+6664;Magical Lodestone;Equipment;;;1042,lofiObjShiny;EQUIPMENT,RING,UT,TAB_UT,POWERTIER_S,XPBONUS,ORG_LH,SHINY;Magical Lodestone Shiny
+6665;Morning Square;Equipment;;8,45,60,1,45,60,0,45,60,0,45,60,0,45,60,0;1030,lofiObjShiny;EQUIPMENT,WEAPON,WAND,UT,TAB_UT,XPBONUS,ORG_3D,SHINY;Morning Square Shiny
+6666;;Projectile;;;1031,lofiObjShiny;;Morning Square 1 Shiny
+6667;;Projectile;;;1032,lofiObjShiny;;Morning Square 2 Shiny
+6668;The Triangle;Equipment;;28,300,450,0;1035,lofiObjShiny;EQUIPMENT,ABILITY,LUTE,UT,TAB_UT,POWERTIER_A,XPBONUS,MPCOST,ORG_3D,STATMOD,SHINY;The Triangle Shiny
+6669;;Projectile;;;1036,lofiObjShiny;;Triangle Projectile Shiny
 6702;Night Prince Engraving;Equipment;;;1,enchantments8x8;FORGESTORE;Night Prince Engraving
 6703;Conqueror's Crown;Equipment;;;184,ancientCityObjects8x8;EQUIPMENT,RING,UT,TAB_UT,XPBONUS,SUPER,CROWN;Shatters A2000
 6704;;Pet;;;50,lofiObj2;;Mini Medusa
@@ -7133,7 +7146,7 @@
 7376;;Projectile;;;589,lofiObjShiny;;Bone Dagger Shot Shiny
 7377;Bone Dagger;Equipment;;2,95,170,0;588,lofiObjShiny;EQUIPMENT,WEAPON,DAGGER,UT,TAB_UT,POWERTIER_B,TRADEABLE,XPBONUS,ORG_MANOR,BONEDAGGER,SHINY;Bone Dagger Shiny
 7378;Sealed Crystal Skull;Equipment;;;590,lofiObjShiny;EQUIPMENT,ABILITY,SKULL,STATMOD,UT,TAB_UT,POWERTIER_B,TRADEABLE,XPBONUS,MPCOST,ORG_THICKET,SHINY;Sealed Crystal Skull Shiny
-7379;Coral Ring;Equipment;;;593,lofiObjShiny;EQUIPMENT,RING,UT,TAB_UT,POWERTIER_C,TRADEABLE,XPBONUS,ORG_OTRENCH,SHINY;Coral Ring Shiny
+7379;Coral Ring;Equipment;;;671,oceanTrenchObjects8x8;EQUIPMENT,RING,UT,TAB_UT,POWERTIER_C,TRADEABLE,XPBONUS,ORG_OTRENCH,SHINY;Coral Ring Shiny
 7380;Orb of Conflict;Equipment;;;592,lofiObjShiny;EQUIPMENT,ABILITY,ORB,STATMOD,UT,TAB_UT,POWERTIER_SS,XPBONUS,MPCOST,REALMWHITE,SHINY;Orb of Conflict Shiny
 7381;Armor of Nil;Equipment;;;594,lofiObjShiny;EQUIPMENT,ARMOR,LEATHER,UT,TAB_UT,POWERTIER_S,XPBONUS,ORG_VOID,SHINY;Armor of Nil Shiny
 7382;;Undead;;,195,280,1;37,necromancerChars8x8;;Sealed Crystal Undead Shiny
@@ -7151,7 +7164,7 @@
 7394;;Projectile;;;597,lofiObjShiny;;Hidden Knowledge Shot Shiny
 7395;;Equipment;;21,70,95,1;596,lofiObjShiny;EQUIPMENT,WAND;Wand of Hidden Knowledge Proc Shiny
 7396;Wand of Hidden Knowledge;Equipment;;8,200,250,0;596,lofiObjShiny;EQUIPMENT,WEAPON,WAND,UT,TAB_UT,POWERTIER_C,TRADEABLE,XPBONUS,ORG_LIBRARY,SHINY,LIBWAND;Wand of Hidden Knowledge Shiny
-7397;Adamantine Helm Shiny;Equipment;;;606,lofiObjShiny;EQUIPMENT,ABILITY,HELM,UT,TAB_UT,XPBONUS,MPCOST,ORG_ABYSS,SHINY;Adamantine Helm Shiny
+7397;Adamantine Helm;Equipment;;;606,lofiObjShiny;EQUIPMENT,ABILITY,HELM,UT,TAB_UT,XPBONUS,MPCOST,ORG_ABYSS,SHINY;Adamantine Helm Shiny
 7398;;Projectile;;;677,lofiObjBig;;tD Serpent Head Main Shiny
 7399;;Projectile;;;679,lofiObjBig;;tD Serpent Body Shiny
 7400;;Equipment;;15,650,750,0;16,lofiObjShiny;EQUIPMENT,ABILITY,EFFECT,SHINY;tD WakiProcA Shiny
@@ -7306,7 +7319,7 @@
 7725;;Equipment;;;78,d2LofiObjEmbed;MARK,TAB_ALL,FORGESTORE;Mark of Daichi
 7726;;Equipment;;;79,d2LofiObjEmbed;MARK,TAB_ALL,FORGESTORE;Mark of Esben
 7727;;Equipment;;;126,spriteWorldObjects8x8;MARK,TAB_ALL,FORGESTORE;Mark of Limon
-7728;;Equipment;;;84,d2LofiObjEmbed;MARK,TAB_ALL,FORGESTORE;Mark of Thessal
+7728;;Equipment;;;666,oceanTrenchObjects8x8;MARK,TAB_ALL,FORGESTORE;Mark of Thessal
 7729;;Equipment;;;85,d2LofiObjEmbed;MARK,TAB_ALL,FORGESTORE;Mark of Geb
 7730;;Equipment;;;87,d2LofiObjEmbed;MARK,TAB_ALL,FORGESTORE;Mark of Oryx
 7731;;Equipment;;;89,d2LofiObjEmbed;MARK,TAB_ALL,FORGESTORE;Mark of Janus
@@ -14114,8 +14127,14 @@
 17020;Bogspawn;Character;;,150,150,0;144,wetlandsObjects16x16;;SulfW murderBall 3C
 17021;;GameObject;;;;;SulfW trees3
 17022;;GameObject;;;;;SulfW Ferns
+17024;Giant Squid;Character;;,85,85,0,75,75,0;38,oceanTrenchChars16x16;ENEMY,MINION,BEAST,MINION_STRONG;OT Giant Squid
+17028;;Projectile;;;181,oceanTrenchObjects8x8;;OT Nautical Swirl
+17034;Ink Bubble;Character;;,75,75,0;536,oceanTrenchObjects8x8;ENEMY,NATURE;OT Ink Bubble
+17036;Fishman Warrior;Character;;,65,65,0,80,80,0,45,45,0;34,oceanTrenchChars16x16;ENEMY,MINION,TRACKLOOT,BEAST,MINION_STRONG;OT Fishman Warrior
 17041;;Equipment;;;262,iceCitadelObjects8x8;EQUIPMENT,ABILITY,SPELL,STATMOD,UT,TAB_UT,POWERTIER_S,XPBONUS,MPCOST,ORG_ICECAVE;Esben's Vows
 17042;;Summon;;,600,650,0,100,100,1;219,iceCitadelObjects32x32;;Esben Spell Icicle
+17085;Sea Mare;Character;;,50,50,0,80,80,0;37,oceanTrenchChars16x16;ENEMY,MINION,BEAST,MINION_STRONG;OT Sea Mare
+17095;Sea Horse;Character;;,40,40,0;43,oceanTrenchChars8x8;ENEMY,MINION,CRITTER,MINION_WEAK;OT Sea Horse
 17124;Archangel's Judgement;Equipment;;2,60,75,0;832,d2LofiObjEmbed;EQUIPMENT,WEAPON,DAGGER,ST,TAB_ST,ST_WEAPON,STGEN_2,POWERTIER_S,XPBONUS;2TricksterST0
 17128;;Projectile;;;836,d2LofiObjEmbed;;Daeva Feather
 17129;;Projectile;;;852,d2LofiObjEmbed;;Daeva Feather Large
@@ -14157,6 +14176,10 @@
 17222;;GameObject;;;0,invisible;ENEMY,MINION;Statues Initiator 2
 17223;;GameObject;;;0,invisible;;Statues Spawner 2
 17224;Arena Announcer;GameObject;;;0,invisible;;Oryxmania Spawner
+17244;Fishman;Character;;,50,50,0,65,65,0;42,oceanTrenchChars8x8;ENEMY,MINION,BEAST,MINION_MID;OT Fishman
+17245;;Character;Ocean Trench;;541,oceanTrenchObjects8x8;;OT Coral Gift
+17271;;InteractiveInfoObject;;;260,oceanTrenchObjects32x32;;OT Forgotten Coral
+17278;;Projectile;;;;;OT Ink Blot
 17383;;Equipment;;7,200,400,0;820,d2LofiObjEmbed;EQUIPMENT,ARMOR,HEAVY;2PaladinST2 Proc
 17384;;Projectile;;;820,d2LofiObjEmbed;;CorrPala Dark Blast
 17385;;Projectile;;;821,d2LofiObjEmbed;;CorrPala Big Dark Blast
@@ -16634,7 +16657,7 @@
 21997;Protection Crystal;Character;New Knights of the Lost Lands;,75,75,0;13,chars8x8dEncounters;;New Protection Crystal
 21998;Knight of the Lost Lands;Character;New Knights of the Lost Lands;,50,50,0;10,chars8x8rEncounters;;New Knight of the Lost Lands
 21999;Guardian of the Lost Lands;Character;New Knights of the Lost Lands;,60,60,0,50,50,0;19,chars16x16dEncounters;;New Guardian of the Lost Lands
-22000;Withered Sphinx;Character;;,85,85,0,150,150,0,120,120,0;37,d3Chars16x16rEmbed;ENCOUNTER,Grand Sphinx,ADEPT_ENCOUNTER;New Grand Sphinx
+22000;Grand Sphinx;Character;;,85,85,0,150,150,0,120,120,0;10,Rookie_24x24;ENCOUNTER,Grand Sphinx,ADEPT_ENCOUNTER;New Grand Sphinx
 22001;;GameObject;;;164,lofiEnvironment;;New Tomb Wall Deleter
 22002;Horrid Reaper;Character;;,80,80,0,65,65,0;74,charsRookie8x8;;New Horrid Reaper
 22003;Skull Shrine;Character;;,100,100,0;6,risenHellChars16x16;ENCOUNTER,Skull Shrine,ADEPT_ENCOUNTER;New Skull Shrine
@@ -16643,10 +16666,10 @@
 22006;Pumpkin Shrine;Character;;,100,100,0;4,d3Chars16x16rEmbed;;New Pumpkin Shrine
 22007;Green Floating Pumpkin;Character;New Floating Pumpkins;,80,80,0;11,d3Chars8x8rEmbed;;New Green Floating Pumpkin
 22008;Blue Floating Pumpkin;Character;New Floating Pumpkins;,60,60,0;9,d3Chars8x8rEmbed;;New Blue Floating Pumpkin
-22009;Calcium God;Character;;,100,100,0,150,150,0;88,d3LofiObjEmbed16;ENCOUNTER,Cube God,ADEPT_ENCOUNTER;New Cube God
-22010;Bone Overseer;Character;;,60,60,0,100,100,0;381,d3LofiObjEmbed;;New Cube Overseer
-22011;Bone Defender;Character;New Cube Minions;,50,50,0;380,d3LofiObjEmbed;;New Cube Defender
-22012;Bone Blaster;Character;New Cube Minions;,10,10,0,40,40,0;379,d3LofiObjEmbed;;New Cube Blaster
+22009;Cube God;Character;;,100,100,0,150,150,0;10,Rookie_16x16;ENCOUNTER,Cube God,ADEPT_ENCOUNTER;New Cube God
+22010;Cube Overseer;Character;;,60,60,0,100,100,0;54,Rookie_8x8;;New Cube Overseer
+22011;Cube Defender;Character;New Cube Minions;,50,50,0;51,Rookie_8x8;;New Cube Defender
+22012;Cube Blaster;Character;New Cube Minions;,10,10,0,40,40,0;52,Rookie_8x8;;New Cube Blaster
 22013;Gobble God;Character;;,100,100,0,150,150,0;125,chars16x16rEncounters;;New Turkey God
 22014;Gobble Overseer;Character;;,60,60,0,100,100,0;120,chars8x8rEncounters;;New Turkey God Overseer
 22015;Gobble Defender;Character;New Turkey God Minions;,50,50,0;121,chars8x8rEncounters;;New Turkey God Defender
@@ -16657,24 +16680,24 @@
 22020;;Character;;;56,lofiChar216x16;;New Pentaract Tower Corpse
 22021;Pentaract Tower Ultra;Character;;;28,lofiObjBig;;New Pentaract Tower Ultra
 22022;;GameObject;;;0,invisible;;New Hermit WaterDrain
-22023;Reanimated Hermit God;Character;New Hermit God Encounter;,45,45,0,65,65,0,100,100,0,100,100,0;38,d3Chars16x16rEmbed;Hermit God,ADEPT_ENCOUNTER;New Hermit God
-22024;Reanimated Hermit Minion;Character;New Hermit God Encounter;,50,50,0,60,60,0;145,chars8x8rEncounters;;New Hermit Minion
+22023;Hermit God;Character;New Hermit God Encounter;,45,45,0,65,65,0,100,100,0,100,100,0;9,charsVeteran16x16;Hermit God,ADEPT_ENCOUNTER;New Hermit God
+22024;Hermit Minion;Character;New Hermit God Encounter;,50,50,0,60,60,0;21,chars8x8rEncounters;;New Hermit Minion
 22025;Whirlpool;Character;New Hermit God Encounter;,50,50,0;13,charsVeteran16x16;;New Whirlpool
-22026;Reanimated Hermit God Tentacle;Character;New Hermit God Encounter;,45,45,0,40,40,0;40,d3Chars16x16rEmbed;;New Hermit God Tentacle
+22026;Hermit God Tentacle;Character;New Hermit God Encounter;,45,45,0,40,40,0;11,charsVeteran16x16;;New Hermit God Tentacle
 22027;;Character;New Hermit God Encounter;;0,invisible;;New Hermit God Tentacle Spawner
 22028;;GameObject;New Hermit God Encounter;;11,chars16x16dEncounters2;;New Hermit God Drop
 22029;Zombie Horde;Character;;;255,lofiEnvironment3;;New Zombie Horde
 22030;Bonegrind the Undead Butcher;Character;;,60,60,0,90,90,0,120,120,0,110,110,0;8,d3Chars16x16rEmbed;;New Bonegrind 2
 22031;;GameObject;;;0,invisible;;New Horde Spawner
 22034;;Character;;;37,chars8x8rEncounters;ENEMY,ENCOUNTER,ADEPT_ENCOUNTER;New Beach Bum
-22035;Ghost Mine;Character;;,80,80,0;45,d3Chars16x16rEmbed;;New Water Mine
-22036;Ghost Mine;Character;;,80,80,0;45,d3Chars16x16rEmbed;;New Water Mine Path
-22037;Sea Spectre;Character;;,35,35,0;146,chars8x8rEncounters;;New Beach Spectre
+22035;Water Mine;Character;;,80,80,0;8,charsVeteran16x16;;New Water Mine
+22036;Water Mine;Character;;,80,80,0;38,chars16x16rEncounters;;New Water Mine Path
+22037;Beach Spectre;Character;;,35,35,0;73,charsRookie8x8;;New Beach Spectre
 22038;;Character;;;36,chars8x8rEncounters;;New Beach Spectre Spawner
 22039;Tempest Cloud;Character;;,66,66,0;0,invisible;;New Tempest Cloud
-22040;Dutchman Spirit;Character;;,65,65,0;44,d3Chars16x16rEmbed;;New Vengeful Spirit
+22040;Vengeful Spirit;Character;;,65,65,0;12,charsVeteran16x16;;New Vengeful Spirit
 22041;Ghost Ship Whirlpool;Character;;,75,75,0;40,chars16x16dEncounters2;ENCOUNTER,Ghost Ship Anchor;New Ghost Ship Anchor
-22042;The Flying Dutchman;Character;;,80,80,0,250,250,0;43,d3Chars16x16rEmbed;;New Ghost Ship
+22042;Ghost Ship;Character;;,80,80,0,250,250,0;7,charsVeteran16x16;;New Ghost Ship
 22043;;Character;;;0,invisible;;New Phoenix Lord Spawner
 22044;;GameObject;;;136,innerWorkingsObjects8x8;;New Train Point 1
 22045;;Projectile;;;432,oryxHordeObjects8x8;;Primal Arcana Projectile Red
@@ -16770,7 +16793,7 @@
 22136;;Character;;;25,steamworksObjects16x16;;New Beer God Anchor W
 22137;Dwarf Miner;Character;;;13,crystalCaveObjects8x8;ENEMY,MINION,QUEST,ENCOUNTER,GC Encounter Gauntlet Controller;New GC Encounter Gauntlet Controller
 22138;Crystal Worm Father;Character;;,200,200,0,180,180,0,200,200,0,120,120,0,120,120,0,120,120,0,120,120,0,120,120,0;0,fungalCavernChars16x16;ENEMY,MINIBOSS,BOSSFIGHT,CONSTRUCT,GOD,TRACKLOOT,BOSS_SPAWNED,VETERAN_ENCOUNTER;New GC Enc Boss
-22139;;Character;;;0,invisible;ENEMY,MINION,ENCOUNTER,EH Event Hive Summoner;New EH Event Hive Summoner
+22139;;Character;;;0,invisible;ENEMY,MINION,ENCOUNTER,EH Event Hive Summoner,VETERAN_ENCOUNTER;New EH Event Hive Summoner
 22140;;Character;;;0,invisible;ENEMY,MINION,TRACKLOOT,VETERAN_ENCOUNTER;New EH Red Loot
 22141;;Character;;;0,invisible;ENEMY,MINION,TRACKLOOT,VETERAN_ENCOUNTER;New EH Blue Loot
 22142;;Character;;;0,invisible;ENEMY,MINION,TRACKLOOT,VETERAN_ENCOUNTER;New EH Yellow Loot
@@ -16780,8 +16803,8 @@
 22146;Lost Sentry;Character;;,100,100,0,140,140,0,130,130,0,100,100,0,150,150,0,130,130,0,140,140,0,110,110,0,120,120,0,90,90,0,90,90,0,130,130,0,150,150,0,120,120,0,110,110,0,100,100,0,100,100,0,100,100,0,140,140,0,90,90,0,140,140,0,90,90,0,110,110,0,120,120,0;28,lostHallsChars16x16;ENEMY,MINION,HUMANOID,MINION_STRONG,ENCOUNTER,LH Lost Sentry,VETERAN_ENCOUNTER;New LH Lost Sentry
 22147;Ethereal Shrine;Character;;,100,100,1,90,90,1,80,80,1,50,50,1,50,50,1,100,100,1,80,80,1;367,moonlightVillageObjects16x16;ENEMY,HERO,GOD,QUEST,STASISIMMUNE,BOSS,BOSSFIGHT,ENCOUNTER,MV Event Shrine,VETERAN_ENCOUNTER;New MV Event Shrine
 22148;;Character;;;0,invisible;ENEMY,ENCOUNTER,Temple Encounter,ADEPT_ENCOUNTER;New Temple Encounter
-22149;Blue Oni;Character;;,125,125,0,100,100,0,75,75,0,175,175,0,125,125,0;75,d3Chars16x16rEmbed;ENEMY,MINIBOSS,BOSSFIGHT,QUEST,STASISIMMUNE,TRACKLOOT,CONSTRUCT,GOD,ADEPT_ENCOUNTER;New Jade Statue
-22150;Red Oni;Character;;,125,125,0,125,125,0,75,75,0,175,175,0,125,125,0;76,d3Chars16x16rEmbed;ENEMY,MINIBOSS,BOSSFIGHT,QUEST,STASISIMMUNE,TRACKLOOT,CONSTRUCT,GOD,ADEPT_ENCOUNTER;New Garnet Statue
+22149;Jade Statue;Character;;,125,125,0,100,100,0,75,75,0,175,175,0,125,125,0;14,mountainTempleChars16x16;ENEMY,MINIBOSS,BOSSFIGHT,QUEST,STASISIMMUNE,TRACKLOOT,CONSTRUCT,GOD,ADEPT_ENCOUNTER;New Jade Statue
+22150;Garnet Statue;Character;;,125,125,0,125,125,0,75,75,0,175,175,0,125,125,0;15,mountainTempleChars16x16;ENEMY,MINIBOSS,BOSSFIGHT,QUEST,STASISIMMUNE,TRACKLOOT,CONSTRUCT,GOD,ADEPT_ENCOUNTER;New Garnet Statue
 22158;;Character;;;0,invisible;;New Cyclops God Spawner
 22159;;Character;;;0,invisible;;Maiden of the Sea Spawner
 22160;;Character;;;0,invisible;;Graverobber's Guild Spawner
@@ -19388,6 +19411,8 @@
 27627;;Equipment;;;149,UGCSetpieceObjects8x8;EQUIPMENT,RING,UT,TAB_UT,POWERTIER_A,XPBONUS,ORG_UDL,SKELETALSPECTERS;Ring of Skeletal Specters
 27628;;PlayerSpawnedObject;;;147,UGCSetpieceObjects8x8;;Helping Hands
 27850;;Equipment;;;54,playerskins;;Stanley the Spring Bunny Skin (SB)
+27906;;Wall;;;;;OT Wall
+27907;;GameObject;;;;;OT Rocks
 28055;Shaitan the Advisor;Character;Spawners;,70,70,0;0,invisible;ENEMY,STASISIMMUNE,NATURE;md2 Explode
 28056;;Projectile;;;381,oryxSanctuaryObjects8x8;;O3 Red Slash
 28057;Lair of Shaitan;Portal;;;1211,lofiObj3;;Lair of Shaitan Portal
@@ -19614,8 +19639,8 @@
 28595;;Projectile;;;506,oryxSanctuaryObjects8x8;;O3 Black Star MRot
 28596;;Projectile;;;507,oryxSanctuaryObjects8x8;;O3 Black Spinner MRot
 28597;;Projectile;;;508,oryxSanctuaryObjects8x8;;O3 Black Magic MRot
-28598;Red Lantern;Character;Daichi;,60,60,1;47,d3Chars8x8rEmbed;ENEMY,STASISIMMUNE,NATURE,MOUNTAIN_TEMPLE;Corrupted Spirit
-28599;White Lantern;Character;Daichi;,60,60,1;48,d3Chars8x8rEmbed;ENEMY,STASISIMMUNE,NATURE,MOUNTAIN_TEMPLE;Corrupted Sprite
+28598;Corrupted Spirit;Character;Daichi;,60,60,1;9,mountainTempleChars8x8;ENEMY,STASISIMMUNE,NATURE,MOUNTAIN_TEMPLE;Corrupted Spirit
+28599;Corrupted Sprite;Character;Daichi;,60,60,1;8,mountainTempleChars8x8;ENEMY,STASISIMMUNE,NATURE,MOUNTAIN_TEMPLE;Corrupted Sprite
 28600;;Projectile;;;442,oryxSanctuaryObjects8x8;;O3 Blue Star SRot
 28601;;Projectile;;;443,oryxSanctuaryObjects8x8;;O3 Blue Spinner SRot
 28602;;Character;;;0,invisible;ENEMY,MOUNTAIN_TEMPLE;Outro
@@ -25720,7 +25745,7 @@
 38550;;Projectile;;;359,lofiObjShiny;;Shatters Katana Projectile Shiny
 38551;St. Abraham's Wand;Equipment;;8,155,180,0;499,lofiObjShiny;EQUIPMENT,WEAPON,WAND,UT,TAB_UT,POWERTIER_C,TRADEABLE,XPBONUS,ORG_MANOR,SHINY;St. Abraham's Wand Shiny
 38552;;Projectile;;;361,lofiObjShiny;;Cross Bullet Shiny
-38553;Coral Venom Trap;Equipment;;;362,lofiObjShiny;EQUIPMENT,ABILITY,TRAP,UT,TAB_UT,POWERTIER_A,XPBONUS,MPCOST,STATMOD,ORG_OTRENCH,SHINY;Coral Venom Trap Shiny
+38553;Coral Venom Trap;Equipment;;;669,oceanTrenchObjects8x8;EQUIPMENT,ABILITY,TRAP,UT,TAB_UT,POWERTIER_A,XPBONUS,MPCOST,STATMOD,ORG_OTRENCH,SHINY;Coral Venom Trap Shiny
 38554;Fungal Breastplate;Equipment;;;363,lofiObjShiny;EQUIPMENT,ARMOR,HEAVY,UT,TAB_UT,POWERTIER_S,XPBONUS,ORG_FUNGAL,SHINY;Fungal Breastplate Shiny
 38555;Spider's Eye Ring;Equipment;;;364,lofiObjShiny;EQUIPMENT,RING,UT,TAB_UT,POWERTIER_D,TRADEABLE,SPIDERS_EYE_RING,ORG_SPIDER,SHINY;Spider's Eye Ring Shiny
 38556;Pharaoh's Requiem;Equipment;;;365,lofiObjShiny;EQUIPMENT,ABILITY,LUTE,UT,TAB_UT,POWERTIER_A,TRADEABLE,XPBONUS,MPCOST,ORG_TOMB,SHINY;Pharaoh's Requiem Shiny
@@ -26321,6 +26346,56 @@
 40509;Swamp Hermit Druid 2ST Shard x15;Equipment;;;2105,d2LofiObjEmbed;TAB_ST,FORGESTORE;2DruidSTShard x15
 40511;Sponsored by Darkness;Title;;;;;Title_Sponsored_by_Darkness
 40512;;Equipment;;;75,interregnumObjects8x8;TITLE,EQUIPMENT,CONSUMABLE,UT;Sponsored by Darkness Title Unlocker
+40513;;Skin;;;1344,playerskins;;Mini Skeletosaur Druid
+40514;;Equipment;;;1344,playerskins;;Mini Skeletosaur Druid Skin
+40515;;Skin;;;1345,playerskins;;Cursed Paladin
+40516;;Equipment;;;1345,playerskins;;Cursed Paladin Skin
+40517;;Skin;;;1346,playerskins;;Snake Flower Kensei
+40518;;Equipment;;;1346,playerskins;;Snake Flower Kensei Skin
+40519;;Skin;;;605,playerskins16;;Tiramisu King Knight
+40520;;Equipment;;;605,playerskins16;;Tiramisu King Knight Skin
+40521;;Pet;;;50,lofiObj2;;Miss Cancan
+40522;Miss Cancan;PetSkin;;;410,petsDivine;;Miss Cancan Pet Skin
+40523;Miss Cancan Pet Skin;Equipment;;;410,petsDivine;;Miss Cancan Pet Stone
+40524;;Skin;;;1347,playerskins;;Mollusk Wizard
+40525;;Equipment;;;1347,playerskins;;Mollusk Wizard Skin
+40526;;Equipment;;;2106,d2LofiObjEmbed;EQUIPMENT,CONSUMABLE,UT;Tiramisu Cake
+40527;;Equipment;;;2107,d2LofiObjEmbed;EQUIPMENT,CONSUMABLE,UT;Fish Food
+40528;;Equipment;;;2108,d2LofiObjEmbed;EQUIPMENT,CONSUMABLE,UT;Eel Jelly and Mash
+40529;;Equipment;;;2109,d2LofiObjEmbed;EQUIPMENT,CONSUMABLE,UT;Steamed Coral
+40530;;Pet;;;50,lofiObj2;;Pearl-Adorned Seahorse
+40531;Pearl-Adorned Seahorse;PetSkin;;;411,petsDivine;;Pearl-Adorned Seahorse Pet Skin
+40532;Pearl-Adorned Seahorse Pet Skin;Equipment;;;411,petsDivine;;Pearl-Adorned Seahorse Pet Stone
+40533;;Pet;;;50,lofiObj2;;Glowlamp Nautilus
+40534;Glowlamp Nautilus;PetSkin;;;412,petsDivine;;Glowlamp Nautilus Pet Skin
+40535;Glowlamp Nautilus Pet Skin;Equipment;;;412,petsDivine;;Glowlamp Nautilus Pet Stone
+40536;;Skin;;;606,playerskins16;;Snake Dancer Mystic
+40537;;Equipment;;;606,playerskins16;;Snake Dancer Mystic Skin
+40538;Siren Call Entrance;Entrance;;;704,entranceEffectsObjects;;Siren Call Entrance
+40539;Level 1 Ocean Trench Grave Unlocker;Equipment;;;262,lofiGravestone8x8;;Ocean Trench Gravestone Unlocker 1
+40540;Level 2-19 Ocean Trench Grave Unlocker;Equipment;;;263,lofiGravestone8x8;;Ocean Trench Gravestone Unlocker 2
+40541;Level 20 Ocean Trench Grave Unlocker;Equipment;;;264,lofiGravestone8x8;;Ocean Trench Gravestone Unlocker 3
+40542;1/8 Ocean Trench Grave Unlocker;Equipment;;;265,lofiGravestone8x8;;Ocean Trench Gravestone Unlocker 4
+40543;2/8 Ocean Trench Grave Unlocker;Equipment;;;169,lofiGravestone16x16;;Ocean Trench Gravestone Unlocker 5
+40544;3/8 Ocean Trench Grave Unlocker;Equipment;;;170,lofiGravestone16x16;;Ocean Trench Gravestone Unlocker 6
+40545;4/8 Ocean Trench Grave Unlocker;Equipment;;;171,lofiGravestone16x16;;Ocean Trench Gravestone Unlocker 7
+40546;5/8 Ocean Trench Grave Unlocker;Equipment;;;172,lofiGravestone16x16;;Ocean Trench Gravestone Unlocker 8
+40547;6/8 Ocean Trench Grave Unlocker;Equipment;;;173,lofiGravestone16x16;;Ocean Trench Gravestone Unlocker 9
+40548;7/8 Ocean Trench Grave Unlocker;Equipment;;;174,lofiGravestone16x16;;Ocean Trench Gravestone Unlocker 10
+40549;8/8 Ocean Trench Grave Unlocker;Equipment;;;175,lofiGravestone16x16;;Ocean Trench Gravestone Unlocker 11
+40550;Level 1 Ocean Trench Gravestone;Gravestone;;;262,lofiGravestone8x8;;Ocean Trench Gravestone 1
+40551;Level 2-19 Ocean Trench Gravestone;Gravestone;;;263,lofiGravestone8x8;;Ocean Trench Gravestone 2
+40552;Level 20 Ocean Trench Gravestone;Gravestone;;;264,lofiGravestone8x8;;Ocean Trench Gravestone 3
+40553;1/8 Ocean Trench Gravestone;Gravestone;;;265,lofiGravestone8x8;;Ocean Trench Gravestone 4
+40554;2/8 Ocean Trench Gravestone;Gravestone;;;169,lofiGravestone16x16;;Ocean Trench Gravestone 5
+40555;3/8 Ocean Trench Gravestone;Gravestone;;;170,lofiGravestone16x16;;Ocean Trench Gravestone 6
+40556;4/8 Ocean Trench Gravestone;Gravestone;;;171,lofiGravestone16x16;;Ocean Trench Gravestone 7
+40557;5/8 Ocean Trench Gravestone;Gravestone;;;172,lofiGravestone16x16;;Ocean Trench Gravestone 8
+40558;6/8 Ocean Trench Gravestone;Gravestone;;;173,lofiGravestone16x16;;Ocean Trench Gravestone 9
+40559;7/8 Ocean Trench Gravestone;Gravestone;;;174,lofiGravestone16x16;;Ocean Trench Gravestone 10
+40560;8/8 Ocean Trench Gravestone;Gravestone;;;175,lofiGravestone16x16;;Ocean Trench Gravestone 11
+40561;;Skin;;;1348,playerskins;;Last Breath Thessal
+40562;;Equipment;;;1348,playerskins;;Last Breath Thessal Skin
 40597;;Equipment;;;1847,d2LofiObjEmbed;;Exalted Druid Token x1
 40598;;Equipment;;;1847,d2LofiObjEmbed;;Exalted Druid Token x2
 40599;;Equipment;;;1847,d2LofiObjEmbed;;Exalted Druid Token x3
@@ -27804,7 +27879,7 @@
 42188;the Last God Standing;Title;;;;;Title_Last_God_Standing
 42189;;Equipment;;;75,interregnumObjects8x8;TITLE,EQUIPMENT,CONSUMABLE,UT;Last God Standing Title Unlocker
 42190;Smug Nure-onna (emote);Emote;;;1038,lofiObj;SPOOKY_EMOTE;Smug Nure-onna Emote
-42191;Confused D?notsura (emote);Emote;;;1039,lofiObj;SPOOKY_EMOTE;Confused Donotsura Emote
+42191;Confused D≈çnotsura (emote);Emote;;;1039,lofiObj;SPOOKY_EMOTE;Confused Donotsura Emote
 42192;Chochinobake (emote);Emote;;;1040,lofiObj;SPOOKY_EMOTE;Chochinobake Emote
 42193;Roaring Byakko (emote);Emote;;;1041,lofiObj;SPOOKY_EMOTE;Roaring Byakko Emote
 42195;;Equipment;;;1528,d2LofiObjEmbed;FORGESTORE;Emerald x1
@@ -28725,6 +28800,76 @@
 44420;;Character;;;0,invisible;ENEMY,MINION,SANGUINEFOREST,GOD,MINION_HIGH,VETERAN;SpecPen Jailer Spawner Sanguine
 44421;;Character;;;0,invisible;ENEMY,MINION,FLORALESCAPE,GOD,MINION_HIGH,VETERAN;SpecPen Jailer Spawner Floral
 44422;;Character;;;0,invisible;ENEMY,MINION,RUNICTUNDRA,GOD,MINION_HIGH,VETERAN;SpecPen Jailer Spawner Tundra
+44423;;Projectile;;;545,oceanTrenchObjects8x8;;OT Fish Warrior Spike
+44424;;Projectile;;;544,oceanTrenchObjects8x8;;OT Fish Warrior Boomerang
+44425;;Projectile;;;546,oceanTrenchObjects8x8;;OT Fish Berserker Axe
+44426;;Projectile;;;504,oceanTrenchObjects16x16;;OT Fish Berserker Big Axe
+44427;;Projectile;;;547,oceanTrenchObjects8x8;;OT Fishmancer Magic
+44428;;Projectile;;;;;OT Coral Wave
+44429;;Projectile;;;554,oceanTrenchObjects8x8;;OT Cnidarian Pink Shot
+44430;;Projectile;;;553,oceanTrenchObjects8x8;;OT Cnidarian Blue Shot
+44431;;Projectile;;;555,oceanTrenchObjects8x8;;OT Cnidarian Green Shot
+44432;;Projectile;;;557,oceanTrenchObjects8x8;;OT Squid Sucker
+44433;;Projectile;;;556,oceanTrenchObjects8x8;;OT Squid Shot
+44434;;Projectile;;;505,oceanTrenchObjects16x16;;OT Deep Sea Blast
+44435;Pink Coral Turret;Character;;,120,120,0;41,oceanTrenchChars16x16;ENEMY,NATURE;OT Pink Coral Turret
+44436;;Wall;;;;;OT Mermaid Wall Horizontal
+44437;;Wall;;;;;OT Mermaid Wall Vertical
+44438;;Wall;;;558,oceanTrenchObjects8x8;;OT Wood Pillar
+44439;;GameObject;;;;;OT Mermaid Built Rubble
+44440;;GameObject;;;;;OT Fish Hut
+44441;;GameObject;;;;;OT Drift Wood
+44442;;GameObject;;;517,oceanTrenchObjects16x16;;OT Fish Garden
+44443;;GameObject;;;;;OT Mermaid Ruin Bricks Solid
+44444;;GameObject;;;;;OT Mermaid Ruin Bricks Breaking
+44445;;GameObject;;;;;OT Mermaid Ruin Bricks Broken
+44446;;GameObject;;;;;OT Fish Wood HLT
+44447;;GameObject;;;;;OT Fish Wood HLM
+44448;;GameObject;;;;;OT Fish Wood HLB
+44449;;GameObject;;;;;OT Fish Wood HRT
+44450;;GameObject;;;;;OT Fish Wood HRM
+44451;;GameObject;;;;;OT Fish Wood HRB
+44452;;GameObject;;;;;OT Fish Wood VRT
+44453;;GameObject;;;;;OT Fish Wood VMT
+44454;;GameObject;;;;;OT Fish Wood VLT
+44455;;GameObject;;;;;OT Fish Wood VRB
+44456;;GameObject;;;;;OT Fish Wood VMB
+44457;;GameObject;;;;;OT Fish Wood VML
+44458;;Projectile;;;;;OT Seahorse Bubble
+44459;Blue Coral Turret;Character;;,120,120,0;44,oceanTrenchChars16x16;ENEMY,NATURE;OT Blue Coral Turret
+44460;Yellow Coral Turret;Character;;,120,120,0,120,120,0;43,oceanTrenchChars16x16;ENEMY,NATURE;OT Yellow Coral Turret
+44461;Green Coral Turret;Character;;,120,120,0,120,120,0;42,oceanTrenchChars16x16;ENEMY,NATURE;OT Green Coral Turret
+44462;;Projectile;;;549,oceanTrenchObjects8x8;;OT Coral Wave Green
+44463;;Projectile;;;550,oceanTrenchObjects8x8;;OT Coral Wave Yellow
+44464;;Projectile;;;551,oceanTrenchObjects8x8;;OT Coral Wave Pink
+44465;;Projectile;;;552,oceanTrenchObjects8x8;;OT Coral Wave Blue
+44466;;Projectile;;;647,oceanTrenchObjects8x8;;OT Marlin Shot
+44467;;Projectile;;;651,oceanTrenchObjects8x8;;OT Sea Horse Spinner
+44468;;Projectile;;;650,oceanTrenchObjects8x8;;OT Uma Shot
+44469;;Projectile;;;654,oceanTrenchObjects8x8;;OT Coral Arrow
+44470;Native Hermit Minion;Character;;,50,50,0,60,60,0,60,60,0;1,oceanTrenchChars8x8;ENEMY,MINION,CRITTER,MINION_WEAK;OT Native Hermit Minion
+44471;;GameObject;;;538,oceanTrenchObjects16x16;;OT Fishman Banner
+44472;;GameObject;;;;ENEMY;OT Coral Barrier
+44478;;Projectile;;;534,oceanTrenchObjects16x16;;OT Yellow Wall
+44479;;Character;;;;;OT Crustation Critters
+44489;;Equipment;;9,100,130,1;683,oceanTrenchObjects8x8;EQUIPMENT,RING,UT;Squidver Proc 1
+44490;;Equipment;;9,100,130,1;683,oceanTrenchObjects8x8;EQUIPMENT,RING,UT;Squidver Proc 2
+44491;;Equipment;;9,100,130,1;683,oceanTrenchObjects8x8;EQUIPMENT,RING,UT;Squidver Proc 3
+44492;;Equipment;;9,100,130,1;683,oceanTrenchObjects8x8;EQUIPMENT,RING,UT;Squidver Proc 4
+44494;;Equipment;;15,450,500,0;680,oceanTrenchObjects8x8;EQUIPMENT,ABILITY,QUIVER,UT,TAB_UT,POWERTIER_A,XPBONUS,MPCOST,STATMOD,ORG_OTRENCH;Squidver
+44495;;Equipment;;;681,oceanTrenchObjects8x8;EQUIPMENT,CONSUMABLE,UT,TAB_UT,COOLDOWN,PETBLACKLIST,ORG_OTRENCH;Coral Juice Refinery
+44497;;Projectile;;;686,oceanTrenchObjects8x8;;Squidver Urchin Arrow
+44498;;Projectile;;;682,oceanTrenchObjects8x8;;Squidver Arrow
+44501;Fire Coral Branch;Equipment;;;649,oceanTrenchObjects8x8;ARTIFACT,FORGESTORE;OT Fire Coral Branch x1
+44502;Fire Coral Branch;Equipment;;;649,oceanTrenchObjects8x8;ARTIFACT,FORGESTORE;OT Fire Coral Branch x2
+44503;Fire Coral Branch;Equipment;;;649,oceanTrenchObjects8x8;ARTIFACT,FORGESTORE;OT Fire Coral Branch x3
+44504;Fire Coral Branch;Equipment;;;649,oceanTrenchObjects8x8;ARTIFACT,FORGESTORE;OT Fire Coral Branch x4
+44505;Fire Coral Branch;Equipment;;;649,oceanTrenchObjects8x8;ARTIFACT,FORGESTORE;OT Fire Coral Branch x5
+44506;Fire Coral Branch;Equipment;;;649,oceanTrenchObjects8x8;ARTIFACT,FORGESTORE;OT Fire Coral Branch x6
+44507;Fire Coral Branch;Equipment;;;649,oceanTrenchObjects8x8;ARTIFACT,FORGESTORE;OT Fire Coral Branch x7
+44508;Fire Coral Branch;Equipment;;;649,oceanTrenchObjects8x8;ARTIFACT,FORGESTORE;OT Fire Coral Branch x8
+44509;Fire Coral Branch;Equipment;;;649,oceanTrenchObjects8x8;ARTIFACT,FORGESTORE;OT Fire Coral Branch x9
+44510;Fire Coral Branch;Equipment;;;649,oceanTrenchObjects8x8;ARTIFACT,FORGESTORE;OT Fire Coral Branch x10
 44815;;GameObject;;;17,newThirdDimensionObjects8x8;;3D Border TL
 44816;;GameObject;;;18,newThirdDimensionObjects8x8;;3D Border T
 44817;;GameObject;;;19,newThirdDimensionObjects8x8;;3D Border TR
@@ -30943,7 +31088,7 @@
 47944;;Projectile;;;217,sorcEncountersObjects8x8;;Defender Shot
 47945;;Projectile;;;216,sorcEncountersObjects8x8;;Blaster Shot
 47946;;Projectile;;;219,sorcEncountersObjects8x8;;Blaster Spinner
-47947;;Equipment;;22,250,250,0;220,sorcEncountersObjects8x8;EQUIPMENT,ABILITY,PRISM,UT,TAB_UT,POWERTIER_SS,XPBONUS,MPCOST;Rectangular Prism
+47947;;Equipment;;22,250,250,0;220,sorcEncountersObjects8x8;EQUIPMENT,ABILITY,PRISM,UT,TAB_UT,POWERTIER_SS,XPBONUS,MPCOST,REALMWHITE;Rectangular Prism
 47948;;Summon;;,175,175,0,175,175,0,175,175,0;225,sorcEncountersObjects8x8;;Rectangular Prism Summon
 47949;;Projectile;;;460,sorcEncountersObjects8x8;;CS Snowball
 47950;;Projectile;;;229,sorcEncountersObjects8x8;;Prism Spinner
@@ -31107,6 +31252,69 @@
 48195;;Undead;;,75,75,1,75,75,1,75,75,1,75,75,1,75,75,1;48,sorcEncountersChars8x8;;Barnacle Summon
 48198;Pulsating Wand;Equipment;;8,65,95,0;481,sorcEncountersObjects8x8;EQUIPMENT,WEAPON,WAND,ST,TAB_ST,ST_WEAPON,STGEN_2,XPBONUS;2DruidST0
 48199;Swampy Sigil;Equipment;;31,1100,1300,0,1100,1300,0;484,sorcEncountersObjects8x8;EQUIPMENT,ABILITY,SIGIL,ST,MPCOST,STATMOD,STGEN_2;2DruidST1
+48383;Thessal the Mermaid Goddess;Character;;,100,100,0,100,100,0,150,150,0,120,120,0,120,120,0,100,100,0,100,100,0,80,80,0,80,80,0,80,80,0,100,100,0,100,100,0,120,120,0;27,oceanTrenchChars16x16;ENEMY,BOSS,BOSSFIGHT,QUEST,STASISIMMUNE,TRACKLOOT,HUMANOID,GOD,HPSCALEONENTRY,AMULET_ADEPT;OT Thessal the Mermaid Goddess
+48384;Deep Sea Beast;Character;OT Beasts;,85,85,0,85,85,0,85,85,0,85,85,0;39,oceanTrenchChars16x16;ENEMY,MINION,BEAST,MINION_STRONG;OT Deep Sea Beast
+48386;Ocean Trench;Portal;;;418,oceanTrenchObjects8x8;;Ocean Trench Portal
+48387;;Equipment;;;5,lofiObj2;KEY,EPIC_KEY;Legacy Ocean Trench Key
+48388;Gigantic Clam;Character;;;655,oceanTrenchObjects8x8;ENEMY,RDS;OT Gigantic Clam
+48602;;Character;;;;;OT Tropical Fish Critters
+48604;;GameObject;;;;;OT Coral Blue
+48605;;GameObject;;;;;OT Coral Pink
+48606;;GameObject;;;;;OT Coral Green
+48607;;GameObject;;;;;OT Coral Yellow
+48608;;GameObject;;;;;OT Big Rocks
+48609;;GameObject;;;;;OT Small Coral Blue
+48610;;GameObject;;;;;OT Small Coral Pink
+48611;;GameObject;;;;;OT Small Coral Green
+48612;;GameObject;;;;;OT Small Coral Yellow
+48613;;GameObject;;;;;OT Small Rocks
+48614;;GameObject;;;;;OT Red Starfish
+48615;;GameObject;;;;;OT Blue Starfish
+48616;;GameObject;;;;;OT Green Starfish
+48617;;GameObject;;;;;OT Yellow Starfish
+48618;;GameObject;;;;;OT Fluffy Seaweed
+48619;;GameObject;;;;;OT Small Fluffy Seaweed
+48620;;Character;;;;;OT Ocean Vent
+48621;Lost Pink Cnidarian;Character;OT Cnidarian;,100,100,0;39,oceanTrenchChars8x8;;OT Lost Pink Cnidarian
+48622;Lost Gold Cnidarian;Character;OT Cnidarian;,70,70,0;40,oceanTrenchChars8x8;;OT Lost Blue Cnidarian
+48623;Lost Green Cnidarian;Character;OT Cnidarian;,80,80,0;41,oceanTrenchChars8x8;;OT Lost Green Cnidarian
+48624;Tanky Slurp Home;Character;OT Slurp Homes;;;;OT Tanky Slurp Home
+48625;Grey Sea Slurp;Character;;,80,80,0;32,oceanTrenchChars8x8;ENEMY,MINION,CRITTER,MINION_WEAK;OT Grey Sea Slurp
+48626;White Sea Slurp;Character;;,90,90,0;31,oceanTrenchChars8x8;ENEMY,MINION,CRITTER,MINION_WEAK;OT White Sea Slurp
+48627;Quick Slurp Home;Character;OT Slurp Homes;;;;OT Quick Slurp Home
+48628;Orange Sea Slurp;Character;;,20,20,1;33,oceanTrenchChars8x8;ENEMY,MINION,CRITTER,MINION_WEAK;OT Orange Sea Slurp
+48629;Yellow Sea Slurp;Character;;,25,25,1,75,75,0;34,oceanTrenchChars8x8;ENEMY,MINION,CRITTER,MINION_WEAK;OT Yellow Sea Slurp
+48630;Magic Slurp Home;Character;OT Slurp Homes;;;;OT Magic Slurp Home
+48631;Cyan Sea Slurp;Character;;,45,45,1;35,oceanTrenchChars8x8;ENEMY,MINION,CRITTER,MINION_WEAK;OT Cyan Sea Slurp
+48632;Lime Sea Slurp;Character;;;36,oceanTrenchChars8x8;ENEMY,MINION,CRITTER,MINION_WEAK;OT Lime Sea Slurp
+48633;Offensive Slurp Home;Character;OT Slurp Homes;;;;OT Offensive Slurp Home
+48634;Pink Sea Slurp;Character;;,60,60,0;37,oceanTrenchChars8x8;ENEMY,MINION,CRITTER,MINION_WEAK;OT Pink Sea Slurp
+48635;Purple Sea Slurp;Character;;,30,30,1,30,30,1;38,oceanTrenchChars8x8;ENEMY,MINION,CRITTER,MINION_WEAK;OT Purple Sea Slurp
+48636;Marlin;Character;;,100,100,0,100,100,0,100,100,0;40,oceanTrenchChars16x16;ENEMY,MINION,BEAST,MINION_STRONG;OT Marlin
+48637;Fishmancer;Character;OT Fishmen;,40,40,1,45,45,0;36,oceanTrenchChars16x16;ENEMY,MINION,TRACKLOOT,BEAST,MINION_STRONG;OT Fishmancer
+48638;Fishman Berserker;Character;OT Fishmen;,200,200,0,100,100,0,100,100,0;35,oceanTrenchChars16x16;ENEMY,MINION,TRACKLOOT,BEAST,MINION_STRONG;OT Fishman Berserker
+48639;;Projectile;;;;;OT Thessal Music Shot
+48640;;Projectile;;;471,oceanTrenchObjects8x8;;OT White Slurp Shot
+48641;;Projectile;;;472,oceanTrenchObjects8x8;;OT Grey Slurp Shot
+48642;;Projectile;;;473,oceanTrenchObjects8x8;;OT Orange Slurp Shot
+48643;;Projectile;;;474,oceanTrenchObjects8x8;;OT Yellow Slurp Shot
+48644;;Projectile;;;475,oceanTrenchObjects8x8;;OT Yellow Slurp Bolt
+48645;;Projectile;;;476,oceanTrenchObjects8x8;;OT Cyan Slurp Shot
+48646;;Projectile;;;478,oceanTrenchObjects8x8;;OT Pink Slurp Shot
+48647;;Projectile;;;479,oceanTrenchObjects8x8;;OT Purple Slurp Shot
+48650;Thessal the Mermaid Goddess;Character;;,80,80,0;531,oceanTrenchObjects8x8;ENEMY,BOSS_SPAWNED,BOSSFIGHT;OT Thessal Big Coral Bomb
+48677;;Projectile;;;;;OT Thessal Bubble Shot
+48678;;Projectile;;;495,oceanTrenchObjects8x8;;OT Thessal Small Trident Shot
+48679;;Projectile;;;473,oceanTrenchObjects16x16;;OT Thessal Small Aura Trident Shot
+48680;;Projectile;;;244,oceanTrenchObjects32x32;;OT Thessal Big Trident Shot
+48681;;Projectile;;;245,oceanTrenchObjects32x32;;OT Thessal Big Aura Trident Shot
+48682;;Character;;;482,oceanTrenchObjects16x16;;OT Thessal Fish Target
+48683;;Character;;;0,invisible;;OT Thessal Anchor
+48684;;GameObject;;;;;OT Sea Grass Floor Low
+48685;;GameObject;;;;;OT Sea Grass Floor Mid
+48686;;GameObject;;;;;OT Sea Grass Floor High
+48687;Thessal the Mermaid Goddess;GameObject;;,80,80,1;521,oceanTrenchObjects16x16;ENEMY,BOSS_SPAWNED,BOSSFIGHT;OT Thessal Bubble Helper
+48700;;Projectile;;;535,oceanTrenchObjects8x8;;OT Coral Spike
 48822;;Equipment;;;45,enchantments8x8;EQUIPMENT,CONSUMABLE,UT;Green Dust Shard
 48823;;Equipment;;;46,enchantments8x8;EQUIPMENT,CONSUMABLE,UT;Red Dust Shard
 48824;;Equipment;;;47,enchantments8x8;EQUIPMENT,CONSUMABLE,UT;Purple Dust Shard
@@ -34807,30 +35015,30 @@
 52987;Floral Escape Beacon (Veteran);Beacon;;;0,invisible;BEACON;Teleport Beacon Floral Escape
 52988;Sanguine Forest Beacon (Veteran);Beacon;;;0,invisible;BEACON;Teleport Beacon Sanguine Forest
 52989;Runic Tundra Beacon (Veteran);Beacon;;;0,invisible;BEACON;Teleport Beacon Runic Tundra
-52990;Legion Beach Guard;Character;;,15,15,0;93,Rookie_8x8;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Shore
-52991;Legion Nature Ruins Guard;Character;;,20,20,0,30,30,0;91,Rookie_8x8;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Forest
-52992;Legion Undead Forest Guard;Character;;,15,15,0;91,Rookie_8x8;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Undead Forest
-52993;Legion Desert Guard;Character;;,20,20,0,0,0,0;92,Rookie_8x8;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Desert
-52994;Legion Plains Guard;Character;;,30,30,0;93,Rookie_8x8;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Plains
-52995;Legion City Guardian;Character;;,40,40,1,40,40,1,40,40,1,75,75,0;86,Rookie_16x16;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Abandoned City
-52996;Legion Reef Guardian;Character;;,60,60,0,80,80,0;87,Rookie_16x16;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Coral Reefs
-52997;Legion Church Guardian;Character;;,40,40,1,75,75,1;85,Rookie_16x16;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Dead Church
+52990;Legion Beach Guard;Character;;,15,15,0;66,Rookie_8x8;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Shore
+52991;Legion Nature Ruins Guard;Character;;,20,20,0,30,30,0;64,Rookie_8x8;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Forest
+52992;Legion Undead Forest Guard;Character;;,15,15,0;64,Rookie_8x8;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Undead Forest
+52993;Legion Desert Guard;Character;;,20,20,0,0,0,0;65,Rookie_8x8;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Desert
+52994;Legion Plains Guard;Character;;,30,30,0;66,Rookie_8x8;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Plains
+52995;Legion City Guardian;Character;;,40,40,1,40,40,1,40,40,1,75,75,0;46,Rookie_16x16;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Abandoned City
+52996;Legion Reef Guardian;Character;;,60,60,0,80,80,0;10,oryxSanctuaryChars16x16;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Coral Reefs
+52997;Legion Church Guardian;Character;;,40,40,1,75,75,1;39,Rookie_16x16;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Dead Church
 52998;Reanimated Legion Minion;Character;;,50,50,0;70,Rookie_8x8;;Beacon Guardian Dead Church Minion
-52999;Legion Graveyard Guardian;Character;;,60,60,0,100,100,0;90,Rookie_16x16;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Haunted Hallows
-53000;Legion Hell Guardian;Character;;,80,80,0,40,40,1;84,Rookie_16x16;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Risen Hell
-53001;Legion Cove Guardian;Character;;,60,60,0,60,60,0;88,Rookie_16x16;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Shipwreck Cove
-53002;Legion Fey Guardian;Character;;,80,80,0,80,80,0,80,80,0,40,40,1;89,Rookie_16x16;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Sprite Forest
-53003;Legion Colonel;Character;;,145,145,0,115,115,0,180,180,0,155,155,0,135,135,0;91,Rookie_16x16;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Carboniferous
+52999;Legion Graveyard Guardian;Character;;,60,60,0,100,100,0;44,Rookie_16x16;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Haunted Hallows
+53000;Legion Hell Guardian;Character;;,80,80,0,40,40,1;38,Rookie_16x16;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Risen Hell
+53001;Legion Cove Guardian;Character;;,60,60,0,60,60,0;43,Rookie_16x16;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Shipwreck Cove
+53002;Legion Fey Guardian;Character;;,80,80,0,80,80,0,80,80,0,40,40,1;42,Rookie_16x16;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Sprite Forest
+53003;Legion Colonel;Character;;,145,145,0,115,115,0,180,180,0,155,155,0,135,135,0;33,Rookie_16x16;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Carboniferous
 53004;Captured Prehistoric Beacon;Character;;;0,invisible;;Beacon Guardian Carboniferous Attack Anchor
 53005;;GameObject;;;19,oryxSanctuaryObjects32x32;;Beacon Guardian Carboniferous Patrol Point
 53006;;GameObject;;;19,oryxSanctuaryObjects32x32;;Beacon Guardian Carboniferous Patrol Point Helper
 53007;Legion Soldier;Character;;,135,135,0,60,60,1,100,100,0,120,120,0,120,120,0;2,oryxSanctuaryChars16x16;;Beacon Guardian Carboniferous Minion
 53008;Legion Abyssal Defender;Character;;,1,1,1;2,oryxSanctuaryChars16x16;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Deep Sea Abyss
-53009;Legion Commissioner;Character;;,100,100,0,100,100,0,100,100,0,100,100,0,100,100,0,100,100,0,100,100,0;95,Rookie_16x16;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Floral Escape
+53009;Legion Commissioner;Character;;,100,100,0,100,100,0,100,100,0,100,100,0,100,100,0,100,100,0,100,100,0;37,Rookie_16x16;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Floral Escape
 53010;Captured Floral Beacon;Character;;,140,140,0;0,invisible;;Beacon Guardian Floral Escape Attack Anchor
 53011;Intentional Game Mechanic;Character;;,0,0,0;97,undeadLairObjects8x8;;Beacon Guardian Floral Escape Teleport Point
-53012;Legion Commissioner;Character;;,100,100,0;95,Rookie_16x16;;Beacon Guardian Floral Escape Decoy
-53013;Legion Missionary;Character;;,140,140,0,140,140,0,120,120,0,120,120,0,120,120,0,160,160,0,160,160,0,140,140,0,140,140,0,140,140,0;93,Rookie_16x16;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Sanguine Forest
+53012;Legion Commissioner;Character;;,100,100,0;37,Rookie_16x16;;Beacon Guardian Floral Escape Decoy
+53013;Legion Missionary;Character;;,140,140,0,140,140,0,120,120,0,120,120,0,120,120,0,160,160,0,160,160,0,140,140,0,140,140,0,140,140,0;34,Rookie_16x16;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Sanguine Forest
 53014;Captured Sanguine Beacon;Character;;;0,invisible;;Beacon Guardian Sanguine Forest Attack Anchor
 53015;;GameObject;;;0,invisible;;Beacon Guardian Sanguine Forest Patrol Point
 53016;;GameObject;;;0,invisible;;Beacon Guardian Sanguine Forest Orb Helper
@@ -34838,7 +35046,7 @@
 53018;Legion Missionary Chaos Orb;Character;;,110,110,0;96,archbishopObjects16x16;;Beacon Guardian Sanguine Forest Dark Orb
 53019;Legion Missionary Holy Beam;Character;;;0,invisible;ENEMY;Beacon Guardian Sanguine Forest Light Beam
 53020;Legion Missionary Chaos Beam;Character;;;0,invisible;ENEMY;Beacon Guardian Sanguine Forest Dark Beam
-53021;Legion Principal;Character;;,115,115,0,65,65,1;94,Rookie_16x16;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Runic Tundra
+53021;Legion Principal;Character;;,115,115,0,65,65,1;47,Rookie_16x16;ENEMY,STASISIMMUNE,BEACON_GUARDIAN;Beacon Guardian Runic Tundra
 53022;Captured Frozen Beacon;Character;;,155,155,0;0,invisible;;Beacon Guardian Runic Tundra Attack Anchor
 53023;Legion Principal Portal;Character;;,115,115,0;6,Rookie_16x16;;Beacon Guardian Runic Tundra Portal
 53024;Legion Principal Portal;Character;;,125,125,0,150,150,0;29,Rookie_24x24;;Beacon Guardian Runic Tundra Big Portal
@@ -35306,6 +35514,16 @@
 53820;Hookblade Tachi;Equipment;;24,90,120,0,90,120,0;340,lofiObj6;EQUIPMENT,WEAPON,TACHI,UT,TAB_UT,POWERTIER_A,XPBONUS,TAB_UT,EASTER_ENCHANTABLE;Hookblade Tachi
 53821;;Equipment;;8,75,105,0,75,105,0,75,105,0,75,105,0,75,105,0;342,lofiObj6;EQUIPMENT,WEAPON,MORNINGSTAR,TIERED,UT,TRADEABLE,XPBONUS,SUBTYPE,TAB_UT,EASTER_ENCHANTABLE;Acidic Aspergillum
 53822;;Equipment;;3,100,110,0,100,110,0,100,110,0;345,lofiObj6;EQUIPMENT,WEAPON,LONGBOW,TIERED,UT,TRADEABLE,XPBONUS,SUBTYPE,TAB_UT,EASTER_ENCHANTABLE;Harpoon Longbow
+53826;;Equipment;;3,75,95,0;4,lofiObj2;EQUIPMENT,WEAPON,BOW,UT,TAB_UT,POWERTIER_B,TRADEABLE,XPBONUS,CBOW;Legacy Coral Bow
+53827;;Equipment;;;27,lofiObj2;EQUIPMENT,ABILITY,TRAP,UT,TAB_UT,POWERTIER_A,XPBONUS,MPCOST,STATMOD;Legacy Coral Venom Trap
+53828;;Equipment;;;13,lofiObj2;EQUIPMENT,ARMOR,LEATHER,UT,TAB_UT,POWERTIER_B,TRADEABLE,XPBONUS;Legacy Coral Silk Armor
+53829;;Equipment;;;8,lofiObj2;EQUIPMENT,RING,UT,TAB_UT,POWERTIER_C,TRADEABLE,XPBONUS;Legacy Coral Ring
+53830;;Projectile;;;55,lofiProjs;;Legacy Coral Arrow
+53831;Coral Bow;Equipment;;3,75,95,0;153,lofiObjShiny;EQUIPMENT,WEAPON,BOW,UT,TAB_UT,POWERTIER_B,TRADEABLE,XPBONUS,SHINY,CBOW;Legacy Coral Bow Shiny
+53832;Coral Venom Trap;Equipment;;;362,lofiObjShiny;EQUIPMENT,ABILITY,TRAP,UT,TAB_UT,POWERTIER_A,XPBONUS,MPCOST,STATMOD,SHINY;Legacy Coral Venom Trap Shiny
+53833;Coral Silk Armor;Equipment;;;36,lofiObjShiny;EQUIPMENT,ARMOR,LEATHER,UT,TAB_UT,POWERTIER_B,TRADEABLE,XPBONUS,SHINY;Legacy Coral Silk Armor Shiny
+53834;Coral Ring;Equipment;;;593,lofiObjShiny;EQUIPMENT,RING,UT,TAB_UT,POWERTIER_C,TRADEABLE,XPBONUS,SHINY;Legacy Coral Ring Shiny
+53835;;Projectile;;;154,lofiObjShiny;;Legacy Coral Arrow Shiny
 54288;;Character;;,35,35,0;213,chars8x8rEncounters;ENEMY,MINION,LEGION;Legion Novice Mage
 54289;;Character;;,30,30,0;210,chars8x8rEncounters;ENEMY,MINION,LEGION;Legion Novice Hunter
 54290;;Character;;,40,40,0;207,chars8x8rEncounters;ENEMY,MINION,LEGION;Legion Novice Guard
@@ -36094,7 +36312,7 @@
 56410;Golden Sphinx Mk II;Character;;,120,120,0,140,140,0,120,120,0,100,100,0,140,140,0,0,0,0,80,80,1,130,130,0,150,150,0,130,130,0,120,120,0,120,120,0,120,120,0,0,0,0;98,alienInvasionChars16x16;ENEMY,BOSS,BOSSFIGHT,QUEST,STASISIMMUNE,TRACKLOOT,CONSTRUCT,GOD,HPSCALEONENTRY,AMULET_ADEPT,ALIEN_BOSS;AI Neo Golden Sphinx
 56411;Golden Reaper Drone Mk II;GameObject;;,120,120,0,120,120,0,120,120,0,130,130,0,110,110,0,90,90,0,140,140,0,0,0,0,80,80,1,120,120,0,0,0,0;99,alienInvasionChars16x16;ENEMY,BOSSFIGHT,ALIEN_BOSS;AI Neo Golden Reaper Drone
 56412;Royal Guard Suesogling;GameObject;;,50,50,1;410,alienInvasionObjects16x16;ENEMY,BOSSFIGHT,ALIEN_BOSS;AI Neo Suesogian Ring
-56413;Golden Sphinx Mk.II;GameObject;;,0,0,0,80,80,1;190,alienInvasionObjects8x8;ENEMY,BOSSFIGHT,ALIEN_BOSS;AI Neo Golden Sphinx Laser Spawner
+56413;Golden Sphinx Mk II;GameObject;;,0,0,0,80,80,1;190,alienInvasionObjects8x8;ENEMY,BOSSFIGHT,ALIEN_BOSS;AI Neo Golden Sphinx Laser Spawner
 56414;Tarul, Eyes of the Cosmos;GameObject;;,150,150,0,120,120,0,150,150,0,130,130,0,110,110,0,150,150,0;898,alienInvasionObjects8x8;ENEMY,BOSSFIGHT,ALIEN_BOSS;AI Neo Tarul Eye 2
 56415;Tarul, Eyes of the Cosmos;GameObject;;,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,120,120,0,120,120,0,120,120,0,120,120,0,120,120,0,120,120,0,120,120,0,120,120,0,120,120,0,120,120,0,120,120,0;891,alienInvasionObjects8x8;ENEMY,BOSSFIGHT,ALIEN_BOSS;AI Neo Tarul Tentacle Eye
 56416;Tarul, Eyes of the Cosmos;Character;;,150,150,0,150,150,0;310,alienInvasionObjects16x16;ENEMY,BOSSFIGHT,ALIEN_BOSS;AI Neo Tarul Eye 3
@@ -36538,6 +36756,15 @@
 63902;;Equipment;;2,85,100,0;991,lofiObj6;EQUIPMENT,WEAPON,DAGGER,UT,TAB_UT,POWERTIER_B,RESKIN,XPBONUS,ORG_LIBRARY;Sweettreats Dagger
 63903;;Projectile;;;1088,lofiObj6;;Sweettreats Bow Projectile
 63993;;Skin;;;51,players;;Evolutionary Skeletosaur
+64931;;Equipment;;;75,interregnumObjects8x8;TITLE,EQUIPMENT,CONSUMABLE,UT;Snake Charmer Title Unlocker
+64932;the Snake Charmer;Title;;;;;Title_Snake_Charmer
+64933;Comfy Beach Snake (emote);Emote;;;1366,lofiObj;MISC_EMOTE;Comfy Beach Snake Emote
+64934;Freaky Stheno (emote);Emote;;;1367,lofiObj;MISC_EMOTE;Freaky Stheno Emote
+64935;Confused White Snake (emote);Emote;;;1368,lofiObj;MISC_EMOTE;Confused White Snake Emote
+64936;Drooling White Snake (emote);Emote;;;1369,lofiObj;MISC_EMOTE;Drooling White Snake Emote
+64937;Thinking White Snake (emote);Emote;;;1370,lofiObj;MISC_EMOTE;Thinking White Snake Emote
+64938;Bonked White Snake (emote);Emote;;;1371,lofiObj;MISC_EMOTE;Bonked White Snake Emote
+64939;Solo White Snake Invasion III Key;Equipment;;;31,whiteSnakeObjects8x8;COMMUNITY;Solo White Snake Invasion III Key
 64941;;Equipment;;;1111,lofiObj6;;Halloween Selection ST Shard x1
 64942;;Equipment;;;1111,lofiObj6;;Halloween Selection ST Shard x2
 64943;;Equipment;;;1111,lofiObj6;;Halloween Selection ST Shard x3
@@ -37065,11 +37292,11 @@
 65490;Gigantic Dust Chest;Equipment;;;1536,d2LofiObjEmbed;EQUIPMENT,CONSUMABLE,UT;Gigantic Dust Chest
 65491;Large Dust Chest;Equipment;;;1537,d2LofiObjEmbed;EQUIPMENT,CONSUMABLE,UT;Large Dust Chest
 65492;Medium Dust Chest;Equipment;;;1538,d2LofiObjEmbed;EQUIPMENT,CONSUMABLE,UT;Medium Dust Chest
-65493;Enchanterís Treasure Trove Crate;Equipment;;;1539,d2LofiObjEmbed;EQUIPMENT,CONSUMABLE,UT;Enchanters Treasure Trove Crate
+65493;Enchanter‚Äôs Treasure Trove Crate;Equipment;;;1539,d2LofiObjEmbed;EQUIPMENT,CONSUMABLE,UT;Enchanters Treasure Trove Crate
 65494;Purple Dust Philosopher's Geode;Equipment;;;1540,d2LofiObjEmbed;EQUIPMENT,CONSUMABLE,UT;Purple Dust Philosophers Geode
-65495;Red Dust Philosopherís Geode;Equipment;;;1541,d2LofiObjEmbed;EQUIPMENT,CONSUMABLE,UT;Red Dust Philosophers Geode
-65496;Green Dust Philosopherís Geode;Equipment;;;1542,d2LofiObjEmbed;EQUIPMENT,CONSUMABLE,UT;Green Dust Philosophers Geode
-65497;Biffís Secrets;Equipment;;;767,d2LofiObjEmbed;EQUIPMENT,CONSUMABLE,UT;Easter Treasure 2025
+65495;Red Dust Philosopher‚Äôs Geode;Equipment;;;1541,d2LofiObjEmbed;EQUIPMENT,CONSUMABLE,UT;Red Dust Philosophers Geode
+65496;Green Dust Philosopher‚Äôs Geode;Equipment;;;1542,d2LofiObjEmbed;EQUIPMENT,CONSUMABLE,UT;Green Dust Philosophers Geode
+65497;Biff‚Äôs Secrets;Equipment;;;767,d2LofiObjEmbed;EQUIPMENT,CONSUMABLE,UT;Easter Treasure 2025
 65498;Secret Hoard;Equipment;;;763,d2LofiObjEmbed;;Secret Hoard 2025
 65499;Backup Stash;Equipment;;;764,d2LofiObjEmbed;;Backup Stash 2025
 65500;Key to Oryx's Armory;Equipment;;;765,d2LofiObjEmbed;;Key to Oryx's Armory 2025

@@ -10,7 +10,7 @@ internal class StatData : IDataObject, ICloneable
 
 	public string StatStringValue;
 
-	public byte SecondaryStatValue;
+	public int SecondaryStatValue;
 
 	public StatType Type
 	{
@@ -48,7 +48,7 @@ internal class StatData : IDataObject, ICloneable
 		}
 	}
 
-	public byte SecondaryValue
+	public int SecondaryValue
 	{
 		get
 		{
@@ -87,7 +87,7 @@ internal class StatData : IDataObject, ICloneable
 		{
 			StatValue = reader.ReadCompressedInt();
 		}
-		SecondaryStatValue = reader.ReadByte();
+		SecondaryStatValue = reader.ReadCompressedInt();
 		return this;
 	}
 
@@ -102,7 +102,7 @@ internal class StatData : IDataObject, ICloneable
 		{
 			writer.WriteCompressedInt(StatValue);
 		}
-		writer.Write(SecondaryStatValue);
+		writer.WriteCompressedInt(SecondaryStatValue);
 	}
 
 	public object Clone()

@@ -86,6 +86,7 @@ internal class MainForm : Form
 	public MainForm()
 	{
 		InitializeComponent();
+		stripMain.Items.Insert(2, new ToolStripMenuItem("ExaltHUD", null, (_, __) => DpsOverlayManager.SetExpanded(true)));
 		Text += " v" + Program.ToolVersion;
 		ToolStripMenuItem toolStripMenuItem = lblVersion;
 		toolStripMenuItem.Text = toolStripMenuItem.Text + " " + Program.GameVersion;

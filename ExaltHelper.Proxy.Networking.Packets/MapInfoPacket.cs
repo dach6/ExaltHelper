@@ -46,6 +46,8 @@ internal class MapInfoPacket : Packet
 
 	public int CurrentRealmScore = -1;
 
+	private bool hasRealmScores;
+
 	public override void Read(PacketReader reader)
 	{
 		Width = reader.ReadInt32();
@@ -68,13 +70,14 @@ internal class MapInfoPacket : Packet
 		UnknownInt = reader.ReadInt32();
 		DungeonModifiers = reader.ReadString();
 		BgColor = reader.ReadInt16();
-		if (reader.BaseStream.Length - reader.BaseStream.Position >= 4)
-		{
-			CurrentRealmScore = reader.ReadInt32();
-		}
-		if (reader.BaseStream.Length - reader.BaseStream.Position >= 4)
+		MaxRealmScore = CurrentRealmScore = -1;
+		hasRealmScores = reader.BaseStream.Length - reader.BaseStream.Position >= 8;
+		// The optional wire pair is maximum, then current. A short suffix is
+		// left unread so Packet preserves it as trailing data.
+		if (hasRealmScores)
 		{
 			MaxRealmScore = reader.ReadInt32();
+			CurrentRealmScore = reader.ReadInt32();
 		}
 	}
 
@@ -100,13 +103,12 @@ internal class MapInfoPacket : Packet
 		writer.Write(UnknownInt);
 		writer.Write(DungeonModifiers);
 		writer.Write(BgColor);
-		if (CurrentRealmScore != -1)
-		{
-			writer.Write(CurrentRealmScore);
-		}
-		if (MaxRealmScore != -1)
+		// Presence is independent of value: a received -1/-1 pair must still
+		// be forwarded, and explicit score edits must write a complete pair.
+		if (hasRealmScores || MaxRealmScore != -1 || CurrentRealmScore != -1)
 		{
 			writer.Write(MaxRealmScore);
+			writer.Write(CurrentRealmScore);
 		}
 	}
 }

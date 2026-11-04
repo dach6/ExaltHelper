@@ -5945,6 +5945,17 @@
 22715;27,spriteWorldObjects8x8;;Dread Angler Puller Left
 22716;28,spriteWorldObjects8x8;;Dread Angler Puller Down
 22717;29,spriteWorldObjects8x8;;Dread Angler Puller Up
+23356;1121,oceanTrenchObjects8x8,1122,oceanTrenchObjects8x8,1123,oceanTrenchObjects8x8,1124,oceanTrenchObjects8x8,1125,oceanTrenchObjects8x8,1126,oceanTrenchObjects8x8,1147,oceanTrenchObjects8x8,1148,oceanTrenchObjects8x8;;OT Sandlight
+23357;1127,oceanTrenchObjects8x8,1128,oceanTrenchObjects8x8,1129,oceanTrenchObjects8x8,1130,oceanTrenchObjects8x8,1131,oceanTrenchObjects8x8,1132,oceanTrenchObjects8x8,1133,oceanTrenchObjects8x8,1134,oceanTrenchObjects8x8;;OT Sanddark
+23358;1149,oceanTrenchObjects8x8,1150,oceanTrenchObjects8x8,1151,oceanTrenchObjects8x8,1152,oceanTrenchObjects8x8;;OT cornerBR
+23359;1153,oceanTrenchObjects8x8,1154,oceanTrenchObjects8x8,1155,oceanTrenchObjects8x8,1156,oceanTrenchObjects8x8;;OT cornerBL
+23360;1157,oceanTrenchObjects8x8,1158,oceanTrenchObjects8x8,1159,oceanTrenchObjects8x8,1160,oceanTrenchObjects8x8;;OT cornerTR
+23361;1161,oceanTrenchObjects8x8,1162,oceanTrenchObjects8x8,1163,oceanTrenchObjects8x8,1164,oceanTrenchObjects8x8;;OT cornerTL
+23362;1165,oceanTrenchObjects8x8,1166,oceanTrenchObjects8x8,1167,oceanTrenchObjects8x8,1168,oceanTrenchObjects8x8;;OT separationTOP
+23363;1169,oceanTrenchObjects8x8,1170,oceanTrenchObjects8x8,1171,oceanTrenchObjects8x8,1172,oceanTrenchObjects8x8;;OT separationRIGHT
+23364;1173,oceanTrenchObjects8x8,1174,oceanTrenchObjects8x8,1175,oceanTrenchObjects8x8,1176,oceanTrenchObjects8x8;;OT separationLEFT
+23365;1177,oceanTrenchObjects8x8,1178,oceanTrenchObjects8x8,1179,oceanTrenchObjects8x8,1180,oceanTrenchObjects8x8;;OT separationDOWN
+23366;1181,oceanTrenchObjects8x8,1182,oceanTrenchObjects8x8,1183,oceanTrenchObjects8x8,1184,oceanTrenchObjects8x8,1185,oceanTrenchObjects8x8,1186,oceanTrenchObjects8x8,1187,oceanTrenchObjects8x8,1188,oceanTrenchObjects8x8;;OT gravel
 25130;156,archbishopObjects8x8;;Shade 1 O3 Sanctuary Rug L Edge L
 25131;158,archbishopObjects8x8;;Shade 1 O3 Sanctuary Rug L Edge R
 25132;141,archbishopObjects8x8;;Shade 1 O3 Sanctuary Rug L Edge U
@@ -7911,6 +7922,8 @@
 33652;1013,memoriesObjects8x8,1016,memoriesObjects8x8,1013,memoriesObjects8x8,1014,memoriesObjects8x8,1017,memoriesObjects8x8,1014,memoriesObjects8x8,1015,memoriesObjects8x8,1018,memoriesObjects8x8,1015,memoriesObjects8x8;;Defiant Memory Dark Stone
 33653;1019,memoriesObjects8x8;;Defiant Memory Edge
 33654;1020,memoriesObjects8x8;;Defiant Memory Pit
+33655;220,lofiEnvironment3;;NoBlend Black
+33656;220,lofiEnvironment3;;NoBlend Black Outer
 35203;268,epicHiveObjects8x8;;EH UnderBossPartialFloor Venom
 35204;235,epicHiveObjects8x8;70,70;EH Plague Venom
 35205;235,epicHiveObjects8x8;;EH UnderPartialFloor Plague Venom

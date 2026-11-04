@@ -439,7 +439,9 @@ internal class Client
 			{
 				try
 				{
+					if (!(packet is NewTickPacket) && !(packet is UpdatePacket) && !(packet is MapInfoPacket)) HudObserver.Observe(this, packet, flag);
 					RoutePacket(packet);
+					if (packet is NewTickPacket || packet is UpdatePacket || packet is MapInfoPacket) HudObserver.Observe(this, packet, flag);
 				}
 				catch (Exception ex)
 				{

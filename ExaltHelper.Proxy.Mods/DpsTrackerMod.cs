@@ -31,6 +31,7 @@ internal class DpsTrackerMod : IDisposable
 		public int OriginVitality = int.MinValue;
 		public bool ScalingApplied;
 		public bool ServerCreated;
+		public HudDamageSource HudContext;
 		public string ShotContext = ",,,,,";
 		public int ShooterId;
 		public int BulletId;
@@ -106,6 +107,14 @@ internal class DpsTrackerMod : IDisposable
 	private class EnemyCombatTracker
 	{
 		public int EntityId;
+		public int ObjectType;
+		private int journalIdentity = -1;
+		private readonly HashSet<int> journalEntities = new HashSet<int>();
+		public int JournalIdentity
+		{
+			get { lock (journalEntities) { if (journalIdentity < 0) journalIdentity = EntityId; journalEntities.Add(EntityId); return journalIdentity; } }
+		}
+		private int[] JournalEntities { get { lock (journalEntities) return journalEntities.ToArray(); } }
 
 		public string Name = "Monster";
 
@@ -157,6 +166,7 @@ internal class DpsTrackerMod : IDisposable
 
 		public EnemyCombatSnapshot ToSnapshot()
 		{
+			int encounterIdentity = JournalIdentity;
 			double dur = GetFightDurationSec();
 			double dps = ((dur > 0.0) ? Math.Round((double)TotalDamage / dur, 1) : 0.0);
 			List<PlayerDamageEntry> list = new List<PlayerDamageEntry>();
@@ -252,6 +262,9 @@ internal class DpsTrackerMod : IDisposable
 			return new EnemyCombatSnapshot
 			{
 				EntityId = EntityId,
+				ObjectType = ObjectType,
+				EncounterId = encounterIdentity,
+				EncounterEntityIds = JournalEntities,
 				Name = Name,
 				MaxHp = MaxHp,
 				CurrentHp = CurrentHp,
@@ -322,6 +335,9 @@ internal class DpsTrackerMod : IDisposable
 	private static volatile DpsTrackerMod activeTrackerInstance;
 
 	private static DpsSnapshot lastLiveSnapshot;
+	private static readonly object sessionAccountGate = new object();
+	private static volatile string sessionAccountKey;
+	private static string sessionScopeId;
 
 	private static readonly List<LootBagDrop> sessionLootBags = new List<LootBagDrop>();
 
@@ -402,14 +418,62 @@ internal class DpsTrackerMod : IDisposable
 	public DpsTrackerMod(Client client2)
 	{
 		client = client2;
-		activeTrackerInstance = this;
+		if (HudObserver.Accepts(client2)) activeTrackerInstance = this;
 	}
+
+	// A refreshed token may still belong to the same account. Keep its session
+	// caches while identity is pending, but expose them only after resolution.
+	internal static void ObserveAccount(Client observedClient, string accountKey)
+	{
+		if (!HudObserver.Accepts(observedClient)) return;
+		bool clearView = false;
+		lock (sessionAccountGate)
+		{
+			if (!string.IsNullOrEmpty(accountKey))
+			{
+				if (sessionAccountKey != null && sessionAccountKey != accountKey)
+				{
+					lock (sessionDungeonHistory) sessionDungeonHistory.Clear();
+					lock (sessionLootBags) sessionLootBags.Clear();
+					lock (sessionLootDrops) sessionLootDrops.Clear();
+					lock (abilityLogLock) sessionAbilityLog.Clear();
+					lock (partyLock) { sessionPartyMembers.Clear(); sessionPartyId = 0; }
+					currentHistoryIndex = selectedMonsterMode = -1;
+					lastLiveSnapshot = null;
+					clearView = true;
+				}
+				sessionAccountKey = accountKey;
+				string scope = HudJournal.ScopeId;
+				if (sessionScopeId != scope)
+				{
+					// The account is now confirmed. Its retained drops remain the same
+					// discoveries when a renewed login uses a fresh journal scope.
+					lock (sessionLootBags) foreach (var bag in sessionLootBags) bag.JournalScopeId = scope;
+					lock (sessionLootDrops) foreach (var drop in sessionLootDrops) drop.JournalScopeId = scope;
+					sessionScopeId = scope;
+				}
+			}
+			else if (sessionAccountKey != null) clearView = true;
+			if (observedClient?.dpsTracker != null) activeTrackerInstance = observedClient.dpsTracker;
+			else if (activeTrackerInstance != null && !HudObserver.Accepts(activeTrackerInstance.client)) activeTrackerInstance = null;
+		}
+		if (clearView) DpsOverlayManager.UpdateSnapshot(new DpsSnapshot());
+	}
+
+	private static bool IsSessionVisible()
+	{
+		string owner = sessionAccountKey;
+		string accountKey = AccountWorkspace.AccountKey;
+		return owner == null || owner == accountKey;
+	}
+
+	private bool OwnsSession() => HudObserver.Accepts(client) && IsSessionVisible();
 
 	public void OnMapChange(MapInfoPacket packet)
 	{
 		try
 		{
-			activeTrackerInstance = this;
+			if (HudObserver.Accepts(client)) activeTrackerInstance = this;
 			ArchiveCurrentDungeon();
 			if (packet != null)
 			{
@@ -440,8 +504,7 @@ internal class DpsTrackerMod : IDisposable
 			{
 				realmSharkRng = new RealmSharkRng(packet.Fp);
 			}
-			currentHistoryIndex = -1;
-			selectedMonsterMode = -1;
+			if (OwnsSession()) { currentHistoryIndex = -1; selectedMonsterMode = -1; }
 			PushSnapshotToOverlay();
 		}
 		catch
@@ -451,11 +514,13 @@ internal class DpsTrackerMod : IDisposable
 
 	private void ArchiveCurrentDungeon()
 	{
+		if (!OwnsSession()) return;
 		try
 		{
 			damageDiagnostics.Save();
 			if (combinedDungeonCombat.TotalDamage <= 0 && totalKillsCount <= 0)
 			{
+				if (HudObserver.Accepts(client)) HudJournal.ObserveSnapshot(CompileCurrentSnapshot());
 				return;
 			}
 			lock (allEnemies)
@@ -481,6 +546,7 @@ internal class DpsTrackerMod : IDisposable
 			lock (sessionDungeonHistory)
 			{
 				sessionDungeonHistory.Add(dpsSnapshot);
+				if (HudObserver.Accepts(client)) HudJournal.ObserveSnapshot(dpsSnapshot);
 				if (sessionDungeonHistory.Count > 30)
 				{
 					sessionDungeonHistory.RemoveAt(0);
@@ -691,6 +757,7 @@ internal class DpsTrackerMod : IDisposable
 								if (enemyCombatTracker != null)
 								{
 									value4 = enemyCombatTracker;
+									_ = value4.JournalIdentity;
 									value4.EntityId = entityId;
 									value4.IsDead = false;
 									value4.CurrentHp = Hp;
@@ -719,6 +786,7 @@ internal class DpsTrackerMod : IDisposable
 								value4 = new EnemyCombatTracker
 								{
 									EntityId = entityId,
+									ObjectType = mapObject2.ObjectType,
 									Name = name,
 									MaxHp = MaxHp,
 									CurrentHp = Hp,
@@ -731,6 +799,7 @@ internal class DpsTrackerMod : IDisposable
 						}
 					}
 					if (!string.IsNullOrWhiteSpace(name) && name != "Monster" && !name.StartsWith("Item #") && !name.StartsWith("{s.")) value4.Name = name;
+					if (mapObject2.ObjectType != 0) value4.ObjectType = mapObject2.ObjectType;
 					value4.IsBoss |= flag2;
 					if (value4.MaxHp == 0) value4.MaxHp = MaxHp;
 					value4.CurrentHp = Hp;
@@ -1004,6 +1073,17 @@ internal class DpsTrackerMod : IDisposable
 		bagColor = Color.White;
 		switch (type)
 		{
+		case 1280:
+		case 1709:
+			bagName = "Brown Bag"; bagColor = Color.FromArgb(160, 110, 65); return true;
+		case 1283:
+			bagName = "Soulbound Bag"; bagColor = Color.FromArgb(160, 160, 180); return true;
+		case 1286:
+		case 1710:
+			bagName = "Pink Bag"; bagColor = Color.FromArgb(245, 140, 200); return true;
+		case 1287:
+		case 1722:
+			bagName = "Purple Bag"; bagColor = Color.FromArgb(180, 95, 220); return true;
 		case 1292:
 		case 1296:
 			bagName = "White Bag";
@@ -1025,11 +1105,13 @@ internal class DpsTrackerMod : IDisposable
 			bagColor = Color.FromArgb(255, 215, 0);
 			return true;
 		case 1289:
+		case 1725:
 		case 4358:
 			bagName = "Cyan Bag";
 			bagColor = Color.FromArgb(0, 225, 255);
 			return true;
 		case 1291:
+		case 1726:
 			bagName = "Blue Bag";
 			bagColor = Color.FromArgb(56, 189, 248);
 			return true;
@@ -1045,6 +1127,7 @@ internal class DpsTrackerMod : IDisposable
 
 	private void ProcessLootBag(ObjectData obj)
 	{
+		if (!OwnsSession()) return;
 		if (obj?.Stats == null)
 		{
 			return;
@@ -1077,8 +1160,13 @@ internal class DpsTrackerMod : IDisposable
 		{
 			text = ((!string.IsNullOrEmpty(currentDungeonName)) ? currentDungeonName : "Encounter");
 		}
+		if (bagName == "Brown Bag") text = "Public / player bag";
 		LootBagDrop lootBagDrop = new LootBagDrop
 		{
+			JournalScopeId = HudObserver.Accepts(client) ? HudJournal.ScopeId : Guid.NewGuid().ToString("N"),
+			Dungeon = currentDungeonName,
+			DungeonStartTime = dungeonStartTime,
+			Character = (client.Player?.PlayerName ?? "Unknown") + " · " + GetClassName(client.Player?.ObjectType ?? 0),
 			BagEntityId = ObjectId,
 			BagType = bagName,
 			BagColor = bagColor,
@@ -1086,6 +1174,7 @@ internal class DpsTrackerMod : IDisposable
 			DropTime = DateTime.Now
 		};
 		string[] slotItemDatas = null;
+		var bagItems = new List<LootDropEntry>();
 		StatData itemDataStat = obj.Stats.StatList.FirstOrDefault(s => s.StatTypeField == 80);
 		if (itemDataStat != null && !string.IsNullOrEmpty(itemDataStat.StatStringValue))
 		{
@@ -1104,13 +1193,13 @@ internal class DpsTrackerMod : IDisposable
 				continue;
 			}
 			int slotIdx = num - 8;
-			lootBagDrop.ItemIds.Add(StatValue);
 			ItemSpriteManager.ItemMeta itemMetadata = ItemSpriteManager.GetItemMetadata(StatValue);
 
 			string slotCode = (slotItemDatas != null && slotItemDatas.Length > slotIdx) ? slotItemDatas[slotIdx] : null;
 			var (enchantCount, enchantRarity, enchantNames) = EnchantmentParser.ParseSlotEnchants(slotCode);
 
 			bool isShiny = itemMetadata.IsShiny;
+			lootBagDrop.ItemIds.Add(StatValue);
 			string effectiveRarity = itemMetadata.Rarity;
 			if (enchantCount > 0 && !string.IsNullOrEmpty(enchantRarity) && enchantRarity != "Common")
 			{
@@ -1124,6 +1213,7 @@ internal class DpsTrackerMod : IDisposable
 
 			LootDropEntry item = new LootDropEntry
 			{
+				JournalScopeId = lootBagDrop.JournalScopeId,
 				ItemId = StatValue,
 				ItemName = itemMetadata.Name,
 				ItemRarity = effectiveRarity,
@@ -1135,19 +1225,19 @@ internal class DpsTrackerMod : IDisposable
 				SourceMonster = text,
 				DropTime = DateTime.Now
 			};
-			lock (sessionLootDrops)
-			{
-				sessionLootDrops.Insert(0, item);
-				if (sessionLootDrops.Count > 100)
-				{
-					sessionLootDrops.RemoveAt(sessionLootDrops.Count - 1);
-				}
-			}
+			bagItems.Add(item);
 		}
-		if (lootBagDrop.ItemIds.Count <= 0)
+		if (HudObserver.Accepts(client)) HudJournal.RecordFeedLoot(lootBagDrop);
+		if (!HudLootPolicy.ShouldTrack(lootBagDrop))
 		{
 			return;
 		}
+		lock (sessionLootDrops)
+		{
+			foreach (var item in bagItems) sessionLootDrops.Insert(0, item);
+			if (sessionLootDrops.Count > 100) sessionLootDrops.RemoveRange(100, sessionLootDrops.Count - 100);
+		}
+		if (HudObserver.Accepts(client)) HudJournal.RecordLoot(lootBagDrop);
 		lock (sessionLootBags)
 		{
 			sessionLootBags.Insert(0, lootBagDrop);
@@ -1438,6 +1528,7 @@ internal class DpsTrackerMod : IDisposable
 
 	public void OnText(TextPacket packet)
 	{
+		if (!OwnsSession()) return;
 		if (packet == null)
 		{
 			return;
@@ -1627,11 +1718,13 @@ internal class DpsTrackerMod : IDisposable
 				if (!allEnemies.TryGetValue(targetId, out value))
 				{
 					string enemyName = "Monster";
+					int objectType = 0;
 					int num = 0;
 					int num2 = 0;
 					bool flag = false;
 					if (client.Enemies != null && client.Enemies.TryGetValue(targetId, out var value2))
 					{
+						objectType = value2.ObjectType;
 						enemyName = value2.StructureName ?? "Monster";
 						ItemSpriteManager.ItemMeta itemMetadata = ItemSpriteManager.GetItemMetadata(value2.ObjectType);
 						if (itemMetadata != null && !string.IsNullOrWhiteSpace(itemMetadata.Name) && !itemMetadata.Name.StartsWith("{s.") && !itemMetadata.Name.StartsWith("Item #"))
@@ -1644,6 +1737,7 @@ internal class DpsTrackerMod : IDisposable
 					}
 					else if (client.Portals != null && client.Portals.TryGetValue(targetId, out value2))
 					{
+						objectType = value2.ObjectType;
 						enemyName = value2.StructureName ?? "Monster";
 						ItemSpriteManager.ItemMeta itemMetadata2 = ItemSpriteManager.GetItemMetadata(value2.ObjectType);
 						if (itemMetadata2 != null && !string.IsNullOrWhiteSpace(itemMetadata2.Name) && !itemMetadata2.Name.StartsWith("{s.") && !itemMetadata2.Name.StartsWith("Item #"))
@@ -1660,7 +1754,9 @@ internal class DpsTrackerMod : IDisposable
 						if (enemyCombatTracker != null)
 						{
 							value = enemyCombatTracker;
+							_ = value.JournalIdentity;
 							value.EntityId = targetId;
+							if (objectType != 0) value.ObjectType = objectType;
 							value.IsDead = false;
 							value.CurrentHp = num2;
 							if (num2 > 0)
@@ -1683,6 +1779,7 @@ internal class DpsTrackerMod : IDisposable
 						value = new EnemyCombatTracker
 						{
 							EntityId = targetId,
+							ObjectType = objectType,
 							Name = enemyName,
 							MaxHp = num,
 							CurrentHp = num2,
@@ -1848,6 +1945,13 @@ internal class DpsTrackerMod : IDisposable
 	{
 		MapObject player = client?.Player;
 		if (player == null) return;
+		eventDamageModifiers.TryGetMultiplier(player.CrucibleId, player.BloodRitualId, out double hudEventMultiplier);
+		projectile.HudContext = new HudDamageSource {
+			ItemId = projectile.ContainerType,
+			Kind = projectile.SummonerId != 0 ? "Summon" : IsMainWeaponSlot(RealmSharkData.GetSlotType(projectile.ContainerType)) ? "Weapon" : "Ability",
+			Attack = player.Attack, Dexterity = player.Dexterity, Vitality = player.Vitality, Wisdom = player.Wisdom,
+			Effects = player.Effects, Effects2 = player.Effects2, EventMultiplier = hudEventMultiplier
+		};
 		projectile.OriginEffects = player.Effects;
 		projectile.OriginEffects2 = player.Effects2;
 		projectile.OriginVitality = player.Vitality;
@@ -1869,6 +1973,8 @@ internal class DpsTrackerMod : IDisposable
 
 	private void LogProjectileDamage(RealmSharkBullet projectile, int targetId, string kind, int reported, int previous, int delta, string combatBoostPayload = null)
 	{
+		if (HudObserver.Accepts(client) && (kind == "local_estimate" || kind == "server_first" || kind == "server_correction"))
+			HudJournal.RecordSourceContext(dungeonStartTime, GetJournalEncounterId(targetId), projectile.HudContext, delta, kind == "local_estimate" ? 0 : reported);
 		MapObject target = null;
 		if (client.Enemies != null) client.Enemies.TryGetValue(targetId, out target);
 		if (target == null && client.Portals != null) client.Portals.TryGetValue(targetId, out target);
@@ -1888,6 +1994,11 @@ internal class DpsTrackerMod : IDisposable
 			projectile.OriginVitality == int.MinValue ? "" : projectile.OriginVitality.ToString(CultureInfo.InvariantCulture),
 			projectile.ScalingApplied ? 1 : 0, projectile.SummonerId, client.Player?.ObjectType ?? 0,
 			DpsDamageDiagnostics.CsvValue(combatBoostPayload)));
+	}
+
+	private int GetJournalEncounterId(int targetId)
+	{
+		lock (allEnemies) return allEnemies.TryGetValue(targetId, out var encounter) ? encounter.JournalIdentity : targetId;
 	}
 
 	private static void AdjustLocalProjectileDamage(EnemyCombatTracker combat, int delta, int hitDelta, bool wasGuarding)
@@ -2065,6 +2176,7 @@ internal class DpsTrackerMod : IDisposable
 					var pellet = new RealmSharkBullet
 					{
 						TotalDmg = realmSharkBullet.TotalDmg,
+						HudContext = realmSharkBullet.HudContext,
 						ArmorPiercing = realmSharkBullet.ArmorPiercing,
 						SummonerId = summonerId,
 						ContainerType = packet.ContainerType,
@@ -2365,8 +2477,9 @@ internal class DpsTrackerMod : IDisposable
 		}
 	}
 
-	public static void LogAbilityUsage(string playerName, string className, string abilityType, string abilityItemName, string details, bool isLocal)
+	public void LogAbilityUsage(string playerName, string className, string abilityType, string abilityItemName, string details, bool isLocal)
 	{
+		if (!OwnsSession()) return;
 		try
 		{
 			if (string.IsNullOrEmpty(playerName))
@@ -2375,6 +2488,7 @@ internal class DpsTrackerMod : IDisposable
 			}
 			lock (abilityLogLock)
 			{
+				if (!OwnsSession()) return;
 				DateTime now = DateTime.Now;
 				for (int i = sessionAbilityLog.Count - 1; i >= Math.Max(0, sessionAbilityLog.Count - 6); i--)
 				{
@@ -2416,11 +2530,13 @@ internal class DpsTrackerMod : IDisposable
 
 	public void OnPartyMemberInfo(IncomingPartyMemberInfoPacket packet)
 	{
+		if (!OwnsSession()) return;
 		if (packet == null) return;
 		try
 		{
 			lock (partyLock)
 			{
+				if (!OwnsSession()) return;
 				sessionPartyId = packet.PartyId;
 				if (packet.PartyPlayers == null || packet.PartyPlayers.Length == 0)
 				{
@@ -2487,11 +2603,13 @@ internal class DpsTrackerMod : IDisposable
 
 	public void OnPartyMemberAdded(PartyMemberAddedPacket packet)
 	{
+		if (!OwnsSession()) return;
 		if (packet == null || string.IsNullOrWhiteSpace(packet.Name)) return;
 		try
 		{
 			lock (partyLock)
 			{
+				if (!OwnsSession()) return;
 				string name = packet.Name.Trim();
 				string cName = GetClassName((ushort)packet.ClassId);
 				if (string.IsNullOrEmpty(cName)) cName = "Unknown";
@@ -2522,11 +2640,13 @@ internal class DpsTrackerMod : IDisposable
 
 	public void OnPartyActionResult(PartyActionResultPacket packet)
 	{
+		if (!OwnsSession()) return;
 		if (packet == null) return;
 		try
 		{
 			lock (partyLock)
 			{
+				if (!OwnsSession()) return;
 				if (packet.Action == PartyActionType.LeftParty || packet.Action == PartyActionType.Kicked)
 				{
 					var match = sessionPartyMembers.Values.FirstOrDefault(m => m.PlayerId == packet.PlayerId);
@@ -2633,11 +2753,13 @@ internal class DpsTrackerMod : IDisposable
 
 	public void OnStasis(StasisPacket packet)
 	{
+		if (!OwnsSession()) return;
 		try
 		{
 			if (packet == null || packet.StasisDuration <= 0f) return;
 			lock (abilityLogLock)
 			{
+				if (!OwnsSession()) return;
 				for (int i = sessionAbilityLog.Count - 1; i >= Math.Max(0, sessionAbilityLog.Count - 6); i--)
 				{
 					var entry = sessionAbilityLog[i];
@@ -2965,6 +3087,7 @@ internal class DpsTrackerMod : IDisposable
 					}
 				}
 				RecordCombatDamage(OwnerId, _damageAmount, flag, text, text2);
+				if (flag && HudObserver.Accepts(client)) HudJournal.RecordSource(dungeonStartTime, GetJournalEncounterId(OwnerId), 0, "Server report", _damageAmount, _damageAmount, client.Player, 1);
 				if (flag)
 					LogProjectileDamage(new RealmSharkBullet { ShooterId = ObjectId, BulletId = packet.BulletId },
 						OwnerId, "server_unmatched", _damageAmount, 0, _damageAmount);
@@ -3100,6 +3223,7 @@ internal class DpsTrackerMod : IDisposable
 
 	public static List<DungeonHistoryItem> GetDungeonHistoryList()
 	{
+		if (!IsSessionVisible()) return new List<DungeonHistoryItem>();
 		List<DungeonHistoryItem> list = new List<DungeonHistoryItem>();
 		string dungeonName = activeTrackerInstance?.currentDungeonName ?? lastLiveSnapshot?.DungeonName ?? "Nexus";
 		double num = ((activeTrackerInstance != null && activeTrackerInstance.dungeonStartTick > 0) ? ((double)(Environment.TickCount - activeTrackerInstance.dungeonStartTick) / 1000.0) : (lastLiveSnapshot?.ElapsedDungeonSeconds ?? 0.0));
@@ -3165,6 +3289,7 @@ internal class DpsTrackerMod : IDisposable
 
 	public static void PushOverlaySnapshot()
 	{
+		if (!IsSessionVisible()) { DpsOverlayManager.UpdateSnapshot(new DpsSnapshot()); return; }
 		lock (sessionDungeonHistory)
 		{
 			if (currentHistoryIndex >= 0 && currentHistoryIndex < sessionDungeonHistory.Count)
@@ -3195,25 +3320,32 @@ internal class DpsTrackerMod : IDisposable
 
 	public void PushSnapshotToOverlay()
 	{
+		if (!HudObserver.Accepts(client)) return;
 		try
 		{
 			activeTrackerInstance = this;
+			bool ownsSession = OwnsSession();
+			string scope = HudJournal.ScopeId;
 			lock (sessionDungeonHistory)
 			{
-				if (currentHistoryIndex >= 0 && currentHistoryIndex < sessionDungeonHistory.Count)
+				if (ownsSession && currentHistoryIndex >= 0 && currentHistoryIndex < sessionDungeonHistory.Count)
 				{
 					lastLiveSnapshot = CompileCurrentSnapshot();
+					if (!HudObserver.Accepts(client) || scope != HudJournal.ScopeId) return;
+					HudJournal.ObserveSnapshot(lastLiveSnapshot);
 					return;
 				}
 			}
 			DpsSnapshot dpsSnapshot = CompileCurrentSnapshot();
+			if (!HudObserver.Accepts(client) || scope != HudJournal.ScopeId) return;
 			dpsSnapshot.HistoryIndex = -1;
 			lock (sessionDungeonHistory)
 			{
-				dpsSnapshot.HistoryTotalCount = sessionDungeonHistory.Count;
+				dpsSnapshot.HistoryTotalCount = ownsSession ? sessionDungeonHistory.Count : 0;
 			}
 			dpsSnapshot.SelectedMonsterMode = selectedMonsterMode;
 			lastLiveSnapshot = dpsSnapshot;
+			HudJournal.ObserveSnapshot(dpsSnapshot);
 			DpsOverlayManager.UpdateSnapshot(dpsSnapshot);
 		}
 		catch
@@ -3223,6 +3355,7 @@ internal class DpsTrackerMod : IDisposable
 
 	private DpsSnapshot CompileCurrentSnapshot()
 	{
+		bool ownsSession = OwnsSession();
 		double num = ((dungeonStartTick > 0) ? ((double)(Environment.TickCount - dungeonStartTick) / 1000.0) : 1.0);
 		if (num < 1.0)
 		{
@@ -3303,6 +3436,12 @@ internal class DpsTrackerMod : IDisposable
 			localPlayerInfo.Vitality = Player.Vitality;
 			localPlayerInfo.Wisdom = Player.Wisdom;
 			localPlayerInfo.Dexterity = Player.Dexterity;
+			localPlayerInfo.ExaltationBonusDamage = Player.ExaltationBonusDamage > 0 ? Player.ExaltationBonusDamage : 1000;
+			localPlayerInfo.Damaging = Player.IsDamaging(); localPlayerInfo.Berserk = Player.IsBerserk();
+			localPlayerInfo.Weak = Player.IsWeak(); localPlayerInfo.Dazed = Player.IsDazed();
+			localPlayerInfo.CrucibleId = Player.CrucibleId ?? ""; localPlayerInfo.BloodRitualId = Player.BloodRitualId ?? "";
+			localPlayerInfo.HasChallengeDamageBonus = eventDamageModifiers.TryGetMultiplier(Player.CrucibleId, Player.BloodRitualId, out double liveChallengeMultiplier);
+			localPlayerInfo.ChallengeDamageMultiplier = liveChallengeMultiplier;
 			localPlayerInfo.BaseLife = Player.MaxHp - Player.HealthBonus;
 			localPlayerInfo.BaseMana = Player.MaxMp - Player.ManaBonus;
 			localPlayerInfo.BaseAttack = Player.Attack - Player.AttackBonus;
@@ -3434,22 +3573,22 @@ internal class DpsTrackerMod : IDisposable
 		List<LootDropEntry> lootDrops;
 		lock (sessionLootDrops)
 		{
-			lootDrops = sessionLootDrops.ToList();
+			lootDrops = sessionLootDrops.Where(x => x.JournalScopeId == HudJournal.ScopeId).ToList();
 		}
 		List<LootBagDrop> lootBags;
 		lock (sessionLootBags)
 		{
-			lootBags = sessionLootBags.ToList();
+			lootBags = sessionLootBags.Where(x => x.JournalScopeId == HudJournal.ScopeId).ToList();
 		}
 		List<AbilityLogEntry> abilityLog;
 		lock (abilityLogLock)
 		{
-			abilityLog = sessionAbilityLog.ToList();
+			abilityLog = ownsSession ? sessionAbilityLog.ToList() : new List<AbilityLogEntry>();
 		}
 		List<PartyMemberEntry> partyMembers = new List<PartyMemberEntry>();
 		lock (partyLock)
 		{
-			foreach (var kvp in sessionPartyMembers)
+			foreach (var kvp in sessionPartyMembers.Where(_ => ownsSession))
 			{
 				PartyTrackerEntry p = kvp.Value;
 				PlayerParseEntry inDungeonPlayer = null;
@@ -3543,6 +3682,7 @@ internal class DpsTrackerMod : IDisposable
 
 	public void HandleCommand(GenericFailurePacket packet)
 	{
+		if (!OwnsSession()) return;
 		if (packet == null)
 		{
 			return;

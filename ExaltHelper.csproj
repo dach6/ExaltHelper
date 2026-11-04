@@ -23,6 +23,8 @@
 
   <ItemGroup>
     <None Update="assets\**\*" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="THIRD-PARTY-NOTICES.md" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="docs\HUD-GUIDE.md" CopyToOutputDirectory="PreserveNewest" />
     <None Update="ExaltHelper_Data\**\*.*">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

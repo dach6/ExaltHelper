@@ -4,7 +4,7 @@ Suggested repository name: **ExaltHelper**
 
 Suggested description:
 
-> A Windows companion for Realm of the Mad God Exalt with DPS tracking, a combat HUD, player and party inspection, loot logs, Moonlight Village tracking, and configurable gameplay utilities.
+> A Windows companion for Realm of the Mad God Exalt with compact and desktop HUD modes, missions and quests, account tools, combat/loot/chat history, and Moonlight Village tracking.
 
 ## Create the repository
 
@@ -33,12 +33,12 @@ git push -u origin main
 
 ## Create the release
 
-Create a GitHub release with tag **v1.0.0** and title **ExaltHelper v1.0.0**. Attach `ExaltHelper-Release.zip` for users to download.
+Create a GitHub release with tag **v1.1.0** and title **ExaltHelper v1.1.0**. Attach `ExaltHelper-1.1.0-Release.zip` for users to download.
 
 Suggested release description:
 
-> ExaltHelper brings DPS tracking, encounter history, player and equipment inspection, party and loot logs, and Moonlight Village tools to a configurable in-game HUD. Includes launcher integration and gameplay utilities.
+> ExaltHelper 1.1 adds a resizable desktop HUD for a second monitor, persistent widgets/taskbar, missions/quests, account and collection views, searchable combat/loot/chat history and a theoretical DPS calculator. Includes the existing compact HUD, launcher and Moonlight Village tools.
 >
-> Download and extract `ExaltHelper-Release.zip`, then run `ExaltHelper.exe`. Requires Windows, .NET Framework 4.8, and Realm of the Mad God Exalt. F8 toggles the HUD; F9 toggles click-through.
+> Download and extract `ExaltHelper-1.1.0-Release.zip`, then run `ExaltHelper.exe`. Requires Windows, .NET Framework 4.8, and Realm of the Mad God Exalt. F8 toggles the active HUD; F9 locks the compact overlay; F10 switches desktop/compact modes. See the included HUD guide and verification ledger for offline test evidence and live-game validation limits.
 
 Dependency DLLs, compiled UI resources, game data, and the native hook are required repository inputs. The `.gitignore` excludes build output, runtime settings, diagnostics, and packet captures.

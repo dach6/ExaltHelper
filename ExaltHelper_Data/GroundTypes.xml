@@ -32513,6 +32513,20 @@
     <NoBlend />
     <NoWalk />
   </Ground>
+  <Ground id="NoBlend Black" type="0x8377">
+    <Texture>
+      <File>lofiEnvironment3</File>
+      <Index>0xdc</Index>
+    </Texture>
+    <NoBlend />
+  </Ground>
+  <Ground id="NoBlend Black Outer" type="0x8378">
+    <Texture>
+      <File>lofiEnvironment3</File>
+      <Index>0xdc</Index>
+    </Texture>
+    <NoBlend />
+  </Ground>
   <Ground type="0x50e6" id="MV Gravel Dark">
     <RandomTexture>
       <Texture>
@@ -36902,6 +36916,417 @@
     <ConditionEffect duration="0.4">Invincible</ConditionEffect>
     <Animate dx="0.002" dy="0.002">Flow</Animate>
     <Sink />
+  </Ground>
+  <Ground type="0x5b3c" id="OT Sandlight">
+    <RandomTexture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1121</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1122</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1123</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1124</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1125</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1126</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1147</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1148</Index>
+      </Texture>
+    </RandomTexture>
+    <NoBlend />
+    <Edge>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>466</Index>
+      </Texture>
+    </Edge>
+    <Corner>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>470</Index>
+      </Texture>
+    </Corner>
+  </Ground>
+  <Ground type="0x5b3d" id="OT Sanddark">
+    <RandomTexture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1127</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1128</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1129</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1130</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1131</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1132</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1133</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1134</Index>
+      </Texture>
+    </RandomTexture>
+    <NoBlend />
+    <Edge>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>466</Index>
+      </Texture>
+    </Edge>
+    <Corner>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>470</Index>
+      </Texture>
+    </Corner>
+  </Ground>
+  <Ground type="0x5b3e" id="OT cornerBR">
+    <RandomTexture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1149</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1150</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1151</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1152</Index>
+      </Texture>
+    </RandomTexture>
+    <NoBlend />
+    <Edge>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>466</Index>
+      </Texture>
+    </Edge>
+    <Corner>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>470</Index>
+      </Texture>
+    </Corner>
+  </Ground>
+  <Ground type="0x5b3f" id="OT cornerBL">
+    <RandomTexture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1153</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1154</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1155</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1156</Index>
+      </Texture>
+    </RandomTexture>
+    <NoBlend />
+    <Edge>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>466</Index>
+      </Texture>
+    </Edge>
+    <Corner>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>470</Index>
+      </Texture>
+    </Corner>
+  </Ground>
+  <Ground type="0x5b40" id="OT cornerTR">
+    <RandomTexture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1157</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1158</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1159</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1160</Index>
+      </Texture>
+    </RandomTexture>
+    <NoBlend />
+    <Edge>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>466</Index>
+      </Texture>
+    </Edge>
+    <Corner>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>470</Index>
+      </Texture>
+    </Corner>
+  </Ground>
+  <Ground type="0x5b41" id="OT cornerTL">
+    <RandomTexture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1161</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1162</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1163</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1164</Index>
+      </Texture>
+    </RandomTexture>
+    <NoBlend />
+    <Edge>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>466</Index>
+      </Texture>
+    </Edge>
+    <Corner>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>470</Index>
+      </Texture>
+    </Corner>
+  </Ground>
+  <Ground type="0x5b42" id="OT separationTOP">
+    <RandomTexture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1165</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1166</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1167</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1168</Index>
+      </Texture>
+    </RandomTexture>
+    <NoBlend />
+    <Edge>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>466</Index>
+      </Texture>
+    </Edge>
+    <Corner>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>470</Index>
+      </Texture>
+    </Corner>
+  </Ground>
+  <Ground type="0x5b43" id="OT separationRIGHT">
+    <RandomTexture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1169</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1170</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1171</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1172</Index>
+      </Texture>
+    </RandomTexture>
+    <NoBlend />
+    <Edge>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>466</Index>
+      </Texture>
+    </Edge>
+    <Corner>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>470</Index>
+      </Texture>
+    </Corner>
+  </Ground>
+  <Ground type="0x5b44" id="OT separationLEFT">
+    <RandomTexture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1173</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1174</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1175</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1176</Index>
+      </Texture>
+    </RandomTexture>
+    <NoBlend />
+    <Edge>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>466</Index>
+      </Texture>
+    </Edge>
+    <Corner>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>470</Index>
+      </Texture>
+    </Corner>
+  </Ground>
+  <Ground type="0x5b45" id="OT separationDOWN">
+    <RandomTexture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1177</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1178</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1179</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1180</Index>
+      </Texture>
+    </RandomTexture>
+    <NoBlend />
+    <Edge>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>466</Index>
+      </Texture>
+    </Edge>
+    <Corner>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>470</Index>
+      </Texture>
+    </Corner>
+  </Ground>
+  <Ground type="0x5b46" id="OT gravel">
+    <RandomTexture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1181</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1182</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1183</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1184</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1185</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1186</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1187</Index>
+      </Texture>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>1188</Index>
+      </Texture>
+    </RandomTexture>
+    <NoBlend />
+    <Edge>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>466</Index>
+      </Texture>
+    </Edge>
+    <Corner>
+      <Texture>
+        <File>oceanTrenchObjects8x8</File>
+        <Index>470</Index>
+      </Texture>
+    </Corner>
   </Ground>
   <Ground type="0x202c" id="Ohorde Poison">
     <DisplayId>Oryx Poison</DisplayId>
@@ -88515,6 +88940,102 @@
     <Alpha />
     <Color>0xB9B9D3</Color>
   </Ground>
+  <Ground type="0x1670" id="Patty Grass 1">
+    <Texture>
+      <File>stPatricksObjects8x8</File>
+      <Index>0x23</Index>
+    </Texture>
+    <BlendPriority>6</BlendPriority>
+    <RandomOffset />
+  </Ground>
+  <Ground type="0x1671" id="Patty Grass 2">
+    <Texture>
+      <File>stPatricksObjects8x8</File>
+      <Index>0x22</Index>
+    </Texture>
+    <BlendPriority>9</BlendPriority>
+    <RandomOffset />
+  </Ground>
+  <Ground type="0x1672" id="Patty Grass 3">
+    <Texture>
+      <File>stPatricksObjects8x8</File>
+      <Index>0x21</Index>
+    </Texture>
+    <BlendPriority>2</BlendPriority>
+    <RandomOffset />
+  </Ground>
+  <Ground type="0x1673" id="Patty Rainbow Road 1">
+    <Texture>
+      <File>stPatricksObjects8x8</File>
+      <Index>0x19</Index>
+    </Texture>
+    <Speed>1.2</Speed>
+    <BlendPriority>6</BlendPriority>
+  </Ground>
+  <Ground type="0x1674" id="Patty Rainbow Road 2">
+    <Texture>
+      <File>stPatricksObjects8x8</File>
+      <Index>0x1a</Index>
+    </Texture>
+    <Speed>1.2</Speed>
+    <BlendPriority>6</BlendPriority>
+  </Ground>
+  <Ground type="0x1675" id="Patty Rainbow Road 3">
+    <Texture>
+      <File>stPatricksObjects8x8</File>
+      <Index>0x1b</Index>
+    </Texture>
+    <Speed>1.2</Speed>
+    <BlendPriority>6</BlendPriority>
+  </Ground>
+  <Ground type="0x1676" id="Patty Rainbow Road 4">
+    <Texture>
+      <File>stPatricksObjects8x8</File>
+      <Index>0x1c</Index>
+    </Texture>
+    <Speed>1.2</Speed>
+    <BlendPriority>6</BlendPriority>
+  </Ground>
+  <Ground type="0x1677" id="Patty Rainbow Road Rotated 1">
+    <Texture>
+      <File>stPatricksObjects8x8</File>
+      <Index>0x1d</Index>
+    </Texture>
+    <Speed>1.2</Speed>
+    <BlendPriority>6</BlendPriority>
+  </Ground>
+  <Ground type="0x1678" id="Patty Rainbow Road Rotated 2">
+    <Texture>
+      <File>stPatricksObjects8x8</File>
+      <Index>0x1e</Index>
+    </Texture>
+    <Speed>1.2</Speed>
+    <BlendPriority>6</BlendPriority>
+  </Ground>
+  <Ground type="0x1679" id="Patty Rainbow Road Rotated 3">
+    <Texture>
+      <File>stPatricksObjects8x8</File>
+      <Index>0x1f</Index>
+    </Texture>
+    <Speed>1.2</Speed>
+    <BlendPriority>6</BlendPriority>
+  </Ground>
+  <Ground type="0x167a" id="Patty Rainbow Road Rotated 4">
+    <Texture>
+      <File>stPatricksObjects8x8</File>
+      <Index>0x20</Index>
+    </Texture>
+    <Speed>1.2</Speed>
+    <BlendPriority>6</BlendPriority>
+  </Ground>
+  <Ground type="0x167b" id="Patty Grass 3 No Walk">
+    <Texture>
+      <File>stPatricksObjects8x8</File>
+      <Index>0x21</Index>
+    </Texture>
+    <BlendPriority>6</BlendPriority>
+    <NoWalk />
+  </Ground>
   <Ground type="0x6437" id="KSW Conveyor Right">
     <Texture>
       <File>steamworksObjects8x8</File>
@@ -89585,102 +90106,6 @@
       <File>steamworksObjects8x8</File>
       <Index>634</Index>
     </Texture>
-  </Ground>
-  <Ground type="0x1670" id="Patty Grass 1">
-    <Texture>
-      <File>stPatricksObjects8x8</File>
-      <Index>0x23</Index>
-    </Texture>
-    <BlendPriority>6</BlendPriority>
-    <RandomOffset />
-  </Ground>
-  <Ground type="0x1671" id="Patty Grass 2">
-    <Texture>
-      <File>stPatricksObjects8x8</File>
-      <Index>0x22</Index>
-    </Texture>
-    <BlendPriority>9</BlendPriority>
-    <RandomOffset />
-  </Ground>
-  <Ground type="0x1672" id="Patty Grass 3">
-    <Texture>
-      <File>stPatricksObjects8x8</File>
-      <Index>0x21</Index>
-    </Texture>
-    <BlendPriority>2</BlendPriority>
-    <RandomOffset />
-  </Ground>
-  <Ground type="0x1673" id="Patty Rainbow Road 1">
-    <Texture>
-      <File>stPatricksObjects8x8</File>
-      <Index>0x19</Index>
-    </Texture>
-    <Speed>1.2</Speed>
-    <BlendPriority>6</BlendPriority>
-  </Ground>
-  <Ground type="0x1674" id="Patty Rainbow Road 2">
-    <Texture>
-      <File>stPatricksObjects8x8</File>
-      <Index>0x1a</Index>
-    </Texture>
-    <Speed>1.2</Speed>
-    <BlendPriority>6</BlendPriority>
-  </Ground>
-  <Ground type="0x1675" id="Patty Rainbow Road 3">
-    <Texture>
-      <File>stPatricksObjects8x8</File>
-      <Index>0x1b</Index>
-    </Texture>
-    <Speed>1.2</Speed>
-    <BlendPriority>6</BlendPriority>
-  </Ground>
-  <Ground type="0x1676" id="Patty Rainbow Road 4">
-    <Texture>
-      <File>stPatricksObjects8x8</File>
-      <Index>0x1c</Index>
-    </Texture>
-    <Speed>1.2</Speed>
-    <BlendPriority>6</BlendPriority>
-  </Ground>
-  <Ground type="0x1677" id="Patty Rainbow Road Rotated 1">
-    <Texture>
-      <File>stPatricksObjects8x8</File>
-      <Index>0x1d</Index>
-    </Texture>
-    <Speed>1.2</Speed>
-    <BlendPriority>6</BlendPriority>
-  </Ground>
-  <Ground type="0x1678" id="Patty Rainbow Road Rotated 2">
-    <Texture>
-      <File>stPatricksObjects8x8</File>
-      <Index>0x1e</Index>
-    </Texture>
-    <Speed>1.2</Speed>
-    <BlendPriority>6</BlendPriority>
-  </Ground>
-  <Ground type="0x1679" id="Patty Rainbow Road Rotated 3">
-    <Texture>
-      <File>stPatricksObjects8x8</File>
-      <Index>0x1f</Index>
-    </Texture>
-    <Speed>1.2</Speed>
-    <BlendPriority>6</BlendPriority>
-  </Ground>
-  <Ground type="0x167a" id="Patty Rainbow Road Rotated 4">
-    <Texture>
-      <File>stPatricksObjects8x8</File>
-      <Index>0x20</Index>
-    </Texture>
-    <Speed>1.2</Speed>
-    <BlendPriority>6</BlendPriority>
-  </Ground>
-  <Ground type="0x167b" id="Patty Grass 3 No Walk">
-    <Texture>
-      <File>stPatricksObjects8x8</File>
-      <Index>0x21</Index>
-    </Texture>
-    <BlendPriority>6</BlendPriority>
-    <NoWalk />
   </Ground>
   <Ground type="0x3800" id="SN Bh Sd">
     <Texture>

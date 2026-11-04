@@ -1,0 +1,284 @@
+{
+    "schemaVersion":  1,
+    "gameVersion":  "7.2.0.0.0",
+    "provenance":  {
+                       "origin":  "Locally installed official Production client",
+                       "extractedUtc":  "2026-11-03T18:19:58.9575880Z",
+                       "sources":  [
+                                       {
+                                           "fileName":  "resources.assets",
+                                           "relativePath":  "resources.assets",
+                                           "sha256":  "FDBA43BBE02079D56172746501FC9587A5A70FF6C4E05361B47D6645F8403BB2",
+                                           "bytes":  430230704
+                                       },
+                                       {
+                                           "fileName":  "global-metadata.dat",
+                                           "relativePath":  "il2cpp_data/Metadata/global-metadata.dat",
+                                           "sha256":  "708A0DF1A2988B955FEBCFA4898135849232461372FCDFDFC3279461C2FD92A6",
+                                           "bytes":  17628644
+                                       }
+                                   ],
+                       "versionEvidence":  {
+                                               "byteOffset":  11199167,
+                                               "fileName":  "global-metadata.dat",
+                                               "value":  "7.2.0.0.0"
+                                           },
+                       "extractor":  {
+                                         "fileName":  "Tomato-v1.9.2.jar",
+                                         "sha256":  "A41E7F29F215F4AFF2040F3C5B3E20705052B99034E54A50DCCEB4CB67FC353D",
+                                         "bytes":  8872841,
+                                         "method":  "Tomato-v1.9.2 assets.resextractor.UnityExtractor + assets.AssetExtractor through Java8 Nashorn; headless, isolated staging directory; final object/tile lists regenerated with -Dfile.encoding=UTF-8",
+                                         "listEncoding":  "UTF-8"
+                                     },
+                       "aggregation":  "Direct Object/Ground children merged in ordinal source filename order; original XML node content and raw IDs preserved. Existing runtime resolves the last definition after uint16 conversion. Non-XML performance sidecars excluded.",
+                       "excludedNonXmlTextAssets":  [
+                                                        "PerformanceTestRunInfo.xml",
+                                                        "PerformanceTestRunSettings.xml"
+                                                    ]
+                   },
+    "counts":  {
+                   "objects":  36857,
+                   "runtimeObjects":  36855,
+                   "items":  12843,
+                   "grounds":  10398,
+                   "objectRows":  37338,
+                   "groundRows":  10398
+               },
+    "changes":  {
+                    "previousObjectsSha256":  "99E55963D63DEC0A506CDF47C4CAD9AD87DF333F324BB34653116A0DF4F77DFD",
+                    "addedObjects":  227,
+                    "changedObjects":  327,
+                    "removedObjects":  0,
+                    "addedItems":  65,
+                    "addedGrounds":  13
+                },
+    "sourceIdExceptions":  [
+                               {
+                                   "id":  699470,
+                                   "runtimeId":  44110,
+                                   "objectName":  "CHS Pawn Alt",
+                                   "runtimeName":  "Ghost of Skuld",
+                                   "sourceFile":  "innerWorkingsObjects.xml",
+                                   "inherited":  true
+                               },
+                               {
+                                   "id":  796730,
+                                   "runtimeId":  10298,
+                                   "objectName":  "Sanguine Forest Fleshy Growth",
+                                   "runtimeName":  "Summon Cat Projectile",
+                                   "sourceFile":  "adeptStatic.xml",
+                                   "inherited":  true
+                               },
+                               {
+                                   "id":  811318,
+                                   "runtimeId":  24886,
+                                   "objectName":  "Flying Carpet",
+                                   "runtimeName":  "Echoes of Antinomy x4",
+                                   "sourceFile":  "pets.xml",
+                                   "inherited":  true
+                               }
+                           ],
+    "legacyFallback":  {
+                           "file":  "ID3.list",
+                           "status":  "Retained unchanged; current ObjectID entries take precedence.",
+                           "additionalLegacyIds":  [
+                                                       45208,
+                                                       45100,
+                                                       45418,
+                                                       45207
+                                                   ]
+                       },
+    "nativeHook":  {
+                       "file":  "ExaltHelper_Data/version.dll",
+                       "status":  "Retained unchanged; required IL2CPP exports found in the installed client. Game-specific mappings and authenticated gameplay remain unverified.",
+                       "gameAssemblySha256":  "E213023087E8A09F03A947394FA02BF346C156C30579CDB5562E7D21D4563519"
+                   },
+    "files":  [
+                  {
+                      "relativePath":  "ExaltHelper_Data/Objects.xml",
+                      "sha256":  "FC9151DEEB7FBF1B3EF9788833C8296E1C16C2D5664A9394421914C8E79570CD",
+                      "bytes":  30414837
+                  },
+                  {
+                      "relativePath":  "ExaltHelper_Data/GroundTypes.xml",
+                      "sha256":  "B59186CC758ACED16DCA0B056AA980AA9A3125919936B7DB5B00861D08697261",
+                      "bytes":  2903828
+                  },
+                  {
+                      "relativePath":  "ObjectID.list",
+                      "sha256":  "59BAB61CC000F99D39D655509F5143674CCA410ADDF3B269B7FA82F753D2E59D",
+                      "bytes":  3007445,
+                      "embeddedResource":  "ObjectID.list"
+                  },
+                  {
+                      "relativePath":  "TileID.list",
+                      "sha256":  "DAB485265A98C34F165324249252F71CBC8EA47B0F23F17B5D71C9CBD83A86E3",
+                      "bytes":  762512
+                  },
+                  {
+                      "relativePath":  "assets/flatbuffer/spritesheetf",
+                      "sha256":  "890D96C740774F36BDD96F4A767D6C249EA9B3AFA896F2C42C27EF6FCE345BF2",
+                      "bytes":  13906208
+                  },
+                  {
+                      "relativePath":  "assets/sprites/mapObjects.png",
+                      "sha256":  "3119422DCBB66AD753B4D84A808C2954FEB459729FBF19BC307D2B0CB7CD153F",
+                      "bytes":  7783251
+                  },
+                  {
+                      "relativePath":  "assets/sprites/characters.png",
+                      "sha256":  "BE547F98E206AAEB08DD822C3F03EDD1A6DC45CCEFF2186142524FAA8F5A1D1B",
+                      "bytes":  9361524
+                  },
+                  {
+                      "relativePath":  "assets/xml/mods.xml",
+                      "sha256":  "2AF1FB3A5A6EA6E01DB42BEBBDDFC6DEB2E91D10497EC6977183238F24360C04",
+                      "bytes":  145180
+                  },
+                  {
+                      "relativePath":  "assets/xml/enchantments.xml",
+                      "sha256":  "BE8D2EF6F331D9CB294C340E1877A0B09D676553735D079E5CC6F5FEE9BFCCA5",
+                      "bytes":  976910
+                  },
+                  {
+                      "relativePath":  "assets/xml/forgeProperties.xml",
+                      "sha256":  "2C3D61B2327033C370598D40B93385BDC65E0F9675FF0E2A748B656B97DC7F65",
+                      "bytes":  1128451
+                  },
+                  {
+                      "relativePath":  "ID3.list",
+                      "sha256":  "1E697C056190919E68F51BC14D2048FBECD7803013CC0B9384B00E9EAA49C4BC",
+                      "bytes":  855829,
+                      "embeddedResource":  "ID3.list"
+                  },
+                  {
+                      "relativePath":  "ExaltHelper_Data/version.txt",
+                      "sha256":  "C71207E9E19D6055A32634D33F5D783D6BDB518C8723FAA472D90BCDB5474A65",
+                      "bytes":  11
+                  },
+                  {
+                      "relativePath":  "ExaltHelper_Data/version.dll",
+                      "sha256":  "AE58C5FEBD1A773A3DE0BC3A4F6908298A08B94453D937E70C1AF5252854F750",
+                      "bytes":  251904
+                  }
+              ],
+    "sentinels":  [
+                      {
+                          "id":  6657,
+                          "kind":  "added",
+                          "before":  {
+
+                                     },
+                          "after":  {
+                                        "objectName":  "Shifting Shroud Shiny",
+                                        "displayName":  "Shifting Shroud (Shiny)",
+                                        "slotType":  14,
+                                        "labels":  [
+                                                       "EQUIPMENT",
+                                                       "ARMOR",
+                                                       "ROBE",
+                                                       "UT",
+                                                       "TAB_UT",
+                                                       "POWERTIER_S",
+                                                       "XPBONUS",
+                                                       "REALMWHITE",
+                                                       "SHINY"
+                                                   ],
+                                        "sprite":  true,
+                                        "projectiles":  [
+
+                                                        ],
+                                        "spriteRect":  {
+                                                           "x":  6818,
+                                                           "y":  2006,
+                                                           "width":  8,
+                                                           "height":  8,
+                                                           "atlasRelativePath":  "assets/sprites/mapObjects.png"
+                                                       }
+                                    }
+                      },
+                      {
+                          "id":  6661,
+                          "kind":  "added",
+                          "before":  {
+
+                                     },
+                          "after":  {
+                                        "objectName":  "Kageboshi Shiny",
+                                        "displayName":  "Kageboshi (Shiny)",
+                                        "slotType":  25,
+                                        "labels":  [
+                                                       "EQUIPMENT",
+                                                       "ABILITY",
+                                                       "SHURIKEN",
+                                                       "UT",
+                                                       "TAB_UT",
+                                                       "POWERTIER_B",
+                                                       "XPBONUS",
+                                                       "MPCOST",
+                                                       "REALMWHITE",
+                                                       "STATMOD",
+                                                       "SHINY"
+                                                   ],
+                                        "sprite":  true,
+                                        "projectiles":  [
+                                                            {
+                                                                "id":  0,
+                                                                "minDamage":  400,
+                                                                "maxDamage":  600,
+                                                                "rateOfFire":  1.0
+                                                            }
+                                                        ],
+                                        "spriteRect":  {
+                                                           "x":  6818,
+                                                           "y":  1994,
+                                                           "width":  8,
+                                                           "height":  8,
+                                                           "atlasRelativePath":  "assets/sprites/mapObjects.png"
+                                                       }
+                                    }
+                      },
+                      {
+                          "id":  7397,
+                          "kind":  "changed",
+                          "before":  {
+                                         "objectName":  "Adamantine Helm Shiny",
+                                         "displayName":  "Adamantine Helm Shiny"
+                                     },
+                          "after":  {
+                                        "objectName":  "Adamantine Helm Shiny",
+                                        "displayName":  "Adamantine Helm (Shiny)",
+                                        "slotType":  16,
+                                        "labels":  [
+                                                       "EQUIPMENT",
+                                                       "ABILITY",
+                                                       "HELM",
+                                                       "UT",
+                                                       "TAB_UT",
+                                                       "XPBONUS",
+                                                       "MPCOST",
+                                                       "ORG_ABYSS",
+                                                       "SHINY"
+                                                   ],
+                                        "sprite":  false,
+                                        "projectiles":  [
+
+                                                        ]
+                                    }
+                      },
+                      {
+                          "id":  65497,
+                          "kind":  "existing",
+                          "after":  {
+                                        "objectName":  "Easter Treasure 2025",
+                                        "displayName":  "Biff’s Secrets",
+                                        "labels":  [
+                                                       "EQUIPMENT",
+                                                       "CONSUMABLE",
+                                                       "UT"
+                                                   ],
+                                        "sprite":  false
+                                    }
+                      }
+                  ]
+}

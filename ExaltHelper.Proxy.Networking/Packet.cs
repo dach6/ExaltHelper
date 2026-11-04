@@ -40,6 +40,16 @@ internal class Packet
 		writer.Write(_rawPayload);
 	}
 
+	// A detached payload for passive dashboard observers. Never changes forwarding state.
+	public byte[] GetPayloadBytes()
+	{
+		using var stream = new MemoryStream();
+		using var writer = new PacketWriter(stream);
+		Write(writer);
+		if (ExtraBytes != null && ExtraBytes.Length > 0) writer.Write(ExtraBytes);
+		return stream.ToArray();
+	}
+
 	static Packet()
 	{
 		TypeToIdMap = new Dictionary<Type, byte>

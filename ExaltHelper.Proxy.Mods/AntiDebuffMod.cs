@@ -54,7 +54,7 @@ internal class AntiDebuffMod
 			StatTypeField = StatType.Effects,
 			StatValue = _client.Player?.Effects ?? 0,
 			StatStringValue = string.Empty,
-			SecondaryStatValue = 65
+			SecondaryStatValue = -1 // Compressed sentinel retains the existing wire byte 0x41.
 		};
 	}
 
@@ -65,7 +65,7 @@ internal class AntiDebuffMod
 			StatTypeField = StatType.Effects2,
 			StatValue = _client.Player?.Effects2 ?? 0,
 			StatStringValue = string.Empty,
-			SecondaryStatValue = 65
+			SecondaryStatValue = -1 // Compressed sentinel retains the existing wire byte 0x41.
 		};
 	}
 

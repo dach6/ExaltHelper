@@ -6,6 +6,8 @@ namespace ExaltHelper.Proxy.DataStructures;
 
 internal class LootDropEntry
 {
+	public string JournalScopeId { get; set; }
+
 	public int ItemId { get; set; }
 
 	public string ItemName { get; set; } = "Unknown Item";

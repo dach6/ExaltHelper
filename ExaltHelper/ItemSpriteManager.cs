@@ -30,6 +30,8 @@ internal static class ItemSpriteManager
 
 	public class EquipXmlMeta
 	{
+		public int SlotType;
+
 		public float RateOfFire = -1f;
 
 		public int NumProjectiles = 0;
@@ -58,6 +60,7 @@ internal static class ItemSpriteManager
 		public bool IsShiny;
 
 		public int SlotType;
+		public string[] Labels = Array.Empty<string>();
 
 		public int MinDamage;
 
@@ -293,6 +296,7 @@ internal static class ItemSpriteManager
 				}
 				float result2 = -1f;
 				int result3 = 0;
+				int slotType = 0;
 				Dictionary<int, (int min, int max, bool ap)> projectiles = new Dictionary<int, (int, int, bool)>();
 				List<ProjectileInfo> bullets = new List<ProjectileInfo>();
 				using (XmlReader xmlReader2 = xmlReader.ReadSubtree())
@@ -303,7 +307,11 @@ internal static class ItemSpriteManager
 						{
 							continue;
 						}
-						if (xmlReader2.Name == "RateOfFire")
+						if (xmlReader2.Name == "SlotType" && xmlReader2.Depth == 1)
+						{
+							int.TryParse(xmlReader2.ReadElementContentAsString(), out slotType);
+						}
+						else if (xmlReader2.Name == "RateOfFire")
 						{
 							float.TryParse(xmlReader2.ReadElementContentAsString(), NumberStyles.Float, CultureInfo.InvariantCulture, out result2);
 						}
@@ -441,10 +449,11 @@ internal static class ItemSpriteManager
 						item2.ArmorPiercing = value.ap;
 					}
 				}
-				if (bullets.Count > 0 || result2 > 0f || projectiles.Count > 0)
+				if (slotType > 0 || bullets.Count > 0 || result2 > 0f || projectiles.Count > 0)
 				{
 					equipXmlMap[result] = new EquipXmlMeta
 					{
+						SlotType = slotType,
 						RateOfFire = ((result2 > 0f) ? result2 : 1f),
 						NumProjectiles = ((result3 > 0) ? result3 : 1),
 						Projectiles = projectiles,
@@ -539,6 +548,8 @@ internal static class ItemSpriteManager
 				int numProjectiles = 1;
 				if (equipXmlMap != null && equipXmlMap.TryGetValue(result, out var value2))
 				{
+					// The compact list only carries slots with projectile data.
+					if (value2.SlotType > 0) result3 = value2.SlotType;
 					if (value2.Bullets.Count > 0)
 					{
 						finalBullets = value2.Bullets;
@@ -613,6 +624,7 @@ internal static class ItemSpriteManager
 					GlowColor = glowColor,
 					IsShiny = isShiny,
 					SlotType = result3,
+					Labels = tags.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries),
 					MinDamage = result4,
 					MaxDamage = result5,
 					NumProjectiles = numProjectiles,

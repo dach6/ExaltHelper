@@ -4,9 +4,9 @@ public class PotionInfo
 {
 	public int Type;
 
-	public byte Quantity;
+	public int Quantity;
 
-	public PotionInfo(int type, byte quantity)
+	public PotionInfo(int type, int quantity)
 	{
 		Type = type;
 		Quantity = quantity;

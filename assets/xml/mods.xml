@@ -1,0 +1,3151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DungeonModifiers>
+  <DungeonModifier id="FEEBLEMINIONS_1" type="0x62">
+    <DisplayId>Feeble Minions I</DisplayId>
+    <Description>Minions have 12.5% less DEF</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,DEF,TIER1</Labels>
+    <IncompatibleLabels>DEF</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.875" reqLabels="MINION" stat="Defense" />
+      <EntityStatMultiplier stat="XP" amount="1.05" />
+      <EntityDropMultiplier amount="1.01" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="FEEBLEMINIONS_2" type="0x63">
+    <DisplayId>Feeble Minions II</DisplayId>
+    <Description>Minions have 25% less DEF</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,DEF,TIER2</Labels>
+    <IncompatibleLabels>DEF</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.75" reqLabels="MINION" stat="Defense" />
+      <EntityStatMultiplier stat="XP" amount="1.1" />
+      <EntityDropMultiplier amount="1.02" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="FEEBLEMINIONS_3" type="0x64">
+    <DisplayId>Feeble Minions III</DisplayId>
+    <Description>Minions have 37.5% less DEF</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,DEF,TIER3</Labels>
+    <IncompatibleLabels>DEF</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.625" reqLabels="MINION" stat="Defense" />
+      <EntityStatMultiplier stat="XP" amount="1.15" />
+      <EntityDropMultiplier amount="1.03" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="FEEBLEMINIONS_4" type="0x65">
+    <DisplayId>Feeble Minions IV</DisplayId>
+    <Description>Minions have 50% less DEF</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,DEF,TIER4</Labels>
+    <IncompatibleLabels>DEF</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.5" reqLabels="MINION" stat="Defense" />
+      <EntityStatMultiplier stat="XP" amount="1.2" />
+      <EntityDropMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="FEEBLEBOSS_1" type="0x67">
+    <DisplayId>Feeble Boss I</DisplayId>
+    <Description>Bosses have 12.5% less DEF</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,DEF,TIER1</Labels>
+    <IncompatibleLabels>DEF</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.875" reqLabels="BOSSFIGHT" stat="Defense" />
+      <EntityStatMultiplier stat="XP" amount="1.05" />
+      <EntityDustMultiplier amount="1.01" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="FEEBLEBOSS_2" type="0x68">
+    <DisplayId>Feeble Boss II</DisplayId>
+    <Description>Bosses have 25% less DEF</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,DEF,TIER2</Labels>
+    <IncompatibleLabels>DEF</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.75" reqLabels="BOSSFIGHT" stat="Defense" />
+      <EntityStatMultiplier stat="XP" amount="1.1" />
+      <EntityDustMultiplier amount="1.02" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="FEEBLEBOSS_3" type="0x69">
+    <DisplayId>Feeble Boss III</DisplayId>
+    <Description>Bosses have 37.5% less DEF</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,DEF,TIER3</Labels>
+    <IncompatibleLabels>DEF</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.625" reqLabels="BOSSFIGHT" stat="Defense" />
+      <EntityStatMultiplier stat="XP" amount="1.15" />
+      <EntityDropMultiplier amount="1.01" />
+      <EntityDustMultiplier amount="1.03" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="FEEBLEBOSS_4" type="0x6a">
+    <DisplayId>Feeble Boss IV</DisplayId>
+    <Description>Bosses have 50% less DEF</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,DEF,TIER4</Labels>
+    <IncompatibleLabels>DEF</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.5" reqLabels="BOSSFIGHT" stat="Defense" />
+      <EntityStatMultiplier stat="XP" amount="1.2" />
+      <EntityDropMultiplier amount="1.02" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="TOUGHMINIONS_1" type="0x99">
+    <DisplayId>Tough Minions I</DisplayId>
+    <Description>Minions have 20% more DEF</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,DEF,TIER1</Labels>
+    <IncompatibleLabels>DEF</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.2" reqLabels="MINION" stat="Defense" />
+      <EntityStatMultiplier stat="XP" amount="1.02" />
+      <EntityDustMultiplier amount="1.05" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="TOUGHMINIONS_2" type="0x9a">
+    <DisplayId>Tough Minions II</DisplayId>
+    <Description>Minions have 40% more DEF</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,DEF,TIER2</Labels>
+    <IncompatibleLabels>DEF</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.4" reqLabels="MINION" stat="Defense" />
+      <EntityStatMultiplier stat="XP" amount="1.04" />
+      <EntityDustMultiplier amount="1.1" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="TOUGHMINIONS_3" type="0x9b">
+    <DisplayId>Tough Minions III</DisplayId>
+    <Description>Minions have 60% more DEF</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,DEF,TIER3</Labels>
+    <IncompatibleLabels>DEF</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.6" reqLabels="MINION" stat="Defense" />
+      <EntityStatMultiplier stat="XP" amount="1.06" />
+      <EntityDropMultiplier amount="1.01" />
+      <EntityDustMultiplier amount="1.15" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="TOUGHMINIONS_4" type="0x9c">
+    <DisplayId>Tough Minions IV</DisplayId>
+    <Description>Minions have 80% more DEF</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,DEF,TIER4</Labels>
+    <IncompatibleLabels>DEF</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.8" reqLabels="MINION" stat="Defense" />
+      <EntityStatMultiplier stat="XP" amount="1.08" />
+      <EntityDropMultiplier amount="1.02" />
+      <EntityDustMultiplier amount="1.2" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="TOUGHBOSS_1" type="0x9e">
+    <DisplayId>Tough Boss I</DisplayId>
+    <Description>Bosses have 20% more DEF</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,DEF,TIER1</Labels>
+    <IncompatibleLabels>DEF</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.2" reqLabels="BOSSFIGHT" stat="Defense" />
+      <EntityDropMultiplier amount="1.05" />
+      <EntityDustMultiplier amount="1.02" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="TOUGHBOSS_2" type="0x9f">
+    <DisplayId>Tough Boss II</DisplayId>
+    <Description>Bosses have 40% more DEF</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,DEF,TIER2</Labels>
+    <IncompatibleLabels>DEF</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.4" reqLabels="BOSSFIGHT" stat="Defense" />
+      <EntityDropMultiplier amount="1.1" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="TOUGHBOSS_3" type="0xa0">
+    <DisplayId>Tough Boss III</DisplayId>
+    <Description>Bosses have 60% more DEF</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,DEF,TIER3</Labels>
+    <IncompatibleLabels>DEF</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.6" reqLabels="BOSSFIGHT" stat="Defense" />
+      <EntityDropMultiplier amount="1.15" />
+      <EntityDustMultiplier amount="1.06" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="TOUGHBOSS_4" type="0xa1">
+    <DisplayId>Tough Boss IV</DisplayId>
+    <Description>Bosses have 80% more DEF</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,DEF,TIER4</Labels>
+    <IncompatibleLabels>DEF</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.8" reqLabels="BOSSFIGHT" stat="Defense" />
+      <EntityDropMultiplier amount="1.2" />
+      <EntityDustMultiplier amount="1.08" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="TAMEMINIONS_1" type="0x58">
+    <DisplayId>Tame Minions I</DisplayId>
+    <Description>Minions deal 10% less DMG</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,DAMAGE,TIER1</Labels>
+    <IncompatibleLabels>DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.9" reqLabels="MINION" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.05" />
+      <EntityDropMultiplier amount="1.01" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="TAMEMINIONS_2" type="0x59">
+    <DisplayId>Tame Minions II</DisplayId>
+    <Description>Minions deal 15% less DMG</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,DAMAGE,TIER2</Labels>
+    <IncompatibleLabels>DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.85" reqLabels="MINION" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.1" />
+      <EntityDropMultiplier amount="1.02" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="TAMEMINIONS_3" type="0x5a">
+    <DisplayId>Tame Minions III</DisplayId>
+    <Description>Minions deal 20% less DMG</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,DAMAGE,TIER3</Labels>
+    <IncompatibleLabels>DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.8" reqLabels="MINION" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.15" />
+      <EntityDropMultiplier amount="1.03" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="TAMEMINIONS_4" type="0x5b">
+    <DisplayId>Tame Minions IV</DisplayId>
+    <Description>Minions deal 25% less DMG</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,DAMAGE,TIER4</Labels>
+    <IncompatibleLabels>DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.75" reqLabels="MINION" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.2" />
+      <EntityDropMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="TAMEBOSS_1" type="0x5d">
+    <DisplayId>Tame Boss I</DisplayId>
+    <Description>Bosses deal 10% less DMG</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,DAMAGE,TIER1</Labels>
+    <IncompatibleLabels>DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.9" reqLabels="BOSSFIGHT" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.05" />
+      <EntityDustMultiplier amount="1.01" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="TAMEBOSS_2" type="0x5e">
+    <DisplayId>Tame Boss II</DisplayId>
+    <Description>Bosses deal 15% less DMG</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,DAMAGE,TIER2</Labels>
+    <IncompatibleLabels>DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.85" reqLabels="BOSSFIGHT" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.1" />
+      <EntityDustMultiplier amount="1.02" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="TAMEBOSS_3" type="0x5f">
+    <DisplayId>Tame Boss III</DisplayId>
+    <Description>Bosses deal 20% less DMG</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,DAMAGE,TIER3</Labels>
+    <IncompatibleLabels>DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.8" reqLabels="BOSSFIGHT" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.15" />
+      <EntityDropMultiplier amount="1.01" />
+      <EntityDustMultiplier amount="1.03" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="TAMEBOSS_4" type="0x60">
+    <DisplayId>Tame Boss IV</DisplayId>
+    <Description>Bosses deal 25% less DMG</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,DAMAGE,TIER4</Labels>
+    <IncompatibleLabels>DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.75" reqLabels="BOSSFIGHT" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.2" />
+      <EntityDropMultiplier amount="1.02" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="FEROCIOUSMINIONS_1" type="0x8f">
+    <DisplayId>Ferocious Minions I</DisplayId>
+    <Description>Minions deal 10% more DMG</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,DAMAGE,TIER1</Labels>
+    <IncompatibleLabels>DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.10" reqLabels="MINION" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.02" />
+      <EntityDustMultiplier amount="1.05" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="FEROCIOUSMINIONS_2" type="0x90">
+    <DisplayId>Ferocious Minions II</DisplayId>
+    <Description>Minions deal 15% more DMG</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,DAMAGE,TIER2</Labels>
+    <IncompatibleLabels>DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.15" reqLabels="MINION" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.04" />
+      <EntityDustMultiplier amount="1.1" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="FEROCIOUSMINIONS_3" type="0x91">
+    <DisplayId>Ferocious Minions III</DisplayId>
+    <Description>Minions deal 20% more DMG</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,DAMAGE,TIER3</Labels>
+    <IncompatibleLabels>DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.2" reqLabels="MINION" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.06" />
+      <EntityDropMultiplier amount="1.01" />
+      <EntityDustMultiplier amount="1.15" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="FEROCIOUSMINIONS_4" type="0x92">
+    <DisplayId>Ferocious Minions IV</DisplayId>
+    <Description>Minions deal 25% more DMG</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,DAMAGE,TIER4</Labels>
+    <IncompatibleLabels>DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.25" reqLabels="MINION" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.08" />
+      <EntityDropMultiplier amount="1.02" />
+      <EntityDustMultiplier amount="1.2" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="FEROCIOUSBOSS_1" type="0x94">
+    <DisplayId>Ferocious Boss I</DisplayId>
+    <Description>Bosses deal 10% more DMG</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,DAMAGE,TIER1</Labels>
+    <IncompatibleLabels>DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.10" reqLabels="BOSSFIGHT" stat="Damage" />
+      <EntityDropMultiplier amount="1.05" />
+      <EntityDustMultiplier amount="1.02" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="FEROCIOUSBOSS_2" type="0x95">
+    <DisplayId>Ferocious Boss II</DisplayId>
+    <Description>Bosses deal 15% more DMG</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,DAMAGE,TIER2</Labels>
+    <IncompatibleLabels>DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.15" reqLabels="BOSSFIGHT" stat="Damage" />
+      <EntityDropMultiplier amount="1.1" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="FEROCIOUSBOSS_3" type="0x96">
+    <DisplayId>Ferocious Boss III</DisplayId>
+    <Description>Bosses deal 20% more DMG</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,DAMAGE,TIER3</Labels>
+    <IncompatibleLabels>DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.20" reqLabels="BOSSFIGHT" stat="Damage" />
+      <EntityDropMultiplier amount="1.15" />
+      <EntityDustMultiplier amount="1.06" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="FEROCIOUSBOSS_4" type="0x97">
+    <DisplayId>Ferocious Boss IV</DisplayId>
+    <Description>Bosses deal 25% more DMG</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,DAMAGE,TIER4</Labels>
+    <IncompatibleLabels>DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.25" reqLabels="BOSSFIGHT" stat="Damage" />
+      <EntityDropMultiplier amount="1.2" />
+      <EntityDustMultiplier amount="1.08" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="WEAKMINIONS_1" type="0x4e">
+    <DisplayId>Weak Minions I</DisplayId>
+    <Description>Minions have 10% less HP</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,HEALTH,TIER1</Labels>
+    <IncompatibleLabels>HEALTH</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.9" reqLabels="MINION" stat="MaxHitPoints" />
+      <EntityStatMultiplier stat="XP" amount="1.05" />
+      <EntityDropMultiplier amount="1.01" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="WEAKMINIONS_2" type="0x4f">
+    <DisplayId>Weak Minions II</DisplayId>
+    <Description>Minions have 15% less HP</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,HEALTH,TIER2</Labels>
+    <IncompatibleLabels>HEALTH</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.85" reqLabels="MINION" stat="MaxHitPoints" />
+      <EntityStatMultiplier stat="XP" amount="1.1" />
+      <EntityDropMultiplier amount="1.02" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="WEAKMINIONS_3" type="0x50">
+    <DisplayId>Weak Minions III</DisplayId>
+    <Description>Minions have 20% less HP</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,HEALTH,TIER3</Labels>
+    <IncompatibleLabels>HEALTH</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.8" reqLabels="MINION" stat="MaxHitPoints" />
+      <EntityStatMultiplier stat="XP" amount="1.15" />
+      <EntityDropMultiplier amount="1.03" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="WEAKMINIONS_4" type="0x51">
+    <DisplayId>Weak Minions IV</DisplayId>
+    <Description>Minions have 25% less HP</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,HEALTH,TIER4</Labels>
+    <IncompatibleLabels>HEALTH</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.75" reqLabels="MINION" stat="MaxHitPoints" />
+      <EntityStatMultiplier stat="XP" amount="1.2" />
+      <EntityDropMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="WEAKBOSS_1" type="0x53">
+    <DisplayId>Weak Boss I</DisplayId>
+    <Description>Bosses have 10% less HP</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,HEALTH,TIER1</Labels>
+    <IncompatibleLabels>HEALTH</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.9" reqLabels="BOSSFIGHT" stat="MaxHitPoints" />
+      <EntityStatMultiplier stat="XP" amount="1.05" />
+      <EntityDustMultiplier amount="1.01" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="WEAKBOSS_2" type="0x54">
+    <DisplayId>Weak Boss II</DisplayId>
+    <Description>Bosses have 15% less HP</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,HEALTH,TIER2</Labels>
+    <IncompatibleLabels>HEALTH</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.85" reqLabels="BOSSFIGHT" stat="MaxHitPoints" />
+      <EntityStatMultiplier stat="XP" amount="1.1" />
+      <EntityDustMultiplier amount="1.02" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="WEAKBOSS_3" type="0x55">
+    <DisplayId>Weak Boss III</DisplayId>
+    <Description>Bosses have 20% less HP</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,HEALTH,TIER3</Labels>
+    <IncompatibleLabels>HEALTH</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.8" reqLabels="BOSSFIGHT" stat="MaxHitPoints" />
+      <EntityStatMultiplier stat="XP" amount="1.15" />
+      <EntityDropMultiplier amount="1.01" />
+      <EntityDustMultiplier amount="1.03" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="WEAKBOSS_4" type="0x56">
+    <DisplayId>Weak Boss IV</DisplayId>
+    <Description>Bosses have 25% less HP</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,HEALTH,TIER4</Labels>
+    <IncompatibleLabels>HEALTH</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.75" reqLabels="BOSSFIGHT" stat="MaxHitPoints" />
+      <EntityStatMultiplier stat="XP" amount="1.2" />
+      <EntityDropMultiplier amount="1.02" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="HEALTHYMINIONS_1" type="0x85">
+    <DisplayId>Healthy Minions I</DisplayId>
+    <Description>Minions have 10% more HP</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,HEALTH,TIER1</Labels>
+    <IncompatibleLabels>HEALTH</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.1" reqLabels="MINION" stat="MaxHitPoints" />
+      <EntityStatMultiplier stat="XP" amount="1.02" />
+      <EntityDustMultiplier amount="1.05" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="HEALTHYMINIONS_2" type="0x86">
+    <DisplayId>Healthy Minions II</DisplayId>
+    <Description>Minions have 15% more HP</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,HEALTH,TIER2</Labels>
+    <IncompatibleLabels>HEALTH</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.15" reqLabels="MINION" stat="MaxHitPoints" />
+      <EntityStatMultiplier stat="XP" amount="1.04" />
+      <EntityDustMultiplier amount="1.1" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="HEALTHYMINIONS_3" type="0x87">
+    <DisplayId>Healthy Minions III</DisplayId>
+    <Description>Minions have 20% more HP</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,HEALTH,TIER3</Labels>
+    <IncompatibleLabels>HEALTH</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.2" reqLabels="MINION" stat="MaxHitPoints" />
+      <EntityStatMultiplier stat="XP" amount="1.06" />
+      <EntityDropMultiplier amount="1.01" />
+      <EntityDustMultiplier amount="1.15" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="HEALTHYMINIONS_4" type="0x88">
+    <DisplayId>Healthy Minions IV</DisplayId>
+    <Description>Minions have 25% more HP</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,HEALTH,TIER4</Labels>
+    <IncompatibleLabels>HEALTH</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.25" reqLabels="MINION" stat="MaxHitPoints" />
+      <EntityStatMultiplier stat="XP" amount="1.08" />
+      <EntityDropMultiplier amount="1.02" />
+      <EntityDustMultiplier amount="1.2" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="HEALTHYBOSS_1" type="0x8a">
+    <DisplayId>Healthy Boss I</DisplayId>
+    <Description>Bosses have 10% more HP</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,HEALTH,TIER1</Labels>
+    <IncompatibleLabels>HEALTH</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.1" reqLabels="BOSSFIGHT" stat="MaxHitPoints" />
+      <EntityDropMultiplier amount="1.05" />
+      <EntityDustMultiplier amount="1.02" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="HEALTHYBOSS_2" type="0x8b">
+    <DisplayId>Healthy Boss II</DisplayId>
+    <Description>Bosses have 15% more HP</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,HEALTH,TIER2</Labels>
+    <IncompatibleLabels>HEALTH</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.15" reqLabels="BOSSFIGHT" stat="MaxHitPoints" />
+      <EntityDropMultiplier amount="1.1" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="HEALTHYBOSS_3" type="0x8c">
+    <DisplayId>Healthy Boss III</DisplayId>
+    <Description>Bosses have 20% more HP</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,HEALTH,TIER3</Labels>
+    <IncompatibleLabels>HEALTH</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.2" reqLabels="BOSSFIGHT" stat="MaxHitPoints" />
+      <EntityDropMultiplier amount="1.15" />
+      <EntityDustMultiplier amount="1.06" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="HEALTHYBOSS_4" type="0x8d">
+    <DisplayId>Healthy Boss IV</DisplayId>
+    <Description>Bosses have 25% more HP</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,HEALTH,TIER4</Labels>
+    <IncompatibleLabels>HEALTH</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.25" reqLabels="BOSSFIGHT" stat="MaxHitPoints" />
+      <EntityDropMultiplier amount="1.2" />
+      <EntityDustMultiplier amount="1.08" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="GLASSMINIONS_1" type="0x76">
+    <DisplayId>Glass Minions I</DisplayId>
+    <Description>Minions deal 12% more DMG but have 5% less HP</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,HEALTH,DAMAGE,TIER1</Labels>
+    <IncompatibleLabels>HEALTH,DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.95" reqLabels="MINION" stat="MaxHitPoints" />
+      <EntityStatMultiplier amount="1.12" reqLabels="MINION" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.02" />
+      <EntityDustMultiplier amount="1.05" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="GLASSMINIONS_2" type="0x77">
+    <DisplayId>Glass Minions II</DisplayId>
+    <Description>Minions deal 20% more DMG but have 10% less HP</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,HEALTH,DAMAGE,TIER2</Labels>
+    <IncompatibleLabels>HEALTH,DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.9" reqLabels="MINION" stat="MaxHitPoints" />
+      <EntityStatMultiplier amount="1.2" reqLabels="MINION" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.04" />
+      <EntityDustMultiplier amount="1.1" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="GLASSMINIONS_3" type="0x78">
+    <DisplayId>Glass Minions III</DisplayId>
+    <Description>Minions deal 28% more DMG but have 15% less HP</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,HEALTH,DAMAGE,TIER3</Labels>
+    <IncompatibleLabels>HEALTH,DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.85" reqLabels="MINION" stat="MaxHitPoints" />
+      <EntityStatMultiplier amount="1.28" reqLabels="MINION" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.06" />
+      <EntityDropMultiplier amount="1.01" />
+      <EntityDustMultiplier amount="1.15" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="GLASSMINIONS_4" type="0x79">
+    <DisplayId>Glass Minions IV</DisplayId>
+    <Description>Minions deal 36% more DMG but have 20% less HP</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,HEALTH,DAMAGE,TIER4</Labels>
+    <IncompatibleLabels>HEALTH,DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.8" reqLabels="MINION" stat="MaxHitPoints" />
+      <EntityStatMultiplier amount="1.36" reqLabels="MINION" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.08" />
+      <EntityDropMultiplier amount="1.02" />
+      <EntityDustMultiplier amount="1.2" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="GLASSBOSS_1" type="0xad">
+    <DisplayId>Glass Boss I</DisplayId>
+    <Description>Bosses deal 12% more DMG but have 5% less HP</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,HEALTH,DAMAGE,TIER1</Labels>
+    <IncompatibleLabels>HEALTH,DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.95" reqLabels="BOSSFIGHT" stat="MaxHitPoints" />
+      <EntityStatMultiplier amount="1.12" reqLabels="BOSSFIGHT" stat="Damage" />
+      <EntityDropMultiplier amount="1.06" />
+      <EntityDustMultiplier amount="1.02" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="GLASSBOSS_2" type="0xae">
+    <DisplayId>Glass Boss II</DisplayId>
+    <Description>Bosses deal 20% more DMG but have 10% less HP</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,HEALTH,DAMAGE,TIER2</Labels>
+    <IncompatibleLabels>HEALTH,DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.9" reqLabels="BOSSFIGHT" stat="MaxHitPoints" />
+      <EntityStatMultiplier amount="1.2" reqLabels="BOSSFIGHT" stat="Damage" />
+      <EntityDropMultiplier amount="1.12" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="GLASSBOSS_3" type="0xaf">
+    <DisplayId>Glass Boss III</DisplayId>
+    <Description>Bosses deal 28% more DMG but have 15% less HP</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,HEALTH,DAMAGE,TIER3</Labels>
+    <IncompatibleLabels>HEALTH,DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.85" reqLabels="BOSSFIGHT" stat="MaxHitPoints" />
+      <EntityStatMultiplier amount="1.28" reqLabels="BOSSFIGHT" stat="Damage" />
+      <EntityDropMultiplier amount="1.18" />
+      <EntityDustMultiplier amount="1.06" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="GLASSBOSS_4" type="0xb0">
+    <DisplayId>Glass Boss IV</DisplayId>
+    <Description>Bosses deal 36% more DMG but have 20% less HP</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,HEALTH,DAMAGE,TIER4</Labels>
+    <IncompatibleLabels>HEALTH,DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="0.8" reqLabels="BOSSFIGHT" stat="MaxHitPoints" />
+      <EntityStatMultiplier amount="1.36" reqLabels="BOSSFIGHT" stat="Damage" />
+      <EntityDropMultiplier amount="1.24" />
+      <EntityDustMultiplier amount="1.08" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="ELITEMINIONS_1" type="0xa3">
+    <DisplayId>Elite Minions I</DisplayId>
+    <Description>Minions have 7.5% more HP and deal 7.5% more DMG</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,HEALTH,DAMAGE,TIER1</Labels>
+    <IncompatibleLabels>HEALTH,DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.075" reqLabels="MINION" stat="MaxHitPoints" />
+      <EntityStatMultiplier amount="1.075" reqLabels="MINION" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.02" />
+      <EntityDropMultiplier amount="1.02" />
+      <EntityDustMultiplier amount="1.05" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="ELITEMINIONS_2" type="0xa4">
+    <DisplayId>Elite Minions II</DisplayId>
+    <Description>Minions have 10% more HP and deal 10% more DMG</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,HEALTH,DAMAGE,TIER2</Labels>
+    <IncompatibleLabels>HEALTH,DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.1" reqLabels="MINION" stat="MaxHitPoints" />
+      <EntityStatMultiplier amount="1.1" reqLabels="MINION" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.04" />
+      <EntityDropMultiplier amount="1.04" />
+      <EntityDustMultiplier amount="1.1" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="ELITEMINIONS_3" type="0xa5">
+    <DisplayId>Elite Minions III</DisplayId>
+    <Description>Minions have 12.5% more HP and deal 12.5% more DMG</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,HEALTH,DAMAGE,TIER3</Labels>
+    <IncompatibleLabels>HEALTH,DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.125" reqLabels="MINION" stat="MaxHitPoints" />
+      <EntityStatMultiplier amount="1.125" reqLabels="MINION" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.06" />
+      <EntityDropMultiplier amount="1.06" />
+      <EntityDustMultiplier amount="1.15" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="ELITEMINIONS_4" type="0xa6">
+    <DisplayId>Elite Minions IV</DisplayId>
+    <Description>Minions have 15% more HP and deal 15% more DMG</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,HEALTH,DAMAGE,TIER4</Labels>
+    <IncompatibleLabels>HEALTH,DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.15" reqLabels="MINION" stat="MaxHitPoints" />
+      <EntityStatMultiplier amount="1.15" reqLabels="MINION" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.08" />
+      <EntityDropMultiplier amount="1.08" />
+      <EntityDustMultiplier amount="1.2" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="ELITEBOSS_1" type="0xa8">
+    <DisplayId>Elite Boss I</DisplayId>
+    <Description>Bosses have 7.5% more HP and deal 7.5% more DMG</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,HEALTH,DAMAGE,TIER1</Labels>
+    <IncompatibleLabels>HEALTH,DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.075" reqLabels="BOSSFIGHT" stat="MaxHitPoints" />
+      <EntityStatMultiplier amount="1.075" reqLabels="BOSSFIGHT" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.02" />
+      <EntityDropMultiplier amount="1.05" />
+      <EntityDustMultiplier amount="1.02" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="ELITEBOSS_2" type="0xa9">
+    <DisplayId>Elite Boss II</DisplayId>
+    <Description>Bosses have 10% more HP and deal 10% more DMG</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,HEALTH,DAMAGE,TIER2</Labels>
+    <IncompatibleLabels>HEALTH,DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.1" reqLabels="BOSSFIGHT" stat="MaxHitPoints" />
+      <EntityStatMultiplier amount="1.1" reqLabels="BOSSFIGHT" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.04" />
+      <EntityDropMultiplier amount="1.1" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="ELITEBOSS_3" type="0xaa">
+    <DisplayId>Elite Boss III</DisplayId>
+    <Description>Bosses have 12.5% more HP and deal 12.5% more DMG</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,HEALTH,DAMAGE,TIER3</Labels>
+    <IncompatibleLabels>HEALTH,DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.125" reqLabels="BOSSFIGHT" stat="MaxHitPoints" />
+      <EntityStatMultiplier amount="1.125" reqLabels="BOSSFIGHT" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.06" />
+      <EntityDropMultiplier amount="1.15" />
+      <EntityDustMultiplier amount="1.06" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="ELITEBOSS_4" type="0xa7">
+    <DisplayId>Elite Boss IV</DisplayId>
+    <Description>Bosses have 15% more HP and deal 15% more DMG</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,HEALTH,DAMAGE,TIER4</Labels>
+    <IncompatibleLabels>HEALTH,DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.15" reqLabels="BOSSFIGHT" stat="MaxHitPoints" />
+      <EntityStatMultiplier amount="1.15" reqLabels="BOSSFIGHT" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.08" />
+      <EntityDropMultiplier amount="1.2" />
+      <EntityDustMultiplier amount="1.08" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="ANEMIA_1" type="0xb2">
+    <DisplayId>Anemia I</DisplayId>
+    <Description>Player Healing is reduced by 15%</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,PLAYER,HEALING,TIER1</Labels>
+    <IncompatibleLabels>HEALING</IncompatibleLabels>
+    <Mutators>
+      <PlayerHealMultiplier amount="0.85" methods="Self,External,Regeneration,Pets,Potions" />
+      <EntityDropMultiplier amount="1.06" />
+      <EntityDustMultiplier amount="1.03" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="ANEMIA_2" type="0xb3">
+    <DisplayId>Anemia II</DisplayId>
+    <Description>Player Healing is reduced by 20%</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,PLAYER,HEALING,TIER2</Labels>
+    <IncompatibleLabels>HEALING</IncompatibleLabels>
+    <Mutators>
+      <PlayerHealMultiplier amount="0.8" methods="Self,External,Regeneration,Pets,Potions" />
+      <EntityDropMultiplier amount="1.12" />
+      <EntityDustMultiplier amount="1.06" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="ANEMIA_3" type="0xb7">
+    <DisplayId>Anemia III</DisplayId>
+    <Description>Player Healing is reduced by 25%</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,PLAYER,HEALING,TIER3</Labels>
+    <IncompatibleLabels>HEALING</IncompatibleLabels>
+    <Mutators>
+      <PlayerHealMultiplier amount="0.75" methods="Self,External,Regeneration,Pets,Potions" />
+      <EntityDropMultiplier amount="1.18" />
+      <EntityDustMultiplier amount="1.09" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="ANEMIA_4" type="0xb8">
+    <DisplayId>Anemia IV</DisplayId>
+    <Description>Player Healing is reduced by 30%</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,PLAYER,HEALING,TIER4</Labels>
+    <IncompatibleLabels>HEALING</IncompatibleLabels>
+    <Mutators>
+      <PlayerHealMultiplier amount="0.7" methods="Self,External,Regeneration,Pets,Potions" />
+      <EntityDropMultiplier amount="1.24" />
+      <EntityDustMultiplier amount="1.12" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="VIGOROUS_1" type="0x44">
+    <DisplayId>Vigorous I</DisplayId>
+    <Description>Player Healing is increased by 15%</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,PLAYER,HEALING,TIER1</Labels>
+    <IncompatibleLabels>HEALING</IncompatibleLabels>
+    <Mutators>
+      <PlayerHealMultiplier amount="1.15" methods="Self,External,Regeneration,Pets,Potions" />
+      <EntityStatMultiplier stat="XP" amount="1.02" />
+      <EntityDustMultiplier amount="1.01" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="VIGOROUS_2" type="0x45">
+    <DisplayId>Vigorous II</DisplayId>
+    <Description>Player Healing is increased by 20%</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,PLAYER,HEALING,TIER2</Labels>
+    <IncompatibleLabels>HEALING</IncompatibleLabels>
+    <Mutators>
+      <PlayerHealMultiplier amount="1.2" methods="Self,External,Regeneration,Pets,Potions" />
+      <EntityStatMultiplier stat="XP" amount="1.04" />
+      <EntityDustMultiplier amount="1.02" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="VIGOROUS_3" type="0x46">
+    <DisplayId>Vigorous III</DisplayId>
+    <Description>Player Healing is increased by 25%</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,PLAYER,HEALING,TIER3</Labels>
+    <IncompatibleLabels>HEALING</IncompatibleLabels>
+    <Mutators>
+      <PlayerHealMultiplier amount="1.25" methods="Self,External,Regeneration,Pets,Potions" />
+      <EntityStatMultiplier stat="XP" amount="1.06" />
+      <EntityDropMultiplier amount="1.01" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="VIGOROUS_4" type="0x47">
+    <DisplayId>Vigorous IV</DisplayId>
+    <Description>Player Healing is increased by 30%</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,PLAYER,HEALING,TIER4</Labels>
+    <IncompatibleLabels>HEALING</IncompatibleLabels>
+    <Mutators>
+      <PlayerHealMultiplier amount="1.3" methods="Self,External,Regeneration,Pets,Potions" />
+      <EntityStatMultiplier stat="XP" amount="1.08" />
+      <EntityDropMultiplier amount="1.02" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="UNPREPARED_1" type="0x143">
+    <DisplayId>Unprepared I</DisplayId>
+    <Description>Minions have a 25% lower chance of dropping Health/Mana Potions</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,POTION,TIER1</Labels>
+    <IncompatibleLabels>POTION</IncompatibleLabels>
+    <Mutators>
+      <EntityDropMultiplier amount="0.75" itemId="Health Potion" reqLabels="MINION" />
+      <EntityDropMultiplier amount="0.75" itemId="Magic Potion" reqLabels="MINION" />
+      <EntityDropMultiplier amount="1.01" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="UNPREPARED_2" type="0x144">
+    <DisplayId>Unprepared II</DisplayId>
+    <Description>Minions have a 50% lower chance of dropping Health/Mana Potions</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,POTION,TIER2</Labels>
+    <IncompatibleLabels>POTION</IncompatibleLabels>
+    <Mutators>
+      <EntityDropMultiplier amount="0.5" itemId="Health Potion" reqLabels="MINION" />
+      <EntityDropMultiplier amount="0.5" itemId="Magic Potion" reqLabels="MINION" />
+      <EntityDropMultiplier amount="1.02" />
+      <EntityDustMultiplier amount="1.08" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="UNPREPARED_3" type="0x145">
+    <DisplayId>Unprepared III</DisplayId>
+    <Description>Minions have a 75% lower chance of dropping Health/Mana Potions</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,POTION,TIER3</Labels>
+    <IncompatibleLabels>POTION</IncompatibleLabels>
+    <Mutators>
+      <EntityDropMultiplier amount="0.25" itemId="Health Potion" reqLabels="MINION" />
+      <EntityDropMultiplier amount="0.25" itemId="Magic Potion" reqLabels="MINION" />
+      <EntityDropMultiplier amount="1.03" />
+      <EntityDustMultiplier amount="1.12" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="UNPREPARED_4" type="0x146">
+    <DisplayId>Unprepared IV</DisplayId>
+    <Description>Minions cannot drop Health/Mana Potions</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,POTION,TIER4</Labels>
+    <IncompatibleLabels>POTION</IncompatibleLabels>
+    <Mutators>
+      <EntityDropMultiplier amount="0" itemId="Health Potion" reqLabels="MINION" />
+      <EntityDropMultiplier amount="0" itemId="Magic Potion" reqLabels="MINION" />
+      <EntityDropMultiplier amount="1.04" />
+      <EntityDustMultiplier amount="1.15" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="SURVIVOR_1" type="0x6">
+    <DisplayId>Survivor I</DisplayId>
+    <Description>Minions have a 25% higher chance of dropping Health/Mana Potions</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,POTION,TIER1</Labels>
+    <IncompatibleLabels>POTION</IncompatibleLabels>
+    <Mutators>
+      <EntityDropMultiplier amount="1.25" itemId="Health Potion" reqLabels="MINION" />
+      <EntityDropMultiplier amount="1.25" itemId="Magic Potion" reqLabels="MINION" />
+      <EntityDropMultiplier amount="1.01" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="SURVIVOR_2" type="0x7">
+    <DisplayId>Survivor II</DisplayId>
+    <Description>Minions have a 50% higher chance of dropping Health/Mana Potions</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,POTION,TIER2</Labels>
+    <IncompatibleLabels>POTION</IncompatibleLabels>
+    <Mutators>
+      <EntityDropMultiplier amount="1.5" itemId="Health Potion" reqLabels="MINION" />
+      <EntityDropMultiplier amount="1.5" itemId="Magic Potion" reqLabels="MINION" />
+      <EntityDropMultiplier amount="1.02" />
+      <EntityDustMultiplier amount="1.08" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="SURVIVOR_3" type="0x8">
+    <DisplayId>Survivor III</DisplayId>
+    <Description>Minions have a 75% higher chance of dropping Health/Mana Potions</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,POTION,TIER3</Labels>
+    <IncompatibleLabels>POTION</IncompatibleLabels>
+    <Mutators>
+      <EntityDropMultiplier amount="1.75" itemId="Health Potion" reqLabels="MINION" />
+      <EntityDropMultiplier amount="1.75" itemId="Magic Potion" reqLabels="MINION" />
+      <EntityDropMultiplier amount="1.03" />
+      <EntityDustMultiplier amount="1.12" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="SURVIVOR_4" type="0x9">
+    <DisplayId>Survivor IV</DisplayId>
+    <Description>Minions have a 100% higher chance of dropping Health/Mana Potions</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,POTION,TIER4</Labels>
+    <IncompatibleLabels>POTION</IncompatibleLabels>
+    <Mutators>
+      <EntityDropMultiplier amount="2" itemId="Health Potion" reqLabels="MINION" />
+      <EntityDropMultiplier amount="2" itemId="Magic Potion" reqLabels="MINION" />
+      <EntityDropMultiplier amount="1.04" />
+      <EntityDustMultiplier amount="1.15" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="STONEMINIONS_1" type="0x6c">
+    <DisplayId>Stone Minions I</DisplayId>
+    <Description>Minions have 25% more DEF and deal 5% less DMG</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,DEF,DAMAGE,TIER1</Labels>
+    <IncompatibleLabels>DEF,DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.25" reqLabels="MINION" stat="Defense" />
+      <EntityStatMultiplier amount="0.95" reqLabels="MINION" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.01" />
+      <EntityDustMultiplier amount="1.05" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="STONEMINIONS_2" type="0x6d">
+    <DisplayId>Stone Minions II</DisplayId>
+    <Description>Minions have 50% more DEF and deal 7.5% less DMG</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,DEF,DAMAGE,TIER2</Labels>
+    <IncompatibleLabels>DEF,DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.5" reqLabels="MINION" stat="Defense" />
+      <EntityStatMultiplier amount="0.925" reqLabels="MINION" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.02" />
+      <EntityDustMultiplier amount="1.1" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="STONEMINIONS_3" type="0x6e">
+    <DisplayId>Stone Minions III</DisplayId>
+    <Description>Minions have 75% more DEF and deal 10% less DMG</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,DEF,DAMAGE,TIER3</Labels>
+    <IncompatibleLabels>DEF,DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.75" reqLabels="MINION" stat="Defense" />
+      <EntityStatMultiplier amount="0.9" reqLabels="MINION" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.03" />
+      <EntityDropMultiplier amount="1.01" />
+      <EntityDustMultiplier amount="1.15" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="STONEMINIONS_4" type="0x6f">
+    <DisplayId>Stone Minions IV</DisplayId>
+    <Description>Minions have 100% more DEF and deal 12.5% less DMG</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,DEF,DAMAGE,TIER4</Labels>
+    <IncompatibleLabels>DEF,DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="2" reqLabels="MINION" stat="Defense" />
+      <EntityStatMultiplier amount="0.875" reqLabels="MINION" stat="Damage" />
+      <EntityStatMultiplier stat="XP" amount="1.04" />
+      <EntityDropMultiplier amount="1.02" />
+      <EntityDustMultiplier amount="1.2" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="STONEBOSS_1" type="0x71">
+    <DisplayId>Stone Boss I</DisplayId>
+    <Description>Bosses have 25% more DEF and deal 5% less DMG</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,DEF,DAMAGE,TIER1</Labels>
+    <IncompatibleLabels>DEF,DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.25" reqLabels="BOSSFIGHT" stat="Defense" />
+      <EntityStatMultiplier amount="0.95" reqLabels="BOSSFIGHT" stat="Damage" />
+      <EntityDropMultiplier amount="1.05" />
+      <EntityDustMultiplier amount="1.01" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="STONEBOSS_2" type="0x72">
+    <DisplayId>Stone Boss II</DisplayId>
+    <Description>Bosses have 50% more DEF and deal 7.5% less DMG</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,DEF,DAMAGE,TIER2</Labels>
+    <IncompatibleLabels>DEF,DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.5" reqLabels="BOSSFIGHT" stat="Defense" />
+      <EntityStatMultiplier amount="0.925" reqLabels="BOSSFIGHT" stat="Damage" />
+      <EntityDropMultiplier amount="1.1" />
+      <EntityDustMultiplier amount="1.02" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="STONEBOSS_3" type="0x73">
+    <DisplayId>Stone Boss III</DisplayId>
+    <Description>Bosses have 75% more DEF and deal 10% less DMG</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,DEF,DAMAGE,TIER3</Labels>
+    <IncompatibleLabels>DEF,DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.75" reqLabels="BOSSFIGHT" stat="Defense" />
+      <EntityStatMultiplier amount="0.9" reqLabels="BOSSFIGHT" stat="Damage" />
+      <EntityDropMultiplier amount="1.15" />
+      <EntityDustMultiplier amount="1.03" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="STONEBOSS_4" type="0x70">
+    <DisplayId>Stone Boss IV</DisplayId>
+    <Description>Bosses have 100% more DEF and deal 12.5% less DMG</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,DEF,DAMAGE,TIER4</Labels>
+    <IncompatibleLabels>DEF,DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="2" reqLabels="BOSSFIGHT" stat="Defense" />
+      <EntityStatMultiplier amount="0.875" reqLabels="BOSSFIGHT" stat="Damage" />
+      <EntityDropMultiplier amount="1.2" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="LETHAL_1" type="0xbc">
+    <DisplayId>Lethal I</DisplayId>
+    <Description>Take an additional damage equal to 1.25% of your current Health from every hit.</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,DAMAGE,TIER1</Labels>
+    <IncompatibleLabels>DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <CurrentHealthDamage amount="0.01" />
+      <EntityStatMultiplier stat="XP" amount="1.02" />
+      <EntityDropMultiplier amount="1.06" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="LETHAL_2" type="0xc1">
+    <DisplayId>Lethal II</DisplayId>
+    <Description>Take an additional damage equal to 2.5% of your current Health from every hit.</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,DAMAGE,TIER2</Labels>
+    <IncompatibleLabels>DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <CurrentHealthDamage amount="0.02" />
+      <EntityStatMultiplier stat="XP" amount="1.04" />
+      <EntityDropMultiplier amount="1.12" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="LETHAL_3" type="0xc6">
+    <DisplayId>Lethal III</DisplayId>
+    <Description>Take an additional damage equal to 3.75% of your current Health from every hit.</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,DAMAGE,TIER3</Labels>
+    <IncompatibleLabels>DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <CurrentHealthDamage amount="0.03" />
+      <EntityStatMultiplier stat="XP" amount="1.06" />
+      <EntityDropMultiplier amount="1.18" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="LETHAL_4" type="0xcb">
+    <DisplayId>Lethal IV</DisplayId>
+    <Description>Take an additional damage equal to 5% of your current Health from every hit.</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,DAMAGE,TIER4</Labels>
+    <IncompatibleLabels>DAMAGE</IncompatibleLabels>
+    <Mutators>
+      <CurrentHealthDamage amount="0.04" />
+      <EntityStatMultiplier stat="XP" amount="1.08" />
+      <EntityDropMultiplier amount="1.24" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="EXPOSED_1" type="0x7b">
+    <DisplayId>Exposed I</DisplayId>
+    <Description>Players have -5 DEF</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,DEFENSE,PLAYERSTAT,NEGATIVEPLAYERSTAT,STATFLAT,TIER1</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,DEFENSE</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="-5" stat="DEF" />
+      <EntityDropMultiplier amount="1.06" />
+      <EntityDustMultiplier amount="1.02" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="EXPOSED_2" type="0x7c">
+    <DisplayId>Exposed II</DisplayId>
+    <Description>Players have -10 DEF</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,DEFENSE,PLAYERSTAT,NEGATIVEPLAYERSTAT,STATFLAT,TIER2</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,DEFENSE</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="-10" stat="DEF" />
+      <EntityDropMultiplier amount="1.12" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="EXPOSED_3" type="0x80">
+    <DisplayId>Exposed III</DisplayId>
+    <Description>Players have -15 DEF</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,DEFENSE,PLAYERSTAT,NEGATIVEPLAYERSTAT,STATFLAT,TIER3</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,DEFENSE</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="-15" stat="DEF" />
+      <EntityDropMultiplier amount="1.18" />
+      <EntityDustMultiplier amount="1.06" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="EXPOSED_4" type="0x81">
+    <DisplayId>Exposed IV</DisplayId>
+    <Description>Players have -20 DEF</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,DEFENSE,PLAYERSTAT,NEGATIVEPLAYERSTAT,STATFLAT,TIER4</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,DEFENSE</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="-20" stat="DEF" />
+      <EntityDropMultiplier amount="1.24" />
+      <EntityDustMultiplier amount="1.08" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="FRENZIED_1" type="0x49">
+    <DisplayId>Frenzied I</DisplayId>
+    <Description>Players have 10% more Dex but 5% Less Att</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,PLAYERSTAT,NEGATIVEPLAYERSTAT,POSITIVEPLAYERSTAT,DEXTERITY,ATTACK,STATMULT,TIER1</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,POSITIVEPLAYERSTAT,DEXTERITY,ATTACK</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatMultiplier amount="1.1" stat="DEX" />
+      <PlayerStatMultiplier amount="0.95" stat="ATT" />
+      <EntityStatMultiplier stat="XP" amount="1.04" />
+      <EntityDropMultiplier amount="1.01" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="FRENZIED_2" type="0x4a">
+    <DisplayId>Frenzied II</DisplayId>
+    <Description>Players have 17.5% more Dex but 10% Less Att</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,PLAYERSTAT,DEXTERITY,ATTACK,STATMULT,TIER2</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,POSITIVEPLAYERSTAT,DEXTERITY,ATTACK</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatMultiplier amount="1.175" stat="DEX" />
+      <PlayerStatMultiplier amount="0.90" stat="ATT" />
+      <EntityStatMultiplier stat="XP" amount="1.08" />
+      <EntityDropMultiplier amount="1.02" />
+      <EntityDustMultiplier amount="1.08" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="FRENZIED_3" type="0x4b">
+    <DisplayId>Frenzied III</DisplayId>
+    <Description>Players have 25% more Dex but 15% Less Att</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,PLAYERSTAT,DEXTERITY,ATTACK,STATMULT,TIER3</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,POSITIVEPLAYERSTAT,DEXTERITY,ATTACK</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatMultiplier amount="1.25" stat="DEX" />
+      <PlayerStatMultiplier amount="0.85" stat="ATT" />
+      <EntityStatMultiplier stat="XP" amount="1.12" />
+      <EntityDropMultiplier amount="1.03" />
+      <EntityDustMultiplier amount="1.12" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="FRENZIED_4" type="0x4c">
+    <DisplayId>Frenzied IV</DisplayId>
+    <Description>Players have 33% more Dex but 20% Less Att</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,PLAYERSTAT,DEXTERITY,ATTACK,STATMULT,TIER4</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,POSITIVEPLAYERSTAT,DEXTERITY,ATTACK</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatMultiplier amount="1.33" stat="DEX" />
+      <PlayerStatMultiplier amount="0.8" stat="ATT" />
+      <EntityStatMultiplier stat="XP" amount="1.15" />
+      <EntityDropMultiplier amount="1.04" />
+      <EntityDustMultiplier amount="1.15" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="DRAINED_1" type="0x202">
+    <DisplayId>Drained I</DisplayId>
+    <Description>Player Mana recovery is reduced by 15%</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,PLAYER,MANARECOVERY,TIER1</Labels>
+    <IncompatibleLabels>MANARECOVERY</IncompatibleLabels>
+    <Mutators>
+      <PlayerManaMultiplier amount="0.85" methods="Self,External,Regeneration,Pets,Potions" />
+      <EntityStatMultiplier stat="XP" amount="1.03" />
+      <EntityDropMultiplier amount="1.06" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="DRAINED_2" type="0x203">
+    <DisplayId>Drained II</DisplayId>
+    <Description>Player Mana recovery is reduced by 20%</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,PLAYER,MANARECOVERY,TIER2</Labels>
+    <IncompatibleLabels>MANARECOVERY</IncompatibleLabels>
+    <Mutators>
+      <PlayerManaMultiplier amount="0.8" methods="Self,External,Regeneration,Pets,Potions" />
+      <EntityStatMultiplier stat="XP" amount="1.06" />
+      <EntityDropMultiplier amount="1.12" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="DRAINED_3" type="0x204">
+    <DisplayId>Drained III</DisplayId>
+    <Description>Player Mana recovery is reduced by 25%</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,PLAYER,MANARECOVERY,TIER3</Labels>
+    <IncompatibleLabels>MANARECOVERY</IncompatibleLabels>
+    <Mutators>
+      <PlayerManaMultiplier amount="0.75" methods="Self,External,Regeneration,Pets,Potions" />
+      <EntityStatMultiplier stat="XP" amount="1.09" />
+      <EntityDropMultiplier amount="1.18" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="DRAINED_4" type="0x205">
+    <DisplayId>Drained IV</DisplayId>
+    <Description>Player Mana recovery is reduced by 30%</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,PLAYER,MANARECOVERY,TIER4</Labels>
+    <IncompatibleLabels>MANARECOVERY</IncompatibleLabels>
+    <Mutators>
+      <PlayerManaMultiplier amount="0.7" methods="Self,External,Regeneration,Pets,Potions" />
+      <EntityStatMultiplier stat="XP" amount="1.12" />
+      <EntityDropMultiplier amount="1.24" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="ENERGETIC_1" type="0x206">
+    <DisplayId>Energetic I</DisplayId>
+    <Description>Player Mana recovery is increased by 15%</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,PLAYER,MANARECOVERY,TIER1</Labels>
+    <IncompatibleLabels>MANARECOVERY</IncompatibleLabels>
+    <Mutators>
+      <PlayerManaMultiplier amount="1.15" methods="Self,External,Regeneration,Pets,Potions" />
+      <EntityStatMultiplier stat="XP" amount="1.02" />
+      <EntityDustMultiplier amount="1.01" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="ENERGETIC_2" type="0x207">
+    <DisplayId>Energetic II</DisplayId>
+    <Description>Player Mana recovery is increased by 20%</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,PLAYER,MANARECOVERY,TIER2</Labels>
+    <IncompatibleLabels>MANARECOVERY</IncompatibleLabels>
+    <Mutators>
+      <PlayerManaMultiplier amount="1.2" methods="Self,External,Regeneration,Pets,Potions" />
+      <EntityStatMultiplier stat="XP" amount="1.04" />
+      <EntityDustMultiplier amount="1.02" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="ENERGETIC_3" type="0x208">
+    <DisplayId>Energetic III</DisplayId>
+    <Description>Player Mana recovery is increased by 25%</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,PLAYER,MANARECOVERY,TIER3</Labels>
+    <IncompatibleLabels>MANARECOVERY</IncompatibleLabels>
+    <Mutators>
+      <PlayerManaMultiplier amount="1.25" methods="Self,External,Regeneration,Pets,Potions" />
+      <EntityStatMultiplier stat="XP" amount="1.06" />
+      <EntityDropMultiplier amount="1.01" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="ENERGETIC_4" type="0x209">
+    <DisplayId>Energetic IV</DisplayId>
+    <Description>Player Mana recovery is increased by 30%</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,PLAYER,MANARECOVERY,TIER4</Labels>
+    <IncompatibleLabels>MANARECOVERY</IncompatibleLabels>
+    <Mutators>
+      <PlayerManaMultiplier amount="1.3" methods="Self,External,Regeneration,Pets,Potions" />
+      <EntityStatMultiplier stat="XP" amount="1.08" />
+      <EntityDropMultiplier amount="1.02" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="RESILIENTMINIONS_1" type="0x20b">
+    <DisplayId>Resilient Minions I</DisplayId>
+    <Description>Minions have 10% more DEF and 5% More HP</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,DEF,HEALTH,TIER1</Labels>
+    <IncompatibleLabels>DEF,HEALTH</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.1" reqLabels="MINION" stat="Defense" />
+      <EntityStatMultiplier amount="1.05" reqLabels="MINION" stat="MaxHitPoints" />
+      <EntityStatMultiplier stat="XP" amount="1.01" />
+      <EntityDustMultiplier amount="1.05" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="RESILIENTMINIONS_2" type="0x20c">
+    <DisplayId>Resilient Minions II</DisplayId>
+    <Description>Minions have 20% more DEF and 10% More HP</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,DEF,HEALTH,TIER2</Labels>
+    <IncompatibleLabels>DEF,HEALTH</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.2" reqLabels="MINION" stat="Defense" />
+      <EntityStatMultiplier amount="1.1" reqLabels="MINION" stat="MaxHitPoints" />
+      <EntityStatMultiplier stat="XP" amount="1.02" />
+      <EntityDustMultiplier amount="1.1" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="RESILIENTMINIONS_3" type="0x20d">
+    <DisplayId>Resilient Minions III</DisplayId>
+    <Description>Minions have 30% more DEF and 15% More HP</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,DEF,HEALTH,TIER3</Labels>
+    <IncompatibleLabels>DEF,HEALTH</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.3" reqLabels="MINION" stat="Defense" />
+      <EntityStatMultiplier amount="1.15" reqLabels="MINION" stat="MaxHitPoints" />
+      <EntityStatMultiplier stat="XP" amount="1.03" />
+      <EntityDropMultiplier amount="1.01" />
+      <EntityDustMultiplier amount="1.15" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="RESILIENTMINIONS_4" type="0x20e">
+    <DisplayId>Resilient Minions IV</DisplayId>
+    <Description>Minions have 40% more DEF and 20% More HP</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,MINION,STAT,DEF,HEALTH,TIER4</Labels>
+    <IncompatibleLabels>DEF,HEALTH</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.4" reqLabels="MINION" stat="Defense" />
+      <EntityStatMultiplier amount="1.2" reqLabels="MINION" stat="MaxHitPoints" />
+      <EntityStatMultiplier stat="XP" amount="1.04" />
+      <EntityDropMultiplier amount="1.02" />
+      <EntityDustMultiplier amount="1.2" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="RESILIENTBOSS_1" type="0x20f">
+    <DisplayId>Resilient Boss I</DisplayId>
+    <Description>Bosses have 10% more DEF and 5% More HP</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,DEF,HEALTH,TIER1</Labels>
+    <IncompatibleLabels>DEF,HEALTH</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.1" reqLabels="BOSSFIGHT" stat="Defense" />
+      <EntityStatMultiplier amount="1.05" reqLabels="BOSSFIGHT" stat="MaxHitPoints" />
+      <EntityDropMultiplier amount="1.05" />
+      <EntityDustMultiplier amount="1.01" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="RESILIENTBOSS_2" type="0x210">
+    <DisplayId>Resilient Boss II</DisplayId>
+    <Description>Bosses have 20% more DEF and 10% More HP</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,DEF,HEALTH,TIER2</Labels>
+    <IncompatibleLabels>DEF,HEALTH</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.2" reqLabels="BOSSFIGHT" stat="Defense" />
+      <EntityStatMultiplier amount="1.1" reqLabels="BOSSFIGHT" stat="MaxHitPoints" />
+      <EntityDropMultiplier amount="1.1" />
+      <EntityDustMultiplier amount="1.02" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="RESILIENTBOSS_3" type="0x211">
+    <DisplayId>Resilient Boss III</DisplayId>
+    <Description>Bosses have 30% more DEF and 15% More HP</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,DEF,HEALTH,TIER3</Labels>
+    <IncompatibleLabels>DEF,HEALTH</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.3" reqLabels="BOSSFIGHT" stat="Defense" />
+      <EntityStatMultiplier amount="1.15" reqLabels="BOSSFIGHT" stat="MaxHitPoints" />
+      <EntityDropMultiplier amount="1.15" />
+      <EntityDustMultiplier amount="1.03" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="RESILIENTBOSS_4" type="0x212">
+    <DisplayId>Resilient Boss IV</DisplayId>
+    <Description>Bosses have 40% more DEF and 20% More HP</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,ANY_ELITE,ENTITY,BOSS,STAT,DEF,HEALTH,TIER4</Labels>
+    <IncompatibleLabels>DEF,HEALTH</IncompatibleLabels>
+    <Mutators>
+      <EntityStatMultiplier amount="1.4" reqLabels="BOSSFIGHT" stat="Defense" />
+      <EntityStatMultiplier amount="1.2" reqLabels="BOSSFIGHT" stat="MaxHitPoints" />
+      <EntityDropMultiplier amount="1.2" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="SLUGGISH_1" type="0x215">
+    <DisplayId>Sluggish I</DisplayId>
+    <Description>Players have -3 SPD</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,SPEED,PLAYERSTAT,NEGATIVEPLAYERSTAT,STATFLAT,TIER1</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,SPEED</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="-3" stat="SPD" />
+      <EntityStatMultiplier stat="XP" amount="1.02" />
+      <EntityDropMultiplier amount="1.06" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="SLUGGISH_2" type="0x216">
+    <DisplayId>Sluggish II</DisplayId>
+    <Description>Players have -6 SPD</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,SPEED,PLAYERSTAT,NEGATIVEPLAYERSTAT,STATFLAT,TIER2</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,SPEED</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="-6" stat="SPD" />
+      <EntityStatMultiplier stat="XP" amount="1.04" />
+      <EntityDropMultiplier amount="1.12" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="SLUGGISH_3" type="0x217">
+    <DisplayId>Sluggish III</DisplayId>
+    <Description>Players have -9 SPD</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,SPEED,PLAYERSTAT,NEGATIVEPLAYERSTAT,STATFLAT,TIER3</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,SPEED</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="-9" stat="SPD" />
+      <EntityStatMultiplier stat="XP" amount="1.06" />
+      <EntityDropMultiplier amount="1.18" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="SLUGGISH_4" type="0x218">
+    <DisplayId>Sluggish IV</DisplayId>
+    <Description>Players have -12 SPD</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,SPEED,PLAYERSTAT,NEGATIVEPLAYERSTAT,STATFLAT,TIER4</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,SPEED</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="-12" stat="SPD" />
+      <EntityStatMultiplier stat="XP" amount="1.08" />
+      <EntityDropMultiplier amount="1.24" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="SPEEDY_1" type="0x219">
+    <DisplayId>Speedy I</DisplayId>
+    <Description>Players have +2 SPD</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,SPEED,PLAYERSTAT,POSITIVEPLAYERSTAT,STATFLAT,TIER1</Labels>
+    <IncompatibleLabels>POSITIVEPLAYERSTAT,SPEED</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="2" stat="SPD" />
+      <EntityStatMultiplier stat="XP" amount="1.02" />
+      <EntityDustMultiplier amount="1.01" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="SPEEDY_2" type="0x21a">
+    <DisplayId>Speedy II</DisplayId>
+    <Description>Players have +4 SPD</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,SPEED,PLAYERSTAT,POSITIVEPLAYERSTAT,STATFLAT,TIER2</Labels>
+    <IncompatibleLabels>POSITIVEPLAYERSTAT,SPEED</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="4" stat="SPD" />
+      <EntityStatMultiplier stat="XP" amount="1.04" />
+      <EntityDustMultiplier amount="1.02" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="SPEEDY_3" type="0x21b">
+    <DisplayId>Speedy III</DisplayId>
+    <Description>Players have +6 SPD</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,SPEED,PLAYERSTAT,POSITIVEPLAYERSTAT,STATFLAT,TIER3</Labels>
+    <IncompatibleLabels>POSITIVEPLAYERSTAT,SPEED</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="6" stat="SPD" />
+      <EntityStatMultiplier stat="XP" amount="1.06" />
+      <EntityDropMultiplier amount="1.01" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="SPEEDY_4" type="0x21c">
+    <DisplayId>Speedy IV</DisplayId>
+    <Description>Players have +8 SPD</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,SPEED,PLAYERSTAT,POSITIVEPLAYERSTAT,STATFLAT,TIER4</Labels>
+    <IncompatibleLabels>POSITIVEPLAYERSTAT,SPEED</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="8" stat="SPD" />
+      <EntityStatMultiplier stat="XP" amount="1.08" />
+      <EntityDropMultiplier amount="1.02" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="ARMORED_1" type="0x21d">
+    <DisplayId>Armored I</DisplayId>
+    <Description>Players have +3 DEF</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,DEFENSE,PLAYERSTAT,POSITIVEPLAYERSTAT,STATFLAT,TIER1</Labels>
+    <IncompatibleLabels>POSITIVEPLAYERSTAT,DEFENSE</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="3" stat="DEF" />
+      <EntityStatMultiplier stat="XP" amount="1.02" />
+      <EntityDustMultiplier amount="1.01" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="ARMORED_2" type="0x21e">
+    <DisplayId>Armored II</DisplayId>
+    <Description>Players have +6 DEF</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,DEFENSE,PLAYERSTAT,POSITIVEPLAYERSTAT,STATFLAT,TIER2</Labels>
+    <IncompatibleLabels>POSITIVEPLAYERSTAT,DEFENSE</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="6" stat="DEF" />
+      <EntityStatMultiplier stat="XP" amount="1.04" />
+      <EntityDustMultiplier amount="1.02" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="ARMORED_3" type="0x21f">
+    <DisplayId>Armored III</DisplayId>
+    <Description>Players have +9 DEF</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,DEFENSE,PLAYERSTAT,POSITIVEPLAYERSTAT,STATFLAT,TIER3</Labels>
+    <IncompatibleLabels>POSITIVEPLAYERSTAT,DEFENSE</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="9" stat="DEF" />
+      <EntityStatMultiplier stat="XP" amount="1.06" />
+      <EntityDropMultiplier amount="1.01" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="ARMORED_4" type="0x220">
+    <DisplayId>Armored IV</DisplayId>
+    <Description>Players have +12 DEF</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,DEFENSE,PLAYERSTAT,POSITIVEPLAYERSTAT,STATFLAT,TIER4</Labels>
+    <IncompatibleLabels>POSITIVEPLAYERSTAT,DEFENSE</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="12" stat="DEF" />
+      <EntityStatMultiplier stat="XP" amount="1.08" />
+      <EntityDropMultiplier amount="1.02" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="CLUMSY_1" type="0x222">
+    <DisplayId>Clumsy I</DisplayId>
+    <Description>Players have -3 DEX</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,DEXTERITY,PLAYERSTAT,NEGATIVEPLAYERSTAT,STATFLAT,TIER1</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,DEXTERITY</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="-3" stat="DEX" />
+      <EntityDropMultiplier amount="1.06" />
+      <EntityDustMultiplier amount="1.02" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="CLUMSY_2" type="0x223">
+    <DisplayId>Clumsy II</DisplayId>
+    <Description>Players have -6 DEX</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,DEXTERITY,PLAYERSTAT,NEGATIVEPLAYERSTAT,STATFLAT,TIER2</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,DEXTERITY</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="-6" stat="DEX" />
+      <EntityDropMultiplier amount="1.12" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="CLUMSY_3" type="0x224">
+    <DisplayId>Clumsy III</DisplayId>
+    <Description>Players have -9 DEX</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,DEXTERITY,PLAYERSTAT,NEGATIVEPLAYERSTAT,STATFLAT,TIER3</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,DEXTERITY</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="-9" stat="DEX" />
+      <EntityDropMultiplier amount="1.18" />
+      <EntityDustMultiplier amount="1.06" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="CLUMSY_4" type="0x225">
+    <DisplayId>Clumsy IV</DisplayId>
+    <Description>Players have -12 DEX</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,DEXTERITY,PLAYERSTAT,NEGATIVEPLAYERSTAT,STATFLAT,TIER4</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,DEXTERITY</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="-12" stat="DEX" />
+      <EntityDropMultiplier amount="1.24" />
+      <EntityDustMultiplier amount="1.08" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="DEXTEROUS_1" type="0x226">
+    <DisplayId>Dexterous I</DisplayId>
+    <Description>Players have +2 DEX</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,DEXTERITY,PLAYERSTAT,POSITIVEPLAYERSTAT,STATFLAT,TIER1</Labels>
+    <IncompatibleLabels>POSITIVEPLAYERSTAT,DEXTERITY</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="2" stat="DEX" />
+      <EntityStatMultiplier stat="XP" amount="1.02" />
+      <EntityDustMultiplier amount="1.01" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="DEXTEROUS_2" type="0x227">
+    <DisplayId>Dexterous II</DisplayId>
+    <Description>Players have +4 DEX</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,DEXTERITY,PLAYERSTAT,POSITIVEPLAYERSTAT,STATFLAT,TIER2</Labels>
+    <IncompatibleLabels>POSITIVEPLAYERSTAT,DEXTERITY</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="4" stat="DEX" />
+      <EntityStatMultiplier stat="XP" amount="1.04" />
+      <EntityDustMultiplier amount="1.02" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="DEXTEROUS_3" type="0x228">
+    <DisplayId>Dexterous III</DisplayId>
+    <Description>Players have +6 DEX</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,DEXTERITY,PLAYERSTAT,POSITIVEPLAYERSTAT,STATFLAT,TIER3</Labels>
+    <IncompatibleLabels>POSITIVEPLAYERSTAT,DEXTERITY</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="6" stat="DEX" />
+      <EntityStatMultiplier stat="XP" amount="1.06" />
+      <EntityDropMultiplier amount="1.01" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="DEXTEROUS_4" type="0x229">
+    <DisplayId>Dexterous IV</DisplayId>
+    <Description>Players have +8 DEX</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,DEXTERITY,PLAYERSTAT,POSITIVEPLAYERSTAT,STATFLAT,TIER4</Labels>
+    <IncompatibleLabels>POSITIVEPLAYERSTAT,DEXTERITY</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="8" stat="DEX" />
+      <EntityStatMultiplier stat="XP" amount="1.08" />
+      <EntityDropMultiplier amount="1.02" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="WEAK_1" type="0x22a">
+    <DisplayId>Weak I</DisplayId>
+    <Description>Players have -3 ATT</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,ATTACK,PLAYERSTAT,NEGATIVEPLAYERSTAT,STATFLAT,TIER1</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,ATTACK</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="-3" stat="ATT" />
+      <EntityDropMultiplier amount="1.06" />
+      <EntityDustMultiplier amount="1.02" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="WEAK_2" type="0x22b">
+    <DisplayId>Weak II</DisplayId>
+    <Description>Players have -6 ATT</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,ATTACK,PLAYERSTAT,NEGATIVEPLAYERSTAT,STATFLAT,TIER2</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,ATTACK</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="-6" stat="ATT" />
+      <EntityDropMultiplier amount="1.12" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="WEAK_3" type="0x22c">
+    <DisplayId>Weak III</DisplayId>
+    <Description>Players have -9 ATT</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,ATTACK,PLAYERSTAT,NEGATIVEPLAYERSTAT,STATFLAT,TIER3</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,ATTACK</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="-9" stat="ATT" />
+      <EntityDropMultiplier amount="1.18" />
+      <EntityDustMultiplier amount="1.06" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="WEAK_4" type="0x22d">
+    <DisplayId>Weak IV</DisplayId>
+    <Description>Players have -12 ATT</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,ATTACK,PLAYERSTAT,NEGATIVEPLAYERSTAT,STATFLAT,TIER4</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,ATTACK</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="-12" stat="ATT" />
+      <EntityDropMultiplier amount="1.24" />
+      <EntityDustMultiplier amount="1.08" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="STRENGTHENED_1" type="0x22e">
+    <DisplayId>Strengthened I</DisplayId>
+    <Description>Players have +2 ATT</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,ATTACK,PLAYERSTAT,POSITIVEPLAYERSTAT,STATFLAT,TIER1</Labels>
+    <IncompatibleLabels>POSITIVEPLAYERSTAT,ATTACK</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="2" stat="ATT" />
+      <EntityStatMultiplier stat="XP" amount="1.02" />
+      <EntityDustMultiplier amount="1.01" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="STRENGTHENED_2" type="0x22f">
+    <DisplayId>Strengthened II</DisplayId>
+    <Description>Players have +4 ATT</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,ATTACK,PLAYERSTAT,POSITIVEPLAYERSTAT,STATFLAT,TIER2</Labels>
+    <IncompatibleLabels>POSITIVEPLAYERSTAT,ATTACK</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="4" stat="ATT" />
+      <EntityStatMultiplier stat="XP" amount="1.04" />
+      <EntityDustMultiplier amount="1.02" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="STRENGTHENED_3" type="0x230">
+    <DisplayId>Strengthened III</DisplayId>
+    <Description>Players have +6 ATT</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,ATTACK,PLAYERSTAT,POSITIVEPLAYERSTAT,STATFLAT,TIER3</Labels>
+    <IncompatibleLabels>POSITIVEPLAYERSTAT,ATTACK</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="6" stat="ATT" />
+      <EntityStatMultiplier stat="XP" amount="1.06" />
+      <EntityDropMultiplier amount="1.01" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="STRENGTHENED_4" type="0x231">
+    <DisplayId>Strengthened IV</DisplayId>
+    <Description>Players have +8 ATT</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,ATTACK,PLAYERSTAT,POSITIVEPLAYERSTAT,STATFLAT,TIER4</Labels>
+    <IncompatibleLabels>POSITIVEPLAYERSTAT,ATTACK</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="8" stat="ATT" />
+      <EntityStatMultiplier stat="XP" amount="1.08" />
+      <EntityDropMultiplier amount="1.02" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="FOOLISH_1" type="0x233">
+    <DisplayId>Foolish I</DisplayId>
+    <Description>Players have -4 WIS</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,WISDOM,PLAYERSTAT,NEGATIVEPLAYERSTAT,STATFLAT,TIER1</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,WISDOM</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="-4" stat="WIS" />
+      <EntityDropMultiplier amount="1.05" />
+      <EntityDustMultiplier amount="1.02" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="FOOLISH_2" type="0x234">
+    <DisplayId>Foolish II</DisplayId>
+    <Description>Players have -8 ATT</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,WISDOM,PLAYERSTAT,NEGATIVEPLAYERSTAT,STATFLAT,TIER2</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,WISDOM</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="-8" stat="WIS" />
+      <EntityDropMultiplier amount="1.1" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="FOOLISH_3" type="0x235">
+    <DisplayId>Foolish III</DisplayId>
+    <Description>Players have -12 WIS</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,WISDOM,PLAYERSTAT,NEGATIVEPLAYERSTAT,STATFLAT,TIER3</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,WISDOM</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="-12" stat="WIS" />
+      <EntityDropMultiplier amount="1.15" />
+      <EntityDustMultiplier amount="1.06" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="FOOLISH_4" type="0x236">
+    <DisplayId>Foolish IV</DisplayId>
+    <Description>Players have -16 WIS</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,WISDOM,PLAYERSTAT,NEGATIVEPLAYERSTAT,STATFLAT,TIER4</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,WISDOM</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="-16" stat="WIS" />
+      <EntityDropMultiplier amount="1.2" />
+      <EntityDustMultiplier amount="1.08" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="WISE_1" type="0x237">
+    <DisplayId>Wise I</DisplayId>
+    <Description>Players have +3 WIS</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,WISDOM,PLAYERSTAT,POSITIVEPLAYERSTAT,STATFLAT,TIER1</Labels>
+    <IncompatibleLabels>POSITIVEPLAYERSTAT,WISDOM</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="3" stat="WIS" />
+      <EntityStatMultiplier stat="XP" amount="1.02" />
+      <EntityDustMultiplier amount="1.01" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="WISE_2" type="0x238">
+    <DisplayId>Wise II</DisplayId>
+    <Description>Players have +6 WIS</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,WISDOM,PLAYERSTAT,POSITIVEPLAYERSTAT,STATFLAT,TIER2</Labels>
+    <IncompatibleLabels>POSITIVEPLAYERSTAT,WISDOM</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="6" stat="WIS" />
+      <EntityStatMultiplier stat="XP" amount="1.04" />
+      <EntityDustMultiplier amount="1.02" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="WISE_3" type="0x239">
+    <DisplayId>Wise III</DisplayId>
+    <Description>Players have +9 WIS</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,WISDOM,PLAYERSTAT,POSITIVEPLAYERSTAT,STATFLAT,TIER3</Labels>
+    <IncompatibleLabels>POSITIVEPLAYERSTAT,WISDOM</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="9" stat="WIS" />
+      <EntityStatMultiplier stat="XP" amount="1.06" />
+      <EntityDropMultiplier amount="1.01" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="WISE_4" type="0x23a">
+    <DisplayId>Wise IV</DisplayId>
+    <Description>Players have +12 WIS</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,WISDOM,PLAYERSTAT,POSITIVEPLAYERSTAT,STATFLAT,TIER4</Labels>
+    <IncompatibleLabels>POSITIVEPLAYERSTAT,WISDOM</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="12" stat="WIS" />
+      <EntityStatMultiplier stat="XP" amount="1.08" />
+      <EntityDropMultiplier amount="1.02" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="APATHETIC_1" type="0x23b">
+    <DisplayId>Apathetic I</DisplayId>
+    <Description>Players have -4 VIT</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,VITALITY,PLAYERSTAT,NEGATIVEPLAYERSTAT,STATFLAT,TIER1</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,VITALITY</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="-4" stat="VIT" />
+      <EntityStatMultiplier stat="XP" amount="1.02" />
+      <EntityDropMultiplier amount="1.05" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="APATHETIC_2" type="0x23c">
+    <DisplayId>Apathetic II</DisplayId>
+    <Description>Players have -8 VIT</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,VITALITY,PLAYERSTAT,NEGATIVEPLAYERSTAT,STATFLAT,TIER2</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,VITALITY</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="-8" stat="VIT" />
+      <EntityStatMultiplier stat="XP" amount="1.04" />
+      <EntityDropMultiplier amount="1.1" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="APATHETIC_3" type="0x23d">
+    <DisplayId>Apathetic III</DisplayId>
+    <Description>Players have -12 VIT</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,VITALITY,PLAYERSTAT,NEGATIVEPLAYERSTAT,STATFLAT,TIER3</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,VITALITY</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="-12" stat="VIT" />
+      <EntityStatMultiplier stat="XP" amount="1.06" />
+      <EntityDropMultiplier amount="1.15" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="APATHETIC_4" type="0x23e">
+    <DisplayId>Apathetic IV</DisplayId>
+    <Description>Players have -16 VIT</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,VITALITY,PLAYERSTAT,NEGATIVEPLAYERSTAT,STATFLAT,TIER4</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,VITALITY</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="-16" stat="VIT" />
+      <EntityStatMultiplier stat="XP" amount="1.08" />
+      <EntityDropMultiplier amount="1.2" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="LIVELY_1" type="0x23f">
+    <DisplayId>Lively I</DisplayId>
+    <Description>Players have +3 VIT</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,VITALITY,PLAYERSTAT,POSITIVEPLAYERSTAT,STATFLAT,TIER1</Labels>
+    <IncompatibleLabels>POSITIVEPLAYERSTAT,VITALITY</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="3" stat="VIT" />
+      <EntityStatMultiplier stat="XP" amount="1.02" />
+      <EntityDustMultiplier amount="1.01" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="LIVELY_2" type="0x240">
+    <DisplayId>Lively II</DisplayId>
+    <Description>Players have +6 VIT</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,VITALITY,PLAYERSTAT,POSITIVEPLAYERSTAT,STATFLAT,TIER2</Labels>
+    <IncompatibleLabels>POSITIVEPLAYERSTAT,VITALITY</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="6" stat="VIT" />
+      <EntityStatMultiplier stat="XP" amount="1.04" />
+      <EntityDustMultiplier amount="1.02" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="LIVELY_3" type="0x241">
+    <DisplayId>Lively III</DisplayId>
+    <Description>Players have +9 VIT</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,VITALITY,PLAYERSTAT,POSITIVEPLAYERSTAT,STATFLAT,TIER3</Labels>
+    <IncompatibleLabels>POSITIVEPLAYERSTAT,VITALITY</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="9" stat="VIT" />
+      <EntityStatMultiplier stat="XP" amount="1.06" />
+      <EntityDropMultiplier amount="1.01" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="LIVELY_4" type="0x242">
+    <DisplayId>Lively IV</DisplayId>
+    <Description>Players have +12 VIT</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,VITALITY,PLAYERSTAT,POSITIVEPLAYERSTAT,STATFLAT,TIER4</Labels>
+    <IncompatibleLabels>POSITIVEPLAYERSTAT,VITALITY</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="12" stat="VIT" />
+      <EntityStatMultiplier stat="XP" amount="1.08" />
+      <EntityDropMultiplier amount="1.02" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="SPIDERSWARM_1" type="0x120">
+    <DisplayId>Spider Swarming I</DisplayId>
+    <Description>Enemies have a 10% chance to split into multiple spiders that drop ichors on death</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,UNIQUE,ENTITY,MINION,STAT,SPAWNONDEATH</Labels>
+    <IncompatibleLabels>UNIQUE</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="Swarm_Spider_Low_Spawner" excludeLabels="SPECIAL" prob="0.10" reqLabels="MINION_WEAK" />
+      <SpecialSpawnOnDeath category="Swarm_Spider_Mid_Spawner" excludeLabels="SPECIAL" prob="0.10" reqLabels="MINION_MID" />
+      <SpecialSpawnOnDeath category="Swarm_Spider_High_Spawner" excludeLabels="SPECIAL" prob="0.10" reqLabels="MINION_STRONG" />
+      <EntityStatMultiplier stat="XP" amount="1.15" />
+      <EntityDropMultiplier amount="1.03" />
+      <EntityDustMultiplier amount="1.03" />
+    </Mutators>
+    <Unique />
+  </DungeonModifier>
+  <DungeonModifier id="SPIDERSWARM_2" type="0x121">
+    <DisplayId>Spider Swarming II</DisplayId>
+    <Description>Enemies have a 15% chance to split into multiple spiders that drop ichors on death.</Description>
+    <Weight>10000</Weight>
+    <Labels>ROLLABLE,ANY,UNIQUE,ENTITY,MINION,STAT,SPAWNONDEATH</Labels>
+    <IncompatibleLabels>UNIQUE</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="Swarm_Spider_Low_Spawner" excludeLabels="SPECIAL" prob="0.15" reqLabels="MINION_WEAK" />
+      <SpecialSpawnOnDeath category="Swarm_Spider_Mid_Spawner" excludeLabels="SPECIAL" prob="0.15" reqLabels="MINION_MID" />
+      <SpecialSpawnOnDeath category="Swarm_Spider_High_Spawner" excludeLabels="SPECIAL" prob="0.15" reqLabels="MINION_STRONG" />
+      <EntityStatMultiplier stat="XP" amount="1.2" />
+      <EntityDropMultiplier amount="1.05" />
+      <EntityDustMultiplier amount="1.05" />
+    </Mutators>
+    <Unique />
+  </DungeonModifier>
+  <DungeonModifier id="NOBLEBOSS" type="0x2b">
+    <DisplayId>Noble Boss</DisplayId>
+    <Description>After completion Oryx's Court dungeons will spawn</Description>
+    <Weight>25000</Weight>
+    <Labels>ROLLABLE,ANY,UNIQUE,BOSS,LOOT,PORTAL</Labels>
+    <IncompatibleLabels>UNIQUE</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="NobleBoss" excludeLabels="SPECIAL" prob="1" reqLabels="BOSS" />
+      <EntityDropMultiplier amount="1.2" />
+    </Mutators>
+    <Unique />
+  </DungeonModifier>
+  <DungeonModifier id="DIMITUS" type="0x30">
+    <DisplayId>Dimitus</DisplayId>
+    <Description>Dimitus will appear after the Boss is defeated</Description>
+    <Weight>25000</Weight>
+    <Labels>ROLLABLE,ANY,UNIQUE,BOSS,LOOT,FIGHT</Labels>
+    <IncompatibleLabels>UNIQUE</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="Dimitus" excludeLabels="SPECIAL" prob="1" reqLabels="BOSS" />
+      <EntityDustMultiplier amount="1.24" />
+    </Mutators>
+    <Unique />
+  </DungeonModifier>
+  <DungeonModifier id="PRISMIMIC" type="0x35">
+    <DisplayId>Prismimic</DisplayId>
+    <Description>Prismimic will appear after the Boss is defeated</Description>
+    <Weight>25000</Weight>
+    <Labels>ROLLABLE,ANY,UNIQUE,BOSS,LOOT,FIGHT,</Labels>
+    <IncompatibleLabels>UNIQUE</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="Prismimic" excludeLabels="SPECIAL" prob="1" reqLabels="BOSS" />
+      <EntityStatMultiplier stat="XP" amount="1.15" />
+      <EntityDustMultiplier amount="1.15" />
+    </Mutators>
+    <Unique />
+  </DungeonModifier>
+  <DungeonModifier id="WANDERERBOSS" type="0xd5">
+    <DisplayId>Wanderer</DisplayId>
+    <Description>An unknown foe will appear after the Boss is defeated</Description>
+    <Weight>22500</Weight>
+    <Labels>ROLLABLE,ANY,UNIQUE,BOSS,LOOT,REWARD_LOW,REWARD_MID,REWARD_HIGH</Labels>
+    <IncompatibleLabels>UNIQUE</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="Wanderer_Boss" excludeLabels="SPECIAL" prob="1.00" reqLabels="BOSS" />
+      <EntityDropMultiplier amount="1.16" />
+    </Mutators>
+    <Unique />
+  </DungeonModifier>
+  <DungeonModifier id="HEROICDEFENSE" type="0x152">
+    <DisplayId>Heroic Defense</DisplayId>
+    <Description>Enemies can drop Defense Orbs on death.</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,UNIQUE,HEROIC</Labels>
+    <IncompatibleLabels>UNIQUE</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="Defense_Orb" excludeLabels="SPECIAL" prob="0.025" reqLabels="MINION" />
+      <EntityStatMultiplier stat="XP" amount="1.2" />
+    </Mutators>
+    <Unique />
+  </DungeonModifier>
+  <DungeonModifier id="HEROICDAMAGE" type="0x153">
+    <DisplayId>Heroic Damage</DisplayId>
+    <Description>Enemies can drop Damaging Orbs on death.</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,UNIQUE,HEROIC</Labels>
+    <IncompatibleLabels>UNIQUE</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="Damage_Orb" excludeLabels="SPECIAL" prob="0.025" reqLabels="MINION" />
+      <EntityStatMultiplier stat="XP" amount="1.2" />
+    </Mutators>
+    <Unique />
+  </DungeonModifier>
+  <DungeonModifier id="HEROICFRENZY" type="0x154">
+    <DisplayId>Heroic Frenzy</DisplayId>
+    <Description>Enemies can drop Frenzy Orbs on death.</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,UNIQUE,HEROIC</Labels>
+    <IncompatibleLabels>UNIQUE</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="Frenzy_Orb" excludeLabels="SPECIAL" prob="0.025" reqLabels="MINION" />
+      <EntityStatMultiplier stat="XP" amount="1.2" />
+    </Mutators>
+    <Unique />
+  </DungeonModifier>
+  <DungeonModifier id="HEROICREGENRATION" type="0xf3">
+    <DisplayId>Heroic Regneration</DisplayId>
+    <Description>Enemies can drop Heroic Orbs on death.</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,UNIQUE,HEROIC</Labels>
+    <IncompatibleLabels>UNIQUE</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="Heroic_Orb_Weak" excludeLabels="SPECIAL" prob="0.05" reqLabels="MINION_WEAK" />
+      <SpecialSpawnOnDeath category="Heroic_Orb_Mid" excludeLabels="SPECIAL" prob="0.15" reqLabels="MINION_MID" />
+      <SpecialSpawnOnDeath category="Heroic_Orb_Strong" excludeLabels="SPECIAL" prob="0.25" reqLabels="MINION_STRONG" />
+      <EntityStatMultiplier stat="XP" amount="1.2" />
+    </Mutators>
+    <Unique />
+  </DungeonModifier>
+  <DungeonModifier id="SPIRIT_SNAKE_SWARM" type="0x165">
+    <DisplayId>Spirit Snake Swarm</DisplayId>
+    <Description>Enemies have a 15% chance to split into multiple snakes that drop divine oil on death.</Description>
+    <Weight>25000</Weight>
+    <Labels>ROLLABLE,ANY,UNIQUE,ENTITY,MINION,STAT,SPAWNONDEATH</Labels>
+    <IncompatibleLabels>UNIQUE</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="Swarm_Spirit_Snake_Spawner" excludeLabels="SPECIAL" prob="0.15" reqLabels="MINION" />
+      <EntityStatMultiplier stat="XP" amount="1.2" />
+    </Mutators>
+    <Unique />
+  </DungeonModifier>
+  <DungeonModifier id="ALIEN_WORMHOLES" type="0x161">
+    <DisplayId>Alien Wormholes</DisplayId>
+    <Description>A portal to an alien dungeon will appear when the boss is defeated.</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,ANY,UNIQUE,EXTRABOSS,ALIENS</Labels>
+    <IncompatibleLabels>UNIQUE</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="Alien_Portals" excludeLabels="SPECIAL" prob="1" reqLabels="BOSS" />
+      <EntityDropMultiplier amount="1.15" />
+    </Mutators>
+    <Unique />
+  </DungeonModifier>
+  <DungeonModifier id="MERCA" type="0x134">
+    <DisplayId>Syndicate Takeover I</DisplayId>
+    <Description>Battle Pirate Queen Ramm after the final boss of the dungeon.</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,UNIQUE,EXTRABOSS,MERCA</Labels>
+    <IncompatibleLabels>UNIQUE</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="Mercenary_A" excludeLabels="SPECIAL" prob="1" reqLabels="BOSS" />
+      <EntityStatMultiplier stat="XP" amount="1.1" />
+      <EntityDustMultiplier amount="1.1" />
+    </Mutators>
+    <Unique />
+  </DungeonModifier>
+  <DungeonModifier id="MERCB" type="0x135">
+    <DisplayId>Syndicate Takeover II</DisplayId>
+    <Description>Battle Izel the Grand Shaman after the final boss of the dungeon.</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,UNIQUE,EXTRABOSS,MERCB</Labels>
+    <IncompatibleLabels>UNIQUE</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="Mercenary_B" excludeLabels="SPECIAL" prob="1" reqLabels="BOSS" />
+      <EntityStatMultiplier stat="XP" amount="1.14" />
+      <EntityDustMultiplier amount="1.14" />
+    </Mutators>
+    <Unique />
+  </DungeonModifier>
+  <DungeonModifier id="MERCC" type="0x136">
+    <DisplayId>Syndicate Takeover III</DisplayId>
+    <Description>Battle Nefret the Pharaoh after the final boss of the dungeon.</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,UNIQUE,EXTRABOSS,MERCC</Labels>
+    <IncompatibleLabels>UNIQUE</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="Mercenary_C" excludeLabels="SPECIAL" prob="1" reqLabels="BOSS" />
+      <EntityStatMultiplier stat="XP" amount="1.18" />
+      <EntityDustMultiplier amount="1.18" />
+    </Mutators>
+    <Unique />
+  </DungeonModifier>
+  <DungeonModifier id="MERCD" type="0x137">
+    <DisplayId>Syndicate Takeover IV</DisplayId>
+    <Description>Battle Black Blade Ozuchi after the final boss of the dungeon.</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,UNIQUE,EXTRABOSS,MERCD</Labels>
+    <IncompatibleLabels>UNIQUE</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="Mercenary_D" excludeLabels="SPECIAL" prob="1" reqLabels="BOSS" />
+      <EntityStatMultiplier stat="XP" amount="1.22" />
+      <EntityDustMultiplier amount="1.22" />
+    </Mutators>
+    <Unique />
+  </DungeonModifier>
+  <DungeonModifier id="MYSTERYEFFUSION" type="0xee">
+    <DisplayId>Mystery Effusion</DisplayId>
+    <Description>Boss enemies will always drop a Tincture or Effusion.</Description>
+    <Weight>22500</Weight>
+    <Labels>ROLLABLE,ANY,UNIQUE,BOSS,LOOT</Labels>
+    <IncompatibleLabels>UNIQUE</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>MYSTERY_EFFUSION</GlobalFlag>
+      <GlobalFlag>MYSTERY_TINCTURE</GlobalFlag>
+      <EntityDropMultiplier amount="1.2" />
+    </Mutators>
+    <Unique />
+  </DungeonModifier>
+  <DungeonModifier id="BONUSCONSUMABLES" type="0xf8">
+    <DisplayId>Bonus Consumables</DisplayId>
+    <Description>Boss enemies will drop additional restorative consumables</Description>
+    <Weight>22500</Weight>
+    <Labels>ROLLABLE,ANY,UNIQUE,BOSS,LOOT</Labels>
+    <IncompatibleLabels>UNIQUE</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>BONUSCONSUMABLE</GlobalFlag>
+      <EntityDropMultiplier amount="1.2" />
+    </Mutators>
+    <Unique />
+  </DungeonModifier>
+  <DungeonModifier id="NILDROPS" type="0xe0">
+    <DisplayId>Nildrops</DisplayId>
+    <Description>Boss drops a bonus Nildrop</Description>
+    <Weight>22500</Weight>
+    <Labels>ROLLABLE,ANY,UNIQUE,BOSS,LOOT,NILDROP</Labels>
+    <IncompatibleLabels>UNIQUE</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>NILDROPS</GlobalFlag>
+      <EntityDropMultiplier amount="1.2" />
+    </Mutators>
+    <Unique />
+  </DungeonModifier>
+  <DungeonModifier id="ARMORBROKEN" type="0x200">
+    <DisplayId>Armor Broken</DisplayId>
+    <Description>Players have 30 less Defense</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,UNIQUE,STAT,DEFENSE,STATFLAT</Labels>
+    <IncompatibleLabels>UNIQUE,DEFENSE,PLAYERSTAT</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatIncrement amount="-30" stat="DEF" />
+      <EntityDropMultiplier amount="1.24" />
+      <EntityDustMultiplier amount="1.24" />
+    </Mutators>
+    <Unique />
+  </DungeonModifier>
+  <DungeonModifier id="BERSERK" type="0xe1">
+    <DisplayId>Berserk</DisplayId>
+    <Description>Players have 50% more Dex but 25% less Att</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,UNIQUE,STAT,DEXTERITY,ATTACK,STATMULTSTAT,DEXTERITY,ATTACK,STATMULT,PLAYERSTAT</Labels>
+    <IncompatibleLabels>UNIQUE,DEXTERITY,ATTACK,PLAYERSTAT</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatMultiplier amount="1.5" stat="DEX" />
+      <PlayerStatMultiplier amount="0.75" stat="ATT" />
+      <EntityStatMultiplier stat="XP" amount="1.2" />
+      <EntityDropMultiplier amount="1.1" />
+      <EntityDustMultiplier amount="1.2" />
+    </Mutators>
+    <Unique />
+  </DungeonModifier>
+  <DungeonModifier id="SICKPET" type="0x201">
+    <DisplayId>Sick Pet</DisplayId>
+    <Description>Pet health recovery is disabled.</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,PLAYER,HEALING,UNIQUE</Labels>
+    <IncompatibleLabels>HEALING,UNIQUE</IncompatibleLabels>
+    <Mutators>
+      <PlayerHealMultiplier amount="0" methods="Pets" />
+      <EntityStatMultiplier stat="XP" amount="1.08" />
+      <EntityDropMultiplier amount="1.2" />
+      <EntityDustMultiplier amount="1.15" />
+    </Mutators>
+    <Unique />
+  </DungeonModifier>
+  <DungeonModifier id="SILENTPET" type="0x20a">
+    <DisplayId>Silent Pet</DisplayId>
+    <Description>Pet mana recovery is disabled.</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,PLAYER,MANARECOVERY,UNIQUE</Labels>
+    <IncompatibleLabels>MANARECOVERY,UNIQUE</IncompatibleLabels>
+    <Mutators>
+      <PlayerManaMultiplier amount="0" methods="Pets" />
+      <EntityStatMultiplier stat="XP" amount="1.08" />
+      <EntityDropMultiplier amount="1.15" />
+      <EntityDustMultiplier amount="1.2" />
+    </Mutators>
+    <Unique />
+  </DungeonModifier>
+  <DungeonModifier id="SPONGY" type="0x221">
+    <DisplayId>Spongy</DisplayId>
+    <Description>Players have 25% more Max HP but 50% less Defense</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,PLAYERSTAT,NEGATIVEPLAYERSTAT,POSITIVEPLAYERSTAT,MAXHP,DEFENSE,STATMULT,UNIQUE</Labels>
+    <IncompatibleLabels>NEGATIVEPLAYERSTAT,POSITIVEPLAYERSTAT,MAXHP,DEFENSE</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatMultiplier amount="1.25" stat="MAXHP" />
+      <PlayerStatMultiplier amount="0.5" stat="DEF" />
+      <EntityStatMultiplier stat="XP" amount="1.2" />
+      <EntityDropMultiplier amount="1.1" />
+      <EntityDustMultiplier amount="1.2" />
+    </Mutators>
+    <Unique />
+  </DungeonModifier>
+  <DungeonModifier id="MANA_BATTERY" type="0x232">
+    <DisplayId>Mana Battery</DisplayId>
+    <Description>Players have 50% more Max MP but 50% less Mana Recovery.</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,STAT,PLAYERSTAT,POSITIVEPLAYERSTAT,MAXMP,PLAYER,MANARECOVERY,UNIQUE</Labels>
+    <IncompatibleLabels>MANARECOVERY,MAXMP,POSITIVEPLAYERSTAT</IncompatibleLabels>
+    <Mutators>
+      <PlayerStatMultiplier amount="1.5" stat="MAXMP" />
+      <PlayerManaMultiplier amount="0.5" methods="Self,External,Regeneration,Pets,Potions" />
+      <EntityStatMultiplier stat="XP" amount="1.15" />
+      <EntityDropMultiplier amount="1.1" />
+      <EntityDustMultiplier amount="1.25" />
+    </Mutators>
+    <Unique />
+  </DungeonModifier>
+  <DungeonModifier id="EXPERIENCED" type="0x48">
+    <DisplayId>Experienced</DisplayId>
+    <Description>100% Increased Exp</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,REWARD,EXPEREINCE</Labels>
+    <IncompatibleLabels>REWARD</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>EmptyFlag</GlobalFlag>
+      <EntityStatMultiplier stat="XP" amount="2" />
+    </Mutators>
+    <Reward />
+  </DungeonModifier>
+  <DungeonModifier id="LOOTING" type="0x4d">
+    <DisplayId>Looting</DisplayId>
+    <Description>50% Increased Loot Drop Rate</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,REWARD,LOOT</Labels>
+    <IncompatibleLabels>REWARD</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>EmptyFlag</GlobalFlag>
+      <EntityDropMultiplier amount="1.5" />
+    </Mutators>
+    <Reward />
+  </DungeonModifier>
+  <DungeonModifier id="DUSTSTORM" type="0xa">
+    <DisplayId>Dust Storm</DisplayId>
+    <Description>50% Increased Dust Gain</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,REWARD,DUST</Labels>
+    <IncompatibleLabels>REWARD</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>EmptyFlag</GlobalFlag>
+      <EntityDustMultiplier amount="1.5" />
+    </Mutators>
+    <Reward />
+  </DungeonModifier>
+  <DungeonModifier id="REWARDING" type="0x3b">
+    <DisplayId>Rewarding</DisplayId>
+    <Description>25% increased XP, Loot, and Dust Gain</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,REWARD,DUST,LOOT,EXPERIENCE</Labels>
+    <IncompatibleLabels>REWARD</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>EmptyFlag</GlobalFlag>
+      <EntityStatMultiplier stat="XP" amount="1.25" />
+      <EntityDropMultiplier amount="1.25" />
+      <EntityDustMultiplier amount="1.25" />
+    </Mutators>
+    <Reward />
+  </DungeonModifier>
+  <DungeonModifier id="GENEROUS" type="0x12">
+    <DisplayId>Generous</DisplayId>
+    <Description>Boss drops a Quest Chest</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,REWARD,BOSS,LOOT,CHEST,REWARD_HIGH</Labels>
+    <IncompatibleLabels>REWARD</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="Generous" excludeLabels="SPECIAL" perPlayer="true" prob="1" reqLabels="BOSS" />
+      <EntityStatMultiplier stat="XP" amount="1.18" />
+    </Mutators>
+    <Reward />
+  </DungeonModifier>
+  <DungeonModifier id="PETCOLLECTOR" type="0xd">
+    <DisplayId>Pet Collector</DisplayId>
+    <Description>Boss drops a Pet Egg</Description>
+    <Weight>40000</Weight>
+    <Labels>ROLLABLE,ANY,REWARD,BOSS,LOOT,PET,REWARD_LOW</Labels>
+    <IncompatibleLabels>REWARD</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="PetCollector" excludeLabels="SPECIAL" perPlayer="true" prob="1" reqLabels="BOSS" />
+      <EntityDropMultiplier amount="1.14" />
+      <EntityDustMultiplier amount="1.07" />
+    </Mutators>
+    <Reward />
+  </DungeonModifier>
+  <DungeonModifier id="CHEF" type="0x1">
+    <DisplayId>Chef</DisplayId>
+    <Description>Boss drops a food item</Description>
+    <Weight>35000</Weight>
+    <Labels>ROLLABLE,ANY,REWARD,BOSS,LOOT,FOOD,REWARD_LOW</Labels>
+    <IncompatibleLabels>REWARD</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="Chef" excludeLabels="SPECIAL" perPlayer="true" prob="1" reqLabels="BOSS" />
+      <EntityStatMultiplier stat="XP" amount="1.1" />
+      <EntityDustMultiplier amount="1.14" />
+    </Mutators>
+    <Reward />
+  </DungeonModifier>
+  <DungeonModifier id="MYSTERYSTATPOTION" type="0x1c">
+    <DisplayId>Mystery Stat Potion</DisplayId>
+    <Description>Boss drops a Mystery Stat Potion</Description>
+    <Weight>35000</Weight>
+    <Labels>ROLLABLE,ANY,REWARD,BOSS,LOOT,POTION,REWARD_MID</Labels>
+    <IncompatibleLabels>REWARD</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="MysteryStatPotion" excludeLabels="SPECIAL" perPlayer="true" prob="1" reqLabels="BOSS" />
+      <EntityDropMultiplier amount="1.18" />
+      <EntityDustMultiplier amount="1.08" />
+    </Mutators>
+    <Reward />
+  </DungeonModifier>
+  <DungeonModifier id="GUARANTEEDSTATPOTION" type="0x17">
+    <DisplayId>Guaranteed Stat Potion</DisplayId>
+    <Description>Boss stat potion drops are Guaranteed</Description>
+    <Weight>25000</Weight>
+    <Labels>ANY,REWARD,BOSS,LOOT,REWARD_MID</Labels>
+    <IncompatibleLabels>REWARD</IncompatibleLabels>
+    <Mutators>
+      <EntityDropMultiplier amount="100.00" itemId="Potion of Attack" reqLabels="BOSS" />
+      <EntityDropMultiplier amount="100.00" itemId="Potion of Defense" reqLabels="BOSS" />
+      <EntityDropMultiplier amount="100.00" itemId="Potion of Speed" reqLabels="BOSS" />
+      <EntityDropMultiplier amount="100.00" itemId="Potion of Dexterity" reqLabels="BOSS" />
+      <EntityDropMultiplier amount="100.00" itemId="Potion of Vitality" reqLabels="BOSS" />
+      <EntityDropMultiplier amount="100.00" itemId="Potion of Wisdom" reqLabels="BOSS" />
+      <EntityDropMultiplier amount="100.00" itemId="Potion of Life" reqLabels="BOSS" />
+      <EntityDropMultiplier amount="100.00" itemId="Potion of Mana" reqLabels="BOSS" />
+      <EntityDropMultiplier amount="100.00" itemId="Mystery Stat Pot" reqLabels="BOSS" />
+      <EntityDropMultiplier amount="100.00" excludeLabels="SHORTMINIBOSS" itemId="Potion of Attack" reqLabels="MINIBOSS" />
+      <EntityDropMultiplier amount="100.00" excludeLabels="SHORTMINIBOSS" itemId="Potion of Defense" reqLabels="MINIBOSS" />
+      <EntityDropMultiplier amount="100.00" excludeLabels="SHORTMINIBOSS" itemId="Potion of Speed" reqLabels="MINIBOSS" />
+      <EntityDropMultiplier amount="100.00" excludeLabels="SHORTMINIBOSS" itemId="Potion of Dexterity" reqLabels="MINIBOSS" />
+      <EntityDropMultiplier amount="100.00" excludeLabels="SHORTMINIBOSS" itemId="Potion of Vitality" reqLabels="MINIBOSS" />
+      <EntityDropMultiplier amount="100.00" excludeLabels="SHORTMINIBOSS" itemId="Potion of Wisdom" reqLabels="MINIBOSS" />
+      <EntityDropMultiplier amount="100.00" excludeLabels="SHORTMINIBOSS" itemId="Potion of Life" reqLabels="MINIBOSS" />
+      <EntityDropMultiplier amount="100.00" excludeLabels="SHORTMINIBOSS" itemId="Potion of Mana" reqLabels="MINIBOSS" />
+      <EntityDropMultiplier amount="100.00" excludeLabels="SHORTMINIBOSS" itemId="Mystery Stat Pot" reqLabels="MINIBOSS" />
+      <EntityStatMultiplier stat="XP" amount="1.18" />
+      <EntityDropMultiplier amount="1.18" />
+    </Mutators>
+    <Reward />
+  </DungeonModifier>
+  <DungeonModifier id="COLORFUL" type="0x21">
+    <DisplayId>Colorful</DisplayId>
+    <Description>Boss drops a Color Dye</Description>
+    <Weight>40000</Weight>
+    <Labels>ROLLABLE,ANY,REWARD,BOSS,LOOT,DYE,REWARD_LOW</Labels>
+    <IncompatibleLabels>REWARD</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="Colorful" excludeLabels="SPECIAL" perPlayer="true" prob="1" reqLabels="BOSS" />
+      <EntityDropMultiplier amount="1.1" />
+      <EntityDustMultiplier amount="1.18" />
+    </Mutators>
+    <Reward />
+  </DungeonModifier>
+  <DungeonModifier id="BIS" type="0x26">
+    <DisplayId>BIS</DisplayId>
+    <Description>Boss will drop a portal to the same dungeon</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,REWARD,BOSS,LOOT,PORTAL,REWARD_MID</Labels>
+    <IncompatibleLabels>REWARD</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="Bis" excludeLabels="SPECIAL" prob="1" reqLabels="BOSS" />
+      <EntityStatMultiplier stat="XP" amount="1.15" />
+      <EntityDustMultiplier amount="1.06" />
+    </Mutators>
+    <Reward />
+  </DungeonModifier>
+  <DungeonModifier id="EXALTEDBANNER" type="0x3a">
+    <DisplayId>Exalted Banner</DisplayId>
+    <Description>Complete the dungeon for an extra exaltation</Description>
+    <Weight>20000</Weight>
+    <Labels>ROLLABLE,EXALTATIONS,REWARD</Labels>
+    <IncompatibleLabels>REWARD</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="ExaltedBanner" excludeLabels="SPECIAL" prob="1" reqLabels="BOSS" />
+      <EntityStatMultiplier stat="XP" amount="1.14" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+    <Reward />
+  </DungeonModifier>
+  <DungeonModifier id="AGENTOFORYX" type="0x3f">
+    <DisplayId>Agent of Oryx</DisplayId>
+    <Description>Boss drops Agent of Oryx Shards</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,REWARD,BOSS,REWARD_MID</Labels>
+    <IncompatibleLabels>REWARD</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>AoOShard</GlobalFlag>
+      <EntityDropMultiplier amount="1.1" />
+      <EntityDustMultiplier amount="1.1" />
+    </Mutators>
+    <Reward />
+  </DungeonModifier>
+  <DungeonModifier id="SKINHUNTER_1" type="0x125">
+    <DisplayId>Skin Hunter I (Legacy)</DisplayId>
+    <Description>Boss enemies will drop player and pet skins at a doubled rate</Description>
+    <Weight>0</Weight>
+    <Labels>SKIN_HUNTER,REWARD,BOSS,LOOT</Labels>
+    <IncompatibleLabels>REWARD</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="SkinHunter" excludeLabels="SPECIAL" perPlayer="true" prob="0.028" reqLabels="BOSS" />
+      <EntityStatMultiplier stat="XP" amount="1.15" />
+      <EntityDustMultiplier amount="1.04" />
+    </Mutators>
+    <Reward />
+  </DungeonModifier>
+  <DungeonModifier id="SKINHUNTER" type="0x126">
+    <DisplayId>Skin Hunter</DisplayId>
+    <Description>Boss enemies will drop player and pet skins at a tripled rate</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,SKIN_HUNTER,REWARD,BOSS,LOOT</Labels>
+    <IncompatibleLabels>REWARD</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="SkinHunter" excludeLabels="SPECIAL" perPlayer="true" prob="0.042" reqLabels="BOSS" />
+      <EntityStatMultiplier stat="XP" amount="1.2" />
+      <EntityDustMultiplier amount="1.06" />
+    </Mutators>
+    <Reward />
+  </DungeonModifier>
+  <DungeonModifier id="SOUVENIR_1" type="0xb">
+    <DisplayId>Souvenir I (Legacy)</DisplayId>
+    <Description>Triples your chance of boss dropping an iconic reward</Description>
+    <Weight>0</Weight>
+    <Labels>ANY,REWARD,BOSS,LOOT,REWARD_LOW</Labels>
+    <IncompatibleLabels>REWARD</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="Souvenir_HIG" excludeLabels="SPECIAL" perPlayer="true" prob="0.011" reqLabels="BOSS" />
+      <SpecialSpawnOnDeath category="Souvenir_MID" excludeLabels="SPECIAL" perPlayer="true" prob="0.028" reqLabels="BOSS" />
+      <SpecialSpawnOnDeath category="Souvenir_LOW" excludeLabels="SPECIAL" perPlayer="true" prob="0.440" reqLabels="BOSS" />
+      <EntityStatMultiplier stat="XP" amount="1.08" />
+      <EntityDustMultiplier amount="1.12" />
+    </Mutators>
+    <Reward />
+  </DungeonModifier>
+  <DungeonModifier id="SOUVENIR" type="0xc">
+    <DisplayId>Souvenir</DisplayId>
+    <Description>Quadruples your chance of boss dropping an iconic reward</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,REWARD,BOSS,LOOT,REWARD_LOW</Labels>
+    <IncompatibleLabels>REWARD</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="Souvenir_HIG" excludeLabels="SPECIAL" perPlayer="true" prob="0.016" reqLabels="BOSS" />
+      <SpecialSpawnOnDeath category="Souvenir_MID" excludeLabels="SPECIAL" perPlayer="true" prob="0.042" reqLabels="BOSS" />
+      <SpecialSpawnOnDeath category="Souvenir_LOW" excludeLabels="SPECIAL" perPlayer="true" prob="0.660" reqLabels="BOSS" />
+      <EntityStatMultiplier stat="XP" amount="1.1" />
+      <EntityDustMultiplier amount="1.15" />
+    </Mutators>
+    <Reward />
+  </DungeonModifier>
+  <DungeonModifier id="KEYFAIRY" type="0xdf">
+    <DisplayId>Key Fairy</DisplayId>
+    <Description>A Key Fairy will spawn after defeating the boss dropping a random key and Enchantment Dust.</Description>
+    <Weight>30000</Weight>
+    <Labels>ROLLABLE,ANY,REWARD,BOSS,LOOT,REWARD_LOW,REWARD_MID,REWARD_HIGH</Labels>
+    <IncompatibleLabels>REWARD</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="Key_Fairy" excludeLabels="SPECIAL" prob="1" reqLabels="BOSS" />
+      <EntityStatMultiplier stat="XP" amount="1.12" />
+      <EntityDropMultiplier amount="1.08" />
+    </Mutators>
+    <Reward />
+  </DungeonModifier>
+  <DungeonModifier id="MYSTERYSKIN" type="0xe4">
+    <DisplayId>Mystery Skin</DisplayId>
+    <Description>The boss drops a token to obtain a Mystery Skin for up to 5 players</Description>
+    <Weight>15000</Weight>
+    <Labels>ROLLABLE,ANY,REWARD,BOSS,LOOT,REWARD_LOW,REWARD_MID,REWARD_HIGH</Labels>
+    <IncompatibleLabels>REWARD</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>MYSTERY_SKIN</GlobalFlag>
+      <EntityStatMultiplier stat="XP" amount="1.05" />
+      <EntityDropMultiplier amount="1.12" />
+    </Mutators>
+    <Reward />
+  </DungeonModifier>
+  <DungeonModifier id="FOOUNDTREASURE" type="0x116">
+    <DisplayId>Found Treasure!</DisplayId>
+    <Description>Treasure rooms are revealed if they exist</Description>
+    <Weight>25000</Weight>
+    <Labels>ROLLABLE,TROOM,REWARD</Labels>
+    <IncompatibleLabels>TROOM,REWARD</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>TreasureFound</GlobalFlag>
+      <EntityStatMultiplier stat="XP" amount="1.08" />
+      <EntityDropMultiplier amount="1.12" />
+      <EntityDustMultiplier amount="1.08" />
+    </Mutators>
+    <Reward />
+  </DungeonModifier>
+  <DungeonModifier id="FOOUNDTREASURE_2" type="0x117">
+    <DisplayId>Found Treasure! II (Legacy)</DisplayId>
+    <Description>Treasure rooms are revealed if they exist. Gear items in them have extra 25% droprate</Description>
+    <Weight>0</Weight>
+    <Labels>TROOM,REWARD</Labels>
+    <IncompatibleLabels>TROOM,REWARD</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>TreasureFound2</GlobalFlag>
+      <EntityStatMultiplier stat="XP" amount="1.1" />
+      <EntityDropMultiplier amount="1.12" />
+      <EntityDustMultiplier amount="1.1" />
+    </Mutators>
+    <Reward />
+  </DungeonModifier>
+  <DungeonModifier id="HAUNTEDHALLS_1" type="0xfd">
+    <DisplayId>Haunted Halls I  (Legacy)</DisplayId>
+    <Description>Additional 5% chance for each room to contain the Spectral Sentry</Description>
+    <Weight>0</Weight>
+    <Labels>LOSTHALLS,HAUNTEDHALLS</Labels>
+    <IncompatibleLabels>HAUNTEDHALLS</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>HAUNTED_HALLS1</GlobalFlag>
+      <EntityStatMultiplier stat="XP" amount="1.1" />
+      <EntityDropMultiplier amount="1.05" />
+      <EntityDustMultiplier amount="1.05" />
+    </Mutators>
+    <DungeonUnique />
+  </DungeonModifier>
+  <DungeonModifier id="HAUNTEDHALLS_2" type="0x102">
+    <DisplayId>Haunted Halls II  (Legacy)</DisplayId>
+    <Description>Additional 10% chance for each room to contain the Spectral Sentry</Description>
+    <Weight>0</Weight>
+    <Labels>LOSTHALLS,HAUNTEDHALLS</Labels>
+    <IncompatibleLabels>HAUNTEDHALLS</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>HAUNTED_HALLS2</GlobalFlag>
+      <EntityStatMultiplier stat="XP" amount="1.2" />
+      <EntityDropMultiplier amount="1.1" />
+      <EntityDustMultiplier amount="1.1" />
+    </Mutators>
+    <DungeonUnique />
+  </DungeonModifier>
+  <DungeonModifier id="HAUNTEDHALLS" type="0x103">
+    <DisplayId>Haunted Halls</DisplayId>
+    <Description>Additional 15% chance for each room to contain the Spectral Sentry</Description>
+    <Weight>50000</Weight>
+    <Labels>ROLLABLE,LOSTHALLS,HAUNTEDHALLS</Labels>
+    <IncompatibleLabels>HAUNTEDHALLS</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>HAUNTED_HALLS3</GlobalFlag>
+      <EntityStatMultiplier stat="XP" amount="1.3" />
+      <EntityDropMultiplier amount="1.15" />
+      <EntityDustMultiplier amount="1.15" />
+    </Mutators>
+    <DungeonUnique />
+  </DungeonModifier>
+  <DungeonModifier id="ALEXANDERSLEGACY_1" type="0x107">
+    <DisplayId>Alexanders Legacy I  (Legacy)</DisplayId>
+    <Description>Thessal has a 25% chance of becoming wounded upon defeat</Description>
+    <Weight>0</Weight>
+    <Labels>TRENCH,ALEGACY</Labels>
+    <IncompatibleLabels>ALEGACY</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>ALEXANDERS_LEGACY1</GlobalFlag>
+      <EntityStatMultiplier stat="XP" amount="1.05" />
+      <EntityDropMultiplier amount="1.05" />
+      <EntityDustMultiplier amount="1.05" />
+    </Mutators>
+    <DungeonUnique />
+  </DungeonModifier>
+  <DungeonModifier id="ALEXANDERSLEGACY_2" type="0x108">
+    <DisplayId>Alexanders Legacy II  (Legacy)</DisplayId>
+    <Description>Thessal has a 50% chance of becoming wounded upon defeat</Description>
+    <Weight>0</Weight>
+    <Labels>TRENCH,ALEGACY</Labels>
+    <IncompatibleLabels>ALEGACY</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>ALEXANDERS_LEGACY2</GlobalFlag>
+      <EntityStatMultiplier stat="XP" amount="1.1" />
+      <EntityDropMultiplier amount="1.1" />
+      <EntityDustMultiplier amount="1.1" />
+    </Mutators>
+    <DungeonUnique />
+  </DungeonModifier>
+  <DungeonModifier id="ALEXANDERSLEGACY_3" type="0x109">
+    <DisplayId>Alexanders Legacy III  (Legacy)</DisplayId>
+    <Description>Thessal has a 75% chance of becoming wounded upon defeat</Description>
+    <Weight>0</Weight>
+    <Labels>TRENCH,ALEGACY</Labels>
+    <IncompatibleLabels>ALEGACY</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>ALEXANDERS_LEGACY3</GlobalFlag>
+      <EntityStatMultiplier stat="XP" amount="1.15" />
+      <EntityDropMultiplier amount="1.15" />
+      <EntityDustMultiplier amount="1.15" />
+    </Mutators>
+    <DungeonUnique />
+  </DungeonModifier>
+  <DungeonModifier id="ALEXANDERSLEGACY" type="0x10a">
+    <DisplayId>Alexanders Legacy</DisplayId>
+    <Description>Dying Thessal will always occur</Description>
+    <Weight>50000</Weight>
+    <Labels>ROLLABLE,TRENCH,ALEGACY</Labels>
+    <IncompatibleLabels>ALEGACY</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>ALEXANDERS_LEGACY4</GlobalFlag>
+      <EntityStatMultiplier stat="XP" amount="1.2" />
+      <EntityDropMultiplier amount="1.2" />
+      <EntityDustMultiplier amount="1.2" />
+    </Mutators>
+    <DungeonUnique />
+  </DungeonModifier>
+  <DungeonModifier id="LANTERNLIGHT" type="0x12b">
+    <DisplayId>Lanternlight</DisplayId>
+    <Description>All Temple Lanterns are already lit.</Description>
+    <Weight>50000</Weight>
+    <Labels>ROLLABLE,LANTERNLIGHT,MTEMPLE</Labels>
+    <IncompatibleLabels>LANTERNLIGHT</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>LANTERNLIGHT</GlobalFlag>
+      <EntityStatMultiplier stat="XP" amount="1.1" />
+      <EntityDropMultiplier amount="1.2" />
+      <EntityDustMultiplier amount="1.1" />
+    </Mutators>
+    <DungeonUnique />
+  </DungeonModifier>
+  <DungeonModifier id="MOONLIT_FISHING" type="0x13f">
+    <DisplayId>Moonlit Fishing</DisplayId>
+    <Description>Umi is guaranteed to guide players to fish after the dance.</Description>
+    <Weight>0</Weight>
+    <Labels>MOONLIGHT</Labels>
+    <IncompatibleLabels>MOONLIGHT</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>MoonlightFishing</GlobalFlag>
+    </Mutators>
+    <DungeonUnique />
+  </DungeonModifier>
+  <DungeonModifier id="STEAMWORKS_MAINTENANCE" type="0x13d">
+    <DisplayId>Steamworks Maintenance</DisplayId>
+    <Description>Dungeon turrets are disabled while they undergo maintenance.</Description>
+    <Weight>50000</Weight>
+    <Labels>ROLLABLE,STEAMWORKS</Labels>
+    <IncompatibleLabels>STEAMWORKS</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>turretsOff</GlobalFlag>
+      <EntityStatMultiplier stat="XP" amount="1.15" />
+      <EntityDropMultiplier amount="1.15" />
+      <EntityDustMultiplier amount="1.25" />
+    </Mutators>
+    <DungeonUnique />
+  </DungeonModifier>
+  <DungeonModifier id="CRABRAVE_1" type="0x111">
+    <DisplayId>Crab Rave I (Legacy)</DisplayId>
+    <Description>Calamity crab is replaced with multiple smaller crabs</Description>
+    <Weight>0</Weight>
+    <Labels>DDOCKS,CRABRAVE</Labels>
+    <IncompatibleLabels>CRABRAVE</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>CRAB_RAVE</GlobalFlag>
+      <EntityStatMultiplier stat="XP" amount="1.1" />
+      <EntityDropMultiplier amount="1.1" />
+      <EntityDustMultiplier amount="1.2" />
+    </Mutators>
+    <DungeonUnique />
+  </DungeonModifier>
+  <DungeonModifier id="CRABRAVE" type="0x112">
+    <DisplayId>Crab Rave</DisplayId>
+    <Description>Calamity crab is replaced with multiple smaller crabs</Description>
+    <Weight>50000</Weight>
+    <Labels>ROLLABLE,DDOCKS,CRABRAVE</Labels>
+    <IncompatibleLabels>CRABRAVE</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>CRAB_RAVE2</GlobalFlag>
+      <EntityStatMultiplier stat="XP" amount="1.15" />
+      <EntityDropMultiplier amount="1.15" />
+      <EntityDustMultiplier amount="1.2" />
+    </Mutators>
+    <DungeonUnique />
+  </DungeonModifier>
+  <DungeonModifier id="SHATTERSACCEL" type="0x11b">
+    <DisplayId>Lingering Magi</DisplayId>
+    <Description>The castle starts with one Magi Generator active</Description>
+    <Weight>50000</Weight>
+    <Labels>ROLLABLE,SHATTERS</Labels>
+    <IncompatibleLabels>SHATTERS</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>SHATTERSSPEEDUP</GlobalFlag>
+      <EntityStatMultiplier stat="XP" amount="1.1" />
+      <EntityDropMultiplier amount="1.2" />
+      <EntityDustMultiplier amount="1.2" />
+    </Mutators>
+    <DungeonUnique />
+  </DungeonModifier>
+  <DungeonModifier id="SOULBOOST" type="0x12a">
+    <DisplayId>Soul Boost</DisplayId>
+    <Description>All dragons drop loot as if they were the final dragon fought.</Description>
+    <Weight>50000</Weight>
+    <Labels>ROLLABLE,DRACONIS</Labels>
+    <IncompatibleLabels>DRACONIS</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>LODBonus</GlobalFlag>
+      <EntityStatMultiplier stat="XP" amount="1.2" />
+      <EntityDropMultiplier amount="1.1" />
+      <EntityDustMultiplier amount="1.2" />
+    </Mutators>
+    <DungeonUnique />
+  </DungeonModifier>
+  <DungeonModifier id="SQUARED" type="0x16a">
+    <DisplayId>Squared</DisplayId>
+    <Description>Most enemies before the midpoint of the dungeon are buffed.\n\nBoss enemies drop 45% more loot.</Description>
+    <Weight>50000</Weight>
+    <Labels>ROLLABLE,3D</Labels>
+    <IncompatibleLabels>3D</IncompatibleLabels>
+    <Mutators>
+      <EntityDropMultiplier amount="1.45" reqLabels="BOSS" />
+      <EntityDropMultiplier amount="1.45" reqLabels="MINIBOSS" />
+      <GlobalFlag>Squared</GlobalFlag>
+      <EntityStatMultiplier stat="XP" amount="1.15" />
+      <EntityDustMultiplier amount="1.1" />
+    </Mutators>
+    <DungeonUnique />
+  </DungeonModifier>
+  <DungeonModifier id="FAST_WORMHOLE" type="0x214">
+    <DisplayId>Out of Time</DisplayId>
+    <Description>Enemy waves automatically progress after some time has passed.</Description>
+    <Weight>50000</Weight>
+    <Labels>ROLLABLE,ALIEN</Labels>
+    <IncompatibleLabels>ALIEN</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>FAST_WORMHOLE</GlobalFlag>
+      <EntityStatMultiplier stat="XP" amount="1.2" />
+      <EntityDropMultiplier amount="1.2" />
+      <EntityDustMultiplier amount="1.2" />
+    </Mutators>
+    <DungeonUnique />
+  </DungeonModifier>
+  <DungeonModifier id="ORYXMANIA_PORTAL" type="0x015f">
+    <DisplayId>Oryxmania Rumble</DisplayId>
+    <Description>A portal to the Oryxmania Rumble will appear after the boss is defeated.</Description>
+    <Weight>1000</Weight>
+    <Labels>REWARD,BOSS,LOOT,PORTAL</Labels>
+    <IncompatibleLabels>PORTAL</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="Oryxmania" excludeLabels="SPECIAL" prob="1" reqLabels="BOSS" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="EASTER_LOOT_BUNNY" type="0x0160">
+    <DisplayId>Loot Bunny</DisplayId>
+    <Description>A loot-bearing bunny alien will appear when the boss is defeated.</Description>
+    <Weight>1000</Weight>
+    <Labels>REWARD,BOSS,LOOT,REWARD_MID,EASTER</Labels>
+    <IncompatibleLabels>EASTER</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="Easter_Loot" excludeLabels="SPECIAL" prob="1" reqLabels="BOSS" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="ROLLABLE,INFO_NIGHTMATTER_RIFT_1" type="0x166">
+    <DisplayId>Nightmatter Rift I</DisplayId>
+    <Description>Enemy attacks apply momentary invulnerability, but life and magic healing are reduced by 30%.</Description>
+    <Weight>1000000</Weight>
+    <Labels>INFO,NIGHTMATTER_RIFT_1</Labels>
+    <IncompatibleLabels>NIGHTMATTER_RIFT_1</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>EmptyFlag</GlobalFlag>
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="ROLLABLE,INFO_NIGHTMATTER_RIFT_2" type="0x167">
+    <DisplayId>Nightmatter Rift II</DisplayId>
+    <Description>Enemy attacks apply momentary invulnerability, but life and magic healing are reduced by 45%.</Description>
+    <Weight>1000000</Weight>
+    <Labels>INFO,NIGHTMATTER_RIFT_2</Labels>
+    <IncompatibleLabels>NIGHTMATTER_RIFT_2</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>EmptyFlag</GlobalFlag>
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="ROLLABLE,INFO_NIGHTMATTER_RIFT_3" type="0x168">
+    <DisplayId>Nightmatter Rift III</DisplayId>
+    <Description>Enemy attacks apply momentary invulnerability, but life and magic healing are reduced by 60%.</Description>
+    <Weight>1000000</Weight>
+    <Labels>INFO,NIGHTMATTER_RIFT_3</Labels>
+    <IncompatibleLabels>NIGHTMATTER_RIFT_3</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>EmptyFlag</GlobalFlag>
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="INFO_NONE_D0" type="0x180">
+    <DisplayId>No Mod</DisplayId>
+    <Description>No mod is present.</Description>
+    <Weight>100</Weight>
+    <Labels>INFO,NO_MOD</Labels>
+    <IncompatibleLabels />
+    <Mutators>
+      <GlobalFlag>EmptyFlag</GlobalFlag>
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="INFO_NONE_D1" type="0x181">
+    <DisplayId>No Mod</DisplayId>
+    <Description>No mod is present.</Description>
+    <Weight>100</Weight>
+    <Labels>INFO,NO_MOD</Labels>
+    <IncompatibleLabels />
+    <Mutators>
+      <GlobalFlag>EmptyFlag</GlobalFlag>
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="INFO_NONE_C0" type="0x182">
+    <DisplayId>No Mod</DisplayId>
+    <Description>No mod is present.</Description>
+    <Weight>100</Weight>
+    <Labels>INFO,NO_MOD</Labels>
+    <IncompatibleLabels />
+    <Mutators>
+      <GlobalFlag>EmptyFlag</GlobalFlag>
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="INFO_NONE_C1" type="0x183">
+    <DisplayId>No Mod</DisplayId>
+    <Description>No mod is present.</Description>
+    <Weight>100</Weight>
+    <Labels>INFO,NO_MOD</Labels>
+    <IncompatibleLabels />
+    <Mutators>
+      <GlobalFlag>EmptyFlag</GlobalFlag>
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="INFO_NONE_C2" type="0x184">
+    <DisplayId>No Mod</DisplayId>
+    <Description>No mod is present.</Description>
+    <Weight>100</Weight>
+    <Labels>INFO,NO_MOD</Labels>
+    <IncompatibleLabels />
+    <Mutators>
+      <GlobalFlag>EmptyFlag</GlobalFlag>
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="INFO_NONE_B0" type="0x185">
+    <DisplayId>No Mod</DisplayId>
+    <Description>No mod is present.</Description>
+    <Weight>100</Weight>
+    <Labels>INFO,NO_MOD</Labels>
+    <IncompatibleLabels />
+    <Mutators>
+      <GlobalFlag>EmptyFlag</GlobalFlag>
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="INFO_NONE_B1" type="0x186">
+    <DisplayId>No Mod</DisplayId>
+    <Description>No mod is present.</Description>
+    <Weight>100</Weight>
+    <Labels>INFO,NO_MOD</Labels>
+    <IncompatibleLabels />
+    <Mutators>
+      <GlobalFlag>EmptyFlag</GlobalFlag>
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="INFO_NONE_B2" type="0x187">
+    <DisplayId>No Mod</DisplayId>
+    <Description>No mod is present.</Description>
+    <Weight>100</Weight>
+    <Labels>INFO,NO_MOD</Labels>
+    <IncompatibleLabels />
+    <Mutators>
+      <GlobalFlag>EmptyFlag</GlobalFlag>
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="INFO_NONE_A0" type="0x188">
+    <DisplayId>No Mod</DisplayId>
+    <Description>No mod is present.</Description>
+    <Weight>100</Weight>
+    <Labels>INFO,NO_MOD</Labels>
+    <IncompatibleLabels />
+    <Mutators>
+      <GlobalFlag>EmptyFlag</GlobalFlag>
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="INFO_NONE_A1" type="0x189">
+    <DisplayId>No Mod</DisplayId>
+    <Description>No mod is present.</Description>
+    <Weight>100</Weight>
+    <Labels>INFO,NO_MOD</Labels>
+    <IncompatibleLabels />
+    <Mutators>
+      <GlobalFlag>EmptyFlag</GlobalFlag>
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="INFO_NONE_A2" type="0x18a">
+    <DisplayId>No Mod</DisplayId>
+    <Description>No mod is present.</Description>
+    <Weight>100</Weight>
+    <Labels>INFO,NO_MOD</Labels>
+    <IncompatibleLabels />
+    <Mutators>
+      <GlobalFlag>EmptyFlag</GlobalFlag>
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="INFO_NONE_S0" type="0x18b">
+    <DisplayId>No Mod</DisplayId>
+    <Description>No mod is present.</Description>
+    <Weight>100</Weight>
+    <Labels>INFO,NO_MOD</Labels>
+    <IncompatibleLabels />
+    <Mutators>
+      <GlobalFlag>EmptyFlag</GlobalFlag>
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="INFO_NONE_S1" type="0x18c">
+    <DisplayId>No Mod</DisplayId>
+    <Description>No mod is present.</Description>
+    <Weight>100</Weight>
+    <Labels>INFO,NO_MOD</Labels>
+    <IncompatibleLabels />
+    <Mutators>
+      <GlobalFlag>EmptyFlag</GlobalFlag>
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="INFO_NONE_S2" type="0x18d">
+    <DisplayId>No Mod</DisplayId>
+    <Description>No mod is present.</Description>
+    <Weight>100</Weight>
+    <Labels>INFO,NO_MOD</Labels>
+    <IncompatibleLabels />
+    <Mutators>
+      <GlobalFlag>EmptyFlag</GlobalFlag>
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="INFO_NONE_S3" type="0x18e">
+    <DisplayId>No Mod</DisplayId>
+    <Description>No mod is present.</Description>
+    <Weight>100</Weight>
+    <Labels>INFO,NO_MOD</Labels>
+    <IncompatibleLabels />
+    <Mutators>
+      <GlobalFlag>EmptyFlag</GlobalFlag>
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="REMNANT" type="0x213">
+    <DisplayId>Remnant</DisplayId>
+    <Description>Boss and Minions have 40% less HP and deal 30% less damage</Description>
+    <Weight>1000000</Weight>
+    <Labels>EVENT,REMNANT,HEALTH,DAMAGE</Labels>
+    <IncompatibleLabels />
+    <Mutators>
+      <EntityStatMultiplier amount=".7" reqLabels="BOSSFIGHT" stat="Damage" />
+      <EntityStatMultiplier amount=".7" reqLabels="MINION" stat="Damage" />
+      <EntityStatMultiplier amount="0.6" reqLabels="BOSSFIGHT" stat="MaxHitPoints" />
+      <EntityStatMultiplier amount="0.6" reqLabels="MINION" stat="MaxHitPoints" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="SHADOW_OF_THE_LEGION" type="0x169">
+    <DisplayId>Shadow of the Legion</DisplayId>
+    <Description>60% chance to battle Inspector Stromwell in his Rift after the final boss of the dungeon.</Description>
+    <Weight>100</Weight>
+    <Labels>EXTRABOSS,SHADOW_OF_THE_LEGION</Labels>
+    <IncompatibleLabels>EXTRABOSS</IncompatibleLabels>
+    <Mutators>
+      <SpecialSpawnOnDeath category="SHADOW_OF_THE_LEGION" excludeLabels="SPECIAL" prob="0.6" reqLabels="BOSS" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="SHATTERS_SENTINEL_REHERSAL" type="0x139">
+    <DisplayId>The Bridge Sentinel Rehersal</DisplayId>
+    <Description>Hone your skills against The Bridge Sentinel!</Description>
+    <Weight>100</Weight>
+    <Labels />
+    <IncompatibleLabels />
+    <Mutators>
+      <EntityDropMultiplier amount="0.0" reqLabels="SHATTERS" />
+      <EntityStatMultiplier amount="0.80" reqLabels="SHATTERS" stat="Damage" />
+      <EntityStatMultiplier amount="0.85" reqLabels="SHATTERS" stat="MaxHitPoints" />
+      <EntityStatMultiplier amount="0.70" reqLabels="SHATTERS" stat="XP" />
+      <NoExaltStat />
+      <GlobalFlag>REHERSAL</GlobalFlag>
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="SHATTERS_ARCHMAGE_REHERSAL" type="0x13a">
+    <DisplayId>The Twilight Archmage Rehersal</DisplayId>
+    <Description>Hone your skills against The Twilight Archmage!</Description>
+    <Weight>100</Weight>
+    <Labels />
+    <IncompatibleLabels />
+    <Mutators>
+      <EntityDropMultiplier amount="0.0" reqLabels="SHATTERS" />
+      <EntityStatMultiplier amount="0.80" reqLabels="SHATTERS" stat="Damage" />
+      <EntityStatMultiplier amount="0.85" reqLabels="SHATTERS" stat="MaxHitPoints" />
+      <EntityStatMultiplier amount="0.70" reqLabels="SHATTERS" stat="XP" />
+      <NoExaltStat />
+      <GlobalFlag>REHERSAL</GlobalFlag>
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="SHATTERS_KING_REHERSAL" type="0x13b">
+    <DisplayId>The Forgotten King Rehersal</DisplayId>
+    <Description>Hone your skills against The Forgotten King!</Description>
+    <Weight>100</Weight>
+    <Labels />
+    <IncompatibleLabels />
+    <Mutators>
+      <EntityDropMultiplier amount="0.0" reqLabels="SHATTERS" />
+      <EntityStatMultiplier amount="0.80" reqLabels="SHATTERS" stat="Damage" />
+      <EntityStatMultiplier amount="0.85" reqLabels="SHATTERS" stat="MaxHitPoints" />
+      <EntityStatMultiplier amount="0.70" reqLabels="SHATTERS" stat="XP" />
+      <NoExaltStat />
+      <GlobalFlag>REHERSAL</GlobalFlag>
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="SHATTERS_ENCORE" type="0x13c">
+    <DisplayId>The Shatters Encore</DisplayId>
+    <Description>Boss has a 25% chance of dropping a portal to The Shatters.</Description>
+    <Weight>100</Weight>
+    <Labels>REWARD,BOSS,LOOT,PORTAL,REWARD_HIGH</Labels>
+    <IncompatibleLabels />
+    <Mutators>
+      <SpecialSpawnOnDeath category="ShattersEncore" excludeLabels="SPECIAL" prob="0.25" reqLabels="BOSS" />
+      <SpecialSpawnOnDeath category="ShattersEncore" excludeLabels="SPECIAL" prob="0.25" reqLabels="MINIBOSS" />
+    </Mutators>
+  </DungeonModifier>
+  <DungeonModifier id="POWEREDUP" type="0x13e">
+    <DisplayId>Powered Up</DisplayId>
+    <Description>The Dwarf Miner's Drill Starts Fully Charged.</Description>
+    <Weight>50000</Weight>
+    <Labels>ROLLABLE,POWEREDUP,FUNGAL</Labels>
+    <IncompatibleLabels>POWEREDUP</IncompatibleLabels>
+    <Mutators>
+      <GlobalFlag>POWEREDUP</GlobalFlag>
+      <EntityStatMultiplier stat="XP" amount="1.2" />
+      <EntityDropMultiplier amount="1.2" />
+      <EntityDustMultiplier amount="1.2" />
+    </Mutators>
+    <DungeonUnique />
+  </DungeonModifier>
+</DungeonModifiers>

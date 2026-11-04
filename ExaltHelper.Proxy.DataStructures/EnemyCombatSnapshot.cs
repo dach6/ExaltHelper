@@ -5,6 +5,9 @@ namespace ExaltHelper.Proxy.DataStructures;
 internal class EnemyCombatSnapshot
 {
 	public int EntityId { get; set; }
+	public int ObjectType { get; set; }
+	public int EncounterId { get; set; } = -1;
+	public int[] EncounterEntityIds { get; set; } = System.Array.Empty<int>();
 
 	public string Name { get; set; } = "Unknown";
 

@@ -73,6 +73,14 @@ internal class DpsOverlayForm : Form
 
 	private bool wasF9Down;
 
+	private bool wasF10Down;
+	private readonly bool isEmbedded;
+	public bool DesktopModeActive { get; set; }
+	private static readonly Rectangle nextDungeonButton = new Rectangle(124, 0, 20, 26);
+	private static readonly Rectangle liveDungeonButton = new Rectangle(146, 0, 40, 26);
+	private static readonly Rectangle lockButton = new Rectangle(188, 0, 52, 26);
+	private static readonly Rectangle expandButton = new Rectangle(242, 3, 60, 20);
+
 	private bool isMonsterDropdownOpen;
 
 	private readonly OverlayScrollBar dropdownScrollBar = new OverlayScrollBar();
@@ -266,7 +274,7 @@ internal class DpsOverlayForm : Form
 		get
 		{
 			CreateParams createParams = base.CreateParams;
-			createParams.ExStyle |= 524296;
+			if (!isEmbedded) createParams.ExStyle |= 524296;
 			if (isClickThrough)
 			{
 				createParams.ExStyle |= 134217760;
@@ -296,15 +304,19 @@ internal class DpsOverlayForm : Form
 	[DllImport("user32.dll")]
 	private static extern short GetAsyncKeyState(int vKey);
 
-	public DpsOverlayForm()
+	public DpsOverlayForm() : this(false) { }
+
+	public DpsOverlayForm(bool embedded)
 	{
+		isEmbedded = embedded;
+		if (embedded) TopLevel = false;
 		base.FormBorderStyle = FormBorderStyle.None;
 		base.ShowInTaskbar = false;
-		base.TopMost = true;
+		base.TopMost = !embedded;
 		base.StartPosition = FormStartPosition.Manual;
 		BackColor = Color.FromArgb(14, 15, 20);
 		base.Size = new Size(380, 440);
-		base.Opacity = 0.94;
+		base.Opacity = embedded ? 1 : 0.94;
 		DoubleBuffered = true;
 		try
 		{
@@ -320,7 +332,33 @@ internal class DpsOverlayForm : Form
 			Interval = 50
 		};
 		updateTimer.Tick += OnTimerTick;
-		updateTimer.Start();
+		if (!embedded) updateTimer.Start();
+		if (!embedded)
+		{
+			var saved = HudPreferences.Current;
+			if (saved.OverlayX != int.MinValue)
+			{
+				Bounds = ExaltDashboardForm.ClampBounds(new Rectangle(saved.OverlayX, saved.OverlayY, 380, Math.Max(260, saved.OverlayHeight)), Screen.AllScreens.Select(x => x.WorkingArea), new Size(380, 260));
+				Width = 380;
+				hasCustomPosition = true;
+			}
+			SetClickThrough(saved.OverlayLocked);
+		}
+	}
+
+	public void SaveOverlayLayout()
+	{
+		if (isEmbedded) return;
+		var saved = HudPreferences.Current;
+		saved.OverlayX = Left; saved.OverlayY = Top;
+		if (!isCompact) saved.OverlayHeight = Height;
+		saved.OverlayLocked = isClickThrough; saved.Save();
+	}
+
+	public void SetDesktopMode(bool enabled)
+	{
+		DesktopModeActive = enabled;
+		Visible = !enabled && !isUserHidden;
 	}
 
 	public void ToggleClickThrough()
@@ -330,6 +368,7 @@ internal class DpsOverlayForm : Form
 
 	public void SetClickThrough(bool enable)
 	{
+		if (isEmbedded) enable = false;
 		if (enable) EndScrollDrag();
 		isClickThrough = enable;
 		if (base.IsHandleCreated)
@@ -387,16 +426,20 @@ internal class DpsOverlayForm : Form
 	{
 		bool flag = (GetAsyncKeyState(119) & 0x8000) != 0;
 		bool flag2 = (GetAsyncKeyState(120) & 0x8000) != 0;
+		bool expandedKey = (GetAsyncKeyState(121) & 0x8000) != 0;
 		if (flag && !wasF8Down)
 		{
-			ToggleVisibility();
+			DpsOverlayManager.ToggleVisibility();
 		}
 		if (flag2 && !wasF9Down)
 		{
-			ToggleClickThrough();
+			if (!DesktopModeActive) ToggleClickThrough();
 		}
 		wasF8Down = flag;
 		wasF9Down = flag2;
+		if (expandedKey && !wasF10Down) DpsOverlayManager.ToggleExpanded();
+		wasF10Down = expandedKey;
+		if (DesktopModeActive || isEmbedded) return;
 		IntPtr gameHwnd = GetGameHwnd();
 		if (!(gameHwnd != IntPtr.Zero) || !IsWindow(gameHwnd))
 		{
@@ -449,6 +492,15 @@ internal class DpsOverlayForm : Form
 	protected override void OnMouseDown(MouseEventArgs e)
 	{
 		base.OnMouseDown(e);
+		if (e.Button == MouseButtons.Right && !isEmbedded && !isClickThrough)
+		{
+			var menu = new ContextMenuStrip();
+			menu.Items.Add("Expand to desktop  (F10)", null, (_, __) => DpsOverlayManager.SetExpanded(true));
+			menu.Closed += (_, __) => menu.Dispose();
+			menu.Show(this, e.Location);
+			return;
+		}
+		if (isEmbedded && e.Y < 76) return;
 		if (isClickThrough)
 		{
 			return;
@@ -487,7 +539,7 @@ internal class DpsOverlayForm : Form
 			return;
 		}
 
-		if (!isCompact && e.Y >= base.Height - 8 && e.Button == MouseButtons.Left)
+		if (!isEmbedded && !isCompact && e.Y >= base.Height - 8 && e.Button == MouseButtons.Left)
 		{
 			isResizingBottom = true;
 			resizeDragStartY = Cursor.Position.Y;
@@ -516,19 +568,24 @@ internal class DpsOverlayForm : Form
 				ShowDungeonHistoryMenu(new Point(44, 26));
 				return;
 			}
-			if (e.X >= 170 && e.X <= 190)
+			if (nextDungeonButton.Contains(e.Location))
 			{
 				DpsTrackerMod.NavigateNextDungeon();
 				return;
 			}
-			if (e.X >= 192 && e.X <= 242)
+			if (liveDungeonButton.Contains(e.Location))
 			{
 				DpsTrackerMod.NavigateLiveDungeon();
 				return;
 			}
-			if (e.X >= 244 && e.X <= 302)
+			if (lockButton.Contains(e.Location))
 			{
 				ToggleClickThrough();
+				return;
+			}
+			if (!isEmbedded && expandButton.Contains(e.Location))
+			{
+				DpsOverlayManager.SetExpanded(true);
 				return;
 			}
 			if (e.X >= 304 && e.X <= 324)
@@ -803,7 +860,8 @@ internal class DpsOverlayForm : Form
 					Invalidate();
 				}
 			}
-			else if ((e.X >= 24 && e.X <= 42) || (e.X >= 170 && e.X <= 190) || (e.X >= 192 && e.X <= 242) || (e.X >= 244 && e.X <= 302) || (e.X >= 326 && e.X <= 375))
+			else if ((e.X >= 24 && e.X <= 42) || nextDungeonButton.Contains(e.Location) || liveDungeonButton.Contains(e.Location)
+				|| lockButton.Contains(e.Location) || (!isEmbedded && expandButton.Contains(e.Location)) || (e.X >= 326 && e.X <= 375))
 			{
 				Cursor = Cursors.Hand;
 				if (hoveredTooltipText == "Drag to move HUD")
@@ -1255,9 +1313,11 @@ internal class DpsOverlayForm : Form
 	protected override void OnMouseUp(MouseEventArgs e)
 	{
 		base.OnMouseUp(e);
+		bool changed = isDragging || isResizingBottom;
 		isDragging = false;
 		EndScrollDrag();
 		isResizingBottom = false;
+		if (changed) SaveOverlayLayout();
 	}
 
 	protected override void OnMouseLeave(EventArgs e)
@@ -1360,26 +1420,28 @@ internal class DpsOverlayForm : Form
 		bool flag = currentSnapshot.HistoryTotalCount > 0;
 		Brush brush = (flag ? brushAccentCyan : brushTextMuted);
 		g.DrawString("◀", fontHeader, brush, 28f, 4f);
-		string s = TruncateString(currentSnapshot.DungeonName, 13);
+		string s = currentSnapshot.DungeonName ?? "";
 		bool flag2 = currentSnapshot.HistoryIndex >= 0;
-		using (SolidBrush brush2 = new SolidBrush(flag2 ? GoldColor : TextWhite))
-		{
-			g.DrawString(s, fontHeader, brush2, 46f, 4f);
-		}
-		int num = (int)(46f + g.MeasureString(s, fontHeader).Width);
-		dungeonDropdownHitRight = num + 16;
-		if (num < 165)
-		{
-			g.DrawString("▾", fontBadge, flag2 ? brushGold : brushAccentCyan, num, 6f);
-		}
+		HudDrawing.DrawText(g, s, fontHeader, new Rectangle(44, 3, 66, 20), flag2 ? GoldColor : TextWhite,
+			TextFormatFlags.SingleLine | TextFormatFlags.VerticalCenter | TextFormatFlags.EndEllipsis | TextFormatFlags.NoPrefix);
+		dungeonDropdownHitRight = 120;
+		g.DrawString("▾", fontBadge, flag2 ? brushGold : brushAccentCyan, 111f, 6f);
 		Brush brush3 = ((flag2 | flag) ? brushAccentCyan : brushTextMuted);
-		g.DrawString("▶", fontHeader, brush3, 174f, 4f);
+		g.DrawString("▶", fontHeader, brush3, nextDungeonButton.X + 3, 4f);
 		Color color = (flag2 ? GoldColor : HpGreen);
 		string s2 = (flag2 ? $"[{currentSnapshot.HistoryIndex + 1}/{currentSnapshot.HistoryTotalCount}]" : "[LIVE]");
-		g.DrawString(s2, fontBadge, new SolidBrush(color), 196f, 6f);
-		string s3 = (isClickThrough ? "[\ud83d\udd12 Locked]" : "[\ud83d\udd13 Lock]");
-		SolidBrush brush4 = (isClickThrough ? brushGold : brushTextMuted);
-		g.DrawString(s3, fontBadge, brush4, 250f, 6f);
+		HudDrawing.DrawText(g, s2, fontBadge, liveDungeonButton, color,
+			TextFormatFlags.SingleLine | TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter | TextFormatFlags.EndEllipsis | TextFormatFlags.NoPadding);
+		HudDrawing.DrawText(g, isClickThrough ? "[Locked]" : "[Lock]", fontBadge, lockButton, isClickThrough ? GoldColor : TextMuted,
+			TextFormatFlags.SingleLine | TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter | TextFormatFlags.NoPadding);
+		if (!isEmbedded)
+		{
+			using var fill = new SolidBrush(Color.FromArgb(26, 50, 64));
+			using var border = new Pen(Color.FromArgb(70, 130, 150));
+			g.FillRectangle(fill, expandButton); g.DrawRectangle(border, expandButton);
+			HudDrawing.DrawText(g, "Expand F10", fontBadge, expandButton, AccentCyan,
+				TextFormatFlags.SingleLine | TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter | TextFormatFlags.NoPadding);
+		}
 		DrawDragGrip(g, 306, 5, isRightDragHandleHovered);
 		g.DrawString(isCompact ? "▾" : "▴", fontTitle, brushTextWhite, 332f, 3f);
 		g.DrawString("✕", fontTitle, brushTextWhite, 358f, 3f);

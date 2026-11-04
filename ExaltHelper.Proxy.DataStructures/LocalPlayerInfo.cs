@@ -32,6 +32,18 @@ internal class LocalPlayerInfo
 
 	public int Wisdom { get; set; }
 
+	public int ExaltationBonusDamage { get; set; } = 1000;
+	public bool Damaging { get; set; }
+	public bool Berserk { get; set; }
+	public bool Weak { get; set; }
+	public bool Dazed { get; set; }
+	public double MasteryDamagePercent { get; set; }
+	public bool HasMasteryDamageBonus { get; set; }
+	public double ChallengeDamageMultiplier { get; set; } = 1;
+	public bool HasChallengeDamageBonus { get; set; }
+	public string CrucibleId { get; set; } = "";
+	public string BloodRitualId { get; set; } = "";
+
 	public int BaseLife { get; set; }
 
 	public int BaseMana { get; set; }
