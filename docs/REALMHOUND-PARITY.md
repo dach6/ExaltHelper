@@ -24,6 +24,8 @@ more stars. No objects or grounds were added or removed. Sprite atlases, sprite
 coordinates, generated object/tile lists, ground definitions, modifiers,
 enchantments, and forge properties are byte-identical to the previous release.
 The manifest records current source hashes and the exact key before/after values.
+Explicit Git line-ending attributes preserve the extracted asset bytes in source
+archives and fresh checkouts, keeping the manifest checksums reproducible.
 
 The Release build completed with zero errors and 49 existing warnings. Fourteen
 offline suites passed: game asset bundle (150 assertions with original sources),

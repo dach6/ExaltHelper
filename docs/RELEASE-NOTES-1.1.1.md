@@ -2,6 +2,7 @@ ExaltHelper 1.1.1 updates the launcher and bundled game data for **RotMG Exalt 7
 
 Download **ExaltHelper-1.1.1-Release.zip**, extract the entire ZIP to a writable folder, and run **ExaltHelper.exe**. Restart ExaltHelper after updating. Requires Windows, .NET Framework 4.8, and an installed RotMG Exalt client. Keep the assets, data folders, configuration, and DLLs beside the executable.
 
+- Preserves extracted asset line endings in source archives and Git checkouts so packaged checksums remain valid.
 - Updates the launcher handshake and compiled fallback to game version 7.2.0.1.0.
 - Refreshes the Ocean Trench Key definition with dungeon difficulty 5 and the game's warning that keys require 10 or more stars.
 - Refreshes game-source fingerprints and packaged checksums. The extracted sprite atlases, object/tile lists, ground definitions, enchantments, modifiers, and forge data match the previous release.

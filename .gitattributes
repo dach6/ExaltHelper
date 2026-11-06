@@ -14,3 +14,12 @@
 *.resources binary
 *.ico binary
 *.png binary
+
+# Keep extracted asset bytes stable across Windows checkouts and source archives.
+/ExaltHelper_Data/Objects.xml text eol=lf
+/ExaltHelper_Data/GroundTypes.xml text eol=lf
+/ExaltHelper_Data/version.txt text eol=lf
+/*.list text eol=lf
+/assets/xml/mods.xml text eol=crlf
+/assets/xml/enchantments.xml text eol=crlf
+/assets/xml/forgeProperties.xml text eol=crlf
