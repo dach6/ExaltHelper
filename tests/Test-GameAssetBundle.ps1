@@ -35,8 +35,8 @@ using System.Xml.Linq;
 public sealed class GameAssetBundleRegression : MarshalByRefObject
 {
     const BindingFlags F = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance;
-    const string ExpectedVersion = "7.2.0.0.0";
-    const string PreviousObjectsSha256 = "99E55963D63DEC0A506CDF47C4CAD9AD87DF333F324BB34653116A0DF4F77DFD";
+    const string ExpectedVersion = "7.2.0.1.0";
+    const string PreviousObjectsSha256 = "FC9151DEEB7FBF1B3EF9788833C8296E1C16C2D5664A9394421914C8E79570CD";
     const string NativeHookSha256 = "AE58C5FEBD1A773A3DE0BC3A4F6908298A08B94453D937E70C1AF5252854F750";
     static Assembly app;
     static string bundleRoot;
@@ -100,7 +100,7 @@ public sealed class GameAssetBundleRegression : MarshalByRefObject
         {
             string relative = Text(versionSource, "relativePath", Text(versionSource, "fileName")); byte[] actual = new byte[marker.Length];
             using (var stream = File.OpenRead(Inside(sourceDirectory, relative))) { stream.Position = offset; Check(stream.Read(actual, 0, actual.Length) == actual.Length, "Version marker is readable at its recorded offset"); }
-            Check(actual.SequenceEqual(marker), "Original game metadata contains 7.2.0.0.0 at the recorded offset");
+            Check(actual.SequenceEqual(marker), "Original game metadata contains 7.2.0.1.0 at the recorded offset");
         }
         else report.Add("LIMIT Original source files were not supplied; their provenance is recorded, while packaged asset fingerprints are independently verified below.");
     }
@@ -210,6 +210,14 @@ public sealed class GameAssetBundleRegression : MarshalByRefObject
             int id = (int)Number(sentinel, "id"); var expected = Map(sentinel["after"]); XElement definition;
             Check(objects.TryGetValue(id, out definition), "7.2 sentinel object is present: " + id);
             Check((string)definition.Attribute("id") == Text(expected, "objectName"), "7.2 sentinel XML name matches: " + id + " " + Text(expected, "objectName"));
+            if (expected.ContainsKey("dungeonDifficulty"))
+                Check((string)definition.Element("DungeonDifficulty") == Text(expected, "dungeonDifficulty"), "Updated key has the source dungeon difficulty: " + id);
+            if (expected.ContainsKey("tooltipEffects"))
+            {
+                var effects = definition.Element("ExtraTooltipData").Elements("EffectInfo").ToArray();
+                var wanted = ArrayValue(expected, "tooltipEffects").Select(Map).ToArray();
+                Check(effects.Length == wanted.Length && wanted.All(effect => effects.Any(actual => (string)actual.Attribute("name") == Text(effect, "name") && (string)actual.Attribute("description") == Text(effect, "description"))), "Updated key preserves the current source warning: " + id);
+            }
             if (Text(sentinel, "kind") == "changed")
             {
                 var before = Map(sentinel["before"]);
@@ -245,7 +253,7 @@ public sealed class GameAssetBundleRegression : MarshalByRefObject
     }
     static void Versions(string output)
     {
-        Check(File.ReadAllText(Inside(bundleRoot, "ExaltHelper_Data/version.txt")).Trim() == ExpectedVersion, "Packaged launcher version is 7.2.0.0.0");
+        Check(File.ReadAllText(Inside(bundleRoot, "ExaltHelper_Data/version.txt")).Trim() == ExpectedVersion, "Packaged launcher version is 7.2.0.1.0");
         Check((string)Get(T("Program"), "GameVersion") == ExpectedVersion, "Runtime launcher reads the packaged game version");
         string previous = Environment.CurrentDirectory, empty = Path.Combine(output, "missing-version-fixture"); Directory.CreateDirectory(empty);
         var cached = T("Program").GetField("_gameVersion", F);
@@ -258,7 +266,7 @@ public sealed class GameAssetBundleRegression : MarshalByRefObject
         try
         {
             var manifest = Map(json.DeserializeObject(File.ReadAllText(manifestPath)));
-            Check(Number(manifest, "schemaVersion") == 1 && Text(manifest, "gameVersion") == ExpectedVersion, "Bundle manifest identifies the supported 7.2.0.0.0 schema");
+            Check(Number(manifest, "schemaVersion") == 1 && Text(manifest, "gameVersion") == ExpectedVersion, "Bundle manifest identifies the supported 7.2.0.1.0 schema");
             SourceEvidence(manifest, sourceDirectory); Files(manifest); Versions(output);
             Dictionary<int, XElement> objects; DefinitionCounts(manifest, out objects); Sentinels(manifest, objects, output);
             Console.WriteLine("PASS: " + checks + " game-asset bundle assertions.");

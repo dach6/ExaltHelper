@@ -1,44 +1,37 @@
 # Publish ExaltHelper
 
-Suggested repository name: **ExaltHelper**
+Repository: https://github.com/dach6/ExaltHelper
 
-Suggested description:
+## Build and validate
 
-> A Windows companion for Realm of the Mad God Exalt with compact and desktop HUD modes, missions and quests, account tools, combat/loot/chat history, and Moonlight Village tracking.
-
-## Create the repository
-
-The source includes a README and `.gitignore`. When creating the repository on GitHub, leave **Add a README file** and **Add .gitignore** disabled to use the supplied files.
-
-Upload the contents of `ExaltHelper-GitHub`, with `README.md` and `ExaltHelper.csproj` at the repository root. Use GitHub Desktop or Git: `ExaltHelper_Data/Objects.xml` exceeds GitHub's browser upload limit, but is below the 100 MB limit for Git pushes.
-
-### GitHub Desktop
-
-1. Choose **File > Add local repository** and select the source folder.
-2. If prompted, choose **Create a repository here**, keeping the supplied README and `.gitignore`.
-3. Commit the source files.
-4. Choose **Publish repository** and enter the name, description, and visibility.
-
-### Git over HTTPS
-
-Create an empty GitHub repository, then run these commands in the source folder. Replace `YOUR-USERNAME` with your GitHub username.
+Use .NET SDK 10.0.401 on Windows with the .NET Framework 4.8 reference assemblies.
 
 ```powershell
-git init -b main
-git add .
-git commit -m "Initial ExaltHelper release"
-git remote add origin https://github.com/YOUR-USERNAME/ExaltHelper.git
-git push -u origin main
+dotnet build ExaltHelper.csproj -c Release
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tests/Test-GameAssetBundle.ps1
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tests/Test-PackagedAssets.ps1
 ```
 
-## Create the release
+Run the relevant additional suites in [tests/README.md](../tests/README.md).
+The game asset test accepts `-SourceDirectory` pointing to the installed game's
+`RotMG Exalt_Data` folder to verify its original resource fingerprints and version.
 
-Create a GitHub release with tag **v1.1.0** and title **ExaltHelper v1.1.0**. Attach `ExaltHelper-1.1.0-Release.zip` for users to download.
+## Update source and publish the release
 
-Suggested release description:
+1. Commit the validated source to `main` and push to the existing repository over HTTPS.
+2. Create tag **v1.1.1** at that exact commit and title the release
+   **ExaltHelper v1.1.1 - game 7.2.0.1.0**.
+3. Use [the prepared release notes](RELEASE-NOTES-1.1.1.md).
+4. Attach `ExaltHelper-1.1.1-Release.zip`, `ExaltHelper-1.1.1-Source.zip`, and
+   `SHA256SUMS.txt`. Verify uploaded checksums before publishing the stable release.
 
-> ExaltHelper 1.1 adds a resizable desktop HUD for a second monitor, persistent widgets/taskbar, missions/quests, account and collection views, searchable combat/loot/chat history and a theoretical DPS calculator. Includes the existing compact HUD, launcher and Moonlight Village tools.
->
-> Download and extract `ExaltHelper-1.1.0-Release.zip`, then run `ExaltHelper.exe`. Requires Windows, .NET Framework 4.8, and Realm of the Mad God Exalt. F8 toggles the active HUD; F9 locks the compact overlay; F10 switches desktop/compact modes. See the included HUD guide and verification ledger for offline test evidence and live-game validation limits.
+The application ZIP must contain the executable, configuration, dependency DLLs,
+`assets/`, `ExaltHelper_Data/`, notices, and HUD guide. Extract and validate the
+ZIP with the packaged-asset tests before publication. The source ZIP should come
+from the tagged commit and include the required binary build inputs.
 
-Dependency DLLs, compiled UI resources, game data, and the native hook are required repository inputs. The `.gitignore` excludes build output, runtime settings, diagnostics, and packet captures.
+`lib/`, `CompiledResources/`, and `ExaltHelper_Data/` are required build inputs.
+The native `ExaltHelper_Data/version.dll` hook is supplied as a binary; its source
+is not included. Exclude build intermediates, runtime settings, account data,
+diagnostics, and packet captures from both downloads. Do not replace assets of
+an existing published release; publish a new version for subsequent updates.

@@ -11,6 +11,29 @@ mode suitable for a second monitor, improved presentation, and the RealmHound
 features below. Its existing combat, equipment, party, ability, loot, Moonlight
 Village, overlay lock, and scrolling behavior must remain functional.
 
+## Game 7.2.0.1.0 compatibility update: 2026-11-05
+
+ExaltHelper 1.1.1 updates the launcher version file and compiled fallback to
+`7.2.0.1.0`. Assets were extracted from the official launcher's downloaded
+Production client. The launcher installation contains separate launcher assets;
+the game metadata identifies version `7.2.0.1.0` at byte offset 11034925.
+
+The game catalog changes one object: Ocean Trench Key (3089) now has
+`DungeonDifficulty` 5 and an `ExtraTooltipData` warning that keys require 10 or
+more stars. No objects or grounds were added or removed. Sprite atlases, sprite
+coordinates, generated object/tile lists, ground definitions, modifiers,
+enchantments, and forge properties are byte-identical to the previous release.
+The manifest records current source hashes and the exact key before/after values.
+
+The Release build completed with zero errors and 49 existing warnings. Fourteen
+offline suites passed: game asset bundle (150 assertions with original sources),
+packaged assets, ability packets, stat protocol, callouts, dashboard feed,
+expanded calculator, DPS tracking, DPS modifiers, combat stats, player roster,
+HUD item presentation, account workspace, and missions. The bundle test verifies
+the new key fields, all packaged hashes, embedded catalogs, version fallback,
+complete XML loading, and sprite artwork. Authenticated gameplay and the supplied
+native hook's game-specific mappings remain unverified for this game version.
+
 ## Character scrolling, grouped loot and tooltip update: 2026-11-03
 
 Live account revisions previously disposed and rebuilt the selected character's

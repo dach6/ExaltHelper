@@ -1,33 +1,33 @@
 {
     "schemaVersion":  1,
-    "gameVersion":  "7.2.0.0.0",
+    "gameVersion":  "7.2.0.1.0",
     "provenance":  {
                        "origin":  "Locally installed official Production client",
-                       "extractedUtc":  "2026-11-03T18:19:58.9575880Z",
+                       "extractedUtc":  "2026-11-06T04:03:05.6645931Z",
                        "sources":  [
                                        {
                                            "fileName":  "resources.assets",
                                            "relativePath":  "resources.assets",
-                                           "sha256":  "FDBA43BBE02079D56172746501FC9587A5A70FF6C4E05361B47D6645F8403BB2",
-                                           "bytes":  430230704
+                                           "sha256":  "CB64FA1CBFBFDBB3ECBAC28FCEC5FFDAC214D9B8FAF34C136C74901093637878",
+                                           "bytes":  430230800
                                        },
                                        {
                                            "fileName":  "global-metadata.dat",
                                            "relativePath":  "il2cpp_data/Metadata/global-metadata.dat",
-                                           "sha256":  "708A0DF1A2988B955FEBCFA4898135849232461372FCDFDFC3279461C2FD92A6",
-                                           "bytes":  17628644
+                                           "sha256":  "0F3CD3E0045341D8958EBF189A13202AEF67B39B881B5B4536B08D3ABF522DBD",
+                                           "bytes":  17498332
                                        }
                                    ],
                        "versionEvidence":  {
-                                               "byteOffset":  11199167,
+                                               "byteOffset":  11034925,
                                                "fileName":  "global-metadata.dat",
-                                               "value":  "7.2.0.0.0"
+                                               "value":  "7.2.0.1.0"
                                            },
                        "extractor":  {
                                          "fileName":  "Tomato-v1.9.2.jar",
                                          "sha256":  "A41E7F29F215F4AFF2040F3C5B3E20705052B99034E54A50DCCEB4CB67FC353D",
                                          "bytes":  8872841,
-                                         "method":  "Tomato-v1.9.2 assets.resextractor.UnityExtractor + assets.AssetExtractor through Java8 Nashorn; headless, isolated staging directory; final object/tile lists regenerated with -Dfile.encoding=UTF-8",
+                                         "method":  "Tomato-v1.9.2 assets.resextractor.UnityExtractor + assets.AssetExtractor through Java8 Nashorn; headless, isolated staging directory; -Dfile.encoding=UTF-8",
                                          "listEncoding":  "UTF-8"
                                      },
                        "aggregation":  "Direct Object/Ground children merged in ordinal source filename order; original XML node content and raw IDs preserved. Existing runtime resolves the last definition after uint16 conversion. Non-XML performance sidecars excluded.",
@@ -45,12 +45,13 @@
                    "groundRows":  10398
                },
     "changes":  {
-                    "previousObjectsSha256":  "99E55963D63DEC0A506CDF47C4CAD9AD87DF333F324BB34653116A0DF4F77DFD",
-                    "addedObjects":  227,
-                    "changedObjects":  327,
+                    "previousGameVersion":  "7.2.0.0.0",
+                    "previousObjectsSha256":  "FC9151DEEB7FBF1B3EF9788833C8296E1C16C2D5664A9394421914C8E79570CD",
+                    "addedObjects":  0,
+                    "changedObjects":  1,
                     "removedObjects":  0,
-                    "addedItems":  65,
-                    "addedGrounds":  13
+                    "addedItems":  0,
+                    "addedGrounds":  0
                 },
     "sourceIdExceptions":  [
                                {
@@ -90,14 +91,14 @@
                        },
     "nativeHook":  {
                        "file":  "ExaltHelper_Data/version.dll",
-                       "status":  "Retained unchanged; required IL2CPP exports found in the installed client. Game-specific mappings and authenticated gameplay remain unverified.",
-                       "gameAssemblySha256":  "E213023087E8A09F03A947394FA02BF346C156C30579CDB5562E7D21D4563519"
+                       "status":  "Retained unchanged. Game-specific mappings and authenticated gameplay remain unverified for 7.2.0.1.0.",
+                       "gameAssemblySha256":  "D3DFFB55AAB250BD719554EEEFD9F57EDCD51EF9A6D32F690ADFCBB1780CB1B0"
                    },
     "files":  [
                   {
                       "relativePath":  "ExaltHelper_Data/Objects.xml",
-                      "sha256":  "FC9151DEEB7FBF1B3EF9788833C8296E1C16C2D5664A9394421914C8E79570CD",
-                      "bytes":  30414837
+                      "sha256":  "87833A6B1CE541971E5EA5127AB8CDC4F17908E01493BFB89B6AFF6F96BD78AC",
+                      "bytes":  30414923
                   },
                   {
                       "relativePath":  "ExaltHelper_Data/GroundTypes.xml",
@@ -153,8 +154,8 @@
                   },
                   {
                       "relativePath":  "ExaltHelper_Data/version.txt",
-                      "sha256":  "C71207E9E19D6055A32634D33F5D783D6BDB518C8723FAA472D90BCDB5474A65",
-                      "bytes":  11
+                      "sha256":  "873871D26D04A8BC9A71A752C514EB34BDD140A6D3D9183B3EC5E8D2A6D98759",
+                      "bytes":  9
                   },
                   {
                       "relativePath":  "ExaltHelper_Data/version.dll",
@@ -165,10 +166,7 @@
     "sentinels":  [
                       {
                           "id":  6657,
-                          "kind":  "added",
-                          "before":  {
-
-                                     },
+                          "kind":  "existing",
                           "after":  {
                                         "objectName":  "Shifting Shroud Shiny",
                                         "displayName":  "Shifting Shroud (Shiny)",
@@ -199,10 +197,7 @@
                       },
                       {
                           "id":  6661,
-                          "kind":  "added",
-                          "before":  {
-
-                                     },
+                          "kind":  "existing",
                           "after":  {
                                         "objectName":  "Kageboshi Shiny",
                                         "displayName":  "Kageboshi (Shiny)",
@@ -240,11 +235,7 @@
                       },
                       {
                           "id":  7397,
-                          "kind":  "changed",
-                          "before":  {
-                                         "objectName":  "Adamantine Helm Shiny",
-                                         "displayName":  "Adamantine Helm Shiny"
-                                     },
+                          "kind":  "existing",
                           "after":  {
                                         "objectName":  "Adamantine Helm Shiny",
                                         "displayName":  "Adamantine Helm (Shiny)",
@@ -278,6 +269,32 @@
                                                        "UT"
                                                    ],
                                         "sprite":  false
+                                    }
+                      },
+                      {
+                          "id":  3089,
+                          "kind":  "changed",
+                          "before":  {
+                                         "objectName":  "Ocean Trench Key",
+                                         "dungeonDifficulty":  "",
+                                         "tooltipEffects":  [
+                                                                {
+                                                                    "name":  "Dungeon Difficulty",
+                                                                    "description":  "5"
+                                                                }
+                                                            ]
+                                     },
+                          "after":  {
+                                        "objectName":  "Ocean Trench Key",
+                                        "displayName":  "Ocean Trench Key",
+                                        "slotType":  10,
+                                        "dungeonDifficulty":  "5",
+                                        "tooltipEffects":  [
+                                                               {
+                                                                   "name":  "Warning",
+                                                                   "description":  "Keys can only be used once you have 10 or more stars!"
+                                                               }
+                                                           ]
                                     }
                       }
                   ]

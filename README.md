@@ -1,14 +1,14 @@
 # ExaltHelper
 
-**Version 1.1.0**
+**Version 1.1.1**
 
-Launcher game version: **7.2.0.0.0**.
+Launcher game version: **7.2.0.1.0**.
 
 The bundled game data and item atlases were extracted together from the installed
-7.2.0.0.0 client. [The asset manifest](assets/game-assets.json) records the source
+7.2.0.1.0 client. [The asset manifest](assets/game-assets.json) records the source
 fingerprints, packaged checksums, catalog counts and representative release changes.
 
-Includes grouped loot bags, consistent themed item tooltips, and character details that keep their scroll position during live updates. Restart ExaltHelper after updating.
+Version 1.1.1 updates the launcher handshake and bundled data for game 7.2.0.1.0, including the corrected Ocean Trench Key definition. Restart ExaltHelper after updating.
 
 ExaltHelper is a Windows companion for Realm of the Mad God Exalt. It combines an integrated combat HUD, launcher and account tools, and configurable gameplay utilities in one application.
 
@@ -33,7 +33,7 @@ ExaltHelper is a Windows companion for Realm of the Mad God Exalt. It combines a
 
 Requirements: Windows, .NET Framework 4.8, and an installed Realm of the Mad God Exalt client.
 
-1. Download `ExaltHelper-1.1.0-Release.zip`.
+1. Download `ExaltHelper-1.1.1-Release.zip`.
 2. Extract the entire ZIP to a writable folder.
 3. Open `ExaltHelper.exe` and accept the administrator prompt.
 4. Select your Exalt launcher in the application and locate it when prompted.

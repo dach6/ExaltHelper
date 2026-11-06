@@ -294908,8 +294908,9 @@ A dubious candy that specially made by a certain witch. Contains strange ingredi
     </Texture>
     <SlotType>10</SlotType>
     <Description>A key which opens an entrance to an Ocean Trench. Many sailors had met their ends in these waters from the deceptive songs of mermaids long ago.</Description>
+    <DungeonDifficulty>5</DungeonDifficulty>
     <ExtraTooltipData>
-      <EffectInfo description="5" name="Dungeon Difficulty" />
+      <EffectInfo name="Warning" description="Keys can only be used once you have 10 or more stars!" />
     </ExtraTooltipData>
     <Sound>use_key</Sound>
     <Consumable />
