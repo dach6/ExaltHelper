@@ -4,7 +4,7 @@
 
 Expanded dashboard features and mechanics were implemented with reference to [RealmHound](https://github.com/pillarzz/RealmHound), revision `a4c6f74ca16155d7facd97c293e784e8cd9ffd4e`.
 
-Adapted material includes mission definitions/progress handling, objective grouping and target hints; account protocol/API interpretations and fame tables; theoretical weapon, ability, proc, pet and equipment calculations; callout names, hints and modifier interpretations; and the RealmEye drop catalog in `assets/dashboard/realmeye_drops.json`. The original license is also shipped at `assets/dashboard/RealmHound-LICENSE.txt`.
+Adapted material includes mission definitions/progress handling, objective grouping and target hints; account protocol/API interpretations and fame tables; theoretical weapon, ability, proc, pet and equipment calculations; callout names, hints and modifier interpretations; sprite-atlas schema and idle-frame interpretation; and the RealmEye drop catalog in `assets/dashboard/realmeye_drops.json`. The original license is also shipped at `assets/dashboard/RealmHound-LICENSE.txt`.
 
 MIT License
 

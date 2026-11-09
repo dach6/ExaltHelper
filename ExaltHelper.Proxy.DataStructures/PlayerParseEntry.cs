@@ -8,6 +8,9 @@ internal class PlayerParseEntry
 
 	public string ClassName { get; set; }
 
+	public int ClassType { get; set; }
+	public int SkinType { get; set; }
+
 	public int CurrentHp { get; set; }
 
 	public int MaxHp { get; set; }

@@ -15,6 +15,7 @@ internal partial class ExaltDashboardForm
     private readonly List<Label> liveMetrics = new List<Label>();
     private DpsOverlayForm moonlightView;
     private HudCalculatorPage calculator;
+    private HudCombatTrackerPage combatTracker;
     private Label calloutPreview;
     private Label soundStatus;
     private Button copyRoster, copyThanks;
@@ -40,6 +41,7 @@ internal partial class ExaltDashboardForm
                 var panel = new Panel();
                 var feed = MakeTable(key, "Your realm events, travel, direct messages, and alerts in one place.", "Time", "Type", "From", "Event", "Location");
                 ItemColumn(feed, "Event", FeedItems);
+                HudGameSprites.Attach(feed.Grid, "Location", value => HudGameSprites.Portal((value as HudLogEntry)?.Location), "live");
                 feed.Toolbar.WrapContents = true; feed.Toolbar.AutoScroll = false; feed.Toolbar.AutoSize = true;
                 feed.Toolbar.Controls.Add(HudTheme.Button("Copy callout", (_, __) => CopyCallout()));
                 feed.Toolbar.Controls.Add(HudTheme.Button("Callout settings", (_, __) => OpenCalloutSettings()));
@@ -86,18 +88,22 @@ internal partial class ExaltDashboardForm
                 lastNoticeCheck = default; return panel;
             case "combat":
                 var combat = MakeTable(key, "Observed encounters are retained between sessions. Open a fight for team damage and your performance.", "When", "Encounter", "Dungeon", "Duration", "Damage", "DPS", "Result");
+                HudGameSprites.Attach(combat.Grid, "Encounter", value => value is HudFightRecord fight ? HudGameSprites.Object(fight.ObjectType) ?? HudGameSprites.Monster(fight.Enemy) : null, "combat");
+                HudGameSprites.Attach(combat.Grid, "Dungeon", value => HudGameSprites.Portal((value as HudFightRecord)?.Dungeon), "live");
                 var combatGrouping = new HudComboBox { DropDownStyle = ComboBoxStyle.DropDownList, Width = 155, BackColor = HudTheme.Input, ForeColor = HudTheme.Text };
                 combatGrouping.Items.AddRange(new object[] { "Encounters", "Dungeon runs" }); combatGrouping.SelectedIndex = HudPreferences.Current.CombatByDungeon ? 1 : 0;
                 combatGrouping.SelectedIndexChanged += (_, __) => { HudPreferences.Current.CombatByDungeon = combatGrouping.SelectedIndex == 1; HudPreferences.Current.Save(); lastJournalRevision = -1; RefreshPageData(); };
                 combat.Toolbar.Controls.Add(combatGrouping);
                 combat.RowOpened += value => ShowFight((HudFightRecord)value); return combat;
             case "performance":
-                var performance = MakeTable(key, "Your current encounter. Damage estimates are corrected when matching server reports arrive.", "Player", "Class", "Damage", "DPS", "Share", "Guard hits", "Status");
-                performance.Toolbar.Controls.Add(HudTheme.Button("Detailed breakdown", (_, __) => {
-                    var enemy = snapshot.GetCurrentDisplayEnemy();
-                    var fight = HudJournal.SnapshotForPage("combat").Fights.FirstOrDefault(x => x.Id == HudJournal.FightKey(snapshot.DungeonStartTime, enemy.EncounterId >= 0 ? enemy.EncounterId : enemy.EntityId));
+                combatTracker = new HudCombatTrackerPage();
+                combatTracker.HistoryRequested += () => SelectPage("combat");
+                combatTracker.DetailRequested += id => {
+                    var fight = HudJournal.SnapshotForRun(CurrentLiveSnapshot.DungeonStartTime).FirstOrDefault(x => x.Id == id);
                     if (fight != null) ShowFight(fight);
-                })); return performance;
+                    else footer.Text = "This encounter has no saved detail record. Enable combat recording in Settings to retain details.";
+                };
+                return combatTracker;
             case "loot":
                 var loot = MakeTable(key, "Each row shows one recorded bag. Hover an item for its own rarity, stats and enchantments; open the row for every item in the bag.", "When", "Item", "Rarity", "Source", "Dungeon", "Character", "Bag");
                 ItemColumn(loot, "Item", LootBagItems);
@@ -108,6 +114,7 @@ internal partial class ExaltDashboardForm
                 loot.RowOpened += value => ShowLootBag((HudLootBagHistory)value); return loot;
             case "trophies":
                 var trophies = MakeTable(key, "Discoveries from your recorded drops, grouped by dungeon. Open a collection to see obtained and missing items.", "Dungeon / biome", "Discovered", "Catalog", "Collection", "Recorded runs");
+                HudGameSprites.Attach(trophies.Grid, "Dungeon / biome", value => HudGameSprites.Portal(value as string), "live");
                 trophies.RowOpened += value => ShowCollection((string)value); return trophies;
             case "chat":
                 var chat = MakeTable(key, "Search conversations by player or message. Messages are stored locally while chat recording is enabled.", "When", "Channel", "From", "To", "Message", "Location");
@@ -118,6 +125,7 @@ internal partial class ExaltDashboardForm
             case "players":
                 var players = MakeTable(key, "Inspect observed players and their equipped items, enchantments, guild, and maxed stats.", "Player", "Class", "HP", "Maxed", "Stars", "Guild", "Equipment");
                 ItemColumn(players, "Equipment", PlayerItems);
+                HudGameSprites.Attach(players.Grid, "Player", PlayerPortrait, "players");
                 players.RowOpened += value => ShowPlayer((string)value); return players;
             case "abilities":
                 var abilities = MakeTable(key, "Observed abilities and crowd control. Hover identified items for details; search by item or player name.", "When", "Player", "Ability", "Item", "Details");
@@ -125,6 +133,7 @@ internal partial class ExaltDashboardForm
             case "party":
                 var party = MakeTable(key, "Track your party's presence, health, and gear. Utility buttons copy commands for you to use in the game.", "Player", "Class", "Health", "Maxed", "Presence", "Watchlist", "Equipment");
                 ItemColumn(party, "Equipment", PlayerItems);
+                HudGameSprites.Attach(party.Grid, "Player", value => PlayerPortrait(value) ?? HudGameSprites.Class(CurrentLiveSnapshot.PartyMembers.FirstOrDefault(x => x.Name == value as string)?.ClassName), "party");
                 foreach (string command in new[] { "/tell ", "/pkick ", "/ptransfer " })
                 {
                     string prefix = command;
@@ -189,8 +198,8 @@ internal partial class ExaltDashboardForm
             liveMetrics[2].Text = live.TotalDungeonDamage.ToString("N0");
             liveMetrics[3].Text = live.Players.Count + "  /  " + live.KillsCount;
         }
-        if (SelectedPage == "performance" && tables.TryGetValue("performance", out var performance))
-            performance.SetRows(snapshot.GetCurrentDisplayEnemy().Damagers.Select(x => new HudTableRow(x, x.Name, x.ClassName, x.Damage.ToString("N0"), x.Dps.ToString("N0"), x.Percentage + "%", x.GuardHits, x.Status) { StableKey = x.Name, Category = x.IsLocalPlayer ? "You" : "Team" }));
+        if (SelectedPage == "performance" && combatTracker != null)
+            combatTracker.SetLive(CurrentLiveSnapshot, HudJournal.ScopeId, HudJournal.SnapshotForRun(CurrentLiveSnapshot.DungeonStartTime));
         if (SelectedPage == "players" && tables.TryGetValue("players", out var players))
             players.SetRows(CurrentLiveSnapshot.Players.Select(x => new HudTableRow(x.Name, x.Name, x.ClassName, x.CurrentHp + " / " + x.MaxHp, x.MaxedStats, x.Stars, x.GuildName, string.Join(", ", x.EquipmentNames)) { Category = x.ClassName, Search = x.Name + " " + x.ClassName + " " + x.GuildName + " " + string.Join(" ", x.EquipmentNames), Tooltip = EquipmentTooltip(x) }));
         if (SelectedPage == "abilities" && tables.TryGetValue("abilities", out var abilities))
@@ -321,9 +330,19 @@ internal partial class ExaltDashboardForm
     }
     private void ShowFight(HudFightRecord fight)
     {
+        var team = new HudCombatTrackerPage();
+        var records = fight.Id != null && fight.Id.StartsWith("run:", StringComparison.Ordinal)
+            ? HudJournal.SnapshotForPage("combat").Fights.Where(x => x.Id.StartsWith(fight.Id.Substring(4) + ":", StringComparison.Ordinal)).ToArray()
+            : new[] { fight };
+        team.SetHistory(records, fight.Dungeon);
+        team.HistoryRequested += () => SelectPage("combat");
+        team.DetailRequested += id => { var entry = records.FirstOrDefault(x => x.Id == id); if (entry != null) ShowFightSources(entry); };
+        ShowFightTabs(fight, team);
+    }
+    private void ShowFightSources(HudFightRecord fight) => ShowFightTabs(fight, null);
+    private void ShowFightTabs(HudFightRecord fight, HudCombatTrackerPage team)
+    {
         var tabs = new TabControl();
-        var team = new HudTablePage("Server reports cover visible players. Damage taken is attributed to the enemy that dealt it.", "Player", "Class", "Damage dealt", "DPS", "Damage taken", "Guard hits", "Status");
-        team.SetRows(fight.Players.Select(x => new HudTableRow(x.Name, x.Name, x.ClassName, x.Damage.ToString("N0"), x.Dps.ToString("N0"), fight.DamageTaken.TryGetValue(x.Name, out long taken) ? taken.ToString("N0") : "—", x.GuardHits, x.Status)));
         var sources = new HudTablePage("Recorded projectile contributions and their observed stats. Unconfirmed amounts remain estimates. " + fight.EstimateNote,
             "Source", "Kind", "Damage", "Confirmed", "ATT", "DEX", "VIT", "WIS", "Bonus");
         sources.SetRows(fight.Sources.Select(x => new HudTableRow(x, ItemSpriteManager.GetItemMetadata(x.ItemId).Name, x.Kind, x.Damage.ToString("N0"), x.ConfirmedDamage.ToString("N0"), x.Attack, x.Dexterity, x.Vitality, x.Wisdom, x.EventMultiplier.ToString("0.###") + "×") { Tooltip = "Observed effects: " + EffectNames(x.Effects, x.Effects2) }));
@@ -332,9 +351,9 @@ internal partial class ExaltDashboardForm
         var equipment = new HudTablePage(fight.Character + " · " + fight.Dungeon + " · " + fight.Time.ToLocalTime().ToString("g"), "Slot", "Equipment", "Rarity");
         equipment.SetRows((fight.Equipment ?? Array.Empty<int>()).Select((x, i) => new HudTableRow(x, new[] { "Weapon", "Ability", "Armor", "Ring" }[Math.Min(i, 3)], ItemSpriteManager.GetItemMetadata(x).Name, ItemSpriteManager.GetItemMetadata(x).Rarity)));
         ItemColumn(equipment, "Equipment", value => new[] { HudItemPresentation.Create((int)value, details: "Recorded equipment · " + fight.Character) }, showNames: true);
-        foreach (var item in new[] { Tuple.Create("Team", team), Tuple.Create("My performance", sources), Tuple.Create("Equipment", equipment) })
+        foreach (var item in new[] { Tuple.Create("Team overview", (Control)team), Tuple.Create("My performance", (Control)sources), Tuple.Create("Equipment", (Control)equipment) }.Where(x => x.Item2 != null))
         { var tab = new TabPage(item.Item1) { BackColor = HudTheme.Background, Padding = new Padding(12) }; tab.Controls.Add(item.Item2); tabs.TabPages.Add(tab); }
-        DetailWindow(fight.Enemy + " · " + fight.Damage.ToString("N0") + " damage", tabs);
+        DetailWindow(fight.Enemy + " · " + fight.Damage.ToString("N0") + " damage", tabs, new Size(1160, 760));
     }
     internal static IEnumerable<HudFightRecord> DungeonHistory(IEnumerable<HudFightRecord> fights)
     {
@@ -346,6 +365,8 @@ internal partial class ExaltDashboardForm
             long damage = run.Sum(x => x.Damage);
             var players = ordered.SelectMany(x => x.Players).GroupBy(x => x.Name ?? "Unknown").Select(group => new PlayerDamageEntry {
                 Name = group.Key, ClassName = group.Last().ClassName, Damage = group.Sum(x => x.Damage),
+                Hits = group.All(x => x.Hits.HasValue) ? (int?)group.Sum(x => x.Hits.Value) : null,
+                ClassType = group.Last().ClassType, SkinType = group.Last().SkinType, EquipmentIds = (int[])(group.Last().EquipmentIds ?? Array.Empty<int>()).Clone(),
                 Dps = group.Sum(x => x.Damage) / Math.Max(.5, seconds), Percentage = 100.0 * group.Sum(x => x.Damage) / Math.Max(1, damage),
                 IsLocalPlayer = group.Any(x => x.IsLocalPlayer), GuardHits = group.Sum(x => x.GuardHits), GuardDamage = group.Sum(x => x.GuardDamage),
                 Status = group.Last().Status, LastHpPercent = group.Last().LastHpPercent }).OrderByDescending(x => x.Damage).ToList();

@@ -44,7 +44,7 @@ internal partial class ExaltDashboardForm : Form
     public event EventHandler CompactRequested;
 
     private static readonly string[][] PageDefinitions = {
-        new[] { "live", "Live feed", "PLAY" }, new[] { "combat", "Combat history", "" }, new[] { "performance", "My performance", "" },
+        new[] { "live", "Live feed", "PLAY" }, new[] { "performance", "Combat tracker", "" }, new[] { "combat", "Combat history", "" },
         new[] { "loot", "Loot history", "" }, new[] { "trophies", "Trophy hall", "" }, new[] { "missions", "Missions", "PROGRESS" },
         new[] { "quests", "Quests", "" }, new[] { "characters", "Characters", "ACCOUNT" }, new[] { "treasury", "Treasury", "" },
         new[] { "vault", "Vault", "" }, new[] { "exaltations", "Exaltations", "" }, new[] { "pets", "Pet yard", "" },

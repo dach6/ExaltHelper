@@ -65,6 +65,18 @@ Loot display filters in the feed are independent of loot-history recording filte
 
 Combat history stores observed encounters, including team damage and available enemy-attributed damage taken. Open a fight for equipment and contribution details. Server reports can correct earlier estimates, including to zero. Source tooltips show the conditions recorded when the projectile was fired. Reviewing old combat history does not replace live widgets, party/player inspection or live-feed metrics.
 
+The expanded dashboard's **Combat tracker** page breaks the current dungeon into
+one expandable section per observed monster. Each section keeps its own damage
+total, HP bar, fight duration, phase count and contributor ranking, so two
+monsters with the same name still have separate leaderboards. Expand a row with
+the mouse, **Enter**, **Space**, or the arrow keys. **% DMG** is each player's
+share of that monster's tracked damage; DPS uses that monster's encounter time.
+Optional columns show hits, damage taken, guarded damage and the last observed
+gear. Search can match a monster or contributor while retaining the complete
+leaderboard for matching monsters. The page also shows bundled monster,
+character/class, dungeon/portal and equipment artwork. Older records without a
+field such as hit count or HP keep it as unknown instead of displaying a zero.
+
 Settings can restrict newly recorded fights by dungeon difficulty, realm boss group, seasonal encounter or treasure crate, and can exclude solo fights. Already recorded fights continue receiving damage corrections. Unknown groups remain eligible. The same dungeon ratings distinguish normal and advanced variants in mission recommendations and key-opening filters.
 
 Sound settings provide per-category switches, master and individual volume, built-in tones and custom WAV files. Categories include chat, named realm events, dungeon modifiers, bag types and key-opening difficulty. New sound categories start disabled. Custom files must contain 8- or 16-bit PCM mono/stereo audio, last at most five seconds and be no larger than 2 MB. Use the preview button to check the selected sound and volume.

@@ -768,6 +768,14 @@ internal static class ItemSpriteManager
 		};
 	}
 
+	// HUD portraits use the atlas declared by the sprite data, including animated
+	// character frames. Callers borrow these shared images and must not dispose them.
+	internal static Bitmap GetAtlas(int atlasId)
+	{
+		if (!isInitialized) InitializeAssets();
+		return atlasId == 2 ? charactersAtlas : atlasId == 4 ? mapObjectsAtlas : null;
+	}
+
 	public static Bitmap GetItemSprite(int itemId)
 	{
 		if (!isInitialized) InitializeAssets();

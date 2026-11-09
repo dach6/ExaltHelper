@@ -15,6 +15,7 @@ ExaltHelper is a Windows companion for Realm of the Mad God Exalt. It combines a
 ## Features
 
 - Track DPS, total damage, and encounter history, with weapon, ability, and summon attribution.
+- In the expanded dashboard, open **Combat tracker** for expandable per-monster leaderboards with HP, encounter DPS, hit counts, damage share, optional taken/guarded damage, gear, and game artwork.
 - Inspect players and equipment, view ability logs, and follow party and loot activity.
 - Track Moonlight Village encounters and phases.
 - Move and resize the HUD, toggle click-through, and navigate lists with the mouse wheel or draggable scrollbars.
@@ -63,6 +64,13 @@ The implementation uses RealmHound as its feature and mechanics reference. [The 
 ## Damage tracking
 
 The tracker reconstructs damage from combat packets, equipped items, received stats, and available buff definitions. Matching server reports correct local estimates. Unconfirmed hits remain estimates, and totals can be affected by visibility, missing packets, unavailable event definitions, or game updates.
+
+The expanded **Combat tracker** keeps simultaneous monsters separate, including
+same-named targets. Expand a monster to see contributors ordered by damage;
+searching for a player keeps the full ranking and denominator for each matching
+monster. Character, monster, portal and equipment cells use the bundled game
+artwork. Historical records that predate a field retain an unknown marker when
+the value was never observed.
 
 Crucible and Blood Ritual bonuses use definitions received from the game. If the HUD flags missing bonus definitions, open the relevant event panels while tracking is active.
 

@@ -102,6 +102,8 @@ internal class DpsTrackerMod : IDisposable
 		public long GuardDamage;
 
 		public bool IsLocalPlayer;
+		public int ClassType, SkinType;
+		public int[] EquipmentIds = Array.Empty<int>();
 	}
 
 	private class EnemyCombatTracker
@@ -149,6 +151,17 @@ internal class DpsTrackerMod : IDisposable
 		public int Condition2;
 
 		public readonly Dictionary<string, PlayerCombatData> Damagers = new Dictionary<string, PlayerCombatData>(StringComparer.OrdinalIgnoreCase);
+
+		public void CaptureAppearance(Dictionary<string, PlayerParseEntry> roster)
+		{
+			lock (Damagers)
+				foreach (var player in Damagers.Values)
+					if ((!IsDead || player.EquipmentIds.Length == 0) && player.Name != null && roster.TryGetValue(player.Name, out var appearance))
+					{
+						player.ClassType = appearance.ClassType; player.SkinType = appearance.SkinType;
+						player.EquipmentIds = (int[])(appearance.EquipmentIds ?? Array.Empty<int>()).Clone();
+					}
+		}
 
 		public double GetFightDurationSec()
 		{
@@ -227,6 +240,9 @@ internal class DpsTrackerMod : IDisposable
 						Name = text,
 						ClassName = className,
 						Damage = value4.Damage,
+						Hits = value4.Hits,
+						ClassType = value4.ClassType, SkinType = value4.SkinType,
+						EquipmentIds = (int[])value4.EquipmentIds.Clone(),
 						Dps = dps2,
 						Percentage = percentage,
 						IsLocalPlayer = isLocalPlayer,
@@ -245,6 +261,10 @@ internal class DpsTrackerMod : IDisposable
 						Name = g.Key,
 						ClassName = (g.FirstOrDefault((PlayerDamageEntry x) => x.ClassName != "Player")?.ClassName ?? g.First().ClassName),
 						Damage = g.Sum((PlayerDamageEntry x) => x.Damage),
+						Hits = g.All((PlayerDamageEntry x) => x.Hits.HasValue) ? (int?)g.Sum((PlayerDamageEntry x) => x.Hits.Value) : null,
+						ClassType = g.FirstOrDefault(x => x.ClassType > 0)?.ClassType ?? 0,
+						SkinType = g.FirstOrDefault(x => x.SkinType > 0)?.SkinType ?? 0,
+						EquipmentIds = (int[])(g.FirstOrDefault(x => x.EquipmentIds.Length > 0)?.EquipmentIds ?? Array.Empty<int>()).Clone(),
 						Dps = ((dur > 0.0) ? Math.Round((double)g.Sum((PlayerDamageEntry x) => x.Damage) / dur, 1) : 0.0),
 						Percentage = ((TotalDamage > 0) ? Math.Round((double)g.Sum((PlayerDamageEntry x) => x.Damage) / (double)TotalDamage * 100.0, 1) : 0.0),
 						IsLocalPlayer = g.Any((PlayerDamageEntry x) => x.IsLocalPlayer),
@@ -3140,6 +3160,8 @@ internal class DpsTrackerMod : IDisposable
 			{
 				Name = PlayerName,
 				ClassName = className,
+				ClassType = player.ObjectType,
+				SkinType = player.Skin,
 				MaxedStats = item,
 				MaxedCount = item2,
 				Exaltations = array8,
@@ -3362,6 +3384,16 @@ internal class DpsTrackerMod : IDisposable
 			num = 1.0;
 		}
 		double totalGroupDps = ((num > 0.0) ? Math.Round((double)combinedDungeonCombat.TotalDamage / num, 1) : 0.0);
+		List<PlayerParseEntry> players;
+		lock (playerRoster)
+		{
+			players = playerRoster.Values.GroupBy(p => p.Name, StringComparer.OrdinalIgnoreCase).Select(g => g.Last())
+				.OrderByDescending(p => p.MaxedCount).ThenBy(p => p.Name).ToList();
+		}
+		var rosterByName = players.Where(p => !string.IsNullOrEmpty(p.Name)).ToDictionary(p => p.Name, StringComparer.OrdinalIgnoreCase);
+		lock (allEnemies)
+			foreach (var encounter in allEnemies.Values.Distinct()) encounter.CaptureAppearance(rosterByName);
+		combinedDungeonCombat.CaptureAppearance(rosterByName);
 		List<EnemyCombatSnapshot> list = new List<EnemyCombatSnapshot>();
 		lock (defeatedEnemies)
 		{
@@ -3409,15 +3441,11 @@ internal class DpsTrackerMod : IDisposable
 			CurrentHp = 0
 		} : list[0]));
 		EnemyCombatSnapshot allCombinedEnemy = combinedDungeonCombat.ToSnapshot();
-		List<PlayerParseEntry> players;
-		lock (playerRoster)
+		List<EnemyCombatSnapshot> encounters;
+		lock (allEnemies)
 		{
-			players = playerRoster.Values
-				.GroupBy(p => p.Name, StringComparer.OrdinalIgnoreCase)
-				.Select(g => g.Last())
-				.OrderByDescending(p => p.MaxedCount)
-				.ThenBy(p => p.Name)
-				.ToList();
+			encounters = allEnemies.Values.Distinct().Where(e => e.StartTick != 0)
+				.Select(e => e.ToSnapshot()).ToList();
 		}
 		LocalPlayerInfo localPlayerInfo = new LocalPlayerInfo();
 		if (client != null && client.Player != null)
@@ -3669,6 +3697,7 @@ internal class DpsTrackerMod : IDisposable
 			TotalGroupDps = totalGroupDps,
 			ActiveEnemy = activeEnemy,
 			DefeatedEnemies = list,
+			Encounters = encounters,
 			AllCombinedEnemy = allCombinedEnemy,
 			Players = players,
 			PartyMembers = partyMembers,

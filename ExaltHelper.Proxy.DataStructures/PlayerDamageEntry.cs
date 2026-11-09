@@ -8,6 +8,12 @@ internal class PlayerDamageEntry
 
 	public string ClassName { get; set; }
 
+	public int ClassType { get; set; }
+	public int SkinType { get; set; }
+	public int[] EquipmentIds { get; set; } = System.Array.Empty<int>();
+	// Missing in older saved encounters; an unknown count must not display as zero.
+	public int? Hits { get; set; }
+
 	public long Damage { get; set; }
 
 	public double Dps { get; set; }

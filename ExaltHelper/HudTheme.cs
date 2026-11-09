@@ -108,6 +108,7 @@ internal static class HudTheme
             foreach (DataGridViewRow row in grid.Rows) row.Height = grid.RowTemplate.Height;
         }
         foreach (Control child in root.Controls) Apply(child, previous);
+        if (root is HudCombatTrackerPage combat) combat.RefreshAppearance();
         root.Invalidate();
     }
 }

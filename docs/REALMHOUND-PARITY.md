@@ -36,6 +36,26 @@ the new key fields, all packaged hashes, embedded catalogs, version fallback,
 complete XML loading, and sprite artwork. Authenticated gameplay and the supplied
 native hook's game-specific mappings remain unverified for this game version.
 
+## Expanded combat tracker: 2026-11-09
+
+The expanded dashboard now exposes a dedicated **Combat tracker** page. It keeps
+all simultaneously observed encounters, gives every monster its own expandable
+leaderboard, and preserves independent damage totals when names repeat. Header
+rows show the observed monster portrait, HP, encounter duration, phase count and
+current/defeated state. Player rows show rank, damage, encounter DPS, share,
+available hit counts, optional taken/guarded damage, class portrait and last
+observed equipment. Search, active/defeated filtering, keyboard expansion,
+stable selection/scroll state and light/dark theme changes are covered.
+
+The page and related history tables resolve bundled monster, class/player,
+portal and equipment artwork from the declared game atlases. Missing historical
+fields remain unknown. `Test-CombatTrackerView.ps1` passed 34 assertions,
+including same-name simultaneous targets, tracker-to-journal retention, sprite
+pixel/source checks, corrections to zero, account scope reset, narrow rendering
+and the integrated dashboard preview. The Release build completed with zero
+errors and 49 existing warnings. This fixture evidence is offline and does not
+replace authenticated live-game validation.
+
 ## Character scrolling, grouped loot and tooltip update: 2026-11-03
 
 Live account revisions previously disposed and rebuilt the selected character's
@@ -385,6 +405,7 @@ names refer to the integrated evidence table; the source paths are under
 | H01 | `DpsTrackerMod` captures whole bags when a selected bag type or content rule matches; `HudJournal` retains slot provenance and independent deduplication. Tables search item/source/dungeon/character/date/rarity/enchantments. | Retention tests real map transitions, reused IDs, repeated slots, 22 mappings, mixed public bags, persisted bag/content options and real shiny/UT/potion/mark/tier fixtures plus enchant thresholds. Cold-load replay cannot inflate lifetime totals or displace newer local-time drops with cached UTC rows. |
 | H02 | Durable encounters use stable phase identity, twelve configurable capture groups and solo filtering; dungeon groups sum retained encounter/player damage and use maximum observed run duration. Details include per-player dealt/taken damage. | Combat policy checks classifications, precedence, solo/group corrections and recording-time behavior; Combat integration tests projectile corrections, phases, taken damage and map finalization; Retention verifies grouped duration/DPS/guard/taken totals and detached equipment. A run view totals retained encounters only. |
 | H03 | Fight detail stores source item/kind, estimated and confirmed damage, ATT/DEX/VIT/WIS, effect bits, event multiplier and gear. | Combat integration checks immutable fire-time context, pellets, summons, server-first/client-first reconciliation and zero corrections. Journal checks separate calculation contexts; unknown effects are labeled without guessing. |
+| H03a | The expanded Combat tracker keeps simultaneous monster sections independent, ranks contributors per target, computes target-local DPS/share, preserves hits and appearance metadata, and renders monster/player/portal artwork. | `Test-CombatTrackerView.ps1` checks two same-name targets, independent rankings and duration, journal retention, corrections to zero, keyboard/search/filter/theme/narrow behavior, stable rows, declared atlas pixels and the integrated dashboard preview. Synthetic records do not establish live packet coverage. |
 | H04 | Trophy Hall loads 104 catalog locations and shows discovered/missing items, counts, first/latest dates and recorded runs using lifetime aggregates separate from retained rows. | Expanded dashboard requires a populated bundled catalog; Retention proves trimming/reload cannot erase trophies or replay runs. Public brown bags do not award collection trophies. |
 | A01 | Treasury aggregates all known character/quickslot/storage/pet items and blueprint unlocks with mode/category/dungeon/type/enchant filters, missing-item lookup and saved section/category layout. | Account suite checks quantities/filters, slot sources, blueprint mode, section order and header collapse. Unknown seasonal storage is not inferred from regular storage. |
 | A02 | Vault renders slot grids for vault/gifts/potions/materials/spoils and pet inventories, preserves empty slots and applies known page updates/successful swaps. | Account fixtures check chunk reconciliation, gift order, unknown page rejection, stack/enchant transfer and seasonal separation. Availability depends on API/live observations. |

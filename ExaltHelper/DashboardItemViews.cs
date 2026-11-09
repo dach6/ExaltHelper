@@ -8,6 +8,9 @@ namespace ExaltHelper;
 
 internal partial class ExaltDashboardForm
 {
+    private HudGameSprite PlayerPortrait(object value)
+        => HudGameSprites.Player(CurrentLiveSnapshot.Players.FirstOrDefault(x => string.Equals(x.Name, value as string, StringComparison.OrdinalIgnoreCase)));
+
     private static void ItemColumn(HudTablePage page, string column, Func<object, IEnumerable<HudItemView>> items,
         bool showNames = false, bool singleItem = false)
     {

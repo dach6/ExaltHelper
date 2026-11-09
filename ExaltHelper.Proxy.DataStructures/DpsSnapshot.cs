@@ -22,6 +22,10 @@ internal class DpsSnapshot
 
 	public List<EnemyCombatSnapshot> DefeatedEnemies { get; set; } = new List<EnemyCombatSnapshot>();
 
+	// Every observed encounter, including simultaneous living targets. The compact
+	// overlay keeps its existing focus/defeated selection independently.
+	public List<EnemyCombatSnapshot> Encounters { get; set; } = new List<EnemyCombatSnapshot>();
+
 	public EnemyCombatSnapshot AllCombinedEnemy { get; set; }
 
 	public int SelectedMonsterMode { get; set; } = -1;

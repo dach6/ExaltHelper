@@ -87,6 +87,10 @@ internal sealed class HudFightRecord
     public string Dungeon { get; set; }
     public string Enemy { get; set; }
     public bool Defeated { get; set; }
+    public int ObjectType { get; set; }
+    public int? MaxHp { get; set; }
+    public int? CurrentHp { get; set; }
+    public int[] EncounterEntityIds { get; set; } = Array.Empty<int>();
     public bool IsBoss { get; set; }
     public double Seconds { get; set; }
     public double DungeonSeconds { get; set; }
@@ -361,7 +365,7 @@ internal static partial class HudJournal
             LiveSnapshot = snapshot;
             if (HudPreferences.Current.RecordCombat)
             {
-                var enemies = snapshot.DefeatedEnemies.AsEnumerable();
+                var enemies = (snapshot.Encounters ?? new List<EnemyCombatSnapshot>()).Concat(snapshot.DefeatedEnemies);
                 if (snapshot.ActiveEnemy != null) enemies = enemies.Concat(new[] { snapshot.ActiveEnemy });
                 foreach (var enemy in enemies.Where(x => x.TotalDamage > 0 || data.Fights.Any(f => f.Id == FightKey(snapshot.DungeonStartTime, x.EncounterId >= 0 ? x.EncounterId : x.EntityId))).GroupBy(x => x.EncounterId >= 0 ? x.EncounterId : x.EntityId).Select(x => x.First()))
                 {
@@ -382,7 +386,19 @@ internal static partial class HudJournal
                     fight.Defeated = enemy.IsDead; fight.IsBoss = enemy.IsBoss; fight.Seconds = enemy.FightDurationSeconds;
                     fight.DungeonSeconds = snapshot.ElapsedDungeonSeconds;
                     fight.Enemy = enemy.Name;
+                    fight.ObjectType = enemy.ObjectType;
+                    fight.MaxHp = enemy.MaxHp > 0 ? (int?)enemy.MaxHp : null;
+                    fight.CurrentHp = enemy.MaxHp > 0 ? (int?)enemy.CurrentHp : null;
+                    fight.EncounterEntityIds = (int[])(enemy.EncounterEntityIds ?? Array.Empty<int>()).Clone();
+                    var priorPlayers = fight.Players;
                     fight.Damage = enemy.TotalDamage; fight.Players = enemy.Damagers.Select(ClonePlayer).ToList(); fight.EstimateNote = snapshot.DamageEstimateNote;
+                    foreach (var player in fight.Players.Where(p => p.EquipmentIds.Length == 0))
+                    {
+                        var previous = priorPlayers.FirstOrDefault(p => string.Equals(p.Name, player.Name, StringComparison.OrdinalIgnoreCase));
+                        if (previous == null) continue;
+                        player.ClassType = previous.ClassType; player.SkinType = previous.SkinType;
+                        player.EquipmentIds = (int[])(previous.EquipmentIds ?? Array.Empty<int>()).Clone();
+                    }
                     var taken = new Dictionary<string, long>();
                     foreach (int entityId in enemy.EncounterEntityIds.Length > 0 ? enemy.EncounterEntityIds : new[] { enemy.EntityId })
                         if (damageTaken.TryGetValue(entityId, out var phase)) foreach (var player in phase) { taken.TryGetValue(player.Key, out long total); taken[player.Key] = total + player.Value; }
@@ -552,6 +568,7 @@ internal static partial class HudJournal
     private static HudLootRecord CloneLoot(HudLootRecord x) => new HudLootRecord { Id = x.Id, BagId = x.BagId, BagSlot = x.BagSlot, Time = x.Time, ItemId = x.ItemId, Item = x.Item,
         Rarity = x.Rarity, Shiny = x.Shiny, Bag = x.Bag, Enemy = x.Enemy, Dungeon = x.Dungeon, Character = x.Character, Enchantments = x.Enchantments };
     private static PlayerDamageEntry ClonePlayer(PlayerDamageEntry x) => new PlayerDamageEntry { Rank = x.Rank, Name = x.Name, ClassName = x.ClassName,
+        Hits = x.Hits, ClassType = x.ClassType, SkinType = x.SkinType, EquipmentIds = (int[])(x.EquipmentIds ?? Array.Empty<int>()).Clone(),
         Damage = x.Damage, Dps = x.Dps, Percentage = x.Percentage, IsLocalPlayer = x.IsLocalPlayer, GuardHits = x.GuardHits,
         GuardDamage = x.GuardDamage, Status = x.Status, LastHpPercent = x.LastHpPercent };
     private static HudDamageSource CloneSource(HudDamageSource x) => new HudDamageSource { ItemId = x.ItemId, Kind = x.Kind, Damage = x.Damage,
@@ -566,7 +583,7 @@ internal static partial class HudJournal
     {
         lock (Gate)
             return page == "live" ? feedRevision : page == "chat" ? chatRevision : page == "loot" ? lootRevision
-                : page == "combat" ? combatRevision : page == "trophies" ? collectionRevision : 0;
+                : page == "combat" || page == "performance" ? combatRevision : page == "trophies" ? collectionRevision : 0;
     }
     // UI tables need one history at a time. Copying the full journal here also
     // copied every fight's players/sources and all persistence ledgers while
@@ -593,8 +610,14 @@ internal static partial class HudJournal
     }
     private static HudFightRecord CloneFight(HudFightRecord x)
         => new HudFightRecord { Id = x.Id, Time = x.Time, Dungeon = x.Dungeon, Enemy = x.Enemy, Defeated = x.Defeated,
+            ObjectType = x.ObjectType, MaxHp = x.MaxHp, CurrentHp = x.CurrentHp, EncounterEntityIds = (int[])(x.EncounterEntityIds ?? Array.Empty<int>()).Clone(),
             IsBoss = x.IsBoss, Seconds = x.Seconds, DungeonSeconds = x.DungeonSeconds, Damage = x.Damage, Character = x.Character, Equipment = (int[])(x.Equipment ?? Array.Empty<int>()).Clone(),
             Players = x.Players.Select(ClonePlayer).ToList(), DamageTaken = new Dictionary<string, long>(x.DamageTaken), Sources = x.Sources.Select(CloneSource).ToList(), EstimateNote = x.EstimateNote };
+    public static List<HudFightRecord> SnapshotForRun(DateTime start)
+    {
+        string prefix = start.Ticks + ":";
+        lock (Gate) return data.Fights.Where(x => x.Id != null && x.Id.StartsWith(prefix, StringComparison.Ordinal)).Select(CloneFight).ToList();
+    }
     private static HudJournalData CloneData(HudJournalData source)
         => new HudJournalData { Chat = source.Chat.Select(CloneLog).ToList(), Feed = source.Feed.Select(CloneLog).ToList(), Loot = source.Loot.Select(CloneLoot).ToList(),
                 CollectionVersion = 1, Trophies = source.Trophies.Select(CloneTrophy).ToList(), DungeonRuns = new Dictionary<string, long>(source.DungeonRuns),
