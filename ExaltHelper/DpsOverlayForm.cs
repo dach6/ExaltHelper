@@ -1556,8 +1556,9 @@ internal class DpsOverlayForm : Form
 		g.DrawRectangle(penBorderThin, monsterDropdownBarRect);
 		EnemyCombatSnapshot currentDisplayEnemy = currentSnapshot.GetCurrentDisplayEnemy();
 		bool num2 = currentSnapshot.HistoryIndex >= 0;
-		string s = ((!num2) ? ((currentSnapshot.SelectedMonsterMode == -1) ? "\ud83d\udd34 [LIVE] " : ((currentSnapshot.SelectedMonsterMode == -2) ? "\ud83c\udf1f [TOTAL] " : "\ud83d\udc80 [DEAD] ")) : ((currentSnapshot.SelectedMonsterMode == -2) ? "\ud83c\udf1f [TOTAL] " : "\ud83d\udcdc [BOSS] "));
-		using (SolidBrush brush = new SolidBrush((!num2) ? ((currentSnapshot.SelectedMonsterMode == -1) ? HpGreen : ((currentSnapshot.SelectedMonsterMode == -2) ? AccentCyan : GoldColor)) : ((currentSnapshot.SelectedMonsterMode == -2) ? AccentCyan : GoldColor)))
+		bool followingLiveTarget = currentSnapshot.SelectedMonsterMode == -1 && currentSnapshot.ActiveEnemy != null && !currentSnapshot.ActiveEnemy.IsDead;
+		string s = ((!num2) ? ((currentSnapshot.SelectedMonsterMode == -1) ? (followingLiveTarget ? "\ud83d\udd34 [LIVE] " : "\ud83d\udc80 [RECENT] ") : ((currentSnapshot.SelectedMonsterMode == -2) ? "\ud83c\udf1f [TOTAL] " : "\ud83d\udc80 [DEAD] ")) : ((currentSnapshot.SelectedMonsterMode == -2) ? "\ud83c\udf1f [TOTAL] " : "\ud83d\udcdc [BOSS] "));
+		using (SolidBrush brush = new SolidBrush((!num2) ? ((currentSnapshot.SelectedMonsterMode == -1) ? (followingLiveTarget ? HpGreen : GoldColor) : ((currentSnapshot.SelectedMonsterMode == -2) ? AccentCyan : GoldColor)) : ((currentSnapshot.SelectedMonsterMode == -2) ? AccentCyan : GoldColor)))
 		{
 			g.DrawString(s, fontBadge, brush, x + 4, y + 5);
 		}
@@ -2637,8 +2638,9 @@ internal class DpsOverlayForm : Form
 	{
 		List<(string, Color)> list = new List<(string, Color)>();
 		bool flag = currentSnapshot.HistoryIndex >= 0;
-		string item = (flag ? ("\ud83d\udcdc [MAIN TARGET] " + TruncateString(currentSnapshot.ActiveEnemy?.Name ?? "Main Target", 20)) : ("\ud83d\udd34 [LIVE] " + TruncateString(currentSnapshot.ActiveEnemy?.Name ?? "Live Target", 22)));
-		list.Add((item, flag ? GoldColor : HpGreen));
+		bool live = currentSnapshot.ActiveEnemy != null && !currentSnapshot.ActiveEnemy.IsDead;
+		string item = (flag ? ("\ud83d\udcdc [MAIN TARGET] " + TruncateString(currentSnapshot.ActiveEnemy?.Name ?? "Main Target", 20)) : ((live ? "\ud83d\udd34 [LIVE] " : "\ud83d\udc80 [RECENT] ") + TruncateString(currentSnapshot.GetCurrentDisplayEnemy()?.Name ?? "Recent kill", 22)));
+		list.Add((item, flag ? GoldColor : (live ? HpGreen : GoldColor)));
 		list.Add(("\ud83c\udf1f [ALL MOBS COMBINED]", AccentCyan));
 		foreach (EnemyCombatSnapshot defeatedEnemy in currentSnapshot.DefeatedEnemies)
 		{

@@ -63,7 +63,7 @@ Automatic dungeon copying is optional. It copies newly observed, joinable dungeo
 
 Loot display filters in the feed are independent of loot-history recording filters. Each visible bag keeps all of its items together. Dust notices report a newly reached cap separately for regular and seasonal characters; the first observation seeds the state quietly. Feed categories and season, battlepass and monthly calendar reminders can be enabled separately. Party utilities likewise copy commands. Separate local watch and banned lists flag players and can notify you when they appear in your dungeon; moderation commands remain available to copy and use yourself.
 
-Combat history stores observed encounters, including team damage and available enemy-attributed damage taken. Open a fight for equipment and contribution details. Server reports can correct earlier estimates, including to zero. Source tooltips show the conditions recorded when the projectile was fired. Reviewing old combat history does not replace live widgets, party/player inspection or live-feed metrics.
+Combat history stores observed encounters, including team damage and available enemy-attributed damage taken. Click an encounter row to expand its player damage ranking inline; the separate source-detail action remains available when you need weapon, ability or summon attribution. Server reports can correct earlier estimates, including to zero. Source tooltips show the conditions recorded when the projectile was fired. Reviewing old combat history does not replace live widgets, party/player inspection or live-feed metrics.
 
 The expanded dashboard's **Combat tracker** page breaks the current dungeon into
 one expandable section per observed monster. Each section keeps its own damage
@@ -71,11 +71,15 @@ total, HP bar, fight duration, phase count and contributor ranking, so two
 monsters with the same name still have separate leaderboards. Expand a row with
 the mouse, **Enter**, **Space**, or the arrow keys. **% DMG** is each player's
 share of that monster's tracked damage; DPS uses that monster's encounter time.
-Optional columns show hits, damage taken, guarded damage and the last observed
-gear. Search can match a monster or contributor while retaining the complete
-leaderboard for matching monsters. The page also shows bundled monster,
-character/class, dungeon/portal and equipment artwork. Older records without a
-field such as hit count or HP keep it as unknown instead of displaying a zero.
+Optional columns show hits, damage taken, guarded damage and the complete
+four-slot gear set for every contributor, including an explicit empty-slot
+marker when no item was observed. Search can match a monster or contributor
+while retaining the complete leaderboard for matching monsters. Boss encounters
+stay at the top of the list, and the DPS overlay keeps the newest defeated
+monster selected when no living target is active. The page also shows bundled
+monster, character/class, dungeon/portal and equipment artwork. Older records
+without a field such as hit count or HP keep it as unknown instead of displaying
+a zero.
 
 Settings can restrict newly recorded fights by dungeon difficulty, realm boss group, seasonal encounter or treasure crate, and can exclude solo fights. Already recorded fights continue receiving damage corrections. Unknown groups remain eligible. The same dungeon ratings distinguish normal and advanced variants in mission recommendations and key-opening filters.
 

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ExaltHelper.Proxy.DataStructures;
 
@@ -63,7 +64,15 @@ internal class DpsSnapshot
 		{
 			return DefeatedEnemies[SelectedMonsterMode];
 		}
-		return ActiveEnemy ?? ((DefeatedEnemies.Count > 0) ? DefeatedEnemies[0] : null) ?? AllCombinedEnemy ?? new EnemyCombatSnapshot
+		// Live mode follows an active target while one is alive. Once the target
+		// dies, keep the most recently defeated encounter visible so the last kill
+		// remains inspectable until the next target is observed.
+		if (ActiveEnemy != null && !ActiveEnemy.IsDead)
+		{
+			return ActiveEnemy;
+		}
+		return (DefeatedEnemies ?? new List<EnemyCombatSnapshot>()).FirstOrDefault(x => x != null)
+			?? ActiveEnemy ?? AllCombinedEnemy ?? new EnemyCombatSnapshot
 		{
 			Name = "Waiting for Target..."
 		};

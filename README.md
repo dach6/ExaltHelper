@@ -67,10 +67,14 @@ The tracker reconstructs damage from combat packets, equipped items, received st
 
 The expanded **Combat tracker** keeps simultaneous monsters separate, including
 same-named targets. Expand a monster to see contributors ordered by damage;
-searching for a player keeps the full ranking and denominator for each matching
-monster. Character, monster, portal and equipment cells use the bundled game
-artwork. Historical records that predate a field retain an unknown marker when
-the value was never observed.
+combat history uses the same inline expansion, so player rankings are available
+without opening a second window. Bosses stay at the top, and each contributor
+keeps a four-slot gear display with explicit empty slots. Searching for a player
+keeps the full ranking and denominator for each matching monster. Character,
+monster, portal and equipment cells use the bundled game artwork. Historical
+records that predate a field retain an unknown marker when the value was never
+observed. When no living target is active, the DPS overlay follows the newest
+defeated monster.
 
 Crucible and Blood Ritual bonuses use definitions received from the game. If the HUD flags missing bonus definitions, open the relevant event panels while tracking is active.
 

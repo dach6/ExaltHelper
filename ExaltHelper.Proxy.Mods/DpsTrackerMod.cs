@@ -3402,9 +3402,10 @@ internal class DpsTrackerMod : IDisposable
 				list.Add(defeatedEnemy.ToSnapshot());
 			}
 		}
-		list = (from e in list
-			orderby e.IsBoss descending, e.TotalDamage descending
-			select e).ToList();
+		// defeatedEnemies is maintained newest-first. Preserve that order for the
+		// overlay so the default target remains the most recent monster killed;
+		// the expanded dashboard applies its own boss-first ordering for the
+		// encounter list.
 		EnemyCombatTracker value = null;
 		if (activeFocusId != -1)
 		{

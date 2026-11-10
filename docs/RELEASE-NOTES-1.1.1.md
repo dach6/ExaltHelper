@@ -6,6 +6,8 @@ Download **ExaltHelper-1.1.1-Release.zip**, extract the entire ZIP to a writable
 - Updates the launcher handshake and compiled fallback to game version 7.2.0.1.0.
 - Refreshes the Ocean Trench Key definition with dungeon difficulty 5 and the game's warning that keys require 10 or more stars.
 - Refreshes game-source fingerprints and packaged checksums. The extracted sprite atlases, object/tile lists, ground definitions, enchantments, modifiers, and forge data match the previous release.
+- Expands combat history inline: click an encounter to reveal its per-monster player damage ranking without opening another window.
+- Keeps all four gear slots visible for every tracked player, puts boss encounters first, and keeps the most recently defeated monster available as the default DPS target.
 
 **Source:** ExaltHelper-1.1.1-Source.zip contains this release's source, required build inputs, documentation, and tests. SHA256SUMS.txt provides checksums for both ZIP downloads.
 

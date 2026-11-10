@@ -16,6 +16,8 @@ internal partial class ExaltDashboardForm
     private DpsOverlayForm moonlightView;
     private HudCalculatorPage calculator;
     private HudCombatTrackerPage combatTracker;
+    private HudCombatTrackerPage combatHistoryTracker;
+    private HudComboBox combatGrouping;
     private Label calloutPreview;
     private Label soundStatus;
     private Button copyRoster, copyThanks;
@@ -87,14 +89,26 @@ internal partial class ExaltDashboardForm
                 cycleWarnings.VisibleChanged += (_, __) => FitLiveControls();
                 lastNoticeCheck = default; return panel;
             case "combat":
-                var combat = MakeTable(key, "Observed encounters are retained between sessions. Open a fight for team damage and your performance.", "When", "Encounter", "Dungeon", "Duration", "Damage", "DPS", "Result");
-                HudGameSprites.Attach(combat.Grid, "Encounter", value => value is HudFightRecord fight ? HudGameSprites.Object(fight.ObjectType) ?? HudGameSprites.Monster(fight.Enemy) : null, "combat");
-                HudGameSprites.Attach(combat.Grid, "Dungeon", value => HudGameSprites.Portal((value as HudFightRecord)?.Dungeon), "live");
-                var combatGrouping = new HudComboBox { DropDownStyle = ComboBoxStyle.DropDownList, Width = 155, BackColor = HudTheme.Input, ForeColor = HudTheme.Text };
+                // Keep history in the same expandable encounter view as the live
+                // tracker. Contributors are available with one click instead of
+                // opening a separate window for every fight.
+                // Retain the table binding as a compatibility/data-filter surface
+                // for saved layouts and date filters; the visible page below is
+                // the inline tracker.
+                var legacyCombat = MakeTable(key, "Observed encounters are retained between sessions. Use the expandable tracker below to inspect team damage.", "When", "Encounter", "Dungeon", "Duration", "Damage", "DPS", "Result");
+                HudGameSprites.Attach(legacyCombat.Grid, "Encounter", value => value is HudFightRecord fight ? HudGameSprites.Object(fight.ObjectType) ?? HudGameSprites.Monster(fight.Enemy) : null, "combat");
+                HudGameSprites.Attach(legacyCombat.Grid, "Dungeon", value => HudGameSprites.Portal((value as HudFightRecord)?.Dungeon), "live");
+                combatHistoryTracker = new HudCombatTrackerPage(showHistoryButton: false, expandFirstEncounter: false);
+                combatGrouping = new HudComboBox { DropDownStyle = ComboBoxStyle.DropDownList, Width = 155, BackColor = HudTheme.Input, ForeColor = HudTheme.Text, AccessibleName = "Combat history grouping" };
                 combatGrouping.Items.AddRange(new object[] { "Encounters", "Dungeon runs" }); combatGrouping.SelectedIndex = HudPreferences.Current.CombatByDungeon ? 1 : 0;
                 combatGrouping.SelectedIndexChanged += (_, __) => { HudPreferences.Current.CombatByDungeon = combatGrouping.SelectedIndex == 1; HudPreferences.Current.Save(); lastJournalRevision = -1; RefreshPageData(); };
-                combat.Toolbar.Controls.Add(combatGrouping);
-                combat.RowOpened += value => ShowFight((HudFightRecord)value); return combat;
+                combatHistoryTracker.Toolbar.Controls.Add(combatGrouping);
+                combatHistoryTracker.DetailRequested += id => {
+                    var entry = HudJournal.SnapshotForPage("combat").Fights.FirstOrDefault(x => x.Id == id);
+                    if (entry != null) ShowFightSources(entry);
+                    else footer.Text = "This encounter has no retained source detail.";
+                };
+                return combatHistoryTracker;
             case "performance":
                 combatTracker = new HudCombatTrackerPage();
                 combatTracker.HistoryRequested += () => SelectPage("combat");
@@ -171,8 +185,18 @@ internal partial class ExaltDashboardForm
                 && (x.Category != "Key pop" || !HudPreferences.Current.HiddenKeyPopTiers.Contains(x.KeyPopTier))
                 && (x.Category != "Loot" || HudLootPolicy.ShowInFeed(x))).Select(x => new HudTableRow(x, x.Time.ToLocalTime().ToString("HH:mm:ss"), x.Category, x.Sender, x.Text, x.Location) { StableKey = x.Id, Category = x.Category, Time = x.Time.ToLocalTime() }));
         }
-        if (SelectedPage == "combat" && tables.TryGetValue("combat", out var combat))
-            combat.SetRows((HudPreferences.Current.CombatByDungeon ? DungeonHistory(data.Fights) : data.Fights).OrderByDescending(x => x.Time.ToUniversalTime()).Select(x => new HudTableRow(x, x.Time.ToLocalTime().ToString("g"), x.Enemy, x.Dungeon, TimeSpan.FromSeconds(x.Seconds).ToString(@"hh\:mm\:ss"), x.Damage.ToString("N0"), (x.Damage / Math.Max(.5, x.Seconds)).ToString("N0"), x.Defeated ? "Defeated" : "Observed") { StableKey = x.Id, Time = x.Time.ToLocalTime(), Category = HudPreferences.Current.CombatByDungeon ? x.Dungeon : x.IsBoss ? "Bosses" : "Other enemies", Search = x.Enemy + " " + x.Dungeon + " " + x.Character + " " + x.Time.ToLocalTime().ToString("yyyy-MM-dd"), Tooltip = x.EstimateNote }));
+        if (SelectedPage == "combat" && combatHistoryTracker != null)
+        {
+            var fights = (HudPreferences.Current.CombatByDungeon ? DungeonHistory(data.Fights) : data.Fights)
+                .OrderByDescending(x => x.IsBoss).ThenByDescending(x => x.Time.ToUniversalTime()).ToArray();
+            combatHistoryTracker.SetHistory(fights, fights.Select(x => x.Dungeon).FirstOrDefault() ?? "Combat history");
+            if (tables.TryGetValue("combat", out var legacyCombat))
+                legacyCombat.SetRows(fights.Select(x => new HudTableRow(x, x.Time.ToLocalTime().ToString("g"), x.Enemy, x.Dungeon,
+                    TimeSpan.FromSeconds(x.Seconds).ToString(@"hh\:mm\:ss"), x.Damage.ToString("N0"),
+                    (x.Damage / Math.Max(.5, x.Seconds)).ToString("N0"), x.Defeated ? "Defeated" : "Observed")
+                { StableKey = x.Id, Time = x.Time.ToLocalTime(), Category = HudPreferences.Current.CombatByDungeon ? x.Dungeon : x.IsBoss ? "Bosses" : "Other enemies",
+                    Search = x.Enemy + " " + x.Dungeon + " " + x.Character + " " + x.Time.ToLocalTime().ToString("yyyy-MM-dd"), Tooltip = x.EstimateNote }));
+        }
         if (SelectedPage == "loot" && tables.TryGetValue("loot", out var loot))
             loot.SetRows(LootHistoryRows(data.Loot));
         if (SelectedPage == "chat" && tables.TryGetValue("chat", out var chat))

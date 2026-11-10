@@ -11,6 +11,9 @@ namespace ExaltHelper;
 internal sealed class HudCombatRow
 {
     public string Key;
+    // The history table previously tagged rows with HudFightRecord directly;
+    // keep an Id projection so integrations can retain stable selection keys.
+    public string Id => Fight?.Id;
     public HudFightRecord Fight;
     public PlayerDamageEntry Player;
     public int Rank;
@@ -21,6 +24,7 @@ internal sealed class HudCombatRow
 internal sealed class HudCombatTrackerPage : UserControl
 {
     internal readonly DataGridView Grid = HudTheme.Grid("Rank", "Player", "Damage", "DPS", "Share", "Hits", "Taken", "Guarded", "Gear", "Status");
+    internal readonly HudFlowPanel Toolbar = new HudFlowPanel { Dock = DockStyle.Top, Height = 42, WrapContents = false, AutoScroll = true };
     internal readonly TextBox Search = new HudTextBox { Width = 238, SearchIcon = true, Placeholder = "Find monster or player…", AccessibleName = "Find monster or player" };
     internal readonly ComboBox StateFilter = new HudComboBox { Width = 150, DropDownStyle = ComboBoxStyle.DropDownList, AccessibleName = "Encounter status" };
     internal readonly HashSet<string> ExpandedIds = new HashSet<string>(StringComparer.Ordinal);
@@ -32,24 +36,30 @@ internal sealed class HudCombatTrackerPage : UserControl
     private List<HudFightRecord> encounters = new List<HudFightRecord>();
     private string scope;
     private bool seedExpansion = true, history;
+    private readonly bool showHistoryButton;
+    private readonly bool expandFirstEncounter;
     private string focusId;
     public event Action HistoryRequested;
     public event Action<string> DetailRequested;
 
-    public HudCombatTrackerPage()
+    public HudCombatTrackerPage() : this(true, true) { }
+
+    internal HudCombatTrackerPage(bool showHistoryButton, bool expandFirstEncounter)
     {
+        this.showHistoryButton = showHistoryButton;
+        this.expandFirstEncounter = expandFirstEncounter;
         Dock = DockStyle.Fill; BackColor = HudTheme.Background; ForeColor = HudTheme.Text; Font = HudTheme.BodyFont;
         HudGameSprites.Initialize();
-        var tools = new HudFlowPanel { Dock = DockStyle.Top, Height = 42, WrapContents = false, AutoScroll = true };
+        var tools = Toolbar;
         Search.Margin = new Padding(0, 3, 10, 0); StateFilter.Margin = new Padding(0, 3, 10, 0);
         StateFilter.Items.AddRange(new object[] { "All encounters", "Active", "Defeated" }); StateFilter.SelectedIndex = 0;
         tools.Controls.Add(Search); tools.Controls.Add(StateFilter);
         tools.Controls.Add(HudTheme.Button("Expand all", (_, __) => { foreach (var fight in Filtered()) ExpandedIds.Add(fight.Id); RefreshRows(); }));
         tools.Controls.Add(HudTheme.Button("Collapse all", (_, __) => { ExpandedIds.Clear(); seedExpansion = false; RefreshRows(); }));
-        tools.Controls.Add(HudTheme.Button("History", (_, __) => HistoryRequested?.Invoke()));
+        if (showHistoryButton) tools.Controls.Add(HudTheme.Button("History", (_, __) => HistoryRequested?.Invoke()));
         var columns = new HudFlowPanel { Dock = DockStyle.Top, Height = 39, WrapContents = false, AutoScroll = true };
         columns.Controls.Add(HudTheme.Label("SHOW", true));
-        foreach (var option in new[] { Tuple.Create("DPS", "DPS", true), Tuple.Create("Hits", "Hits", true), Tuple.Create("Damage taken", "Taken", false), Tuple.Create("Guarded", "Guarded", false), Tuple.Create("Gear", "Gear", true) })
+        foreach (var option in new[] { Tuple.Create("DPS", "DPS", true), Tuple.Create("Hits", "Hits", true), Tuple.Create("Damage taken", "Taken", false), Tuple.Create("Guarded", "Guarded", false) })
         {
             string key = option.Item2;
             var check = new HudCheckBox { Text = option.Item1, Checked = option.Item3, AutoSize = true, Margin = new Padding(0, 5, 14, 0), ForeColor = HudTheme.Text, BackColor = HudTheme.Background };
@@ -57,11 +67,12 @@ internal sealed class HudCombatTrackerPage : UserControl
             check.CheckedChanged += (_, __) => { Grid.Columns[key].Visible = check.Checked; Grid.Invalidate(); };
             columns.Controls.Add(check);
         }
+        Grid.Columns["Gear"].Visible = true;
         columns.Controls.Add(HudTheme.Button("Encounter details", (_, __) => OpenSelected()));
         Grid.AccessibleName = "Monster encounters and individual damage rankings";
         Grid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
         Grid.ColumnHeadersHeight = 34;
-        int[] widths = { 46, 186, 116, 86, 76, 70, 100, 100, 152, 105 };
+        int[] widths = { 46, 186, 116, 86, 76, 70, 100, 100, 190, 105 };
         for (int i = 0; i < widths.Length; i++)
         {
             var column = Grid.Columns[i]; column.MinimumWidth = Math.Min(widths[i], 55); column.Width = widths[i];
@@ -72,9 +83,13 @@ internal sealed class HudCombatTrackerPage : UserControl
         Grid.Columns["Taken"].HeaderText = "TAKEN"; Grid.Columns["Guarded"].HeaderText = "GUARDED";
         Grid.Columns["Share"].ToolTipText = "Share of damage tracked against this specific monster; not a percentage of its maximum HP.";
         Grid.Columns["Guarded"].ToolTipText = "Tracked damage dealt while the target was guarding.";
-        Grid.Columns["Gear"].ToolTipText = "Last observed equipment for this encounter. Hover an item for details.";
+        Grid.Columns["Gear"].HeaderText = "GEAR (4)";
+        Grid.Columns["Gear"].ToolTipText = "The complete four-slot equipment set last observed for this player. Hover an item for details.";
         Grid.CellClick += (_, e) => { if (e.RowIndex >= 0 && Grid.Rows[e.RowIndex].Tag is HudCombatRow row && row.Header) ToggleEncounter(row.Fight.Id); };
-        Grid.CellDoubleClick += (_, e) => { if (e.RowIndex >= 0 && Grid.Rows[e.RowIndex].Tag is HudCombatRow row && !row.Header) DetailRequested?.Invoke(row.Fight.Id); };
+        // Player rows are already visible in the encounter expansion. A double click
+        // must not be required to inspect contributors; the explicit details button
+        // remains available for the recorded source breakdown.
+        Grid.CellDoubleClick += (_, e) => { if (e.RowIndex >= 0 && Grid.Rows[e.RowIndex].Tag is HudCombatRow row && row.Header) ToggleEncounter(row.Fight.Id); };
         Grid.KeyDown += (_, e) => {
             if (!(Grid.CurrentRow?.Tag is HudCombatRow row)) return;
             if (e.KeyCode == Keys.Space || e.KeyCode == Keys.Left || e.KeyCode == Keys.Right || e.KeyCode == Keys.Enter && row.Header)
@@ -88,7 +103,7 @@ internal sealed class HudCombatTrackerPage : UserControl
         Grid.RowPrePaint += PaintEncounter;
         Grid.CellPainting += PaintPlayer;
         HudItemPresentation.Attach(Grid, "Gear", value => value is HudCombatRow row && row.Player != null
-            ? row.Equipment.Take(4).Select((id, slot) => HudItemPresentation.Create(id, details: new[] { "Weapon", "Ability", "Armor", "Ring" }[slot] + " · " + row.Player.Name + "\nLast observed in " + row.Fight.Enemy))
+            ? CombatEquipment(row)
             : Enumerable.Empty<HudItemView>());
         Search.TextChanged += (_, __) => RefreshRows(); StateFilter.SelectedIndexChanged += (_, __) => RefreshRows();
         Controls.Add(Grid); Controls.Add(footer); Controls.Add(columns); Controls.Add(tools); Controls.Add(banner);
@@ -99,7 +114,7 @@ internal sealed class HudCombatTrackerPage : UserControl
     {
         if (scope == value) return;
         scope = value; ExpandedIds.Clear(); encounterOrder.Clear(); lastEquipment.Clear(); rowModels.Clear();
-        seedExpansion = true; Grid.Rows.Clear();
+        seedExpansion = expandFirstEncounter; Grid.Rows.Clear();
     }
     public void SetLive(DpsSnapshot snapshot, string accountScope, IEnumerable<HudFightRecord> saved)
     {
@@ -114,7 +129,7 @@ internal sealed class HudCombatTrackerPage : UserControl
                 return new HudFightRecord { Id = id, Enemy = enemy.Name, ObjectType = enemy.ObjectType, MaxHp = enemy.MaxHp > 0 ? (int?)enemy.MaxHp : null,
                     CurrentHp = enemy.MaxHp > 0 ? (int?)enemy.CurrentHp : null, Defeated = enemy.IsDead, IsBoss = enemy.IsBoss,
                     EncounterEntityIds = enemy.EncounterEntityIds ?? Array.Empty<int>(), Seconds = enemy.FightDurationSeconds, DungeonSeconds = snapshot.ElapsedDungeonSeconds,
-                    Damage = enemy.TotalDamage, Players = enemy.Damagers, Dungeon = snapshot.DungeonName, Time = snapshot.Timestamp,
+                    Damage = enemy.TotalDamage, Players = HydratePlayers(enemy.Damagers, snapshot.Players), Dungeon = snapshot.DungeonName, Time = snapshot.Timestamp,
                     DamageTaken = record?.DamageTaken ?? new Dictionary<string, long>(), Sources = record?.Sources ?? new List<HudDamageSource>(), EstimateNote = snapshot.DamageEstimateNote };
             }).ToList();
         focusId = snapshot.ActiveEnemy == null ? null : HudJournal.FightKey(snapshot.DungeonStartTime, snapshot.ActiveEnemy.EncounterId >= 0 ? snapshot.ActiveEnemy.EncounterId : snapshot.ActiveEnemy.EntityId);
@@ -124,7 +139,12 @@ internal sealed class HudCombatTrackerPage : UserControl
     public void SetHistory(IEnumerable<HudFightRecord> fights, string dungeon)
     {
         var records = (fights ?? Enumerable.Empty<HudFightRecord>()).Where(f => f != null).ToList();
-        NewScope("history:" + string.Join("|", records.Select(f => f.Id))); history = true; focusId = null;
+        string historyScope = "history:" + string.Join("|", records.Select(f => f.Id));
+        // Journal snapshots are cloned on every refresh. Rebuild the lightweight
+        // row models for history so callers receive the new record objects while
+        // native grid rows, selection, and scroll position remain stable.
+        if (scope == historyScope) rowModels.Clear();
+        NewScope(historyScope); history = true; focusId = null;
         encounters = records; banner.Set(dungeon, records.Select(f => f.DungeonSeconds).DefaultIfEmpty().Max(), records, true); RefreshRows();
     }
     internal void ToggleEncounter(string id)
@@ -142,7 +162,8 @@ internal sealed class HudCombatTrackerPage : UserControl
         string query = Search.Text.Trim();
         return encounters.Where(f => (StateFilter.SelectedIndex != 1 || !f.Defeated) && (StateFilter.SelectedIndex != 2 || f.Defeated)
             && (query.Length == 0 || (f.Enemy ?? "").IndexOf(query, StringComparison.OrdinalIgnoreCase) >= 0 || f.Players.Any(p => (p.Name ?? "").IndexOf(query, StringComparison.OrdinalIgnoreCase) >= 0)))
-            .OrderBy(f => encounterOrder.TryGetValue(f.Id, out int order) ? order : int.MaxValue);
+            .OrderByDescending(f => f.IsBoss)
+            .ThenBy(f => encounterOrder.TryGetValue(f.Id, out int order) ? order : int.MaxValue);
     }
     private void RefreshRows()
     {
@@ -159,8 +180,11 @@ internal sealed class HudCombatTrackerPage : UserControl
             row.Fight = fight; row.Player = player; row.Rank = rank; row.Header = header; row.Total = total;
             if (player != null)
             {
-                if (player.EquipmentIds?.Length > 0) lastEquipment[key] = (int[])player.EquipmentIds.Clone();
-                row.Equipment = lastEquipment.TryGetValue(key, out var equipment) ? equipment : Array.Empty<int>();
+                var incoming = NormalizeEquipment(player.EquipmentIds);
+                if (!lastEquipment.TryGetValue(key, out var previous)) previous = Array.Empty<int>();
+                if (incoming.Any(id => id > 0) || previous.Length == 0)
+                    lastEquipment[key] = MergeEquipment(previous, incoming);
+                row.Equipment = lastEquipment.TryGetValue(key, out var equipment) ? equipment : NormalizeEquipment(null);
             }
             return row;
         }
@@ -200,7 +224,7 @@ internal sealed class HudCombatTrackerPage : UserControl
                     fight.DamageTaken.Count > 0 ? fight.DamageTaken.Values.Sum().ToString("N0") : "—", fight.Players.Sum(p => p.GuardDamage).ToString("N0"), "", "" };
                 else cells = new object[] { model.Rank, player.Name, player.Damage.ToString("N0"), Rate(player.Damage, fight.Seconds), fight.Damage > 0 ? (100.0 * player.Damage / fight.Damage).ToString("0.0") + "%" : "—",
                     player.Hits?.ToString("N0") ?? "—", fight.DamageTaken.TryGetValue(player.Name ?? "", out long taken) ? taken.ToString("N0") : "—",
-                    player.GuardDamage.ToString("N0"), string.Join(", ", model.Equipment.Select(id => ItemSpriteManager.GetItemMetadata(id).Name)), player.IsLocalPlayer ? "You · " + player.Status : player.Status.ToString() };
+                    player.GuardDamage.ToString("N0"), string.Join(" · ", model.Equipment.Select((id, slot) => EquipmentName(id, slot))), player.IsLocalPlayer ? "You · " + player.Status : player.Status.ToString() };
                 for (int c = 0; c < cells.Length; c++) if (!Equals(row.Cells[c].Value, cells[c])) row.Cells[c].Value = cells[c];
                 row.Cells["Player"].ToolTipText = model.Header ? fight.Enemy + " · click or press Enter to expand/collapse" : player == null ? "Total damage recorded for this monster." : player.Name + " · " + player.ClassName;
                 row.DefaultCellStyle.BackColor = player?.IsLocalPlayer == true ? HudTheme.Selection : model.Total ? HudTheme.Raised : i % 2 == 0 ? HudTheme.Surface : HudTheme.Alternate;
@@ -220,11 +244,38 @@ internal sealed class HudCombatTrackerPage : UserControl
         }
         finally { Grid.ResumeLayout(); }
         footer.Text = encounters.Count == 0 ? history ? "This saved run has no retained encounters." : "Damage to observed monsters will appear here when you enter combat."
-            : visible.Length + " / " + encounters.Count + " encounters  ·  Click a monster to expand  ·  % DMG = share of tracked damage";
+            : visible.Length + " / " + encounters.Count + " encounters  ·  Click a monster to expand  ·  GEAR (4) shows the full set  ·  % DMG = share of tracked damage";
         HudItemPresentation.Refresh(Grid); Grid.Invalidate();
     }
     private static string Rate(long damage, double seconds) => seconds > 0 ? (damage / Math.Max(.5, seconds)).ToString("N0") : "—";
     private static string Duration(double seconds) => TimeSpan.FromSeconds(Math.Max(0, seconds)).ToString(seconds >= 3600 ? @"h\:mm\:ss" : @"m\:ss");
+    private static readonly string[] EquipmentLabels = { "Weapon", "Ability", "Armor", "Ring" };
+    private static int[] NormalizeEquipment(int[] ids)
+        => Enumerable.Range(0, 4).Select(i => ids != null && i < ids.Length ? ids[i] : -1).ToArray();
+    private static int[] MergeEquipment(int[] previous, int[] incoming)
+        => Enumerable.Range(0, 4).Select(i => incoming[i] > 0 ? incoming[i] : previous.Length == 4 ? previous[i] : -1).ToArray();
+    private static string EquipmentName(int id, int slot)
+        => id > 0 ? ItemSpriteManager.GetItemMetadata(id).Name : "Empty " + EquipmentLabels[slot].ToLowerInvariant();
+    private static IEnumerable<HudItemView> CombatEquipment(HudCombatRow row)
+        => row.Equipment.Length == 4
+            ? row.Equipment.Select((id, slot) => HudItemPresentation.Create(id, id > 0 ? ItemSpriteManager.GetItemMetadata(id).Name : "Empty " + EquipmentLabels[slot].ToLowerInvariant(),
+                id > 0 ? ItemSpriteManager.GetItemMetadata(id).Rarity : "Empty",
+                details: EquipmentLabels[slot] + " · " + row.Player.Name + "\nLast observed in " + row.Fight.Enemy))
+            : Enumerable.Range(0, 4).Select(slot => HudItemPresentation.Create(-1, "Empty " + EquipmentLabels[slot].ToLowerInvariant(), "Empty",
+                details: EquipmentLabels[slot] + " · " + row.Player.Name + "\nNo equipment observation was received."));
+    private static List<PlayerDamageEntry> HydratePlayers(IEnumerable<PlayerDamageEntry> source, IEnumerable<PlayerParseEntry> roster)
+    {
+        var byName = (roster ?? Enumerable.Empty<PlayerParseEntry>()).Where(p => !string.IsNullOrWhiteSpace(p?.Name))
+            .GroupBy(p => p.Name, StringComparer.OrdinalIgnoreCase).ToDictionary(g => g.Key, g => g.Last(), StringComparer.OrdinalIgnoreCase);
+        return (source ?? Enumerable.Empty<PlayerDamageEntry>()).Where(p => p != null).Select(p => {
+            var equipment = NormalizeEquipment(p.EquipmentIds);
+            if (byName.TryGetValue(p.Name ?? "", out var observed) && observed.EquipmentIds != null && observed.EquipmentIds.Any(id => id > 0))
+                equipment = MergeEquipment(equipment, NormalizeEquipment(observed.EquipmentIds));
+            return new PlayerDamageEntry { Rank = p.Rank, Name = p.Name, ClassName = p.ClassName, ClassType = p.ClassType, SkinType = p.SkinType,
+                EquipmentIds = equipment, Hits = p.Hits, Damage = p.Damage, Dps = p.Dps, Percentage = p.Percentage, IsLocalPlayer = p.IsLocalPlayer,
+                GuardHits = p.GuardHits, GuardDamage = p.GuardDamage, Status = p.Status, LastHpPercent = p.LastHpPercent };
+        }).ToList();
+    }
     private void PaintEncounter(object sender, DataGridViewRowPrePaintEventArgs e)
     {
         if (!(Grid.Rows[e.RowIndex].Tag is HudCombatRow row) || !row.Header) return;
@@ -242,7 +293,7 @@ internal sealed class HudCombatTrackerPage : UserControl
             HudDrawing.DrawText(e.Graphics, fight.Enemy ?? "Unknown monster", HudTheme.BodyFont, new Rectangle(90, area.Top + 9, textWidth, 24), HudTheme.Text,
                 TextFormatFlags.SingleLine | TextFormatFlags.EndEllipsis | TextFormatFlags.NoPrefix);
             int phases = fight.EncounterEntityIds?.Distinct().Count() ?? 0;
-            string summary = (fight.Defeated ? "Defeated" : history ? "Observed" : "Active") + " · " + Duration(fight.Seconds) + " · " + fight.Damage.ToString("N0") + " damage · " + fight.Players.Count + " players";
+            string summary = (fight.IsBoss ? "BOSS · " : "") + (fight.Defeated ? "Defeated" : history ? "Observed" : "Active") + " · " + Duration(fight.Seconds) + " · " + fight.Damage.ToString("N0") + " damage · " + fight.Players.Count + " players";
             if (phases > 1) summary += " · " + phases + " phases";
             HudDrawing.DrawText(e.Graphics, summary, HudTheme.SmallFont, new Rectangle(90, area.Top + 36, textWidth, 22), HudTheme.Muted,
                 TextFormatFlags.SingleLine | TextFormatFlags.EndEllipsis | TextFormatFlags.NoPrefix);
