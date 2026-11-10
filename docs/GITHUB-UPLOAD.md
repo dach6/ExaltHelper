@@ -19,10 +19,10 @@ The game asset test accepts `-SourceDirectory` pointing to the installed game's
 ## Update source and publish the release
 
 1. Commit the validated source to `main` and push to the existing repository over HTTPS.
-2. Create tag **v1.1.2** at that exact commit and title the release
-   **ExaltHelper v1.1.2 - combat tracker / game 7.2.0.1.0**.
-3. Use [the prepared release notes](RELEASE-NOTES-1.1.2.md).
-4. Attach `ExaltHelper-1.1.2-Release.zip`, `ExaltHelper-1.1.2-Source.zip`, and
+2. Create tag **v1.1.3** at that exact commit and title the release
+   **ExaltHelper v1.1.3 - dungeon history / game 7.2.0.1.0**.
+3. Use [the prepared release notes](RELEASE-NOTES-1.1.3.md).
+4. Attach `ExaltHelper-1.1.3-Release.zip`, `ExaltHelper-1.1.3-Source.zip`, and
    `SHA256SUMS.txt`. Verify uploaded checksums before publishing the stable release.
 
 The application ZIP must contain the executable, configuration, dependency DLLs,

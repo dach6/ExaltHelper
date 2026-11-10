@@ -618,6 +618,17 @@ internal static partial class HudJournal
         string prefix = start.Ticks + ":";
         lock (Gate) return data.Fights.Where(x => x.Id != null && x.Id.StartsWith(prefix, StringComparison.Ordinal)).Select(CloneFight).ToList();
     }
+    internal static List<HudCombatRun> CombatRuns()
+    {
+        // The navigator only needs visit identity and name. Do not copy every
+        // encounter's player/source breakdown to populate its dropdown.
+        lock (Gate)
+            return data.Fights.Where(f => f.Id != null).GroupBy(f => f.Id.Split(':')[0]).Select(group => {
+                long ticks;
+                return long.TryParse(group.Key, out ticks) && ticks > 0 && ticks <= DateTime.MaxValue.Ticks
+                    ? new HudCombatRun { StartTicks = ticks, Dungeon = group.First().Dungeon } : null;
+            }).Where(run => run != null).ToList();
+    }
     private static HudJournalData CloneData(HudJournalData source)
         => new HudJournalData { Chat = source.Chat.Select(CloneLog).ToList(), Feed = source.Feed.Select(CloneLog).ToList(), Loot = source.Loot.Select(CloneLoot).ToList(),
                 CollectionVersion = 1, Trophies = source.Trophies.Select(CloneTrophy).ToList(), DungeonRuns = new Dictionary<string, long>(source.DungeonRuns),

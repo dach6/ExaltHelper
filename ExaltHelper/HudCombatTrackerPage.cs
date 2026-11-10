@@ -117,9 +117,13 @@ internal sealed class HudCombatTrackerPage : UserControl
         seedExpansion = expandFirstEncounter; Grid.Rows.Clear();
     }
     public void SetLive(DpsSnapshot snapshot, string accountScope, IEnumerable<HudFightRecord> saved)
+        => SetSnapshot(snapshot, accountScope, saved, false);
+    internal void SetArchived(DpsSnapshot snapshot, string accountScope, IEnumerable<HudFightRecord> saved)
+        => SetSnapshot(snapshot, accountScope, saved, true);
+    private void SetSnapshot(DpsSnapshot snapshot, string accountScope, IEnumerable<HudFightRecord> saved, bool archived)
     {
         if (snapshot == null) return;
-        NewScope(accountScope + ":" + snapshot.DungeonStartTime.Ticks); history = false;
+        NewScope(accountScope + ":" + snapshot.DungeonStartTime.Ticks); history = archived;
         var recorded = (saved ?? Enumerable.Empty<HudFightRecord>()).GroupBy(f => f.Id).ToDictionary(g => g.Key, g => g.First());
         var all = (snapshot.Encounters ?? new List<EnemyCombatSnapshot>()).Concat(snapshot.DefeatedEnemies ?? new List<EnemyCombatSnapshot>());
         if (snapshot.ActiveEnemy != null) all = all.Concat(new[] { snapshot.ActiveEnemy });
@@ -133,7 +137,7 @@ internal sealed class HudCombatTrackerPage : UserControl
                     DamageTaken = record?.DamageTaken ?? new Dictionary<string, long>(), Sources = record?.Sources ?? new List<HudDamageSource>(), EstimateNote = snapshot.DamageEstimateNote };
             }).ToList();
         focusId = snapshot.ActiveEnemy == null ? null : HudJournal.FightKey(snapshot.DungeonStartTime, snapshot.ActiveEnemy.EncounterId >= 0 ? snapshot.ActiveEnemy.EncounterId : snapshot.ActiveEnemy.EntityId);
-        banner.Set(snapshot.DungeonName, snapshot.ElapsedDungeonSeconds, encounters, false);
+        banner.Set(snapshot.DungeonName, snapshot.ElapsedDungeonSeconds, encounters, archived);
         RefreshRows();
     }
     public void SetHistory(IEnumerable<HudFightRecord> fights, string dungeon)

@@ -1,6 +1,6 @@
 # ExaltHelper
 
-**Version 1.1.2**
+**Version 1.1.3**
 
 Launcher game version: **7.2.0.1.0**.
 
@@ -8,7 +8,7 @@ The bundled game data and item atlases were extracted together from the installe
 7.2.0.1.0 client. [The asset manifest](assets/game-assets.json) records the source
 fingerprints, packaged checksums, catalog counts and representative release changes.
 
-Version 1.1.2 refines the expanded combat tracker for game 7.2.0.1.0. It retains the updated launcher handshake and bundled data, including the corrected Ocean Trench Key definition. Restart ExaltHelper after updating.
+Version 1.1.3 adds dungeon visit navigation to the expanded combat tracker and history for game 7.2.0.1.0. It retains the updated launcher handshake and bundled data, including the corrected Ocean Trench Key definition. Restart ExaltHelper after updating.
 
 ExaltHelper is a Windows companion for Realm of the Mad God Exalt. It combines an integrated combat HUD, launcher and account tools, and configurable gameplay utilities in one application.
 
@@ -34,7 +34,7 @@ ExaltHelper is a Windows companion for Realm of the Mad God Exalt. It combines a
 
 Requirements: Windows, .NET Framework 4.8, and an installed Realm of the Mad God Exalt client.
 
-1. Download `ExaltHelper-1.1.2-Release.zip`.
+1. Download `ExaltHelper-1.1.3-Release.zip`.
 2. Extract the entire ZIP to a writable folder.
 3. Open `ExaltHelper.exe` and accept the administrator prompt.
 4. Select your Exalt launcher in the application and locate it when prompted.
@@ -75,6 +75,13 @@ monster, portal and equipment cells use the bundled game artwork. Historical
 records that predate a field retain an unknown marker when the value was never
 observed. When no living target is active, the DPS overlay follows the newest
 defeated monster.
+
+Use the **< / >** arrows at the top of either expanded combat page to browse
+previous dungeon visits and return to **Live**. The dropdown labels each visit
+with its dungeon and start date/time, including repeat runs of the same dungeon.
+**Combat history** opens on **All recorded runs**; choose an individual visit to
+see its monster leaderboards. Saved visits remain accessible after restarting,
+subject to combat recording settings and the configured history limit.
 
 Crucible and Blood Ritual bonuses use definitions received from the game. If the HUD flags missing bonus definitions, open the relevant event panels while tracking is active.
 

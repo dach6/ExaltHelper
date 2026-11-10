@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using ExaltHelper.Proxy.DataStructures;
 using ExaltHelper.Proxy.Helpers;
 using ExaltHelper.Proxy.Networking.Packets;
@@ -309,6 +310,8 @@ internal class DpsTrackerMod : IDisposable
 
 		public string DungeonName;
 
+		public DateTime StartTime;
+
 		public string TimeStr;
 
 		public int Kills;
@@ -349,6 +352,8 @@ internal class DpsTrackerMod : IDisposable
 	private static readonly List<DpsSnapshot> sessionDungeonHistory = new List<DpsSnapshot>();
 
 	private static int currentHistoryIndex = -1;
+	private static int dungeonSelectionRevision;
+	internal static int DungeonSelectionRevision => Volatile.Read(ref dungeonSelectionRevision);
 
 	private static int selectedMonsterMode = -1;
 
@@ -3212,6 +3217,7 @@ internal class DpsTrackerMod : IDisposable
 			}
 		}
 		selectedMonsterMode = -1;
+		Interlocked.Increment(ref dungeonSelectionRevision);
 		PushOverlaySnapshot();
 	}
 
@@ -3233,6 +3239,7 @@ internal class DpsTrackerMod : IDisposable
 			}
 		}
 		selectedMonsterMode = -1;
+		Interlocked.Increment(ref dungeonSelectionRevision);
 		PushOverlaySnapshot();
 	}
 
@@ -3240,6 +3247,7 @@ internal class DpsTrackerMod : IDisposable
 	{
 		currentHistoryIndex = -1;
 		selectedMonsterMode = -1;
+		Interlocked.Increment(ref dungeonSelectionRevision);
 		PushOverlaySnapshot();
 	}
 
@@ -3258,6 +3266,7 @@ internal class DpsTrackerMod : IDisposable
 		{
 			Index = -1,
 			DungeonName = dungeonName,
+			StartTime = activeTrackerInstance?.dungeonStartTime ?? lastLiveSnapshot?.DungeonStartTime ?? default,
 			TimeStr = $"{num2:D2}:{num3:D2}",
 			Kills = kills,
 			Damage = damage,
@@ -3275,6 +3284,7 @@ internal class DpsTrackerMod : IDisposable
 				{
 					Index = num4,
 					DungeonName = dpsSnapshot.DungeonName,
+					StartTime = dpsSnapshot.DungeonStartTime,
 					TimeStr = $"{num5:D2}:{num6:D2}",
 					Kills = dpsSnapshot.KillsCount,
 					Damage = dpsSnapshot.TotalDungeonDamage,
@@ -3300,7 +3310,30 @@ internal class DpsTrackerMod : IDisposable
 			}
 		}
 		selectedMonsterMode = -1;
+		Interlocked.Increment(ref dungeonSelectionRevision);
 		PushOverlaySnapshot();
+	}
+
+	internal static DpsSnapshot ArchivedDungeonSnapshot(DateTime start)
+	{
+		if (!IsSessionVisible()) return null;
+		lock (sessionDungeonHistory)
+			return sessionDungeonHistory.FirstOrDefault(run => run.DungeonStartTime.Ticks == start.Ticks);
+	}
+
+	internal static bool SelectDungeonByStartTime(DateTime start)
+	{
+		if (!IsSessionVisible()) return false;
+		lock (sessionDungeonHistory)
+		{
+			int index = sessionDungeonHistory.FindIndex(run => run.DungeonStartTime.Ticks == start.Ticks);
+			if (index < 0) return false;
+			currentHistoryIndex = index;
+		}
+		selectedMonsterMode = -1;
+		Interlocked.Increment(ref dungeonSelectionRevision);
+		PushOverlaySnapshot();
+		return true;
 	}
 
 	public static void SetSelectedMonsterMode(int mode)

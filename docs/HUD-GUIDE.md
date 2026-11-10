@@ -85,7 +85,21 @@ Settings can restrict newly recorded fights by dungeon difficulty, realm boss gr
 
 Sound settings provide per-category switches, master and individual volume, built-in tones and custom WAV files. Categories include chat, named realm events, dungeon modifiers, bag types and key-opening difficulty. New sound categories start disabled. Custom files must contain 8- or 16-bit PCM mono/stereo audio, last at most five seconds and be no larger than 2 MB. Use the preview button to check the selected sound and volume.
 
-Choose **Dungeon runs** in Combat history to combine retained encounters from the same dungeon visit. Its DPS uses the observed dungeon duration, including time between fights. The detail view explains when totals cover only encounters still retained by your history limit.
+Both expanded combat pages have **< / >** arrows, a dungeon visit dropdown, and
+a **Live** button at the top. Previous moves from Live to your newest previous
+visit and then older visits; Next moves toward Live. Each visit is labeled with
+its start date/time and dungeon, so repeat runs stay separate. Selecting a visit
+shows only its monsters and their individual player damage rankings. A selected
+historical run stays visible while Live combat updates or a new dungeon begins.
+Explicit navigation in the compact HUD also updates the expanded selection.
+
+**Combat history** starts on **All recorded runs**, which remains available in
+the dropdown. This overview includes retained visits from previous sessions;
+its **Dungeon runs** grouping combines encounters from each visit and uses the
+observed dungeon duration for DPS, including time between fights. Select a
+specific visit to inspect its encounters. Recording filters and the configured
+history limit determine which encounters survive a restart. The compact HUD's
+recent session runs are also available in the expanded visit selector.
 
 Loot history records observed drops with their original dungeon, character, source and enchantments. Source attribution depends on visible encounters. Trophy Hall combines lifetime discoveries with the bundled RealmEye drop catalog; it shows missing items as well as discoveries. Trophy counts and recorded-run summaries survive normal history trimming. Public bags do not establish a rare-item discovery. A recorded run means a distinct tracked dungeon session containing an observed defeated encounter, not proof of every boss or dungeon completion.
 

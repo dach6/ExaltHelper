@@ -99,6 +99,7 @@ internal partial class ExaltDashboardForm
                 HudGameSprites.Attach(legacyCombat.Grid, "Encounter", value => value is HudFightRecord fight ? HudGameSprites.Object(fight.ObjectType) ?? HudGameSprites.Monster(fight.Enemy) : null, "combat");
                 HudGameSprites.Attach(legacyCombat.Grid, "Dungeon", value => HudGameSprites.Portal((value as HudFightRecord)?.Dungeon), "live");
                 combatHistoryTracker = new HudCombatTrackerPage(showHistoryButton: false, expandFirstEncounter: false);
+                combatHistoryRuns = AddCombatRunNavigation(combatHistoryTracker, true);
                 combatGrouping = new HudComboBox { DropDownStyle = ComboBoxStyle.DropDownList, Width = 155, BackColor = HudTheme.Input, ForeColor = HudTheme.Text, AccessibleName = "Combat history grouping" };
                 combatGrouping.Items.AddRange(new object[] { "Encounters", "Dungeon runs" }); combatGrouping.SelectedIndex = HudPreferences.Current.CombatByDungeon ? 1 : 0;
                 combatGrouping.SelectedIndexChanged += (_, __) => { HudPreferences.Current.CombatByDungeon = combatGrouping.SelectedIndex == 1; HudPreferences.Current.Save(); lastJournalRevision = -1; RefreshPageData(); };
@@ -111,9 +112,10 @@ internal partial class ExaltDashboardForm
                 return combatHistoryTracker;
             case "performance":
                 combatTracker = new HudCombatTrackerPage();
+                combatTrackerRuns = AddCombatRunNavigation(combatTracker, false);
                 combatTracker.HistoryRequested += () => SelectPage("combat");
                 combatTracker.DetailRequested += id => {
-                    var fight = HudJournal.SnapshotForRun(CurrentLiveSnapshot.DungeonStartTime).FirstOrDefault(x => x.Id == id);
+                    var fight = HudJournal.SnapshotForPage("combat").Fights.FirstOrDefault(x => x.Id == id);
                     if (fight != null) ShowFight(fight);
                     else footer.Text = "This encounter has no saved detail record. Enable combat recording in Settings to retain details.";
                 };
@@ -187,9 +189,10 @@ internal partial class ExaltDashboardForm
         }
         if (SelectedPage == "combat" && combatHistoryTracker != null)
         {
+            RefreshCombatRunNavigation();
             var fights = (HudPreferences.Current.CombatByDungeon ? DungeonHistory(data.Fights) : data.Fights)
                 .OrderByDescending(x => x.IsBoss).ThenByDescending(x => x.Time.ToUniversalTime()).ToArray();
-            combatHistoryTracker.SetHistory(fights, fights.Select(x => x.Dungeon).FirstOrDefault() ?? "Combat history");
+            combatHistoryRecords = fights;
             if (tables.TryGetValue("combat", out var legacyCombat))
                 legacyCombat.SetRows(fights.Select(x => new HudTableRow(x, x.Time.ToLocalTime().ToString("g"), x.Enemy, x.Dungeon,
                     TimeSpan.FromSeconds(x.Seconds).ToString(@"hh\:mm\:ss"), x.Damage.ToString("N0"),
@@ -222,8 +225,7 @@ internal partial class ExaltDashboardForm
             liveMetrics[2].Text = live.TotalDungeonDamage.ToString("N0");
             liveMetrics[3].Text = live.Players.Count + "  /  " + live.KillsCount;
         }
-        if (SelectedPage == "performance" && combatTracker != null)
-            combatTracker.SetLive(CurrentLiveSnapshot, HudJournal.ScopeId, HudJournal.SnapshotForRun(CurrentLiveSnapshot.DungeonStartTime));
+        if (SelectedPage == "performance" || SelectedPage == "combat") RefreshCombatRunPage();
         if (SelectedPage == "players" && tables.TryGetValue("players", out var players))
             players.SetRows(CurrentLiveSnapshot.Players.Select(x => new HudTableRow(x.Name, x.Name, x.ClassName, x.CurrentHp + " / " + x.MaxHp, x.MaxedStats, x.Stars, x.GuildName, string.Join(", ", x.EquipmentNames)) { Category = x.ClassName, Search = x.Name + " " + x.ClassName + " " + x.GuildName + " " + string.Join(" ", x.EquipmentNames), Tooltip = EquipmentTooltip(x) }));
         if (SelectedPage == "abilities" && tables.TryGetValue("abilities", out var abilities))
