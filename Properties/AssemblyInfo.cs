@@ -7,8 +7,8 @@ using System.Security;
 using System.Security.Permissions;
 
 [assembly: ComVisible(false)]
-[assembly: AssemblyFileVersion("1.1.1.0")]
-[assembly: AssemblyInformationalVersion("1.1.1")]
+[assembly: AssemblyFileVersion("1.1.2.0")]
+[assembly: AssemblyInformationalVersion("1.1.2")]
 [assembly: AssemblyTrademark("")]
 [assembly: Guid("a8a24e5a-aa1f-45e9-98d6-49e84def1100")]
 [assembly: AssemblyCopyright("")]
@@ -17,4 +17,4 @@ using System.Security.Permissions;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("ExaltHelper")]
-[assembly: AssemblyVersion("1.1.1.0")]
+[assembly: AssemblyVersion("1.1.2.0")]
